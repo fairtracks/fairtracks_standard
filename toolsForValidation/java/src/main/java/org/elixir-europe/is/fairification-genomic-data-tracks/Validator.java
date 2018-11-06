@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -91,39 +91,39 @@ public class Validator
 		}
 		
 		if(!errors.isEmpty()) {
-			// throw exception with the gathered errorsValidationException, BenchmarkingDocNoSchemaIdException
+			// throw exception with the gathered errorsValidationException, ValidableDocNoSchemaIdException
 			throw new SchemaInconsistentException(errors);
 		}
 	}
 	
-	public void validatePass1(BenchmarkingDoc bDoc)
-		throws ValidationException, BenchmarkingDocNoSchemaIdException, OrphanBenchmarkingDocException, BenchmarkingDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
+	public void validatePass1(ValidableDoc bDoc)
+		throws ValidationException, ValidableDocNoSchemaIdException, OrphanValidableDocException, ValidableDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
 	{
 		URI jsonSchemaId = bDoc.getJsonSchemaId();
 		
 		if(jsonSchemaId == null) {
-			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+			throw new ValidableDocNoSchemaIdException(bDoc.getJsonSource());
 		}
 		
 		if(!containsSchema(jsonSchemaId)) {
-			throw new OrphanBenchmarkingDocException(jsonSchemaId);
+			throw new OrphanValidableDocException(jsonSchemaId);
 		}
 		
 		ValidatedJSONSchema bSchemaDoc = getSchema(jsonSchemaId);
 		bSchemaDoc.validatePass1(bDoc);
 	}
 	
-	public void validatePass2(BenchmarkingDoc bDoc)
-		throws BenchmarkingDocNoSchemaIdException, OrphanBenchmarkingDocException, SchemaMissingForeignKeySchemaException
+	public void validatePass2(ValidableDoc bDoc)
+		throws ValidableDocNoSchemaIdException, OrphanValidableDocException, SchemaMissingForeignKeySchemaException
 	{
 		URI jsonSchemaId = bDoc.getJsonSchemaId();
 		
 		if(jsonSchemaId == null) {
-			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+			throw new ValidableDocNoSchemaIdException(bDoc.getJsonSource());
 		}
 		
 		if(!containsSchema(jsonSchemaId)) {
-			throw new OrphanBenchmarkingDocException(jsonSchemaId);
+			throw new OrphanValidableDocException(jsonSchemaId);
 		}
 		
 		ValidatedJSONSchema bSchemaDoc = getSchema(jsonSchemaId);

@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.elixir-europe.excelerate.benchmarking</groupId>
+	<groupId>org.elixir-europe.is.fairification-genomic-data-tracks</groupId>
 	<artifactId>validator</artifactId>
 	<packaging>jar</packaging>
-	<version>0.3-SNAPSHOT</version>
-	<name>validator</name>
-	<url>https://github.com/inab/benchmarking-data-model</url>
+	<version>0.1-SNAPSHOT</version>
+	<name>fair-gtrack-validator</name>
+	<url>https://github.com/inab/GenomicDataTracks_JSON_schemas</url>
 	
 	<dependencies>
 		<dependency>
@@ -43,8 +43,8 @@
 				<configuration>
 					<programs>
 						<program>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
-							<id>jsonValidate</id>
+							<mainClass>org.elixir_europe.is.fairification_genomic_data_tracks.FairGTrackValidatorCli</mainClass>
+							<id>fairGTrackJsonValidate</id>
 						</program>
 					</programs>
 				</configuration>
@@ -58,7 +58,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
+							<mainClass>org.elixir_europe.is.fairification_genomic_data_tracks.FairGTrackValidatorCli</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -75,7 +75,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
+							<mainClass>org.elixir_europe.is.fairification_genomic_data_tracks.FairGTrackValidatorCli</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -104,7 +104,7 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>org.elixir_europe.excelerate.benchmarking.ValidatorCli</mainClass>
+									<mainClass>org.elixir_europe.is.fairification_genomic_data_tracks.FairGTrackValidatorCli</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>

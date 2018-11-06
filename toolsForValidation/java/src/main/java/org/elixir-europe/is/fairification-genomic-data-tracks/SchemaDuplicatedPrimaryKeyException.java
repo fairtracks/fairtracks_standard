@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

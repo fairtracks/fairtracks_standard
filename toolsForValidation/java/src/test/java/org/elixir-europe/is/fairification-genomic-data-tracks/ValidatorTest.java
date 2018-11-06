@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

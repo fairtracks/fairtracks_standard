@@ -1,13 +1,13 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.net.URI;
 
-public class BenchmarkingDocUnmatchingSchemaException
+public class ValidableDocUnmatchingSchemaException
 	extends Exception
 {
 	protected String jsonSource;
 	protected URI jsonSchemaId;
-	public BenchmarkingDocUnmatchingSchemaException(String jsonSource,URI jsonSchemaId) {
+	public ValidableDocUnmatchingSchemaException(String jsonSource,URI jsonSchemaId) {
 		this.jsonSource = jsonSource;
 		this.jsonSchemaId = jsonSchemaId;
 	}

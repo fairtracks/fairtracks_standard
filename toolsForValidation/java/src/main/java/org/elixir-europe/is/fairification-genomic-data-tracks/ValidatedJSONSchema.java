@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -290,14 +290,14 @@ public class ValidatedJSONSchema {
 		return p_PK!=null && keys.stream().allMatch(key -> p_PK.containsKey(key));
 	}
 	
-	public void validatePass1(BenchmarkingDoc bDoc)
-		throws ValidationException, BenchmarkingDocNoSchemaIdException, BenchmarkingDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
+	public void validatePass1(ValidableDoc bDoc)
+		throws ValidationException, ValidableDocNoSchemaIdException, ValidableDocUnmatchingSchemaException, SchemaDuplicatedPrimaryKeyException
 	{
 		URI jsonSchemaId = bDoc.getJsonSchemaId();
 		if(jsonSchemaId==null) {
 			// Throw an ignore exception, due no declared schema
 			// This should be an assertion, as it should never happen
-			throw new BenchmarkingDocNoSchemaIdException(bDoc.getJsonSource());
+			throw new ValidableDocNoSchemaIdException(bDoc.getJsonSource());
 		}
 		if(jsonSchemaURI.equals(jsonSchemaId)) {
 			jsonSchemaVal.validate(bDoc.getJsonDoc());
@@ -326,7 +326,7 @@ public class ValidatedJSONSchema {
 			}
 		} else {
 			// Throw an ignore exception, due different schemas
-			throw new BenchmarkingDocUnmatchingSchemaException(bDoc.getJsonSource(),jsonSchemaURI);
+			throw new ValidableDocUnmatchingSchemaException(bDoc.getJsonSource(),jsonSchemaURI);
 		}
 	}
 }

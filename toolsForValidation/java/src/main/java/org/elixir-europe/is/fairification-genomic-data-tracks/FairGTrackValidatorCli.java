@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -34,11 +34,11 @@ import org.json.JSONTokener;
  * Hello world!
  *
  */
-public class ValidatorCli
+public class FairGTrackValidatorCli
 {
 	protected Validator p_schemaHash;
 	
-	public ValidatorCli(List<File> jsonSchemaFiles) {
+	public FairGTrackValidatorCli(List<File> jsonSchemaFiles) {
 		p_schemaHash = new Validator();
 		
 		// Schema validation stats
@@ -172,24 +172,24 @@ public class ValidatorCli
 				System.out.printf("* Validating %s\n",jsonFile.getPath());
 				System.out.flush();
 				try {
-					BenchmarkingDoc bDoc = BenchmarkingDoc.parseFile(jsonFile);
+					ValidableDoc bDoc = ValidableDoc.parseFile(jsonFile);
 					try {
 						p_schemaHash.validatePass1(bDoc);
 						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
 						System.out.println("\t- Validated!\n");
 						System.out.flush();
 						numFilePass1OK++;
-					} catch(BenchmarkingDocNoSchemaIdException bdnsie) {
+					} catch(ValidableDocNoSchemaIdException bdnsie) {
 						System.out.println("\t- "+bdnsie.getMessage());
 						// Masking it for the next loop
 						jsonFiles.set(iJsonFile,null);
 						numFilePass1Ignore++;
-					} catch(OrphanBenchmarkingDocException obde) {
+					} catch(OrphanValidableDocException obde) {
 						System.out.println("\t- "+obde.getMessage());
 						// Masking it for the next loop
 						jsonFiles.set(iJsonFile,null);
 						numFilePass1Ignore++;
-					} catch(BenchmarkingDocUnmatchingSchemaException bduse) {
+					} catch(ValidableDocUnmatchingSchemaException bduse) {
 						System.out.println("\t- ASSERTION ERROR: "+bduse.getMessage());
 						// Masking it for the next loop
 						jsonFiles.set(iJsonFile,null);
@@ -235,17 +235,17 @@ public class ValidatorCli
 				System.out.printf("* Checking FK on %s\n",jsonFile.getPath());
 				System.out.flush();
 				try {
-					BenchmarkingDoc bDoc = BenchmarkingDoc.parseFile(jsonFile);
+					ValidableDoc bDoc = ValidableDoc.parseFile(jsonFile);
 					try {
 						p_schemaHash.validatePass2(bDoc);
 						System.out.printf("\t- Using %s schema\n",bDoc.getJsonSchemaId());
 						System.out.println("\t- Validated!\n");
 						System.out.flush();
 						numFilePass2OK++;
-					} catch(BenchmarkingDocNoSchemaIdException bdnsie) {
+					} catch(ValidableDocNoSchemaIdException bdnsie) {
 						System.out.println("\t- ASSERTION ERROR: "+bdnsie.getMessage());
 						numFilePass2Fail++;
-					} catch(OrphanBenchmarkingDocException obde) {
+					} catch(OrphanValidableDocException obde) {
 						System.out.println("\t- ASSERTION ERROR: "+obde.getMessage());
 						numFilePass2Fail++;
 					} catch(SchemaMissingForeignKeySchemaException smfkse) {
@@ -278,7 +278,7 @@ public class ValidatorCli
 			File jsonSchemaPath = jsonFiles.remove(0);
 			List<File> jsonSchemaFiles = new ArrayList<File>();
 			jsonSchemaFiles.add(jsonSchemaPath);
-			ValidatorCli vcli = new ValidatorCli(jsonSchemaFiles);
+			FairGTrackValidatorCli vcli = new FairGTrackValidatorCli(jsonSchemaFiles);
 			
 			if(!jsonFiles.isEmpty()) {
 				if(vcli.isEmpty()) {

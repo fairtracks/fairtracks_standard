@@ -1,12 +1,12 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.net.URI;
 
-public class OrphanBenchmarkingDocException
+public class OrphanValidableDocException
 	extends Exception
 {
 	protected URI jsonSchemaId;
-	public OrphanBenchmarkingDocException(URI jsonSchemaId) {
+	public OrphanValidableDocException(URI jsonSchemaId) {
 		this.jsonSchemaId = jsonSchemaId;
 	}
 	

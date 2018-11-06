@@ -1,4 +1,4 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-public class BenchmarkingDoc {
+public class ValidableDoc {
 	protected final static String SCHEMA_KEY = "_schema";
 	
 	protected static final Pattern jStepPat = Pattern.compile("^([^\\[]+)\\[(0|[1-9][0-9]+)?\\]$");
@@ -30,11 +30,11 @@ public class BenchmarkingDoc {
 	protected String jsonSource;
 	protected URI jsonSchemaId;
 	
-	public BenchmarkingDoc(JSONObject jsonDoc) {
+	public ValidableDoc(JSONObject jsonDoc) {
 		this(jsonDoc,"<unknown>");
 	}
 	
-	public BenchmarkingDoc(JSONObject jsonDoc,String jsonSource) {
+	public ValidableDoc(JSONObject jsonDoc,String jsonSource) {
 		this.jsonDoc = jsonDoc;
 		this.jsonSource = jsonSource;
 		
@@ -48,7 +48,7 @@ public class BenchmarkingDoc {
 		}
 	}
 	
-	public static BenchmarkingDoc parseFile(File jsonFile)
+	public static ValidableDoc parseFile(File jsonFile)
 		throws IOException
 	{
 		try(
@@ -58,7 +58,7 @@ public class BenchmarkingDoc {
 			JSONTokener jt = new JSONTokener(jsonReader);
 			JSONObject jsonDoc = new JSONObject(jt);
 			String jsonSource = jsonFile.getAbsolutePath();
-			return new BenchmarkingDoc(jsonDoc,jsonSource);
+			return new ValidableDoc(jsonDoc,jsonSource);
 		}
 	}
 	

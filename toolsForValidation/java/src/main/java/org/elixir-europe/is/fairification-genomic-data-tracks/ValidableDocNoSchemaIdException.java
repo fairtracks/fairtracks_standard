@@ -1,10 +1,10 @@
-package org.elixir_europe.excelerate.benchmarking;
+package org.elixir_europe.is.fairification_genomic_data_tracks;
 
-public class BenchmarkingDocNoSchemaIdException
+public class ValidableDocNoSchemaIdException
 	extends Exception
 {
 	protected String jsonSource;
-	public BenchmarkingDocNoSchemaIdException(String jsonSource) {
+	public ValidableDocNoSchemaIdException(String jsonSource) {
 		this.jsonSource = jsonSource;
 	}
 	
