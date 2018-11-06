@@ -1,4 +1,4 @@
-# EXCELERATE WP2 JSON Schema validation install instructions, Python edition
+# FAIRification Genomic Data Tracks JSON Schema validation install instructions, Python edition
 
 In order to install the dependencies you need `virtualenv` or `venv`, and `pip`. `pip` is available in many Linux distributions (Ubuntu package `python-pip` and `python3-pip`, CentOS EPEL package `python-pip`), and also as [pip](https://pip.pypa.io/en/stable/) Python package.
 

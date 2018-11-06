@@ -17,3 +17,5 @@ So, this validation program uses libraries compliant with that specification.
 	  export PATH="${PWD}/target/appassembler/bin:$PATH"
 	  fairGTrackJsonValidate ../../JSON-schemas/fair-gtrack.json {JSON file or directory+}
 	  ```
+
+The roots of this program come from [https://github.com/inab/benchmarking-data-model/tree/0.4.0/toolsForValidation](https://github.com/inab/benchmarking-data-model/tree/0.4.0/toolsForValidation)
