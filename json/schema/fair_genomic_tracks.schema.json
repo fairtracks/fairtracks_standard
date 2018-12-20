@@ -7,6 +7,12 @@
         "fair_tracks": {
             "type": "object", 
             "properties": {
+                "_schema": {
+                    "description": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema", 
+                    "type": "string", 
+                    "format": "uri", 
+                    "const": "https://www.elixir-europe.org/IS/FAIRGDataTracks/json-schemas/0.1"
+                }, 
                 "experiment": {
                     "type": "object", 
                     "properties": {
@@ -390,6 +396,7 @@
                 }
             }, 
             "required": [
+                "_schema", 
                 "experiment", 
                 "sample", 
                 "study", 
@@ -399,5 +406,8 @@
     }, 
     "required": [
         "fair_tracks"
-    ]
+    ], 
+    "additionalProperties": true, 
+    "primary_key": [], 
+    "dependencies": {}
 }
