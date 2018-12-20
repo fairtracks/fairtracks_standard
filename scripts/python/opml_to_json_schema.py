@@ -5,7 +5,7 @@ import json
 import xml.etree.ElementTree as ElementTree
 
 
-ATTRIBS_TO_IMPORT = ['description', 'type', 'format', 'ontology', 'namespace', 'pattern', 'examples']
+ATTRIBS_TO_IMPORT = ['description', 'type', 'format', 'ontology', 'namespace', 'const', 'pattern', 'examples']
 ALWAYS_ARRAY_ATTIBS = ['examples']
 ARRAY_SPLIT_TEXT = ', '
 
@@ -15,6 +15,13 @@ def json_schema_create_root():
     json_dict['$id'] = "https://www.elixir-europe.org/IS/FAIRGDataTracks/json-schemas/0.1"
     json_dict['title'] = "FAIRification of Genomic Data Tracks JSON Schema"
     json_dict['type'] = 'object'
+    return json_dict
+
+
+def json_schema_add_end_root_attribs(json_dict):
+    json_dict['additionalProperties'] = True
+    json_dict['primary_key'] = []
+    json_dict['dependencies'] = {}
     return json_dict
 
 
@@ -72,5 +79,7 @@ opml_root = ElementTree.parse(args.in_definition.name).find('./body')
 
 json_schema_dict = json_schema_create_root()
 visit_opml_outline_elements(opml_root, json_schema_handle_visit, json_schema_dict)
+
+json_schema_dict = json_schema_add_end_root_attribs(json_schema_dict)
 
 args.out_schema.write(json.dumps(json_schema_dict, indent=4))
