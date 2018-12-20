@@ -5,7 +5,8 @@ import json
 import xml.etree.ElementTree as ElementTree
 
 
-ATTRIBS_TO_IMPORT = ['description', 'type', 'format', 'ontology', 'namespace', 'pattern']
+ATTRIBS_TO_IMPORT = ['description', 'type', 'format', 'ontology', 'namespace', 'pattern', 'examples']
+ALWAYS_ARRAY_ATTIBS = ['examples']
 ARRAY_SPLIT_TEXT = ', '
 
 def json_schema_create_root():
@@ -24,7 +25,7 @@ def json_schema_handle_visit(element, json_parent):
         if attrib_name in element.attrib:
             element_value = element.attrib[attrib_name]
             if element_value:
-                if ARRAY_SPLIT_TEXT in element_value:
+                if ARRAY_SPLIT_TEXT in element_value or attrib_name in ALWAYS_ARRAY_ATTIBS:
                     json_child[attrib_name] = [_ for _ in element_value.split(ARRAY_SPLIT_TEXT)]
                 else:
                     json_child[attrib_name] = element_value
