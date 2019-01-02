@@ -7,13 +7,15 @@ import xml.etree.ElementTree as ElementTree
 
 ATTRIBS_TO_IMPORT = ['description', 'type', 'format', 'ontology', 'namespace', 'const', 'pattern', 'examples']
 ALWAYS_ARRAY_ATTIBS = ['examples']
-ARRAY_SPLIT_TEXT = ', '
+ARRAY_SPLIT_TEXT = '|'
+MAX_EXAMPLES_COUNT = 2
+
 
 def json_schema_create_root():
     json_dict = OrderedDict()
-    json_dict['$schema'] = "http://json-schema.org/draft-04/hyper-schema#"
-    json_dict['$id'] = "https://www.elixir-europe.org/IS/FAIRGDataTracks/json-schemas/0.1"
-    json_dict['title'] = "FAIRification of Genomic Data Tracks JSON Schema"
+    json_dict['$schema'] = "http://json-schema.org/draft-06/hyper-schema#"
+    json_dict['$id'] = "https://www.elixir-europe.org/IS/FAIRGenomicTracks/json-schemas/0.1"
+    json_dict['title'] = "FAIRification of Genomic Tracks JSON Schema"
     json_dict['type'] = 'object'
     return json_dict
 
@@ -25,7 +27,7 @@ def json_schema_add_end_root_attribs(json_dict):
     return json_dict
 
 
-def json_schema_handle_visit(element, json_parent):
+def json_schema_handle_visit(element, json_parent, array_index=None):
     json_child = OrderedDict()
 
     def add_attrib(json_child, attrib_name):
@@ -57,29 +59,72 @@ def json_schema_handle_visit(element, json_parent):
                 json_parent['required'] = []
             json_parent['required'].append(key)
 
-    # print name, json_child, cur_json_el, json_dict
+    return json_child
+
+
+def json_example_handle_visit(element, json_parent, array_index):
+    el_type = element.attrib['type']
+
+    if el_type == 'object':
+        json_child = OrderedDict()
+    elif el_type == 'array':
+        json_child = []
+    else:
+        el_examples = element.attrib.get('examples')
+        el_default = element.attrib.get('default')
+        el_const = element.attrib.get('const')
+
+        if el_examples:
+            content = el_examples
+        elif el_default:
+            content = el_default
+        elif el_const:
+            content = el_const
+        else:
+            raise ValueError('Missing example content for element: ' + element.attrib['text'])
+
+        if array_index is not None:
+            split_content = content.split(ARRAY_SPLIT_TEXT)
+            if array_index < len(split_content):
+                json_child = split_content[array_index]
+            else:
+                return
+        else:
+            json_child = content
+
+    if isinstance(json_parent, dict):
+        if element.attrib['text'] not in json_parent:
+            json_parent[element.attrib['text']] = json_child
+        else:
+            json_child = json_parent[element.attrib['text']]
+    else:
+        json_parent.append(json_child)
 
     return json_child
 
 
-def visit_opml_outline_elements(opml_root, visit_func, json_parent):
+def visit_opml_outline_elements(opml_root, visit_func, json_parent, array_index=None):
     for opml_elem in opml_root.getchildren():
-        json_child = visit_func(opml_elem, json_parent)
-        visit_opml_outline_elements(opml_elem, visit_func, json_child)
+        json_child = visit_func(opml_elem, json_parent, array_index)
+        visit_opml_outline_elements(opml_elem, visit_func, json_child, array_index)
 
 
 parser = argparse.ArgumentParser(description='Generate JSON schema and example '
                                              'JSON from OPML definition file')
 parser.add_argument('in_definition', type=argparse.FileType('r'))
 parser.add_argument('out_schema', type=argparse.FileType('w'))
-# parser.add_argument('out_example', type=argparse.FileType('w'))
+parser.add_argument('out_example', type=argparse.FileType('w'))
 args = parser.parse_args()
 
 opml_root = ElementTree.parse(args.in_definition.name).find('./body')
 
 json_schema_dict = json_schema_create_root()
 visit_opml_outline_elements(opml_root, json_schema_handle_visit, json_schema_dict)
-
 json_schema_dict = json_schema_add_end_root_attribs(json_schema_dict)
-
 args.out_schema.write(json.dumps(json_schema_dict, indent=4))
+
+json_example_dict = OrderedDict()
+for array_index in range(MAX_EXAMPLES_COUNT):
+    visit_opml_outline_elements(opml_root, json_example_handle_visit, json_example_dict, array_index)
+# json_example_dict = json_example_add_end_root_attribs(json_example_dict)
+args.out_example.write(json.dumps(json_example_dict, indent=4))
