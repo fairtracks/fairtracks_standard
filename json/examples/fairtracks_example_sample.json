@@ -1,0 +1,10 @@
+{
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json", 
+    "global_id": "biosample:SAMN01731491", 
+    "local_id": "GEO:GSM945229", 
+    "biomaterial_type": "primary cell", 
+    "sample_type": {
+        "term_iri": "http://purl.obolibrary.org/obo/CL_0000236", 
+        "term_value": "H1-hESC"
+    }
+}
