@@ -1,23 +1,23 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json", 
-    "global_id": "fairtracks:1", 
-    "local_id": "\nencode:ENCFF625ZYB", 
-    "experiment_ref": "encode:ENCSR000DQP", 
-    "file_iri": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz", 
-    "file_name": "r1.narrowPeak.gz", 
-    "label_short": "ENCFF625ZYB", 
-    "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB", 
-    "genome_assembly": "GRCh38", 
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
+    "global_id": "fairtracks:1",
+    "local_id": "encode:ENCFF625ZYB",
+    "experiment_ref": "encode:ENCSR000DQP",
+    "file_iri": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
+    "file_name": "r1.narrowPeak.gz",
+    "label_short": "ENCFF625ZYB",
+    "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
+    "genome_assembly": "GRCh38",
     "file_format": {
-        "term_iri": "http://edamontology.org/format_3613", 
+        "term_iri": "http://edamontology.org/format_3613",
         "term_value": "ENCODE narrow peak format"
-    }, 
+    },
     "content_type": {
-        "datatype_url": "http://edamontology.org/data_3002", 
+        "datatype_url": "http://edamontology.org/data_3002",
         "datatype_term": "Annotation track"
-    }, 
+    },
     "checksum": {
-        "cs_method": "MD5", 
+        "cs_method": "MD5",
         "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
     }
 }
