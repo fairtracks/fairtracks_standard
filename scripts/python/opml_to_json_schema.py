@@ -28,7 +28,7 @@ def json_schema_add_end_root_attribs(json_dict):
     return json_dict
 
 
-def json_schema_handle_visit(element, json_parent, array_index=None):
+def json_schema_create_child(element):
     json_child = OrderedDict()
 
     def add_attrib(json_child, attrib_name):
@@ -48,6 +48,10 @@ def json_schema_handle_visit(element, json_parent, array_index=None):
     if element.attrib['type'] == 'array':
         json_child['items'] = OrderedDict()
 
+    return json_child
+
+
+def json_schema_add_child_to_parent(element, json_child, json_parent):
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
@@ -62,16 +66,21 @@ def json_schema_handle_visit(element, json_parent, array_index=None):
                 json_parent['required'] = []
             json_parent['required'].append(key)
 
-    return json_child
+
+def json_schema_create_subtree(opml_root, json_parent):
+    for opml_elem in opml_root.getchildren():
+        json_child = json_schema_create_child(opml_elem)
+        json_schema_create_subtree(opml_root=opml_elem, json_parent=json_child)
+        json_schema_add_child_to_parent(opml_elem, json_child, json_parent)
 
 
-def json_example_handle_visit(element, json_parent, array_index):
+def json_example_create_children(element):
     el_type = element.attrib['type']
 
     if el_type == 'object':
-        json_child = OrderedDict()
+        return [OrderedDict()]
     elif el_type == 'array':
-        json_child = []
+        return [[]]
     else:
         el_examples = element.attrib.get('examples')
         el_default = element.attrib.get('default')
@@ -84,32 +93,52 @@ def json_example_handle_visit(element, json_parent, array_index):
         elif el_const:
             content = el_const
         else:
-            raise ValueError('Missing example content for element: ' + element.attrib['text'])
+            return []
 
-        if array_index is not None:
-            split_content = content.split(ARRAY_SPLIT_TEXT)
-            if array_index < len(split_content):
-                json_child = split_content[array_index]
-            else:
-                return
-        else:
-            json_child = content
+        return content.split(ARRAY_SPLIT_TEXT)
 
+
+def json_example_add_child_to_parent(element, json_child, json_parent):
     if isinstance(json_parent, dict):
-        if element.attrib['text'] not in json_parent:
-            json_parent[element.attrib['text']] = json_child
-        else:
-            json_child = json_parent[element.attrib['text']]
-    else:
+        json_parent[element.attrib['text']] = json_child
+    else:  # array
         json_parent.append(json_child)
 
-    return json_child
+
+def _isArray(json_child):
+    return isinstance(json_child, list)
 
 
-def visit_opml_outline_elements(opml_root, visit_func, json_parent, array_index=None):
+def _isExampleContent(json_children):
+    return not any(isinstance(json_children[0], _) for _ in [list, dict])
+
+
+def _treeHasBeenSplitIntoArrays(example_index):
+    return example_index is not None
+
+
+def json_example_create_subtree(opml_root, json_parent, example_index=None):
     for opml_elem in opml_root.getchildren():
-        json_child = visit_func(opml_elem, json_parent, array_index)
-        visit_opml_outline_elements(opml_elem, visit_func, json_child, array_index)
+        json_children = json_example_create_children(opml_elem)
+
+        if json_children:
+            print(opml_elem.attrib['text'], json_children, example_index)
+
+            if _isExampleContent(json_children) and _treeHasBeenSplitIntoArrays(example_index):
+                json_child = json_children[example_index]
+            else:
+                json_child = json_children[0]
+
+            if _isArray(json_child) and not _treeHasBeenSplitIntoArrays(example_index):
+                child_example_indices = range(MAX_EXAMPLES_COUNT)
+            else:
+                child_example_indices = [example_index]
+
+            for child_example_index in child_example_indices:
+                json_example_create_subtree(opml_root=opml_elem, json_parent=json_child,
+                                            example_index=child_example_index)
+
+        json_example_add_child_to_parent(opml_elem, json_child, json_parent)
 
 
 parser = argparse.ArgumentParser(description='Generate JSON schema and example '
@@ -122,12 +151,11 @@ args = parser.parse_args()
 opml_root = ElementTree.parse(args.in_definition.name).find('./body')
 
 json_schema_dict = json_schema_create_root()
-visit_opml_outline_elements(opml_root, json_schema_handle_visit, json_schema_dict)
+json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
 json_schema_dict = json_schema_add_end_root_attribs(json_schema_dict)
 args.out_schema.write(json.dumps(json_schema_dict, indent=4))
 
 json_example_dict = OrderedDict()
-for array_index in range(MAX_EXAMPLES_COUNT):
-    visit_opml_outline_elements(opml_root, json_example_handle_visit, json_example_dict, array_index)
+json_example_create_subtree(opml_root, json_parent=json_example_dict)
 # json_example_dict = json_example_add_end_root_attribs(json_example_dict)
 args.out_example.write(json.dumps(json_example_dict, indent=4))
