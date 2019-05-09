@@ -41,7 +41,8 @@
                 "type": "string",
                 "format": "curie",
                 "namespace": "?",
-                "matchType": "canonical"
+                "matchType": "canonical",
+                "minItems": "1"
             }
         },
         "tech_type": {
