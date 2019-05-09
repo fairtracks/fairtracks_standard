@@ -35,10 +35,9 @@
             "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json#local_id"
         },
         "aggregated_from": {
-            "description": "References to external data sources used as basis for aggregated data generation",
+            "description": "References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)",
             "type": "array",
             "items": {
-                "description": "Reference to external experiment (using global experiment dientifier, resolvable by identifiers.org)",
                 "type": "string",
                 "format": "curie",
                 "namespace": "?",
@@ -99,7 +98,6 @@
         }
     },
     "required": [
-        "@schema",
         "global_id",
         "local_id",
         "study_ref",

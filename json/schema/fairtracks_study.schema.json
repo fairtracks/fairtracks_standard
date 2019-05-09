@@ -96,7 +96,6 @@
         }
     },
     "required": [
-        "@schema",
         "global_id",
         "local_id",
         "study_name",

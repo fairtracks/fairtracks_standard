@@ -111,7 +111,6 @@
         }
     },
     "required": [
-        "@schema",
         "global_id",
         "local_id",
         "experiment_ref",

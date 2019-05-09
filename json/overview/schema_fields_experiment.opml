@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head><!-- <editor scale-mac="1.25">
       <sidebar/>
-      <column name="text" width="150"/>
+      <column name="text" width="314"/>
       <column name="description" width="386"/>
       <column name="required" width="150"/>
       <column name="anyOf" width="150"/>
@@ -16,11 +16,12 @@
       <column name="namespace" width="170"/>
       <column name="matchType" width="150"/>
       <column name="foreignProperty" width="150"/>
+      <column name="minItems" width="150"/>
       <column name="examples" width="414"/>
       <column name="comments" width="150"/>
     </editor> -->
     <title>basic_example</title>
-    <dateCreated>Thu, 09 May 2019 11:47:48 GMT</dateCreated>
+    <dateCreated>Thu, 09 May 2019 19:41:23 GMT</dateCreated>
     <expansionState>5,7,10</expansionState>
     <vertScrollState>0</vertScrollState>
     <windowTop>8</windowTop>
@@ -29,13 +30,13 @@
     <windowBottom>571</windowBottom>
   </head>
   <body>
-    <outline text="@schema" description="The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;id&apos; in the linked schema" required="true" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json" type="string" format="iri" examples="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"/>
+    <outline text="@schema" description="The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;id&apos; in the linked schema" required="false" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json" type="string" format="iri" examples="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"/>
     <outline text="global_id" description="Global experiment identifier, resolvable by identifiers.org" required="true" type="string" format="curie" namespace="?" matchType="canonical" examples="GEO:GSE35583"/>
     <outline text="local_id" description="Submitter-local identifier (within investigation/hub) for experiment (in curie-format, if applicable)" required="true" unique="true" type="string" examples="encode:ENCSR000DQP"/>
     <outline text="study_ref" description="Reference to the study that generated the sample (using the submitter-local identifier of the study)" required="true" type="string" format="foreign_ref" foreignProperty="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json#local_id" examples="UW_ChipSeq"/>
     <outline text="sample_ref" description="Reference to the sample of the experiment (using the submitter-local identifier of the sample)" required="false" anyOf="true" type="string" format="foreign_ref" foreignProperty="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json#local_id" examples="GEO:GSM945229"/>
-    <outline text="aggregated_from" description="References to external data sources used as basis for aggregated data generation" required="false" anyOf="true" type="array">
-      <outline text="global_experiment_ref" description="Reference to external experiment (using global experiment dientifier, resolvable by identifiers.org)" required="true" type="string" format="curie" namespace="?" matchType="canonical"/>
+    <outline text="aggregated_from" description="References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)" required="false" anyOf="true" type="array">
+      <outline text="" type="string" format="curie" namespace="?" matchType="canonical" minItems="1"/>
     </outline>
     <outline text="tech_type" required="true" type="object">
       <outline text="term_iri" description="Type of technology (IRI linking to an ontology term)" required="true" type="string" format="term" ontology="http://purl.obolibrary.org/obo/obi/2018-08-27/obi.owl" matchType="exact" examples="http://purl.obolibrary.org/obo/OBI_0000716"/>
