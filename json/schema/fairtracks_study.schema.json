@@ -33,7 +33,8 @@
                 "type": "string",
                 "format": "curie",
                 "namespace": "pubmed",
-                "matchType": "loose"
+                "matchType": "loose",
+                "minItems": "1"
             }
         },
         "contact": {
