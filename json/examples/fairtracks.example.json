@@ -1,5 +1,5 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "studies": [
         {
             "global_id": "GEO:GSE35583",
@@ -70,72 +70,6 @@
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
-            }
-        },
-        {
-            "global_id": "fairtracks:2",
-            "local_id": "encode:ENCFF718EPO",
-            "experiment_ref": "encode:ENCSR000DQP",
-            "file_iri": "https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed",
-            "file_name": "r1.narrowPeak.bb",
-            "label_short": "ENCFF718EPO",
-            "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO",
-            "genome_assembly": "GRCh38",
-            "file_format": {
-                "term_iri": "http://edamontology.org/format_3004",
-                "term_value": "bigBed"
-            },
-            "content_type": {
-                "datatype_url": "http://edamontology.org/data_3002",
-                "datatype_term": "Annotation track"
-            },
-            "checksum": {
-                "cs_method": "MD5",
-                "cs_hash": "6d2c6c99a7407f1c49ab163e41d9b575"
-            }
-        },
-        {
-            "global_id": "fairtracks:3",
-            "local_id": "encode:ENCFF717PIO",
-            "experiment_ref": "encode:ENCSR000DQP",
-            "file_iri": "https://www.encodeproject.org/files/ENCFF717PIO/@@download/ENCFF717PIO.bigWig",
-            "file_name": "r1.fc_signal.bw",
-            "label_short": "ENCFF717PIO",
-            "label_long": "H3K4me3 ChIP-seq of B cell fold change over control rep1 ENCSR000DQP - ENCFF717PIO",
-            "genome_assembly": "GRCh38",
-            "file_format": {
-                "term_iri": "http://edamontology.org/format_3006",
-                "term_value": "bigWig"
-            },
-            "content_type": {
-                "datatype_url": "http://edamontology.org/data_3002",
-                "datatype_term": "Annotation track"
-            },
-            "checksum": {
-                "cs_method": "MD5",
-                "cs_hash": "550ae974bf94f1deb1676613ab24a5da"
-            }
-        },
-        {
-            "global_id": "fairtracks:4",
-            "local_id": "encode:ENCFF955LOC",
-            "experiment_ref": "encode:ENCSR000DQP",
-            "file_iri": "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig",
-            "file_name": "r1.pvalue_signal.bw",
-            "label_short": " ENCFF955LOC",
-            "label_long": "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC",
-            "genome_assembly": "GRCh38",
-            "file_format": {
-                "term_iri": "http://edamontology.org/format_3006",
-                "term_value": "bigWig"
-            },
-            "content_type": {
-                "datatype_url": "http://edamontology.org/data_3002",
-                "datatype_term": "Annotation track"
-            },
-            "checksum": {
-                "cs_method": "MD5",
-                "cs_hash": "942ea96e86313d4338cf3fd020882c4d"
             }
         }
     ]
