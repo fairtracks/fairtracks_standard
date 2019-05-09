@@ -21,8 +21,8 @@
       <column name="comments" width="150"/>
     </editor> -->
     <title>basic_example</title>
-    <dateCreated>Thu, 09 May 2019 21:48:48 GMT</dateCreated>
-    <expansionState>4,6,10</expansionState>
+    <dateCreated>Thu, 09 May 2019 22:04:10 GMT</dateCreated>
+    <expansionState>5,7,11</expansionState>
     <vertScrollState>0</vertScrollState>
     <windowTop>0</windowTop>
     <windowLeft>175</windowLeft>
@@ -30,6 +30,7 @@
     <windowBottom>707</windowBottom>
   </head>
   <body>
+    <outline text="#title" const="FAIRification of Genomic Tracks JSON Schema - Study" type="string"/>
     <outline text="@schema" description="The JSON schema absolute URI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;$id&apos; in the linked schema" required="false" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json" type="string" format="iri"/>
     <outline text="global_id" description="Global study identifier, resolvable by identifiers.org" required="true" type="string" format="curie" namespace="?" matchType="canonical" examples="GEO:GSE35583"/>
     <outline text="local_id" description="Submitter-local identifier (within investigation/hub) for study" required="true" unique="true" type="string" examples="UW_ChipSeq"/>

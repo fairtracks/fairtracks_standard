@@ -15,11 +15,11 @@ MAX_EXAMPLES_COUNT = 4
 BOOLEAN_MAP = {'true': True, 'false': False}
 
 
-def json_schema_create_root(opml_root, schema_title):
+def json_schema_create_root(opml_root):
     json_dict = OrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@text='@schema']").attrib['const']
-    json_dict['title'] = schema_title
+    json_dict['title'] = opml_root.find(".//outline[@text='#title']").attrib['const']
     json_dict['type'] = 'object'
     return json_dict
 
@@ -63,6 +63,9 @@ def json_schema_add_child_to_parent(element, json_child, json_parent):
             json_parent['properties'] = OrderedDict()
 
         key = element.attrib['text']
+        if key.startswith('#'):
+            return
+
         json_parent['properties'][key] = json_child
 
         if element.attrib['required'] == 'true':
@@ -109,7 +112,10 @@ def json_example_create_children(element):
 
 def json_example_add_child_to_parent(element, json_child, json_parent):
     if isinstance(json_parent, dict):
-        json_parent[element.attrib['text']] = json_child
+        key = element.attrib['text']
+        if key.startswith('#'):
+            return
+        json_parent[key] = json_child
     else:  # array
         json_parent.append(json_child)
 
@@ -178,10 +184,10 @@ def json_example_create_subtree(opml_path, opml_root, json_parent, example_index
                 json_example_add_child_to_parent(opml_elem, json_child, json_parent)
 
 
-def create_json_schema_dict(ompl_path, schema_title):
+def create_json_schema_dict(ompl_path):
     opml_root = ElementTree.parse(ompl_path).find('./body')
 
-    json_schema_dict = json_schema_create_root(opml_root, schema_title)
+    json_schema_dict = json_schema_create_root(opml_root)
     json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
     json_schema_dict = json_schema_add_end_root_attribs(json_schema_dict)
 
@@ -204,12 +210,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate JSON schema and example '
                                              'JSON from OPML definition file')
     parser.add_argument('in_definition', type=argparse.FileType('r'))
-    parser.add_argument('schema_title', type=str)
     parser.add_argument('out_schema', type=argparse.FileType('w'))
     parser.add_argument('out_example', type=argparse.FileType('w'))
     args = parser.parse_args()
 
-    json_schema_dict = create_json_schema_dict(args.in_definition.name, args.schema_title)
+    json_schema_dict = create_json_schema_dict(args.in_definition.name)
     json_example_dict = create_json_example_dict(args.in_definition.name)
 
     args.out_schema.write(json.dumps(json_schema_dict, indent=4))
