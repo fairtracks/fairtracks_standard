@@ -6,6 +6,7 @@
     "properties": {
         "@schema": {
             "description": "The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of 'id' in the linked schema",
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json",
             "type": "string",
             "format": "iri"
         },
@@ -23,6 +24,12 @@
         },
         "biomaterial_type": {
             "description": "Type of biomaterial",
+            "enum": [
+                "cell line",
+                "primary cell",
+                "primary cell culture",
+                "primary tissue"
+            ],
             "type": "string"
         },
         "sample_type": {
