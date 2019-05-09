@@ -2,7 +2,7 @@
 <opml version="2.0">
   <head><!-- <editor scale-mac="1.25">
       <sidebar/>
-      <column name="text" width="150"/>
+      <column name="text" width="182"/>
       <column name="description" width="386"/>
       <column name="required" width="150"/>
       <column name="anyOf" width="150"/>
@@ -21,15 +21,16 @@
       <column name="comments" width="150"/>
     </editor> -->
     <title>basic_example</title>
-    <dateCreated>Thu, 09 May 2019 19:39:31 GMT</dateCreated>
-    <expansionState>4</expansionState>
+    <dateCreated>Thu, 09 May 2019 22:04:02 GMT</dateCreated>
+    <expansionState>5</expansionState>
     <vertScrollState>0</vertScrollState>
-    <windowTop>307</windowTop>
-    <windowLeft>367</windowLeft>
-    <windowRight>2047</windowRight>
-    <windowBottom>920</windowBottom>
+    <windowTop>0</windowTop>
+    <windowLeft>269</windowLeft>
+    <windowRight>1949</windowRight>
+    <windowBottom>613</windowBottom>
   </head>
   <body>
+    <outline text="#title" const="FAIRification of Genomic Tracks JSON Schema - Sample" type="string"/>
     <outline text="@schema" description="The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;id&apos; in the linked schema" required="false" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json" type="string" format="iri"/>
     <outline text="global_id" description="Global sample identifier, resolvable by identifiers.org" required="true" type="string" format="curie" namespace="biosample" matchType="canonical" examples="biosample:SAMN01731491"/>
     <outline text="local_id" description="Submitter-local identifier (within investigation/hub) for sample (in curie-format, if applicable)" required="true" unique="true" type="string" examples="GEO:GSM945229"/>
