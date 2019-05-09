@@ -16,11 +16,12 @@
       <column name="namespace" width="170"/>
       <column name="matchType" width="150"/>
       <column name="foreignProperty" width="150"/>
+      <column name="minItems" width="150"/>
       <column name="examples" width="414"/>
       <column name="comments" width="150"/>
     </editor> -->
     <title>basic_example</title>
-    <dateCreated>Thu, 09 May 2019 19:31:28 GMT</dateCreated>
+    <dateCreated>Thu, 09 May 2019 19:39:31 GMT</dateCreated>
     <expansionState>4</expansionState>
     <vertScrollState>0</vertScrollState>
     <windowTop>307</windowTop>
@@ -29,7 +30,7 @@
     <windowBottom>920</windowBottom>
   </head>
   <body>
-    <outline text="@schema" description="The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;id&apos; in the linked schema" required="true" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json" type="string" format="iri"/>
+    <outline text="@schema" description="The JSON schema absolute IRI. Used for link JSON data to a particular version of the JSON schema. Must match the value of &apos;id&apos; in the linked schema" required="false" const="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json" type="string" format="iri"/>
     <outline text="global_id" description="Global sample identifier, resolvable by identifiers.org" required="true" type="string" format="curie" namespace="biosample" matchType="canonical" examples="biosample:SAMN01731491"/>
     <outline text="local_id" description="Submitter-local identifier (within investigation/hub) for sample (in curie-format, if applicable)" required="true" unique="true" type="string" examples="GEO:GSM945229"/>
     <outline text="biomaterial_type" description="Type of biomaterial" required="true" enum="cell line|primary cell|primary cell culture|primary tissue" type="string" examples="primary cell" comments="Borrowed from IHEC, should be extended to support e.g. tumors"/>
