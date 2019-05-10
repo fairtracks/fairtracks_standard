@@ -171,19 +171,14 @@ def _json_example_convert_opml_elem_to_json_array(opml_elem):
         return [[]]
     else:
         el_examples = opml_elem.attrib.get('examples')
-        el_default = opml_elem.attrib.get('default')
         el_const = opml_elem.attrib.get('const')
 
         if el_examples:
-            content = el_examples
-        elif el_default:
-            content = el_default
+            return el_examples.split(ARRAY_SPLIT_TEXT)
         elif el_const:
-            content = el_const
+            return [el_const] * MAX_EXAMPLES_COUNT
         else:
             return []
-
-        return content.split(ARRAY_SPLIT_TEXT)
 
 
 def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, example_index):
@@ -226,8 +221,8 @@ def _get_ref(opml_elem):
     return opml_elem.attrib['ref']
 
 
-def _is_example_content(json_children):
-    return not any(isinstance(json_children[0], _) for _ in [list, dict])
+def _is_example_content(json_elem_array):
+    return not any(isinstance(json_elem_array[0], _) for _ in [list, dict])
 
 
 def _tree_has_been_split_into_arrays(example_index):
