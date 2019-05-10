@@ -42,7 +42,7 @@
                 "format": "curie",
                 "namespace": "?",
                 "matchType": "canonical",
-                "minItems": "1"
+                "minItems": 1
             }
         },
         "tech_type": {

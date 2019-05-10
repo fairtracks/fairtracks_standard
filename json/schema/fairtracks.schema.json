@@ -14,28 +14,28 @@
             "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json",
-                "minItems": "1"
+                "minItems": 1
             }
         },
         "experiments": {
             "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-                "minItems": "1"
+                "minItems": 1
             }
         },
         "samples": {
             "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json",
-                "minItems": "1"
+                "minItems": 1
             }
         },
         "tracks": {
             "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-                "minItems": "1"
+                "minItems": 1
             }
         }
     },
