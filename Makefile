@@ -1,4 +1,4 @@
-CONVERT_SCRIPT = scripts/python/opml_to_json_schema.py
+CONVERT_SCRIPT = scripts/python/opml_to_json.py
 EXAMPLE_DIR = json/examples
 SCHEMA_DIR = json/schema
 OVERVIEW_DIR = json/overview
