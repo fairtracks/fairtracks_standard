@@ -13,8 +13,8 @@
         "term_value": "ENCODE narrow peak format"
     },
     "content_type": {
-        "datatype_url": "http://edamontology.org/data_3002",
-        "datatype_term": "Annotation track"
+        "term_iri": "http://edamontology.org/data_3002",
+        "term_value": "Annotation track"
     },
     "checksum": {
         "cs_method": "MD5",
