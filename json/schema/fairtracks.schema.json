@@ -6,9 +6,9 @@
     "properties": {
         "@schema": {
             "description": "The JSON schema absolute URI. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
             "type": "string",
-            "format": "iri"
+            "format": "iri",
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
         },
         "studies": {
             "type": "array",
