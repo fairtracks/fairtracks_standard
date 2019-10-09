@@ -16,7 +16,7 @@
             "type": "string",
             "format": "curie",
             "namespace": "fairtracks",
-            "matchType": "canonical"
+            "matchType": "basic"
         },
         "local_id": {
             "description": "Submitter-local identifier (within investigation/hub) for study (in curie-format, if applicable)",
