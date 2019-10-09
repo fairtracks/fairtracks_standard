@@ -14,7 +14,7 @@
             "description": "Global experiment identifier, resolvable by identifiers.org",
             "type": "string",
             "format": "curie",
-            "namespace": "?",
+            "namespace": "geo",
             "matchType": "canonical"
         },
         "local_id": {
@@ -40,7 +40,7 @@
             "items": {
                 "type": "string",
                 "format": "curie",
-                "namespace": "?",
+                "namespace": "geo",
                 "matchType": "canonical",
                 "minItems": 1
             }
