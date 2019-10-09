@@ -33,7 +33,7 @@
             "type": "string"
         },
         "sample_type": {
-            "description": "Main class of sample (e.g. specific cell line, cell/tissue type, \u2026)",
+            "description": "Main class of sample (specific cell line, cell/tissue type, etc.)",
             "type": "object",
             "properties": {
                 "term_iri": {

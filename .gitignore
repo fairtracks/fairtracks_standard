@@ -1,1 +1,3 @@
 toolsForValidation/
+**/*.raw.opml
+**/*.old

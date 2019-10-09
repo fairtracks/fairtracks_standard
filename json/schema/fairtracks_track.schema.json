@@ -71,7 +71,7 @@
             ]
         },
         "content_type": {
-            "description": "Type of content represented by the track data file (e.g. narrow peaks, signal, region, \u2026)",
+            "description": "Type of content represented by the track data file (narrow peaks, signal, region, etc.)",
             "type": "object",
             "properties": {
                 "term_iri": {

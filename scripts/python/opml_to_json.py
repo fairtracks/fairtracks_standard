@@ -34,8 +34,8 @@ def main():
     args.out_json.write(json.dumps(json_dict, indent=4))
 
 
-def create_json_schema_dict(ompl_path):
-    opml_root = ElementTree.parse(ompl_path).find('./body')
+def create_json_schema_dict(opml_path):
+    opml_root = ElementTree.parse(opml_path).find('./body')
 
     json_schema_dict = _json_schema_create_root(opml_root)
     _json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
@@ -44,11 +44,11 @@ def create_json_schema_dict(ompl_path):
     return json_schema_dict
 
 
-def create_json_example_dict(ompl_path, example_index=None):
-    opml_root = ElementTree.parse(ompl_path).find('./body')
+def create_json_example_dict(opml_path, example_index=None):
+    opml_root = ElementTree.parse(opml_path).find('./body')
 
     json_example_dict = OrderedDict()
-    _json_example_create_subtree(ompl_path, opml_root,
+    _json_example_create_subtree(opml_path, opml_root,
                                 json_parent=json_example_dict,
                                 example_index=example_index)
 
@@ -60,8 +60,8 @@ def create_json_example_dict(ompl_path, example_index=None):
 def _json_schema_create_root(opml_root):
     json_dict = OrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
-    json_dict['$id'] = opml_root.find(".//outline[@text='@schema']").attrib['const']
-    json_dict['title'] = opml_root.find(".//outline[@text='#title']").attrib['const']
+    json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
+    json_dict['title'] = opml_root.find(".//outline[@_text='#title']").attrib['const']
     json_dict['type'] = 'object'
     return json_dict
 
@@ -108,7 +108,7 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
         if 'properties' not in json_parent:
             json_parent['properties'] = OrderedDict()
 
-        key = element.attrib['text']
+        key = element.attrib['_text']
         if key.startswith('#'):
             return
 
@@ -157,7 +157,7 @@ def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
 
 def _json_example_add_child_to_parent(element, json_child, json_parent):
     if isinstance(json_parent, dict):
-        key = element.attrib['text']
+        key = element.attrib['_text']
         if key.startswith('#'):
             return
         json_parent[key] = json_child

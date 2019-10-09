@@ -122,7 +122,7 @@
             "experiment_ref": "encode:ENCSR000DQP",
             "file_iri": "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig",
             "file_name": "r1.pvalue_signal.bw",
-            "label_short": "ENCFF955LOC",
+            "label_short": " ENCFF955LOC",
             "label_long": "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC",
             "genome_assembly": "GRCh38",
             "file_format": {
