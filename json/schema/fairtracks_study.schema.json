@@ -14,7 +14,10 @@
             "description": "Global study identifier, resolvable by identifiers.org",
             "type": "string",
             "format": "curie",
-            "namespace": "geo",
+            "namespace": [
+                "geo",
+                "ega.study"
+            ],
             "matchType": "canonical"
         },
         "local_id": {
