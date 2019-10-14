@@ -25,12 +25,7 @@
         "biomaterial_type": {
             "description": "Type of biomaterial",
             "type": "string",
-            "enum": [
-                "cell line",
-                "primary cell",
-                "primary cell culture",
-                "primary tissue"
-            ]
+            "pattern": "^(?i)cell line|primary cell|primary cell culture|primary tissue$"
         },
         "sample_type": {
             "description": "Main class of sample (specific cell line, cell/tissue type, etc.)",
