@@ -14,7 +14,10 @@
             "description": "Global experiment identifier, resolvable by identifiers.org",
             "type": "string",
             "format": "curie",
-            "namespace": "geo",
+            "namespace": [
+                "geo",
+                "ega.experiment"
+            ],
             "matchType": "canonical"
         },
         "local_id": {
