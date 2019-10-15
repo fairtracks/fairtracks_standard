@@ -6,8 +6,8 @@
     <outline _text="global_id" description="Global study identifier, resolvable by identifiers.org" examples="GEO:GSE35583" format="curie" matchType="canonical" namespace="geo|ega.study" required="true" type="string" />
     <outline _text="local_id" description="Submitter-local identifier (within investigation/hub) for study" examples="UW_ChipSeq" required="true" type="string" unique="true" />
     <outline _text="study_name" description="Name of the study" examples="Histone Modifications by ChIP-seq from ENCODE/University of Washington" required="true" type="string" />
-    <outline _text="publications" required="false" type="array">
-      <outline description="Pubmed identifiers (dataset or publication)" examples="22955617" format="curie" matchType="loose" minItems="1" namespace="pubmed" type="string" />
+    <outline _text="publications" minItems="1" required="false" type="array">
+      <outline description="Pubmed identifiers (dataset or publication)" examples="22955617" format="curie" matchType="loose" namespace="pubmed" type="string" />
     </outline>
     <outline _text="contact" description="Contact information for study" required="true" type="object">
       <outline _text="name" description="Name of contact person/organization" examples="ENCODE DCC" required="true" type="string" />
