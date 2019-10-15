@@ -13,6 +13,7 @@ ATTRIBS_TO_IMPORT = [
     'pattern',
     'enum',
     'const',
+    'default',
     'ontology',
     'namespace',
     'matchType',
@@ -191,11 +192,14 @@ def _json_example_convert_opml_elem_to_json_array(opml_elem):
     else:
         el_examples = opml_elem.attrib.get('examples')
         el_const = opml_elem.attrib.get('const')
+        el_default = opml_elem.attrib.get('default')
 
         if el_examples:
             return el_examples.split(ARRAY_SPLIT_TEXT)
         elif el_const:
             return [el_const] * MAX_EXAMPLES_COUNT
+        elif el_default:
+            return [el_default] * MAX_EXAMPLES_COUNT
         else:
             return []
 

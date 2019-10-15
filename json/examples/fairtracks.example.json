@@ -12,10 +12,6 @@
                 "name": "ENCODE DCC",
                 "e-mail": "encode-help@lists.stanford.edu",
                 "orcid_id": "0000-0000-0000-0000"
-            },
-            "phenotype": {
-                "term_iri": "http://purl.obolibrary.org/obo/PATO_0000461",
-                "term_value": "Normal"
             }
         }
     ],
@@ -46,6 +42,10 @@
             "sample_type": {
                 "term_iri": "http://purl.obolibrary.org/obo/CL_0000236",
                 "term_value": "H1-hESC"
+            },
+            "phenotype": {
+                "term_iri": "http://purl.obolibrary.org/obo/PATO_0000461",
+                "term_value": "normal"
             }
         }
     ],

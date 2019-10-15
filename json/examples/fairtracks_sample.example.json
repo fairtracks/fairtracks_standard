@@ -6,5 +6,9 @@
     "sample_type": {
         "term_iri": "http://purl.obolibrary.org/obo/CL_0000236",
         "term_value": "H1-hESC"
+    },
+    "phenotype": {
+        "term_iri": "http://purl.obolibrary.org/obo/PATO_0000461",
+        "term_value": "normal"
     }
 }
