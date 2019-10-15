@@ -53,8 +53,8 @@
                     "type": "string",
                     "format": "idn-email"
                 },
-                "orcid_id": {
-                    "description": "ORCID id to contact person",
+                "orcid": {
+                    "description": "ORCID to contact person",
                     "type": "string",
                     "format": "curie",
                     "namespace": "orcid",
@@ -72,7 +72,7 @@
                 },
                 {
                     "required": [
-                        "orcid_id"
+                        "orcid"
                     ]
                 }
             ]
