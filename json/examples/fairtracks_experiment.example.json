@@ -5,7 +5,7 @@
     "study_ref": "UW_ChipSeq",
     "sample_ref": "GEO:GSM945229",
     "aggregated_from": [],
-    "tech_type": {
+    "technique": {
         "term_iri": "http://purl.obolibrary.org/obo/OBI_0000716",
         "term_value": "ChIP-seq assay"
     },
