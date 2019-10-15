@@ -111,7 +111,6 @@
         }
     },
     "required": [
-        "global_id",
         "local_id",
         "experiment_ref",
         "file_iri",

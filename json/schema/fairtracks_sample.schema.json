@@ -50,7 +50,6 @@
         }
     },
     "required": [
-        "global_id",
         "local_id",
         "biomaterial_type",
         "sample_type"

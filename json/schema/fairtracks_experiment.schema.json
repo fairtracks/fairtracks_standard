@@ -102,7 +102,6 @@
         }
     },
     "required": [
-        "global_id",
         "local_id",
         "study_ref",
         "tech_type",
