@@ -1,7 +1,7 @@
 # FAIRtracks - metadata standard for genomic tracks
 
-FAIRtracks has been developed through the ELIXIR implementation study: "FAIRification of genomic 
-tracks", as a minimal standard for genomic track metadata. More to come about this...
+FAIRtracks has been developed through the ELIXIR implementation study: "FAIRification of Genomic 
+Tracks", as a minimal standard for genomic track metadata. More to come about this...
 
 ## Making changes
 There is an inherent order to the different types of files in this repo, and making (or suggesting)
@@ -11,7 +11,8 @@ changes to the standard requires following a specific set of changes/commands:
     - You need only run this once. If you accidentally run the command twice, any existing raw 
       OPML files will be renamed to *.raw.opml.old.
     - The raw OPML files are ignored by git and can be edited in an OPML editor of choice. On Mac
-      OS, we recommend using the commercial tool [OmniOutliner](https://www.omnigroup.com/omnioutliner), as there are really no open source
+      OS, we recommend using the commercial tool 
+      [OmniOutliner](https://www.omnigroup.com/omnioutliner), as there are really no open source
       alternatives with similar user interface. As an open source, platform-agnostic alternative, 
       we recommend [TreeLine](http://treeline.bellz.org/).
 2. `make`
@@ -37,4 +38,4 @@ make PYTHON_EXE=python3 json
 
 ## Validation
 
-- Please visit [toolsForValidation.md](toolsForValidation.md) document.
+- Please visit the [VALIDATION.md](VALIDATION.md) document.
