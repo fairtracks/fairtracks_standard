@@ -76,10 +76,7 @@
                     "description": "IRI linking to an ontology term",
                     "type": "string",
                     "format": "term",
-                    "ontology": [
-                        "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
-                        "?"
-                    ],
+                    "ontology": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
                     "matchType": "exact"
                 },
                 "term_value": {
