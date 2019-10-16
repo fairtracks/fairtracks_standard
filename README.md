@@ -1,4 +1,5 @@
 # FAIRtracks - metadata standard for genomic tracks
+
 FAIRtracks has been developed through the ELIXIR implementation study: "FAIRification of genomic 
 tracks", as a minimal standard for genomic track metadata. More to come about this...
 
@@ -26,4 +27,14 @@ changes to the standard requires following a specific set of changes/commands:
 
 - Even though the scripts herein will work on both Python 2 and 3, the current standard have been 
 generated using Python 3.7. Python 2 (and perhaps other Python 3 versions) will generate 
-unnecessary whitespace changes to the files.
+unnecessary whitespace changes to the files. In case the Python executable you want to use has
+is called different (i.e. python3), or it is located in a non-standard path, you can use the make
+variable `PYTHON_EXE` to use it. For instance:
+
+```bash
+make PYTHON_EXE=python3 json
+```
+
+## Validation
+
+- Please visit [toolsForValidation.md](toolsForValidation.md) document.
