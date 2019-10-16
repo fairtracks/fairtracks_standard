@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
+    "$comment": "OPML signature: 86f8096c7ab51ae6560f983483f13876e52d0d4c03168e1000dd48bb327493df",
     "title": "FAIRification of Genomic Tracks JSON Schema",
     "type": "object",
     "properties": {

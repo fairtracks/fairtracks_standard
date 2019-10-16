@@ -20,11 +20,14 @@ changes to the standard requires following a specific set of changes/commands:
 2. `make`
     - After the raw OPML files have been edited, `make` runs `make opml` to generate cleaned up,
       standardized versons of the raw OPML files, while `make json` generates JSON Schema files
-      and related example JSON files.
+      and related example JSON files. All the generated JSON and JSON Schema files include the
+      stable SHA256 signature from the source OPML file.
 3. `make clean` (optional)
     - Removes all raw OPML and related .old files.
     - Should only be run if you are sure that all changes in the raw OPML files have propagated to
       other files, i.e. you should make sure that you have run `make` first.
+4. `make signature` (optional)
+    - Computes and prints the stable SHA256 signature from all the OPML files.
 
 ### Note about making changes to properties
 
@@ -44,7 +47,7 @@ is named differently (i.e. python3) or is located in a non-standard path, you ca
 variable `PYTHON_EXE`. For instance:
 
 ```bash
-make PYTHON_EXE=python3 json
+make PYTHON_EXE=python3 signature
 ```
 
 ## Validation
