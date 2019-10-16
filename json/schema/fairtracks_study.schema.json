@@ -78,6 +78,9 @@
             ]
         }
     },
+    "primary_key": [
+        "global_id"
+    ],
     "required": [
         "local_id",
         "study_name",

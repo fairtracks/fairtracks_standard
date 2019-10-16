@@ -110,6 +110,9 @@
             ]
         }
     },
+    "primary_key": [
+        "global_id"
+    ],
     "required": [
         "local_id",
         "experiment_ref",

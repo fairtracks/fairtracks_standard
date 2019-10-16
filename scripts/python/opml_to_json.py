@@ -39,7 +39,7 @@ def main():
                                                  'JSON from OPML overview file')
     parser.add_argument('json_type', choices=['schema', 'example'])
     parser.add_argument('in_opml', type=argparse.FileType('r'))
-    parser.add_argument('out_json', type=argparse.FileType('w'))
+    parser.add_argument('out_json', type=argparse.FileType(mode='w',encoding='utf-8'))
     args = parser.parse_args()
 
     if args.json_type == 'schema':
@@ -135,6 +135,9 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
             if 'required' not in json_parent:
                 json_parent['required'] = []
             json_parent['required'].append(key)
+
+        if element.attrib.get('primary_key') == 'true':
+            json_parent.setdefault('primary_key',[]).append(key)
 
         if 'anyOf' in element.attrib and element.attrib['anyOf'] == 'true':
             if 'anyOf' not in json_parent:
