@@ -14,5 +14,6 @@
         "term_value": "H3K4_trimethylation"
     },
     "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
-    "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
+    "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf",
+    "$comment": "OPML signature: e389adde006c1f15fd55cfd9096aaa74cdbd909e6d9fea556a13b33ae1203b15"
 }

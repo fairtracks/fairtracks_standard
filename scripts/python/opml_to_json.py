@@ -5,6 +5,9 @@ from collections import OrderedDict
 import json
 import xml.etree.ElementTree as ElementTree
 
+import io
+import hashlib
+
 
 ATTRIBS_TO_IMPORT = [
     'description',
@@ -39,7 +42,7 @@ def main():
                                                  'JSON from OPML overview file')
     parser.add_argument('json_type', choices=['schema', 'example'])
     parser.add_argument('in_opml', type=argparse.FileType('r'))
-    parser.add_argument('out_json', type=argparse.FileType(mode='w',encoding='utf-8'))
+    parser.add_argument('out_json', type=argparse.FileType('w'))
     args = parser.parse_args()
 
     if args.json_type == 'schema':
@@ -50,10 +53,21 @@ def main():
     args.out_json.write(json.dumps(json_dict, indent=4))
 
 
-def create_json_schema_dict(opml_path):
-    opml_root = ElementTree.parse(opml_path).find('./body')
+def parse_opml(opml_path):
+    opml_et = ElementTree.parse(opml_path)
+    
+    # Let's generate a signature from the input file
+    uni_ser = io.StringIO()
+    opml_et.write(uni_ser,encoding="unicode")
+    signature = hashlib.sha256(uni_ser.getvalue().encode(encoding='utf-8')).hexdigest()
+    uni_ser.close()
+    
+    return opml_et.find('./body') , signature
 
-    json_schema_dict = _json_schema_create_root(opml_root)
+def create_json_schema_dict(opml_path):
+    opml_root , signature = parse_opml(opml_path)
+
+    json_schema_dict = _json_schema_create_root(opml_root,signature)
     _json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
     json_schema_dict = _json_schema_add_end_root_attribs(json_schema_dict)
 
@@ -61,22 +75,25 @@ def create_json_schema_dict(opml_path):
 
 
 def create_json_example_dict(opml_path, example_index=None):
-    opml_root = ElementTree.parse(opml_path).find('./body')
+    opml_root , signature = parse_opml(opml_path)
 
     json_example_dict = OrderedDict()
     _json_example_create_subtree(opml_path, opml_root,
                                 json_parent=json_example_dict,
                                 example_index=example_index)
+    
+    json_example_dict['$comment'] = "OPML signature: " + signature
 
     return json_example_dict
 
 
 # JSON schema internal methods
 
-def _json_schema_create_root(opml_root):
+def _json_schema_create_root(opml_root,signature):
     json_dict = OrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
+    json_dict['$comment'] = "OPML signature: " + signature
     json_dict['title'] = opml_root.find(".//outline[@_text='#title']").attrib['const']
     json_dict['type'] = 'object'
     return json_dict
@@ -135,9 +152,6 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
             if 'required' not in json_parent:
                 json_parent['required'] = []
             json_parent['required'].append(key)
-
-        if element.attrib.get('primary_key') == 'true':
-            json_parent.setdefault('primary_key',[]).append(key)
 
         if 'anyOf' in element.attrib and element.attrib['anyOf'] == 'true':
             if 'anyOf' not in json_parent:

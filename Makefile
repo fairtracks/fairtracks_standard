@@ -2,6 +2,7 @@ PYTHON_EXE = python
 CLEANUP_OPML_SCRIPT = scripts/python/cleanup_opml.py
 CREATE_RAW_OPML_SCRIPT = scripts/python/create_raw_opml.py
 CONVERT_SCRIPT = scripts/python/opml_to_json.py
+COMPUTE_SIGNATURE_SCRIPT = scripts/python/opml_signature.py
 OVERVIEW_DIR = json/overview
 EXAMPLE_DIR = json/examples
 SCHEMA_DIR = json/schema
@@ -23,6 +24,9 @@ raw:
 	$(PYTHON_EXE) $(CREATE_RAW_OPML_SCRIPT) $(OVERVIEW_DIR)
 
 json: $(SCHEMA_FILES) $(EXAMPLE_FILES)
+
+signature:
+	$(PYTHON_EXE) $(COMPUTE_SIGNATURE_SCRIPT) $(OVERVIEW_FILES)
 
 opml: $(OVERVIEW_RAW_FILES)
 

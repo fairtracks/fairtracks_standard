@@ -12,7 +12,8 @@
                 "name": "ENCODE DCC",
                 "e-mail": "encode-help@lists.stanford.edu",
                 "orcid": "0000-0000-0000-0000"
-            }
+            },
+            "$comment": "OPML signature: 5d178f14eadd740b24e5c61f7080533e086bc977e8911d74490bd385862c3a50"
         }
     ],
     "experiments": [
@@ -31,7 +32,8 @@
                 "term_value": "H3K4_trimethylation"
             },
             "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
-            "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
+            "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf",
+            "$comment": "OPML signature: e389adde006c1f15fd55cfd9096aaa74cdbd909e6d9fea556a13b33ae1203b15"
         }
     ],
     "samples": [
@@ -50,7 +52,8 @@
             "phenotype": {
                 "term_iri": "http://purl.obolibrary.org/obo/PATO_0000461",
                 "term_value": "normal"
-            }
+            },
+            "$comment": "OPML signature: 4078df0c549554360fdf64fbf4539402b3a509c99e4fa67b97e918e74189764c"
         }
     ],
     "tracks": [
@@ -74,7 +77,8 @@
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
-            }
+            },
+            "$comment": "OPML signature: 084bd5cd83d7e1304351ea43b8d2e8502b615a24350302de6a58ef6967fed5b7"
         },
         {
             "global_id": "fairtracks:2",
@@ -96,7 +100,8 @@
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "6d2c6c99a7407f1c49ab163e41d9b575"
-            }
+            },
+            "$comment": "OPML signature: 084bd5cd83d7e1304351ea43b8d2e8502b615a24350302de6a58ef6967fed5b7"
         },
         {
             "global_id": "fairtracks:3",
@@ -118,7 +123,8 @@
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "550ae974bf94f1deb1676613ab24a5da"
-            }
+            },
+            "$comment": "OPML signature: 084bd5cd83d7e1304351ea43b8d2e8502b615a24350302de6a58ef6967fed5b7"
         },
         {
             "global_id": "fairtracks:4",
@@ -140,7 +146,9 @@
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "942ea96e86313d4338cf3fd020882c4d"
-            }
+            },
+            "$comment": "OPML signature: 084bd5cd83d7e1304351ea43b8d2e8502b615a24350302de6a58ef6967fed5b7"
         }
-    ]
+    ],
+    "$comment": "OPML signature: 86f8096c7ab51ae6560f983483f13876e52d0d4c03168e1000dd48bb327493df"
 }

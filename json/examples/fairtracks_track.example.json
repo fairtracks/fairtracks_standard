@@ -19,5 +19,6 @@
     "checksum": {
         "cs_method": "MD5",
         "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
-    }
+    },
+    "$comment": "OPML signature: 084bd5cd83d7e1304351ea43b8d2e8502b615a24350302de6a58ef6967fed5b7"
 }
