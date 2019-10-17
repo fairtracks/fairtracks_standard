@@ -29,16 +29,12 @@
             "description": "Name of the study",
             "type": "string"
         },
-        "publications": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "description": "Pubmed identifiers (dataset or publication)",
-                "type": "string",
-                "format": "curie",
-                "namespace": "pubmed",
-                "matchType": "loose"
-            }
+        "publication": {
+            "description": "Pubmed identifier (dataset or publication)",
+            "type": "string",
+            "format": "curie",
+            "namespace": "pubmed",
+            "matchType": "loose"
         },
         "contact": {
             "description": "Contact information for study",

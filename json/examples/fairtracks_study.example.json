@@ -3,9 +3,7 @@
     "global_id": "GEO:GSE35583",
     "local_id": "UW_ChipSeq",
     "study_name": "Histone Modifications by ChIP-seq from ENCODE/University of Washington",
-    "publications": [
-        "22955617"
-    ],
+    "publication": "22955617",
     "contact": {
         "name": "ENCODE DCC",
         "e-mail": "encode-help@lists.stanford.edu",
