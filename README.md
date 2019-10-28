@@ -4,8 +4,10 @@ FAIRtracks has been developed through the ELIXIR implementation study: "FAIRific
 Tracks", as a minimal standard for genomic track metadata. More to come about this...
 
 ## Making changes
+
 There is an inherent order to the different types of files in this repo, and making (or suggesting)
 changes to the standard requires following a specific set of changes/commands:
+
 1. `make raw`
     - This makes copies of the existing *.opml files into similarly names *.raw.opml files.
     - You need only run this once. If you accidentally run the command twice, any existing raw 
@@ -23,6 +25,15 @@ changes to the standard requires following a specific set of changes/commands:
     - Removes all raw OPML and related .old files.
     - Should only be run if you are sure that all changes in the raw OPML files have propagated to
       other files, i.e. you should make sure that you have run `make` first.
+
+### Note about making changes to properties
+
+In order to support multiple OPML editors, the first `<outline>` tag in the OPML files (the one 
+with `_text="#title"`) should contain all properties in alphabetical order, with an attached value
+(typically `.` or `0`). These parameters are ignored for that line (as it is just used to generate
+the `title` of the JSON schema). Please update this line for all OPML files when adding, removing 
+or renaming properties. In most cases, new properties should be added to the `ATTRIBS_TO_IMPORT` 
+constant in the [opml_to_json.py](scripts/python/opml_to_json.py) script.
 
 ## Dependencies
 
