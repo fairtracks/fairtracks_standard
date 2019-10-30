@@ -1,9 +1,12 @@
 import argparse
-import os
-from collections import OrderedDict
-
+import io
+import hashlib
 import json
+import os
 import xml.etree.ElementTree as ElementTree
+
+from collections import OrderedDict
+from opml_signature import compute_opml_signature
 
 
 ATTRIBS_TO_IMPORT = [
@@ -51,9 +54,10 @@ def main():
 
 
 def create_json_schema_dict(opml_path):
+    signature = compute_opml_signature(opml_path)
     opml_root = ElementTree.parse(opml_path).find('./body')
 
-    json_schema_dict = _json_schema_create_root(opml_root)
+    json_schema_dict = _json_schema_create_root(opml_root, signature)
     _json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
     json_schema_dict = _json_schema_add_end_root_attribs(json_schema_dict)
 
@@ -65,18 +69,22 @@ def create_json_example_dict(opml_path, example_index=None):
 
     json_example_dict = OrderedDict()
     _json_example_create_subtree(opml_path, opml_root,
-                                json_parent=json_example_dict,
-                                example_index=example_index)
+                                 json_parent=json_example_dict,
+                                 example_index=example_index)
+
+    # signature = compute_opml_signature(opml_path)
+    # json_example_dict['$comment'] = "OPML signature: " + signature
 
     return json_example_dict
 
 
 # JSON schema internal methods
 
-def _json_schema_create_root(opml_root):
+def _json_schema_create_root(opml_root, signature):
     json_dict = OrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
+    json_dict['$comment'] = "OPML signature: " + signature
     json_dict['title'] = opml_root.find(".//outline[@_text='#title']").attrib['const']
     json_dict['type'] = 'object'
     return json_dict
