@@ -6,11 +6,11 @@
     "sample_ref": "GEO:GSM945229",
     "aggregated_from": [],
     "technique": {
-        "term_iri": "http://purl.obolibrary.org/obo/OBI_0000716",
+        "term_url": "http://purl.obolibrary.org/obo/OBI_0000716",
         "term_value": "ChIP-seq assay"
     },
     "target": {
-        "term_iri": "http://purl.obolibrary.org/obo/SO_0001706",
+        "term_url": "http://purl.obolibrary.org/obo/SO_0001706",
         "term_value": "H3K4_trimethylation"
     },
     "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",

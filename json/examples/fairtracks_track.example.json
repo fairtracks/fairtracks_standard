@@ -3,17 +3,17 @@
     "global_id": "fairtracks:1",
     "local_id": "encode:ENCFF625ZYB",
     "experiment_ref": "encode:ENCSR000DQP",
-    "file_iri": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
+    "file_url": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
     "file_name": "r1.narrowPeak.gz",
     "label_short": "ENCFF625ZYB",
     "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
     "genome_assembly": "GRCh38",
     "file_format": {
-        "term_iri": "http://edamontology.org/format_3613",
+        "term_url": "http://edamontology.org/format_3613",
         "term_value": "ENCODE narrow peak format"
     },
     "content_type": {
-        "term_iri": "http://edamontology.org/data_3002",
+        "term_url": "http://edamontology.org/data_3002",
         "term_value": "Annotation track"
     },
     "checksum": {

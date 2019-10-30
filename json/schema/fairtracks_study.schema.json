@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json",
-    "$comment": "OPML signature: f100e76fcd8bb70873f85b613c0bb92aea5bd9eeb8dc324a4a60e9ba68c89eb1",
+    "$comment": "OPML signature: b674f4cfc730a8f229b280ff6b5accb308675667643bb283400053570717da8c",
     "title": "FAIRification of Genomic Tracks JSON Schema - Study",
     "type": "object",
     "properties": {
         "@schema": {
-            "description": "The JSON schema absolute URI. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
+            "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
-            "format": "iri",
+            "format": "url",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json"
         },
         "global_id": {
