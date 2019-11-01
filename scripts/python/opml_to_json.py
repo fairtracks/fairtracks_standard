@@ -163,16 +163,20 @@ def _json_schema_add_end_root_attribs(json_dict):
 # JSON example internal methods
 
 def _json_example_create_subtree(opml_path, opml_root, json_parent, example_index):
+    num_children_created = 0
     for opml_elem in opml_root:
+        json_child = None
         if _is_ref(opml_elem):
             json_child = _json_example_get_child_for_ref(opml_path, opml_elem, example_index)
-            _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
         else:
             json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
             if json_elem_array:
                 json_child = _json_example_get_child_recursively(opml_path, opml_elem,
                                                                  json_elem_array, example_index)
-                _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
+        if json_child:
+            _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
+            num_children_created += 1
+    return num_children_created
 
 
 def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
@@ -240,16 +244,21 @@ def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, e
         grandchildren_example_indices = [example_index]
 
     # Looping through all grandchildren, adding each of them to the array.
+    num_grandchildren_created = 0
     for grandchild_example_index in grandchildren_example_indices:
         try:
-            _json_example_create_subtree(opml_path,
-                                         opml_root=opml_elem,
-                                         json_parent=json_child,
-                                         example_index=grandchild_example_index)
+            num_grandchildren_created = _json_example_create_subtree(
+                opml_path,
+                opml_root=opml_elem,
+                json_parent=json_child,
+                example_index=grandchild_example_index
+            )
         except IndexError:
             pass
 
-    return json_child
+    # Pruning empty branches
+    if num_grandchildren_created > 0:
+        return json_child
 
 
 # JSON example helper methods
