@@ -8,8 +8,7 @@ import xml.etree.ElementTree as ElementTree
 from collections import OrderedDict
 from datetime import datetime
 
-from opml_signature import compute_opml_signature
-
+from json_signature import compute_signature_from_json_content
 
 ATTRIBS_TO_IMPORT = [
     'description',
@@ -45,7 +44,7 @@ def main():
                                                  'JSON from OPML overview file')
     parser.add_argument('json_type', choices=['schema', 'single_example', 'full_example'])
     parser.add_argument('in_opml', type=argparse.FileType('r'))
-    parser.add_argument('out_json', type=argparse.FileType('w'))
+    parser.add_argument('out_json', type=argparse.FileType('r+'))
     args = parser.parse_args()
 
     if args.json_type == 'schema':
@@ -55,16 +54,16 @@ def main():
     else:  # full_example
         json_dict = create_json_example_dict(args.in_opml.name)
 
-    args.out_json.write(json.dumps(json_dict, indent=4))
+    if_changed_write_json_file(args.out_json, json_dict)
 
 
 def create_json_schema_dict(opml_path):
-    signature = compute_opml_signature(opml_path)
     opml_root = ElementTree.parse(opml_path).find('./body')
 
-    json_schema_dict = _json_schema_create_root(opml_root, signature)
+    json_schema_dict = _json_schema_create_root(opml_root)
     _json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
     json_schema_dict = _json_schema_add_end_root_attribs(json_schema_dict)
+    json_schema_dict = _json_schema_add_signature(json_schema_dict)
 
     return json_schema_dict
 
@@ -77,22 +76,37 @@ def create_json_example_dict(opml_path, example_index=None):
                                  json_parent=json_example_dict,
                                  example_index=example_index)
 
-    signature = compute_opml_signature(opml_path)
-    if 'doc_info' in json_example_dict:
-        json_example_dict['doc_info']['doc_version'] = signature
-        json_example_dict['doc_info']['doc_date'] = \
-            datetime.now().replace(microsecond=0).isoformat()
+    json_example_dict = _json_example_add_doc_info_attribs(json_example_dict)
+    json_example_dict = _json_example_add_signature(json_example_dict)
 
     return json_example_dict
 
 
+def if_changed_write_json_file(json_file, json_dict):
+    new_signature = compute_signature_from_json_content(json_dict)
+    try:
+        old_signature = compute_signature_from_json_content(json.load(json_file))
+        do_write = new_signature != old_signature
+    except json.decoder.JSONDecodeError:
+        from traceback import print_exc
+        print_exc()
+        do_write = True
+
+    if do_write:
+        json_file.seek(0)
+        json_file.truncate()
+        json_file.write(json.dumps(json_dict, indent=4))
+    else:
+        os.utime(json_file.name)
+
+
 # JSON schema internal methods
 
-def _json_schema_create_root(opml_root, signature):
+def _json_schema_create_root(opml_root):
     json_dict = OrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
-    json_dict['$comment'] = "OPML signature: " + signature
+    json_dict['$comment'] = ""
     json_dict['title'] = opml_root.find(".//outline[@_text='#title']").attrib['const']
     json_dict['type'] = 'object'
     return json_dict
@@ -165,25 +179,34 @@ def _json_schema_add_end_root_attribs(json_dict):
     return json_dict
 
 
+def _json_schema_add_signature(json_dict):
+    signature = compute_signature_from_json_content(json_dict)
+    json_dict['$comment'] = "JSON signature: " + signature
+    return json_dict
+
+
 # JSON example internal methods
 
 def _json_example_create_subtree(opml_path, opml_root, json_parent, example_index):
     num_children_created = 0
+
     for opml_elem in opml_root:
         if _ignore_element(opml_elem):
             continue
 
         json_child = None
         if _is_ref(opml_elem):
-            json_child = _json_example_get_child_for_ref(opml_path, opml_elem, example_index)
+            json_child = _json_example_get_child_for_ref(
+                opml_path, opml_elem, example_index)
         else:
             json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
             if json_elem_array:
-                json_child = _json_example_get_child_recursively(opml_path, opml_elem,
-                                                                 json_elem_array, example_index)
+                json_child = _json_example_get_child_recursively(
+                    opml_path, opml_elem, json_elem_array, example_index)
         if json_child:
             _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
             num_children_created += 1
+
     return num_children_created
 
 
@@ -288,6 +311,21 @@ def _is_example_content(json_elem_array):
             return False
     else:
         return True
+
+
+def _json_example_add_doc_info_attribs(json_dict):
+    if 'doc_info' in json_dict:
+        json_dict['doc_info']['doc_version'] = ""
+        json_dict['doc_info']['doc_date'] = \
+            datetime.now().replace(microsecond=0).isoformat()
+    return json_dict
+
+
+def _json_example_add_signature(json_dict):
+    if 'doc_info' in json_dict:
+        signature = compute_signature_from_json_content(json_dict)
+        json_dict['doc_info']['doc_version'] = signature
+    return json_dict
 
 
 # General helper methods
