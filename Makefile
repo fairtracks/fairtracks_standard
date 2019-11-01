@@ -40,10 +40,10 @@ $(SCHEMA_DIR)/fairtracks.schema.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT)
 	$(PYTHON_EXE) $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/fairtracks.overview.opml $(SCHEMA_DIR)/fairtracks.schema.json
 
 $(EXAMPLE_DIR)/fairtracks_%.example.json: $(OVERVIEW_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT)
-	$(PYTHON_EXE) $(CONVERT_SCRIPT) example $(OVERVIEW_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
+	$(PYTHON_EXE) $(CONVERT_SCRIPT) single_example $(OVERVIEW_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
 
 $(EXAMPLE_DIR)/fairtracks.example.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT)
-	$(PYTHON_EXE) $(CONVERT_SCRIPT) example $(OVERVIEW_DIR)/fairtracks.overview.opml $(EXAMPLE_DIR)/fairtracks.example.json
+	$(PYTHON_EXE) $(CONVERT_SCRIPT) full_example $(OVERVIEW_DIR)/fairtracks.overview.opml $(EXAMPLE_DIR)/fairtracks.example.json
 
 $(OVERVIEW_DIR)/fairtrack%.overview.opml: $(OVERVIEW_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT)
 	$(PYTHON_EXE) $(CLEANUP_OPML_SCRIPT) $(OVERVIEW_DIR)/fairtrack$*.overview.raw.opml $(OVERVIEW_DIR)/fairtrack$*.overview.opml

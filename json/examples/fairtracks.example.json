@@ -56,6 +56,12 @@
             "global_id": "fairtracks:1",
             "local_id": "encode:ENCFF625ZYB",
             "experiment_ref": "encode:ENCSR000DQP",
+            "raw_file_ids": [
+                [
+                    "encode: ENCFF207FGO",
+                    "encode:ENCFF842FEQ"
+                ]
+            ],
             "file_url": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
             "file_name": "r1.narrowPeak.gz",
             "label_short": "ENCFF625ZYB",
@@ -78,6 +84,12 @@
             "global_id": "fairtracks:2",
             "local_id": "encode:ENCFF718EPO",
             "experiment_ref": "encode:ENCSR000DQP",
+            "raw_file_ids": [
+                [
+                    "encode:ENCFF207FGO",
+                    "encode:ENCFF842FEQ"
+                ]
+            ],
             "file_url": "https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed",
             "file_name": "r1.narrowPeak.bb",
             "label_short": "ENCFF718EPO",
@@ -100,6 +112,12 @@
             "global_id": "fairtracks:3",
             "local_id": "encode:ENCFF717PIO",
             "experiment_ref": "encode:ENCSR000DQP",
+            "raw_file_ids": [
+                [
+                    "encode:ENCFF207FGO",
+                    "encode:ENCFF842FEQ"
+                ]
+            ],
             "file_url": "https://www.encodeproject.org/files/ENCFF717PIO/@@download/ENCFF717PIO.bigWig",
             "file_name": "r1.fc_signal.bw",
             "label_short": "ENCFF717PIO",
@@ -122,6 +140,12 @@
             "global_id": "fairtracks:4",
             "local_id": "encode:ENCFF955LOC",
             "experiment_ref": "encode:ENCSR000DQP",
+            "raw_file_ids": [
+                [
+                    "encode:ENCFF207FGO",
+                    "encode:ENCFF842FEQ"
+                ]
+            ],
             "file_url": "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig",
             "file_name": "r1.pvalue_signal.bw",
             "label_short": " ENCFF955LOC",

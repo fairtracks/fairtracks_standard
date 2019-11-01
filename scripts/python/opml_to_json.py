@@ -30,7 +30,8 @@ ATTRIB_CONVERT_MAPPINGS = {'ref': '$ref'}
 INTEGER_ATTRIBS = ['minItems']
 ALWAYS_ARRAY_ATTRIBS = ['examples']
 NEVER_ARRAY_ATTRIBS = ['pattern']
-ARRAY_SPLIT_TEXT = '|'
+ARRAY_SPLIT_CHAR_LEVEL_1 = '|'
+ARRAY_SPLIT_CHAR_LEVEL_2 = ';'
 MAX_EXAMPLES_COUNT = 4
 BOOLEAN_MAP = {'true': True, 'false': False}
 
@@ -40,14 +41,16 @@ BOOLEAN_MAP = {'true': True, 'false': False}
 def main():
     parser = argparse.ArgumentParser(description='Generate JSON schema or example '
                                                  'JSON from OPML overview file')
-    parser.add_argument('json_type', choices=['schema', 'example'])
+    parser.add_argument('json_type', choices=['schema', 'single_example', 'full_example'])
     parser.add_argument('in_opml', type=argparse.FileType('r'))
     parser.add_argument('out_json', type=argparse.FileType('w'))
     args = parser.parse_args()
 
     if args.json_type == 'schema':
         json_dict = create_json_schema_dict(args.in_opml.name)
-    else:  # example
+    elif args.json_type == 'single_example':
+        json_dict = create_json_example_dict(args.in_opml.name, example_index=0)
+    else:  # full_example
         json_dict = create_json_example_dict(args.in_opml.name)
 
     args.out_json.write(json.dumps(json_dict, indent=4))
@@ -118,8 +121,9 @@ def _json_schema_add_attrib_to_child(opml_elem, json_child, attrib_name):
             if element_value in BOOLEAN_MAP.keys():
                 json_child[attrib_name] = BOOLEAN_MAP[element_value]
             elif attrib_name in ALWAYS_ARRAY_ATTRIBS or \
-                    (ARRAY_SPLIT_TEXT in element_value and attrib_name not in NEVER_ARRAY_ATTRIBS):
-                json_child[attrib_name] = [_ for _ in element_value.split(ARRAY_SPLIT_TEXT)]
+                    (ARRAY_SPLIT_CHAR_LEVEL_1 in element_value and
+                     attrib_name not in NEVER_ARRAY_ATTRIBS):
+                json_child[attrib_name] = element_value.split(ARRAY_SPLIT_CHAR_LEVEL_1)
             elif attrib_name in INTEGER_ATTRIBS:
                 json_child[attrib_name] = int(element_value)
             else:
@@ -165,7 +169,6 @@ def _json_example_create_subtree(opml_path, opml_root, json_parent, example_inde
             _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
         else:
             json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
-
             if json_elem_array:
                 json_child = _json_example_get_child_recursively(opml_path, opml_elem,
                                                                  json_elem_array, example_index)
@@ -191,44 +194,58 @@ def _json_example_add_child_to_parent(element, json_child, json_parent):
 
 
 def _json_example_convert_opml_elem_to_json_array(opml_elem):
+    """
+    Convert all OPML elements to arrays for uniformity. If example data is present, the array
+    length is the number of examples, if not the array length is equal to MAX_EXAMPLES_COUNT.
+    Arrays are handled in _json_example_get_child_recursively() and _is_example_content().
+    """
     el_type = opml_elem.attrib['type']
 
     if el_type == 'object':
-        return [OrderedDict()]
+        return [OrderedDict()] * MAX_EXAMPLES_COUNT
     elif el_type == 'array':
-        return [[]]
+        return [[]] * MAX_EXAMPLES_COUNT
     else:
         el_examples = opml_elem.attrib.get('examples')
         el_const = opml_elem.attrib.get('const')
         el_default = opml_elem.attrib.get('default')
 
         if el_examples:
-            return el_examples.split(ARRAY_SPLIT_TEXT)
+            example_array = el_examples.split(ARRAY_SPLIT_CHAR_LEVEL_1)
+            for i in range(len(example_array)):
+                if ARRAY_SPLIT_CHAR_LEVEL_2 in example_array[i]:
+                    example_array[i] = example_array[i].split(ARRAY_SPLIT_CHAR_LEVEL_2)
+            return example_array
         elif el_const:
             return [el_const] * MAX_EXAMPLES_COUNT
         elif el_default:
             return [el_default] * MAX_EXAMPLES_COUNT
         else:
-            return []
+            return None
 
 
 def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, example_index):
-    if _is_example_content(json_elem_array) and _tree_has_been_split_into_arrays(example_index):
-        json_child = json_elem_array[example_index]
-    else:
-        json_child = json_elem_array[0]
+    json_child = json_elem_array[example_index if example_index is not None else 0]
+    if _is_example_content(json_elem_array):
+        return json_child
 
-    if _is_array(json_child) and not _tree_has_been_split_into_arrays(example_index):
-        child_example_indices = range(MAX_EXAMPLES_COUNT)
+    if _is_array(json_child) and example_index is None:
+        # Once example_index has been set, it will not be removed. Hence, this is the highest-level
+        # array met in the current branch. As that is the case, loop through all possible examples
+        # in order for grandchildren to be added to the array, one grandchild for each example
+        # found.
+        grandchildren_example_indices = range(MAX_EXAMPLES_COUNT)
     else:
-        child_example_indices = [example_index]
+        # Not an array. In that case, create a single grandchild, keeping the current state.
+        grandchildren_example_indices = [example_index]
 
-    for child_example_index in child_example_indices:
+    # Looping through all grandchildren, adding each of them to the array.
+    for grandchild_example_index in grandchildren_example_indices:
         try:
             _json_example_create_subtree(opml_path,
                                          opml_root=opml_elem,
                                          json_parent=json_child,
-                                         example_index=child_example_index)
+                                         example_index=grandchild_example_index)
         except IndexError:
             pass
 
@@ -253,11 +270,26 @@ def _get_ref(opml_elem):
 
 
 def _is_example_content(json_elem_array):
-    return not any(isinstance(json_elem_array[0], _) for _ in [list, dict])
+    """
+    Checks whether arrays as created in _json_example_convert_opml_elem_to_json_array() represents
+    example content, assuming that the first element in the array is representative (the structure
+    should be held equal in all elements).
+    """
+    if len(json_elem_array) == 0:
+        return False
 
-
-def _tree_has_been_split_into_arrays(example_index):
-    return example_index is not None
+    first_content = json_elem_array[0]
+    if isinstance(first_content, dict):
+        return False
+    elif isinstance(first_content, list):
+        if len(first_content) > 0 and _is_example_content(first_content):
+            # The array is a list of lists, only two levels deep. The array should then represent
+            # an example for an array property.
+            return True
+        else:
+            return False
+    else:
+        return True
 
 
 def _is_array(json_child):

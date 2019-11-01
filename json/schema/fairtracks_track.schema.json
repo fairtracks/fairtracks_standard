@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "OPML signature: 2cf216acbbe3c8863cc1bad02fe2ef975df0a5ea53d9a4039c0d5abb13ad0eb4",
+    "$comment": "OPML signature: 2cce073f80ec91c515d028750ccf9230b34f49ac4fe11e5f2ddadc81d736b4a8",
     "title": "FAIRification of Genomic Tracks JSON Schema - Track",
     "type": "object",
     "properties": {
@@ -27,6 +27,16 @@
         "experiment_ref": {
             "description": "Reference to the experiment of the track (using the submitter-local identifier of the sample)",
             "type": "string"
+        },
+        "raw_file_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "List of identifiers to raw data files used to create track (typically BAM), resolvable by identifiers.org",
+                "type": "string",
+                "format": "curie",
+                "matchType": "loose"
+            }
         },
         "file_url": {
             "description": "A URL to the track data file",
