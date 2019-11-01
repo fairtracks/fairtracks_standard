@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: c72334a3393cc205b0f16f4ce25d045228d384d064f1210b0408c7465f0308d3",
+    "$comment": "JSON signature: 83b0d938950cde1e2c2d127021540caaa7989309a859940a56d827388182fded",
     "title": "FAIRification of Genomic Tracks JSON Schema - Experiment",
     "type": "object",
     "properties": {
@@ -57,7 +57,10 @@
                     "description": "URL linking to an OBI ontology term",
                     "type": "string",
                     "format": "term",
-                    "ontology": "http://purl.obolibrary.org/obo/obi/2018-08-27/obi.owl",
+                    "ontology": [
+                        "http://purl.obolibrary.org/obo/obi/2018-08-27/obi.owl",
+                        "http://edamontology.org/EDAM_1.21.owl"
+                    ],
                     "matchType": "exact"
                 },
                 "term_value": {
