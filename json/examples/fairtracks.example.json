@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "669a2bacc89300232a782114b8c4e5b6739e305a48df9f9e8ef9e21ea6cd8b40",
-        "doc_date": "2019-11-01T12:05:37"
+        "doc_version": "0a66e0e3f19ff47c89076b07edcff7ca7a2ed59b24208020b892d495a43cc8a9",
+        "doc_date": "2019-11-01T12:07:15"
     },
     "collection_info": {
         "short_name": "ENCODE example",

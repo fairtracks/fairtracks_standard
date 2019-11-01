@@ -142,10 +142,10 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
         if 'properties' not in json_parent:
             json_parent['properties'] = OrderedDict()
 
-        key = element.attrib['_text']
-        if key.startswith('#'):
+        if _ignore_element(element):
             return
 
+        key = element.attrib['_text']
         json_parent['properties'][key] = json_child
 
         if element.attrib['required'] == 'true':
@@ -170,6 +170,9 @@ def _json_schema_add_end_root_attribs(json_dict):
 def _json_example_create_subtree(opml_path, opml_root, json_parent, example_index):
     num_children_created = 0
     for opml_elem in opml_root:
+        if _ignore_element(opml_elem):
+            continue
+
         json_child = None
         if _is_ref(opml_elem):
             json_child = _json_example_get_child_for_ref(opml_path, opml_elem, example_index)
@@ -195,8 +198,6 @@ def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
 def _json_example_add_child_to_parent(element, json_child, json_parent):
     if isinstance(json_parent, dict):
         key = element.attrib['_text']
-        if key.startswith('#'):
-            return
         json_parent[key] = json_child
     else:  # array
         json_parent.append(json_child)
@@ -266,23 +267,6 @@ def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, e
         return json_child
 
 
-# JSON example helper methods
-
-def _is_ref(opml_elem):
-    return 'ref' in opml_elem.attrib
-
-
-def _generate_opml_path_from_ref(opml_path, opml_elem):
-    return os.path.join(
-        os.path.dirname(opml_path),
-        os.path.basename(_get_ref(opml_elem)).replace('.schema.json', '.overview.opml')
-    )
-
-
-def _get_ref(opml_elem):
-    return opml_elem.attrib['ref']
-
-
 def _is_example_content(json_elem_array):
     """
     Checks whether arrays as created in _json_example_convert_opml_elem_to_json_array() represents
@@ -304,6 +288,31 @@ def _is_example_content(json_elem_array):
             return False
     else:
         return True
+
+
+# General helper methods
+
+def _ignore_element(opml_elem):
+    key = opml_elem.attrib.get('_text')
+    if key:
+        return key.startswith('#')
+    else:
+        return False
+
+
+def _is_ref(opml_elem):
+    return 'ref' in opml_elem.attrib
+
+
+def _generate_opml_path_from_ref(opml_path, opml_elem):
+    return os.path.join(
+        os.path.dirname(opml_path),
+        os.path.basename(_get_ref(opml_elem)).replace('.schema.json', '.overview.opml')
+    )
+
+
+def _get_ref(opml_elem):
+    return opml_elem.attrib['ref']
 
 
 def _is_array(json_child):
