@@ -6,6 +6,8 @@ import os
 import xml.etree.ElementTree as ElementTree
 
 from collections import OrderedDict
+from datetime import datetime
+
 from opml_signature import compute_opml_signature
 
 
@@ -75,8 +77,11 @@ def create_json_example_dict(opml_path, example_index=None):
                                  json_parent=json_example_dict,
                                  example_index=example_index)
 
-    # signature = compute_opml_signature(opml_path)
-    # json_example_dict['$comment'] = "OPML signature: " + signature
+    signature = compute_opml_signature(opml_path)
+    if 'doc_info' in json_example_dict:
+        json_example_dict['doc_info']['doc_version'] = signature
+        json_example_dict['doc_info']['doc_date'] = \
+            datetime.now().replace(microsecond=0).isoformat()
 
     return json_example_dict
 

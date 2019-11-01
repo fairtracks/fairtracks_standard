@@ -1,5 +1,20 @@
 {
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
+    "doc_info": {
+        "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
+        "doc_version": "669a2bacc89300232a782114b8c4e5b6739e305a48df9f9e8ef9e21ea6cd8b40",
+        "doc_date": "2019-11-01T12:05:37"
+    },
+    "collection_info": {
+        "short_name": "ENCODE example",
+        "long_name": "Example of a few tracks created by from the ENCODE Project",
+        "description_url": "https://www.encodeproject.org/help/project-overview/",
+        "orig_metadata_url": "https://www.encodeproject.org/search/?format=json",
+        "contact": {
+            "name": "ENCODE DCC",
+            "e-mail": "encode-help@lists.stanford.edu"
+        }
+    },
     "studies": [
         {
             "global_id": "GEO:GSE35583",

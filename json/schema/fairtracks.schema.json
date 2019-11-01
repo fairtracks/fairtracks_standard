@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "OPML signature: 3bc4638c75f0ddd7a3606638c8ccbbd4230650efb29891dd85045aa48067f647",
+    "$comment": "OPML signature: 669a2bacc89300232a782114b8c4e5b6739e305a48df9f9e8ef9e21ea6cd8b40",
     "title": "FAIRification of Genomic Tracks JSON Schema",
     "type": "object",
     "properties": {
@@ -10,6 +10,113 @@
             "type": "string",
             "format": "url",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
+        },
+        "doc_info": {
+            "type": "object",
+            "properties": {
+                "doc_url": {
+                    "description": "URL to this FAIRtracks JSON document",
+                    "type": "string"
+                },
+                "doc_version": {
+                    "description": "Version of this FAIRtracks JSON document",
+                    "type": "string"
+                },
+                "doc_date": {
+                    "description": "Creation date of this version of this FAIRtracks document",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "doc_url",
+                "doc_version",
+                "doc_date"
+            ]
+        },
+        "collection_info": {
+            "type": "object",
+            "properties": {
+                "short_name": {
+                    "description": "Short name of the track collection. Suggested maximum length is 17 characters",
+                    "type": "string"
+                },
+                "long_name": {
+                    "description": "Long name of the track collection. Suggested maximum length is 80 characters",
+                    "type": "string"
+                },
+                "description_url": {
+                    "description": "URL to a web page or file describing the track collection",
+                    "type": "string",
+                    "format": "url",
+                    "properties": {
+                        "source_repo": {
+                            "type": "object",
+                            "properties": {
+                                "repo_url": {
+                                    "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
+                                    "type": "string",
+                                    "format": "url"
+                                },
+                                "local_id": {
+                                    "description": "Submitter-local identifier (within track repository) for the collection",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "repo_url"
+                            ]
+                        }
+                    }
+                },
+                "orig_metadata_url": {
+                    "description": "URL to track collection metadata in its original form (might contain more than the relevant metadata)",
+                    "type": "string",
+                    "format": "url"
+                },
+                "contact": {
+                    "description": "Contact information for the track collection",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Name of contact person/organization",
+                            "type": "string"
+                        },
+                        "e-mail": {
+                            "description": "E-mail to contact person/organization",
+                            "type": "string",
+                            "format": "idn-email"
+                        },
+                        "orcid": {
+                            "description": "ORCID to contact person",
+                            "type": "string",
+                            "format": "curie",
+                            "namespace": "orcid",
+                            "matchType": "loose"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "anyOf": [
+                        {
+                            "required": [
+                                "e-mail"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "orcid"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "short_name",
+                "long_name",
+                "contact"
+            ]
         },
         "studies": {
             "type": "array",
@@ -42,6 +149,8 @@
     },
     "required": [
         "@schema",
+        "doc_info",
+        "collection_info",
         "studies",
         "experiments",
         "samples",
