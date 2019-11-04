@@ -2,19 +2,15 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json",
     "global_id": "biosample:SAMN01731491",
     "local_id": "GEO:GSM945229",
-    "biospecimen_class": {
-        "term_url": "http://purl.obolibrary.org/obo/NCIT_C16403",
-        "term_value": "Cell Line"
-    },
-    "cell_line": {
+    "biomaterial_type": "primary cell",
+    "sample_type": {
         "term_url": "http://purl.obolibrary.org/obo/CL_0000236",
         "term_value": "H1-hESC"
     },
-    "organism_part": {
+    "tissue_type": {
         "term_url": "http://purl.obolibrary.org/obo/CL_0002322",
         "term_value": "embryonic stem cell"
     },
-    "main_type": "H1-hESC",
     "phenotype": {
         "term_url": "http://purl.obolibrary.org/obo/PATO_0000461",
         "term_value": "normal"

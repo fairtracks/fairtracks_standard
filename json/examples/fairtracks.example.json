@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "a12207538a5c6415e11126fe6f3afe96d531cf96aae36939fed5f290b577ebcb",
-        "doc_date": "2019-11-04T13:12:19"
+        "doc_version": "61191a6f1632741eeb8fcf90f8132206965ed2f0aa4ed63e599e72ac32c3958b",
+        "doc_date": "2019-11-01T17:08:07"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -49,19 +49,15 @@
         {
             "global_id": "biosample:SAMN01731491",
             "local_id": "GEO:GSM945229",
-            "biospecimen_class": {
-                "term_url": "http://purl.obolibrary.org/obo/NCIT_C16403",
-                "term_value": "Cell Line"
-            },
-            "cell_line": {
+            "biomaterial_type": "primary cell",
+            "sample_type": {
                 "term_url": "http://purl.obolibrary.org/obo/CL_0000236",
                 "term_value": "H1-hESC"
             },
-            "organism_part": {
+            "tissue_type": {
                 "term_url": "http://purl.obolibrary.org/obo/CL_0002322",
                 "term_value": "embryonic stem cell"
             },
-            "main_type": "H1-hESC",
             "phenotype": {
                 "term_url": "http://purl.obolibrary.org/obo/PATO_0000461",
                 "term_value": "normal"
