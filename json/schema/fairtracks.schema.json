@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: b39e6979cde9a35093be8eaf865311550888e4f4c5f9934c1908c17ae6d71be0",
+    "$comment": "JSON signature: 84a1276f6d87ecbbeabd6bcc4caafe8c5cbefcd2cf9c0344f6f72f6385df33a8",
     "title": "FAIRification of Genomic Tracks JSON Schema",
     "type": "object",
     "properties": {
@@ -60,29 +60,27 @@
                     "format": "url",
                     "examples": [
                         "https://www.encodeproject.org/help/project-overview/"
-                    ],
+                    ]
+                },
+                "source_repo": {
+                    "type": "object",
                     "properties": {
-                        "source_repo": {
-                            "type": "object",
-                            "properties": {
-                                "repo_url": {
-                                    "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
-                                    "type": "string",
-                                    "format": "url",
-                                    "examples": [
-                                        "https://www.encodeproject.org/search"
-                                    ]
-                                },
-                                "local_id": {
-                                    "description": "Submitter-local identifier (within track repository) for the collection",
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "repo_url"
+                        "repo_url": {
+                            "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
+                            "type": "string",
+                            "format": "url",
+                            "examples": [
+                                "https://www.encodeproject.org/search"
                             ]
+                        },
+                        "local_id": {
+                            "description": "Submitter-local identifier (within track repository) for the collection",
+                            "type": "string"
                         }
-                    }
+                    },
+                    "required": [
+                        "repo_url"
+                    ]
                 },
                 "orig_metadata_url": {
                     "description": "URL to track collection metadata in its original form (might contain more than the relevant metadata)",

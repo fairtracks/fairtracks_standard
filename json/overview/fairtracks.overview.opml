@@ -11,11 +11,10 @@
     <outline _text="collection_info" required="true" type="object">
       <outline _text="short_name" description="Short name of the track collection. Suggested maximum length is 17 characters" examples="ENCODE example" required="true" type="string" />
       <outline _text="long_name" description="Long name of the track collection. Suggested maximum length is 80 characters" examples="Example of a few tracks created by from the ENCODE Project" required="true" type="string" />
-      <outline _text="description_url" description="URL to a web page or file describing the track collection" examples="https://www.encodeproject.org/help/project-overview/" format="url" required="false" type="string">
-        <outline _text="source_repo" required="false" type="object">
-          <outline _text="repo_url" description="URL to the track repository containing the collection (e.g., the Track Hub Registry)" examples="https://www.encodeproject.org/search" format="url" required="true" type="string" />
-          <outline _text="local_id" description="Submitter-local identifier (within track repository) for the collection" required="false" type="string" />
-        </outline>
+      <outline _text="description_url" description="URL to a web page or file describing the track collection" examples="https://www.encodeproject.org/help/project-overview/" format="url" required="false" type="string" />
+      <outline _text="source_repo" required="false" type="object">
+        <outline _text="repo_url" description="URL to the track repository containing the collection (e.g., the Track Hub Registry)" examples="https://www.encodeproject.org/search" format="url" required="true" type="string" />
+        <outline _text="local_id" description="Submitter-local identifier (within track repository) for the collection" required="false" type="string" />
       </outline>
       <outline _text="orig_metadata_url" description="URL to track collection metadata in its original form (might contain more than the relevant metadata)" examples="https://www.encodeproject.org/search/?format=json" format="url" required="false" type="string" />
       <outline _text="contact" description="Contact information for the track collection" required="true" type="object">

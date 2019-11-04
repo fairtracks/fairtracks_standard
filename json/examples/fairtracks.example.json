@@ -2,13 +2,16 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "61191a6f1632741eeb8fcf90f8132206965ed2f0aa4ed63e599e72ac32c3958b",
-        "doc_date": "2019-11-01T17:08:07"
+        "doc_version": "b50f18a4a96b16f83ad25b66aa3d15e89c7110bbb56db4603f9a5ca21e53b499",
+        "doc_date": "2019-11-04T14:08:39"
     },
     "collection_info": {
         "short_name": "ENCODE example",
         "long_name": "Example of a few tracks created by from the ENCODE Project",
         "description_url": "https://www.encodeproject.org/help/project-overview/",
+        "source_repo": {
+            "repo_url": "https://www.encodeproject.org/search"
+        },
         "orig_metadata_url": "https://www.encodeproject.org/search/?format=json",
         "contact": {
             "name": "ENCODE DCC",
