@@ -225,18 +225,19 @@ def _json_example_create_subtree(opml_path, opml_root, json_parent, example_inde
         if _ignore_element(opml_elem):
             continue
 
-        json_child = None
+        json_children = None
         if _is_ref(opml_elem):
             json_child = _json_example_get_child_for_ref(
                 opml_path, opml_elem, example_index)
+            json_children = [json_child]
         else:
             json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
             if json_elem_array:
-                json_child = _json_example_get_child_recursively(
+                json_children = _json_example_get_children_recursively(
                     opml_path, opml_elem, json_elem_array, example_index)
-        if json_child:
-            _json_example_add_child_to_parent(opml_elem, json_child, json_parent)
-            num_children_created += 1
+        if json_children:
+            _json_example_add_children_to_parent(opml_elem, json_children, json_parent)
+            num_children_created += len(json_children)
 
     return num_children_created
 
@@ -249,12 +250,14 @@ def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
     return json_child
 
 
-def _json_example_add_child_to_parent(element, json_child, json_parent):
+def _json_example_add_children_to_parent(element, json_children, json_parent):
     if isinstance(json_parent, dict):
+        assert(len(json_children) == 1)
         key = element.attrib['_text']
-        json_parent[key] = json_child
+        json_parent[key] = json_children[0]
     else:  # array
-        json_parent.append(json_child)
+        for json_child in json_children:
+            json_parent.append(json_child)
 
 
 def _json_example_convert_opml_elem_to_json_array(opml_elem):
@@ -288,10 +291,13 @@ def _json_example_convert_opml_elem_to_json_array(opml_elem):
             return None
 
 
-def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, example_index):
+def _json_example_get_children_recursively(opml_path, opml_elem, json_elem_array, example_index):
     json_child = json_elem_array[example_index if example_index is not None else 0]
     if _is_example_content(json_elem_array):
-        return json_child
+        if _is_array(json_child):  # two-level example array, reduce a level
+            return json_child
+        else:
+            return [json_child]
 
     if _is_array(json_child) and example_index is None:
         # Once example_index has been set, it will not be removed. Hence, this is the highest-level
@@ -318,7 +324,7 @@ def _json_example_get_child_recursively(opml_path, opml_elem, json_elem_array, e
 
     # Pruning empty branches
     if num_grandchildren_created > 0:
-        return json_child
+        return [json_child]
 
 
 def _is_example_content(json_elem_array):

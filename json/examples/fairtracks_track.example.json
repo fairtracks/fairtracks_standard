@@ -4,10 +4,8 @@
     "local_id": "encode:ENCFF625ZYB",
     "experiment_ref": "encode:ENCSR000DQP",
     "raw_file_ids": [
-        [
-            "encode: ENCFF207FGO",
-            "encode:ENCFF842FEQ"
-        ]
+        "encode: ENCFF207FGO",
+        "encode:ENCFF842FEQ"
     ],
     "file_url": "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
     "file_name": "r1.narrowPeak.gz",
