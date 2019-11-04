@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json",
-    "$comment": "JSON signature: d42e8b93aaa6d61a51fa48b9c810200569db884ff5b580b5643ed06f5ba67427",
+    "$comment": "JSON signature: 2a7a7d62c650521984eeedd995777071b53b6d6c53bb9eeb1848e6ddf85c8ef0",
     "title": "FAIRification of Genomic Tracks JSON Schema - Study",
     "type": "object",
     "properties": {
@@ -19,23 +19,35 @@
                 "geo",
                 "ega.study"
             ],
-            "matchType": "canonical"
+            "matchType": "canonical",
+            "examples": [
+                "GEO:GSE35583"
+            ]
         },
         "local_id": {
             "description": "Submitter-local identifier (within investigation/hub) for study",
             "type": "string",
+            "examples": [
+                "UW_ChipSeq"
+            ],
             "unique": true
         },
         "study_name": {
             "description": "Name of the study",
-            "type": "string"
+            "type": "string",
+            "examples": [
+                "Histone Modifications by ChIP-seq from ENCODE/University of Washington"
+            ]
         },
         "publication": {
             "description": "Pubmed identifier (dataset or publication)",
             "type": "string",
             "format": "curie",
             "namespace": "pubmed",
-            "matchType": "loose"
+            "matchType": "loose",
+            "examples": [
+                "22955617"
+            ]
         },
         "contact": {
             "description": "Contact information for study",
@@ -43,12 +55,18 @@
             "properties": {
                 "name": {
                     "description": "Name of contact person/organization",
-                    "type": "string"
+                    "type": "string",
+                    "examples": [
+                        "ENCODE DCC"
+                    ]
                 },
                 "e-mail": {
                     "description": "E-mail to contact person/organization",
                     "type": "string",
-                    "format": "idn-email"
+                    "format": "idn-email",
+                    "examples": [
+                        "encode-help@lists.stanford.edu"
+                    ]
                 },
                 "orcid": {
                     "description": "ORCID to contact person",

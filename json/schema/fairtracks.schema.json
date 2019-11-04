@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 01dae06b65847060d6e2df2a3a0e883922a03b77d3c5a9ab5f75a32a53a3e6b5",
+    "$comment": "JSON signature: b39e6979cde9a35093be8eaf865311550888e4f4c5f9934c1908c17ae6d71be0",
     "title": "FAIRification of Genomic Tracks JSON Schema",
     "type": "object",
     "properties": {
@@ -16,7 +16,10 @@
             "properties": {
                 "doc_url": {
                     "description": "URL to this FAIRtracks JSON document",
-                    "type": "string"
+                    "type": "string",
+                    "examples": [
+                        "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json"
+                    ]
                 },
                 "doc_version": {
                     "description": "Version of this FAIRtracks JSON document",
@@ -39,16 +42,25 @@
             "properties": {
                 "short_name": {
                     "description": "Short name of the track collection. Suggested maximum length is 17 characters",
-                    "type": "string"
+                    "type": "string",
+                    "examples": [
+                        "ENCODE example"
+                    ]
                 },
                 "long_name": {
                     "description": "Long name of the track collection. Suggested maximum length is 80 characters",
-                    "type": "string"
+                    "type": "string",
+                    "examples": [
+                        "Example of a few tracks created by from the ENCODE Project"
+                    ]
                 },
                 "description_url": {
                     "description": "URL to a web page or file describing the track collection",
                     "type": "string",
                     "format": "url",
+                    "examples": [
+                        "https://www.encodeproject.org/help/project-overview/"
+                    ],
                     "properties": {
                         "source_repo": {
                             "type": "object",
@@ -56,7 +68,10 @@
                                 "repo_url": {
                                     "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
                                     "type": "string",
-                                    "format": "url"
+                                    "format": "url",
+                                    "examples": [
+                                        "https://www.encodeproject.org/search"
+                                    ]
                                 },
                                 "local_id": {
                                     "description": "Submitter-local identifier (within track repository) for the collection",
@@ -72,7 +87,10 @@
                 "orig_metadata_url": {
                     "description": "URL to track collection metadata in its original form (might contain more than the relevant metadata)",
                     "type": "string",
-                    "format": "url"
+                    "format": "url",
+                    "examples": [
+                        "https://www.encodeproject.org/search/?format=json"
+                    ]
                 },
                 "contact": {
                     "description": "Contact information for the track collection",
@@ -80,12 +98,18 @@
                     "properties": {
                         "name": {
                             "description": "Name of contact person/organization",
-                            "type": "string"
+                            "type": "string",
+                            "examples": [
+                                "ENCODE DCC"
+                            ]
                         },
                         "e-mail": {
                             "description": "E-mail to contact person/organization",
                             "type": "string",
-                            "format": "idn-email"
+                            "format": "idn-email",
+                            "examples": [
+                                "encode-help@lists.stanford.edu"
+                            ]
                         },
                         "orcid": {
                             "description": "ORCID to contact person",
