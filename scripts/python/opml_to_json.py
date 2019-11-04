@@ -19,6 +19,7 @@ ATTRIBS_TO_IMPORT = [
     'const',
     'default',
     'ontology',
+    'ancestor',
     'namespace',
     'matchType',
     'examples',
@@ -34,6 +35,8 @@ ALWAYS_ARRAY_ATTRIBS = ['examples']
 NEVER_ARRAY_ATTRIBS = ['pattern']
 ARRAY_SPLIT_CHAR_LEVEL_1 = '|'
 ARRAY_SPLIT_CHAR_LEVEL_2 = ';'
+REQUIRE_IF_PARENT_CHARS = '->'
+REQUIRE_IF_CHAR = '='
 MAX_EXAMPLES_COUNT = 4
 BOOLEAN_MAP = {'true': True, 'false': False}
 
@@ -172,6 +175,33 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
             if 'anyOf' not in json_parent:
                 json_parent['anyOf'] = []
             json_parent['anyOf'].append({'required': [key]})
+
+        if 'requireIf' in element.attrib and element.attrib['requireIf'] != '':
+            if_property, if_value = element.attrib['requireIf'].split(REQUIRE_IF_CHAR)
+            if REQUIRE_IF_PARENT_CHARS in if_property:
+                if_property, if_property_child = if_property.split(REQUIRE_IF_PARENT_CHARS)
+            else:
+                if_property_child = None
+
+            if 'allOf' not in json_parent:
+                json_parent['allOf'] = []
+
+            if_then_json_object = OrderedDict()
+            json_parent['allOf'].append(if_then_json_object)
+
+            if_then_json_object['if'] = OrderedDict()
+            if_then_json_object['if']['properties'] = OrderedDict()
+            if_then_json_object['if']['properties'][if_property] = OrderedDict()
+            cur_json_object = if_then_json_object['if']['properties'][if_property]
+
+            if if_property_child:
+                cur_json_object['properties'] = OrderedDict()
+                cur_json_object['properties'][if_property_child] = OrderedDict()
+                cur_json_object = cur_json_object['properties'][if_property_child]
+
+            cur_json_object['const'] = if_value
+            if_then_json_object['then'] = OrderedDict()
+            if_then_json_object['then']['required'] = [key]
 
 
 def _json_schema_add_end_root_attribs(json_dict):
