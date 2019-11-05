@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "d90c0ee350c437a4285a73ec8a08190354fd539fb2ba9a045c933e8c2ede894a",
-        "doc_date": "2019-11-17T08:47:07"
+        "doc_version": "5501d28550b98b5239a5c0c813c2662c77dca8ed315d03004d15e9b5c0b54de6",
+        "doc_date": "2019-11-21T21:32:07"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -40,10 +40,11 @@
                 "term_url": "http://purl.obolibrary.org/obo/OBI_0000716",
                 "term_value": "ChIP-seq assay"
             },
-            "target": {
+            "sequence_feature": {
                 "term_url": "http://purl.obolibrary.org/obo/SO_0001706",
                 "term_value": "H3K4_trimethylation"
             },
+            "target": "H3K4_trimethylation",
             "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
             "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
         }
