@@ -12,7 +12,7 @@
         "term_value": "embryonic stem cell"
     },
     "phenotype": {
-        "term_url": "http://purl.obolibrary.org/obo/PATO_0000461",
-        "term_value": "normal"
+        "term_url": "http://purl.obolibrary.org/obo/NCIT_C14165",
+        "term_value": "Normal"
     }
 }

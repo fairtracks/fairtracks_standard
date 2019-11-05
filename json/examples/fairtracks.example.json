@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "b49b67cb03d24ca73db9ef4f6297c167f043eb1102626bdc32c0c6c82a20c38a",
-        "doc_date": "2019-11-04T14:49:37"
+        "doc_version": "91ed24a2d673df20f7596e534e9de6d183e54d86c488312640c99f8e49f88337",
+        "doc_date": "2019-11-05T07:24:41"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -62,8 +62,8 @@
                 "term_value": "embryonic stem cell"
             },
             "phenotype": {
-                "term_url": "http://purl.obolibrary.org/obo/PATO_0000461",
-                "term_value": "normal"
+                "term_url": "http://purl.obolibrary.org/obo/NCIT_C14165",
+                "term_value": "Normal"
             }
         }
     ],

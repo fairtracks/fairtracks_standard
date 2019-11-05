@@ -40,7 +40,7 @@ $(SCHEMA_DIR)/fairtracks_%.schema.json: $(OVERVIEW_DIR)/fairtracks_%.overview.op
 $(SCHEMA_DIR)/fairtracks.schema.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT)
 	$(PYTHON_EXE) $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/fairtracks.overview.opml $(SCHEMA_DIR)/fairtracks.schema.json
 
-$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OVERVIEW_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT)
+$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT)
 	$(PYTHON_EXE) $(CONVERT_SCRIPT) single_example $(OVERVIEW_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
 
 $(EXAMPLE_DIR)/fairtracks.example.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT)
