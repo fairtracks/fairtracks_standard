@@ -1,14 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: d03dc7bf7fbcbc48700f96f0c3fa1e6b898241e817cf90ad4a02932e3268cc03",
+    "$comment": "JSON signature: ab5451db8fe9a937a1f3f79741cc0f4104a5ea08fe24f34bd3fb4f68ffbfc41f",
     "title": "FAIRification of Genomic Tracks JSON Schema - Experiment",
     "type": "object",
     "properties": {
         "@schema": {
             "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of 'id' in the linked schema",
             "type": "string",
-            "format": "url",
+            "format": "uri",
+            "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"
         },
         "global_id": {

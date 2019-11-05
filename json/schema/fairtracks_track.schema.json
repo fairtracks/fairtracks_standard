@@ -1,14 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 2a525b9de445b8e32553db7de903653db99d40e4a73839b3215ccd05546336fe",
+    "$comment": "JSON signature: d5549c9e2b871334c6ffea3e328fffba9f554a6b97b5b5050c612d60cdd2f76e",
     "title": "FAIRification of Genomic Tracks JSON Schema - Track",
     "type": "object",
     "properties": {
         "@schema": {
             "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
-            "format": "url",
+            "format": "uri",
+            "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
         },
         "global_id": {
@@ -65,7 +66,8 @@
         "file_url": {
             "description": "A URL to the track data file",
             "type": "string",
-            "format": "url",
+            "format": "uri",
+            "pattern": "^(https?|ftp|rsync)://",
             "examples": [
                 "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
                 "https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed",

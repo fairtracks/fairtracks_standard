@@ -1,14 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 84a1276f6d87ecbbeabd6bcc4caafe8c5cbefcd2cf9c0344f6f72f6385df33a8",
+    "$comment": "JSON signature: 18e52f61e5230de242b3f779087770d721d9a19b0ed0c095ef553f917f488480",
     "title": "FAIRification of Genomic Tracks JSON Schema",
     "type": "object",
     "properties": {
         "@schema": {
             "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
-            "format": "url",
+            "format": "uri",
+            "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
         },
         "doc_info": {
@@ -17,6 +18,8 @@
                 "doc_url": {
                     "description": "URL to this FAIRtracks JSON document",
                     "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
                     "examples": [
                         "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json"
                     ]
@@ -57,7 +60,8 @@
                 "description_url": {
                     "description": "URL to a web page or file describing the track collection",
                     "type": "string",
-                    "format": "url",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
                     "examples": [
                         "https://www.encodeproject.org/help/project-overview/"
                     ]
@@ -68,7 +72,8 @@
                         "repo_url": {
                             "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
                             "type": "string",
-                            "format": "url",
+                            "format": "uri",
+                            "pattern": "^(https?|ftp)://",
                             "examples": [
                                 "https://www.encodeproject.org/search"
                             ]
@@ -85,7 +90,8 @@
                 "orig_metadata_url": {
                     "description": "URL to track collection metadata in its original form (might contain more than the relevant metadata)",
                     "type": "string",
-                    "format": "url",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
                     "examples": [
                         "https://www.encodeproject.org/search/?format=json"
                     ]
