@@ -20,7 +20,7 @@
       <outline _text="contact" description="Contact information for the track collection" required="true" type="object">
         <outline _text="name" description="Name of contact person/organization" examples="ENCODE DCC" required="true" type="string" />
         <outline _text="e-mail" anyOf="true" description="E-mail to contact person/organization" examples="encode-help@lists.stanford.edu" format="idn-email" required="false" type="string" />
-        <outline _text="orcid" anyOf="true" comments="ORCID - Needs GDPR consent" description="ORCID to contact person" format="curie" matchType="loose" namespace="orcid" required="false" type="string" />
+        <outline _text="orcid" anyOf="true" comments="ORCID - Needs GDPR consent" description="ORCID to contact person" format="curie" matchType="canonical" namespace="orcid" required="false" type="string" />
       </outline>
     </outline>
     <outline _text="studies" minItems="1" required="true" type="array">

@@ -1,9 +1,9 @@
 {
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "global_id": "GEO:GSE35583",
+    "global_id": "geo:GSE35583",
     "local_id": "encode:ENCSR000DQP",
     "study_ref": "UW_ChipSeq",
-    "sample_ref": "GEO:GSM945229",
+    "sample_ref": "geo:GSM945229",
     "technique": {
         "term_url": "http://purl.obolibrary.org/obo/OBI_0000716",
         "term_value": "ChIP-seq assay"

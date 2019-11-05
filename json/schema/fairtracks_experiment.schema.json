@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: ab5451db8fe9a937a1f3f79741cc0f4104a5ea08fe24f34bd3fb4f68ffbfc41f",
+    "$comment": "JSON signature: a3eaf17b6dd8d56ea76aa73d3be0a44a7f846ccd26f2e3527bde240bd979e376",
     "title": "FAIRification of Genomic Tracks JSON Schema - Experiment",
     "type": "object",
     "properties": {
@@ -22,7 +22,7 @@
             ],
             "matchType": "canonical",
             "examples": [
-                "GEO:GSE35583"
+                "geo:GSE35583"
             ]
         },
         "local_id": {
@@ -47,7 +47,7 @@
             "type": "string",
             "format": "foreign_ref",
             "examples": [
-                "GEO:GSM945229"
+                "geo:GSM945229"
             ],
             "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json#local_id"
         },

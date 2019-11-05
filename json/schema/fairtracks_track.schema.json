@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: d5549c9e2b871334c6ffea3e328fffba9f554a6b97b5b5050c612d60cdd2f76e",
+    "$comment": "JSON signature: 974b2c349aadbd0219ecdf399c2b586b9e43931250edf3216ec6789778e32f49",
     "title": "FAIRification of Genomic Tracks JSON Schema - Track",
     "type": "object",
     "properties": {
@@ -15,9 +15,7 @@
         "global_id": {
             "description": "Global track identifier, resolvable by identifiers.org [to be created by us]",
             "type": "string",
-            "format": "curie",
             "namespace": "fairtracks",
-            "matchType": "basic",
             "examples": [
                 "fairtracks:1",
                 "fairtracks:2",
@@ -54,7 +52,7 @@
                 "description": "List of identifiers to raw data files used to create track (typically BAM), resolvable by identifiers.org",
                 "type": "string",
                 "format": "curie",
-                "matchType": "loose",
+                "matchType": "canonical",
                 "examples": [
                     "encode: ENCFF207FGO;encode:ENCFF842FEQ",
                     "encode:ENCFF207FGO;encode:ENCFF842FEQ",
