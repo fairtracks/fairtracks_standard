@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: c9888f9d0305d52186ec47334fefdc4df724884a773f13f2f6eb41c0e7930198",
+    "$comment": "JSON signature: 3096c83221183726bfedac5425026758afb1c26c8f8ea728fd4b923db644560a",
     "title": "FAIRification of Genomic Tracks JSON Schema - Experiment",
     "type": "object",
     "properties": {
@@ -173,6 +173,11 @@
             "required": [
                 "term_url"
             ]
+        },
+        "phenotype": {
+            "description": "Main phenotype (e.g. disease) connected to the sample",
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
         },
         "target_details": {
             "description": "Important details about the target of the experiment (to be included in the 'target' property)",
