@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 974b2c349aadbd0219ecdf399c2b586b9e43931250edf3216ec6789778e32f49",
+    "$comment": "JSON signature: 389020e5a7080b8cd13d53dc24d5a1fc3bcff20417b28a70f31884712a6589f0",
     "title": "FAIRification of Genomic Tracks JSON Schema - Track",
     "type": "object",
     "properties": {
@@ -119,7 +119,7 @@
             "type": "object",
             "properties": {
                 "term_url": {
-                    "description": "URL linking to an EDAM ontology term",
+                    "description": "URL linking to an ontology term",
                     "type": "string",
                     "format": "term",
                     "ontology": "http://edamontology.org/EDAM_1.21.owl",
@@ -132,7 +132,7 @@
                     ]
                 },
                 "term_value": {
-                    "description": "Exact value according to the EDAM ontology",
+                    "description": "Exact value according to the ontology used",
                     "type": "string",
                     "examples": [
                         "ENCODE narrow peak format",
@@ -152,7 +152,7 @@
             "type": "object",
             "properties": {
                 "term_url": {
-                    "description": "URL linking to an EDAM ontology term",
+                    "description": "URL linking to an ontology term",
                     "type": "string",
                     "format": "term",
                     "ontology": "http://edamontology.org/EDAM_1.21.owl",
@@ -165,7 +165,7 @@
                     ]
                 },
                 "term_value": {
-                    "description": "Exact value according to the EDAM ontology",
+                    "description": "Exact value according to the ontology used",
                     "type": "string",
                     "examples": [
                         "Annotation track",
