@@ -20,7 +20,7 @@ ATTRIBS_TO_IMPORT = [
     'const',
     'default',
     'ontology',
-    'ancestor',
+    'ancestors',
     'namespace',
     'matchType',
     'examples',
