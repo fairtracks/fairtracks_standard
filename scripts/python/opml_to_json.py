@@ -3,6 +3,7 @@ import io
 import hashlib
 import json
 import os
+import re
 import xml.etree.ElementTree as ElementTree
 
 from collections import OrderedDict
@@ -33,12 +34,26 @@ ATTRIB_CONVERT_MAPPINGS = {'ref': '$ref'}
 INTEGER_ATTRIBS = ['minItems']
 ALWAYS_ARRAY_ATTRIBS = ['examples']
 NEVER_ARRAY_ATTRIBS = ['pattern']
+IF_THEN_ATTRIBS = ['constIf', 'requireIf']
 ARRAY_SPLIT_CHAR_LEVEL_1 = '|'
 ARRAY_SPLIT_CHAR_LEVEL_2 = ';'
-REQUIRE_IF_PARENT_CHARS = '->'
-REQUIRE_IF_CHAR = '='
+IF_PARENT_SEP = '->'
+IF_THEN_VALUE_CHECK_SEP = '='
+THEN_VALUE_CHECK_SEP = ';'
 MAX_EXAMPLES_COUNT = 4
 BOOLEAN_MAP = {'true': True, 'false': False}
+
+
+# Helper classes
+
+class NestedOrderedDict(OrderedDict):
+    """
+    OrderedDict that automatically enlarges itself when needed.
+    Copied from https://stackoverflow.com/a/18809656
+    """
+    def __missing__(self, key):
+        val = self[key] = NestedOrderedDict()
+        return val
 
 
 # Public methods
@@ -75,7 +90,7 @@ def create_json_schema_dict(opml_path):
 def create_json_example_dict(opml_path, example_index=None):
     opml_root = ElementTree.parse(opml_path).find('./body')
 
-    json_example_dict = OrderedDict()
+    json_example_dict = NestedOrderedDict()
     _json_example_create_subtree(opml_path, opml_root,
                                  json_parent=json_example_dict,
                                  example_index=example_index)
@@ -107,7 +122,7 @@ def if_changed_write_json_file(json_file, json_dict):
 # JSON schema internal methods
 
 def _json_schema_create_root(opml_root):
-    json_dict = OrderedDict()
+    json_dict = NestedOrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
     json_dict['$comment'] = ""
@@ -124,13 +139,13 @@ def _json_schema_create_subtree(opml_root, json_parent):
 
 
 def _json_schema_create_child(opml_elem):
-    json_child = OrderedDict()
+    json_child = NestedOrderedDict()
 
     for attrib in ATTRIBS_TO_IMPORT:
         _json_schema_add_attrib_to_child(opml_elem, json_child, attrib)
 
     if 'type' in opml_elem.attrib and opml_elem.attrib['type'] == 'array':
-        json_child['items'] = OrderedDict()
+        json_child['items'] = NestedOrderedDict()
 
     return json_child
 
@@ -154,54 +169,68 @@ def _json_schema_add_attrib_to_child(opml_elem, json_child, attrib_name):
 
 
 def _json_schema_add_child_to_parent(element, json_child, json_parent):
+    if _ignore_element(element):
+        return
+
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        if 'properties' not in json_parent:
-            json_parent['properties'] = OrderedDict()
+        name = element.attrib['_text']
+        json_parent['properties'][name] = json_child
 
-        if _ignore_element(element):
-            return
+        _json_schema_update_parent_required(json_parent, element, name)
+        _json_schema_update_parent_anyof(json_parent, element, name)
+        _json_schema_update_parent_ifthen(json_parent, element, name)
 
-        key = element.attrib['_text']
-        json_parent['properties'][key] = json_child
 
-        if element.attrib['required'] == 'true':
-            if 'required' not in json_parent:
-                json_parent['required'] = []
-            json_parent['required'].append(key)
+def _json_schema_update_parent_required(json_parent, element, name):
+    if element.attrib['required'] == 'true':
+        if 'required' not in json_parent:
+            json_parent['required'] = []
+        json_parent['required'].append(name)
 
-        if 'anyOf' in element.attrib and element.attrib['anyOf'] == 'true':
-            if 'anyOf' not in json_parent:
-                json_parent['anyOf'] = []
-            json_parent['anyOf'].append({'required': [key]})
 
-        if 'requireIf' in element.attrib and element.attrib['requireIf'] != '':
-            if_property, if_value = element.attrib['requireIf'].split(REQUIRE_IF_CHAR)
-            if REQUIRE_IF_PARENT_CHARS in if_property:
-                if_property, if_property_child = if_property.split(REQUIRE_IF_PARENT_CHARS)
-            else:
-                if_property_child = None
+def _json_schema_update_parent_anyof(json_parent, element, name):
+    if 'anyOf' in element.attrib and element.attrib['anyOf'] == 'true':
+        if 'anyOf' not in json_parent:
+            json_parent['anyOf'] = []
+        json_parent['anyOf'].append({'required': [name]})
 
-            if 'allOf' not in json_parent:
-                json_parent['allOf'] = []
 
-            if_then_json_object = OrderedDict()
-            json_parent['allOf'].append(if_then_json_object)
+def _json_schema_update_parent_ifthen(json_parent, element, name):
+    for if_then_attrib in IF_THEN_ATTRIBS:
+        if if_then_attrib in element.attrib and element.attrib[if_then_attrib] != '':
+            full_attrib = element.attrib[if_then_attrib]
+            all_rules = re.findall('\|?'
+                                   '(?:(\w+)->)?'  # if_property
+                                   '(\w+)'  # if_property_child
+                                   '='
+                                   '([\w\/\:\.]+)'  # if_value
+                                   ';'
+                                   '(?:(\w+)=)?'  # then_property
+                                   '([\w\/\:\.]+)',  # then_value
+                                   full_attrib)
+            for rule in all_rules:
+                if_property, if_property_child, if_value, then_property, then_value = rule
 
-            if_then_json_object['if'] = OrderedDict()
-            if_then_json_object['if']['properties'] = OrderedDict()
-            if_then_json_object['if']['properties'][if_property] = OrderedDict()
-            cur_json_object = if_then_json_object['if']['properties'][if_property]
+                if 'allOf' not in json_parent:
+                    json_parent['allOf'] = []
 
-            if if_property_child:
-                cur_json_object['properties'] = OrderedDict()
-                cur_json_object['properties'][if_property_child] = OrderedDict()
-                cur_json_object = cur_json_object['properties'][if_property_child]
+                if_then_json_object = NestedOrderedDict()
+                json_parent['allOf'].append(if_then_json_object)
 
-            cur_json_object['const'] = if_value
-            if_then_json_object['then'] = OrderedDict()
-            if_then_json_object['then']['required'] = [key]
+                cur_json_object = if_then_json_object['if']['properties'][if_property]
+                if if_property_child:
+                    cur_json_object = cur_json_object['properties'][if_property_child]
+                cur_json_object['const'] = if_value
+
+                if if_then_attrib == 'requireIf':
+                    if_then_json_object['then']['required'] = [name]
+                elif if_then_attrib == 'constIf':
+                    cur_json_object = if_then_json_object['then']['properties'][name]
+                    if then_property:
+                        cur_json_object = cur_json_object['properties'][then_property]
+                    cur_json_object['const'] = then_value
 
 
 def _json_schema_add_end_root_attribs(json_dict):
