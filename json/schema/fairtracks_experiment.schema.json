@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 3096c83221183726bfedac5425026758afb1c26c8f8ea728fd4b923db644560a",
+    "$comment": "JSON signature: 8082507c86932bd868f78604ac6dc880c9d44c18429773173992d086256eaa40",
     "title": "FAIRification of Genomic Tracks JSON Schema - Experiment",
     "type": "object",
     "properties": {
@@ -222,6 +222,262 @@
             "required": [
                 "aggregated_from"
             ]
+        }
+    ],
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0000748"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sequence_feature": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/SO_0001747"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0001853"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sequence_feature": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/SO_0000685"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "anyOf": [
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0002017"
+                                    },
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0000748"
+                                    },
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0001853"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "sequence_feature"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0002019"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "gene_id"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0001271"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "gene_product": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/NCIT_C813"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0001922"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "gene_product": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/NCIT_C25966"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0002019"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "gene_product": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/NCIT_C17207"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "anyOf": [
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0001271"
+                                    },
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0001922"
+                                    },
+                                    {
+                                        "const": "http://purl.obolibrary.org/obo/OBI_0002019"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "gene_product"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0002440"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "macromolecular_structure": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/NCIT_C13402"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://purl.obolibrary.org/obo/OBI_0002440"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "macromolecular_structure"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "technique": {
+                        "properties": {
+                            "term_url": {
+                                "const": "http://edamontology.org/topic_3517"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "phenotype"
+                ]
+            }
         }
     ],
     "additionalProperties": true
