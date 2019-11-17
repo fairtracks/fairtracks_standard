@@ -6,7 +6,7 @@ import os
 import re
 import xml.etree.ElementTree as ElementTree
 
-from collections import OrderedDict
+from collections import OrderedDict, namedtuple, defaultdict
 from datetime import datetime
 
 from json_signature import compute_signature_from_json_content
@@ -54,6 +54,10 @@ class NestedOrderedDict(OrderedDict):
     def __missing__(self, key):
         val = self[key] = NestedOrderedDict()
         return val
+
+
+RuleCategory = namedtuple('RuleCategory', ('if_property', 'if_property_child',
+                                           'then_property', 'then_value'))
 
 
 # Public methods
@@ -206,31 +210,45 @@ def _json_schema_update_parent_ifthen(json_parent, element, name):
                                    '(\w+)'  # if_property_child
                                    '='
                                    '([\w\/\:\.]+)'  # if_value
-                                   ';'
+                                   '(?:;'
                                    '(?:(\w+)=)?'  # then_property
-                                   '([\w\/\:\.]+)',  # then_value
+                                   '([\w\/\:\.]+))?',  # then_value
                                    full_attrib)
-            for rule in all_rules:
-                if_property, if_property_child, if_value, then_property, then_value = rule
-
+            print(if_then_attrib, all_rules)
+            if all_rules:
                 if 'allOf' not in json_parent:
                     json_parent['allOf'] = []
 
-                if_then_json_object = NestedOrderedDict()
-                json_parent['allOf'].append(if_then_json_object)
+                all_rules_by_category = defaultdict(list)
+                for rule in all_rules:
+                    if_value = rule[2]
+                    rule_cat = RuleCategory(*(rule[:2] + rule[3:]))
+                    all_rules_by_category[rule_cat].append(if_value)
 
-                cur_json_object = if_then_json_object['if']['properties'][if_property]
-                if if_property_child:
-                    cur_json_object = cur_json_object['properties'][if_property_child]
-                cur_json_object['const'] = if_value
+                for cat, if_values in all_rules_by_category.items():
+                    assert cat.if_property
+                    if_then_json_object = NestedOrderedDict()
+                    json_parent['allOf'].append(if_then_json_object)
 
-                if if_then_attrib == 'requireIf':
-                    if_then_json_object['then']['required'] = [name]
-                elif if_then_attrib == 'constIf':
-                    cur_json_object = if_then_json_object['then']['properties'][name]
-                    if then_property:
-                        cur_json_object = cur_json_object['properties'][then_property]
-                    cur_json_object['const'] = then_value
+                    cur_json_object = if_then_json_object['if']['properties'][cat.if_property]
+                    if cat.if_property_child:
+                        cur_json_object = cur_json_object['properties'][cat.if_property_child]
+
+                    if len(if_values) == 1:
+                        cur_json_object['const'] = if_values[0]
+                    else:
+                        cur_json_object['anyOf'] = []
+                        for if_value in if_values:
+                            cur_json_object['anyOf'].append(NestedOrderedDict(const=if_value))
+
+                    if if_then_attrib == 'requireIf':
+                        if_then_json_object['then']['required'] = [name]
+                    elif if_then_attrib == 'constIf':
+                        assert cat.then_value
+                        cur_json_object = if_then_json_object['then']['properties'][name]
+                        if cat.then_property:
+                            cur_json_object = cur_json_object['properties'][cat.then_property]
+                        cur_json_object['const'] = cat.then_value
 
 
 def _json_schema_add_end_root_attribs(json_dict):
