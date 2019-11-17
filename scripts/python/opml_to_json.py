@@ -214,7 +214,6 @@ def _json_schema_update_parent_ifthen(json_parent, element, name):
                                    '(?:(\w+)=)?'  # then_property
                                    '([\w\/\:\.]+))?',  # then_value
                                    full_attrib)
-            print(if_then_attrib, all_rules)
             if all_rules:
                 if 'allOf' not in json_parent:
                     json_parent['allOf'] = []
