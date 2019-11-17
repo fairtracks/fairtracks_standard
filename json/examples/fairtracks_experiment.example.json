@@ -5,8 +5,8 @@
     "study_ref": "UW_ChipSeq",
     "sample_ref": "geo:GSM945229",
     "technique": {
-        "term_url": "http://purl.obolibrary.org/obo/OBI_0000716",
-        "term_value": "ChIP-seq assay"
+        "term_url": "http://purl.obolibrary.org/obo/OBI_0002017",
+        "term_value": "histone modification identification by ChIP-Seq assay"
     },
     "sequence_feature": {
         "term_url": "http://purl.obolibrary.org/obo/SO_0001706",
