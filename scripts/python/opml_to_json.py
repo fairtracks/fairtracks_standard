@@ -108,8 +108,11 @@ def create_json_example_dict(opml_path, example_index=None):
 def if_changed_write_json_file(json_file, json_dict):
     new_signature = compute_signature_from_json_content(json_dict)
     try:
-        old_signature = compute_signature_from_json_content(json.load(json_file))
-        do_write = new_signature != old_signature
+        old_json_dict = json.load(json_file)
+        old_signature_from_content = compute_signature_from_json_content(old_json_dict)
+        old_signature_stored = _json_dict_extract_signature(old_json_dict)
+        do_write = (new_signature != old_signature_from_content) or \
+            (new_signature != old_signature_stored)
     except json.decoder.JSONDecodeError:
         from traceback import print_exc
         print_exc()
@@ -411,6 +414,17 @@ def _json_example_add_signature(json_dict):
 
 
 # General helper methods
+
+def _json_dict_extract_signature(json_dict):
+    try:
+        if '$schema' in json_dict:  # JSON Schema
+            return json_dict['$comment'].split(': ')[-1]
+        elif '@schema' in json_dict:  # JSON example
+            return json_dict['doc_info']['doc_version']
+    except KeyError:
+        pass
+    return 'No signature found!'
+
 
 def _ignore_element(opml_elem):
     key = opml_elem.attrib.get('_text')
