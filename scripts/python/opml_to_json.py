@@ -207,8 +207,7 @@ def _json_schema_update_parent_ifthen(json_parent, element, name):
             full_attrib = element.attrib[if_then_attrib]
             all_rules = re.findall('\|?'
                                    '(?:(\w+)->)?'  # if_property
-                                   '(\w+)'  # if_property_child
-                                   '='
+                                   '(\w+)='  # if_property_child
                                    '([\w\/\:\.]+)'  # if_value
                                    '(?:;'
                                    '(?:(\w+)=)?'  # then_property
