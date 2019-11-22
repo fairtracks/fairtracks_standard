@@ -30,12 +30,12 @@ SCHEMA_FILES := $(wildcard $(SCHEMA_DIR)/*.schema.json)
 
 all: opml json
 
-$(GIT_HOOKS_DIR)/%: $(LOCAL_GIT_HOOKS_DIR)/%.sh
-	ln -sf "$<" "$@"
+$(GIT_HOOKS_DIR)/%: $(LOCAL_GIT_HOOKS_DIR)/%.sh Makefile
+	ln -sf "$(shell realpath --relative-to=$(GIT_HOOKS_DIR) $<)" "$@"
 
 git-hooks: $(GIT_HOOKS_FILES)
 
-$(VENV_ACTIVATE): $(INSTALL_VENV_SCRIPT) | $(GIT_HOOKS_FILES)
+$(VENV_ACTIVATE): $(INSTALL_VENV_SCRIPT) Makefile | $(GIT_HOOKS_FILES)
 	$(INSTALL_VENV_SCRIPT) $(VENV_DIR)
 
 venv: $(VENV_ACTIVATE)

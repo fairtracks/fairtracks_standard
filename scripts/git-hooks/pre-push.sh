@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
-echo "pre-push"
-. $(dirname $(realpath "$0"))/../sh/common.sh
+echo "Running pre-push..."
+repo_basedir=$(dirname $(realpath "$0"))/../..
+. "$repo_basedir/scripts/sh/common.sh"
 
 remote="$1"
 url="$2"
@@ -43,12 +44,13 @@ do
 		do
 		  echo "Checking out commit: $commit..."
       git checkout $commit
-      make_all
+      "$repo_basedir"/make_all.sh
 
       if ! check_no_uncommitted
       then
-        echo "'make --always-make' produced changes in the above committed files."
+        echo "'./make_all.sh' produced changes in the above committed files."
         echo "Aborting push..."
+        echo "****************"
 
         echo "Reverting to previous state: $prev_state"
         git reset --hard HEAD
