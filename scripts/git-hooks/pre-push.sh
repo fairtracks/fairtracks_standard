@@ -52,12 +52,12 @@ do
 		  printf "    %.50s...\n" "$commit_msg" 1>&2
 
       git checkout $commit 2>/dev/null
-      printf "Running './make_all.sh'...\n" 1>&2
-      "$repo_basedir"/make_all.sh >/dev/null
+      printf "Running './rebuild_all.sh'...\n" 1>&2
+      "$repo_basedir"/rebuild_all.sh >/dev/null
 
       if ! check_no_uncommitted
       then
-        printf "'./make_all.sh' produced changes to the above-mentioned files.\n" 1>&2
+        printf "'./rebuild_all.sh' produced changes to the above-mentioned files.\n" 1>&2
         printf "Aborting push...\n" 1>&2
         printf "****************\n" 1>&2
 

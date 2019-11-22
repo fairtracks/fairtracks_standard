@@ -46,7 +46,7 @@ b. `make git-hooks`
        where `$FIRST_COMMIT` is the first commit that need editing (you can find this in the log
        messages from the failed remote push).
     2. In the editor that appears, replace `pick` with `edit` for the commits that needs editing.
-    3. `./make_all.sh`
+    3. `./rebuild_all.sh`
     4. For all changed files: `git add $FILE`
     5. `git commit --amend`
     6. `git rebase --continue`
