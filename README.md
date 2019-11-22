@@ -39,9 +39,18 @@ b. `make git-hooks`
     
     It is especially important that the git hooks are installed before merging or rebasing is done, 
     as the SHA256 signatures of the JSON files may then need to be recalculated (by `make`) on 
-    merged/rebased commits. To fix such issues one might need to carry out an interactive rebase.
-    , 
-    editing the erroneous commits by simply running `make --always-make` before `rebase --continue`.
+    merged/rebased commits. To fix such issues (which will appear when trying a remote push) one 
+    will need to carry out an interactive rebase:
+    
+    1. Start interactive rebase: `git rebase -i $FIRST_COMMIT^`,
+       where `$FIRST_COMMIT` is the first commit that need editing (you can find this in the log
+       messages from the failed remote push).
+    2. In the editor that appears, replace `pick` with `edit` for the commits that needs editing.
+    3. `./make_all.sh`
+    4. For all changed files: `git add $FILE`
+    5. `git commit --amend`
+    6. `git rebase --continue`
+    7. Repeat iii-vi for all commits selected for editing. 
     
 ### 2. Main process (with `make` targets) for making changes to the standard
 
