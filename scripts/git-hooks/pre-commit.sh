@@ -10,7 +10,7 @@ then
   exit 1
 fi
 
-make --always-make
+make_all
 
 if ! check_no_uncommitted
 then

@@ -11,3 +11,12 @@ check_no_uncommitted()
   fi
   return 0
 }
+
+make_all()
+{
+  # Same functionality as 'make --always-make all' except that virtual environment is only
+  # installed if needed
+
+  make venv
+  make -W .venv/bin/activate all
+}

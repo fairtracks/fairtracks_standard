@@ -8,6 +8,17 @@ url="$2"
 
 z40=0000000000000000000000000000000000000000
 
+checkout_prev_state()
+{
+  prev_state=$1
+  fairtracks_schema_signature=$2
+
+  git checkout $prev_state
+  if git stash list -n 1 | grep $fairtracks_schema_signature
+    then
+      git stash pop
+    fi
+}
 
 while IFS=' ' read local_ref local_sha remote_ref remote_sha
 do
@@ -24,7 +35,7 @@ do
 
     prev_state=$(git name-rev --name-only $local_sha)
     fairtracks_schema_signature=$(make signature | grep "fairtracks.schema.json;" | cut -d ' ' -f 4)
-    git stash -m "$fairtracks_schema_signature"
+    git stash push -m "$fairtracks_schema_signature"
 
 		commits=$(git rev-list "$range" --reverse --not --remotes="$remote")
 
@@ -32,7 +43,7 @@ do
 		do
 		  echo "Checking out commit: $commit..."
       git checkout $commit
-      make --always-make
+      make_all
 
       if ! check_no_uncommitted
       then
@@ -41,16 +52,11 @@ do
 
         echo "Reverting to previous state: $prev_state"
         git reset --hard HEAD
-        git checkout $prev_state
-        git stash pop
+        checkout_prev_state $prev_state $fairtracks_schema_signature
         exit 1
       fi
 		done
 
-    git checkout $prev_state
-    if git stash list -n 1 | grep "$fairtracks_schema_signature"
-    then
-      git stash pop
-    fi
+    checkout_prev_state $prev_state $fairtracks_schema_signature
 	fi
 done
