@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 1 ]
 then
-  echo "usage: sh install_venv.sh venv_dir"
+  printf "usage: sh install_venv.sh venv_dir\n"
   exit 1
 fi
 

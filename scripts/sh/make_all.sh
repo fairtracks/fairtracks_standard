@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "Force the making of all targets except 'venv' and 'git-hooks', which are only made if needed..."
+printf "Force 'make' to rebuild all targets except 'venv' and 'git-hooks', which are only built if needed...\n"
 
 make venv
 make -W .venv/bin/activate all

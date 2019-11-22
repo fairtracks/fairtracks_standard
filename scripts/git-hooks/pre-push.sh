@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "Running pre-push..."
+printf "Running pre-push...\n"  1>&2
 repo_basedir=$(dirname $(realpath "$0"))/../..
 . "$repo_basedir/scripts/sh/common.sh"
 
@@ -14,11 +14,12 @@ checkout_prev_state()
   prev_state=$1
   fairtracks_schema_signature=$2
 
-  git checkout $prev_state
-  if git stash list -n 1 | grep $fairtracks_schema_signature
-    then
-      git stash pop
-    fi
+  git checkout $prev_state >/dev/null 2>&1
+  if git stash list -n 1 | grep $fairtracks_schema_signature >/dev/null
+  then
+    printf "Unstashing: %s...\n" $fairtracks_schema_signature
+    git stash pop >/dev/null
+  fi
 }
 
 while IFS=' ' read local_ref local_sha remote_ref remote_sha
@@ -36,24 +37,32 @@ do
 
     prev_state=$(git name-rev --name-only $local_sha)
     fairtracks_schema_signature=$(make signature | grep "fairtracks.schema.json;" | cut -d ' ' -f 4)
-    git stash push -m "$fairtracks_schema_signature"
+    if ! git diff --quiet
+    then
+      printf "Stashing uncommitted changes: %s...\n" "$fairtracks_schema_signature"
+      git stash push -m "$fairtracks_schema_signature" >/dev/null
+    fi
 
 		commits=$(git rev-list "$range" --reverse --not --remotes="$remote")
 
 		for commit in $commits
 		do
-		  echo "Checking out commit: $commit..."
-      git checkout $commit
-      "$repo_basedir"/make_all.sh
+		  commit_msg="$(git log --format=%B -n 1 $commit)"
+		  printf "Checking out commit %s:\n" $commit 1>&2
+		  printf "    %.50s...\n" "$commit_msg" 1>&2
+
+      git checkout $commit 2>/dev/null
+      printf "Running './make_all.sh'...\n" 1>&2
+      "$repo_basedir"/make_all.sh >/dev/null
 
       if ! check_no_uncommitted
       then
-        echo "'./make_all.sh' produced changes in the above committed files."
-        echo "Aborting push..."
-        echo "****************"
+        printf "'./make_all.sh' produced changes to the above-mentioned files.\n" 1>&2
+        printf "Aborting push...\n" 1>&2
+        printf "****************\n" 1>&2
 
-        echo "Reverting to previous state: $prev_state"
-        git reset --hard HEAD
+        printf "Switching to previous state: %s...\n" "$prev_state" 1>&2
+        git reset --hard HEAD >/dev/null
         checkout_prev_state $prev_state $fairtracks_schema_signature
         exit 1
       fi

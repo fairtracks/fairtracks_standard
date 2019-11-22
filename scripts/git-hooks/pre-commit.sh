@@ -1,23 +1,24 @@
 #!/usr/bin/env sh
 
-echo "pre-commit"
+printf "Running pre-commit...\n" 1>&2
 repo_basedir=$(dirname $(realpath "$0"))/../..
 . "$repo_basedir/scripts/sh/common.sh"
 
 if ! check_no_uncommitted
 then
-  echo "Please commit all changes in all committed files."
-  echo "Aborting commit..."
-  echo "****************"
+  printf "Please commit all changes to all tracked files.\n" 1>&2
+  printf "Aborting commit...\n" 1>&2
+  printf "****************\n" 1>&2
   exit 1
 fi
 
-"$repo_basedir"/make_all.sh
+printf "Running './make_all.sh'...\n" 1>&2
+"$repo_basedir"/make_all.sh >/dev/null
 
 if ! check_no_uncommitted
 then
-  echo "'./make_all.sh' produced changes in the repo."
-  echo "Aborting commit..."
-  echo "****************"
+  printf "'./make_all.sh' produced changes to the above-mentioned files.\n" 1>&2
+  printf "Aborting commit...\n" 1>&2
+  printf "****************\n" 1>&2
   exit 1
 fi
