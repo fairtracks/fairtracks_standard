@@ -12,6 +12,7 @@ from datetime import datetime
 from json_signature import compute_signature_from_json_content
 
 ATTRIBS_TO_IMPORT = [
+    'title',
     'description',
     'type',
     'format',
@@ -37,9 +38,6 @@ NEVER_ARRAY_ATTRIBS = ['pattern']
 IF_THEN_ATTRIBS = ['constIf', 'requireIf']
 ARRAY_SPLIT_CHAR_LEVEL_1 = '|'
 ARRAY_SPLIT_CHAR_LEVEL_2 = ';'
-IF_PARENT_SEP = '->'
-IF_THEN_VALUE_CHECK_SEP = '='
-THEN_VALUE_CHECK_SEP = ';'
 MAX_EXAMPLES_COUNT = 4
 EXAMPLE_SKIP_CHAR = '.'
 BOOLEAN_MAP = {'true': True, 'false': False}
@@ -132,10 +130,10 @@ def if_changed_write_json_file(json_file, json_dict):
 def _json_schema_create_root(opml_root):
     json_dict = NestedOrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
-    json_dict['$id'] = opml_root.find(".//outline[@_text='@schema']").attrib['const']
+    json_dict['$id'] = opml_root.find(".//outline[@_key='@schema']").attrib['const']
     json_dict['$comment'] = ""
-    json_dict['title'] = opml_root.find(".//outline[@_text='#title']").attrib['const']
-    json_dict['type'] = 'object'
+    json_dict['title'] = opml_root.find(".//outline[@_key='#toplevel']").attrib['title']
+    json_dict['type'] = opml_root.find(".//outline[@_key='#toplevel']").attrib['type']
     return json_dict
 
 
@@ -186,11 +184,11 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        name = element.attrib['_text']
+        name = element.attrib['_key']
         json_parent['properties'][name] = json_child
 
         _json_schema_update_parent_required(json_parent, element, name)
-        _json_schema_update_parent_anyof(json_parent, element, name)
+        _json_schema_update_parent_require_anyof(json_parent, element, name)
         _json_schema_update_parent_ifthen(json_parent, element, name)
 
 
@@ -201,8 +199,8 @@ def _json_schema_update_parent_required(json_parent, element, name):
         json_parent['required'].append(name)
 
 
-def _json_schema_update_parent_anyof(json_parent, element, name):
-    if 'anyOf' in element.attrib and element.attrib['anyOf'] == 'true':
+def _json_schema_update_parent_require_anyof(json_parent, element, name):
+    if 'requireAnyOf' in element.attrib and element.attrib['requireAnyOf'] == 'true':
         if 'anyOf' not in json_parent:
             json_parent['anyOf'] = []
         json_parent['anyOf'].append({'required': [name]})
@@ -213,7 +211,7 @@ def _json_schema_update_parent_ifthen(json_parent, element, name):
         if if_then_attrib in element.attrib and element.attrib[if_then_attrib] != '':
             full_attrib = element.attrib[if_then_attrib]
             all_rules = re.findall('\|?'
-                                   '(?:(\w+)->)?'  # if_property
+                                   '(?:(\w+)/)?'  # if_property
                                    '(\w+)='  # if_property_child
                                    '([\w\/\:\.]+)'  # if_value
                                    '(?:;'
@@ -307,7 +305,7 @@ def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
 def _json_example_add_children_to_parent(element, json_children, json_parent):
     if isinstance(json_parent, dict):
         assert(len(json_children) == 1)
-        key = element.attrib['_text']
+        key = element.attrib['_key']
         json_parent[key] = json_children[0]
     else:  # array
         for json_child in json_children:
@@ -433,7 +431,7 @@ def _json_dict_extract_signature(json_dict):
 
 
 def _ignore_element(opml_elem):
-    key = opml_elem.attrib.get('_text')
+    key = opml_elem.attrib.get('_key')
     if key:
         return key.startswith('#')
     else:
