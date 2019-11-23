@@ -41,6 +41,7 @@ IF_PARENT_SEP = '->'
 IF_THEN_VALUE_CHECK_SEP = '='
 THEN_VALUE_CHECK_SEP = ';'
 MAX_EXAMPLES_COUNT = 4
+EXAMPLE_SKIP_CHAR = '.'
 BOOLEAN_MAP = {'true': True, 'false': False}
 
 
@@ -153,6 +154,9 @@ def _json_schema_create_child(opml_elem):
 
     if 'type' in opml_elem.attrib and opml_elem.attrib['type'] == 'array':
         json_child['items'] = NestedOrderedDict()
+
+    if 'examples' in opml_elem.attrib and opml_elem.attrib['examples'] == EXAMPLE_SKIP_CHAR:
+        del json_child['examples']
 
     return json_child
 
@@ -277,7 +281,7 @@ def _json_example_create_subtree(opml_path, opml_root, json_parent, example_inde
         if _is_ref(opml_elem):
             json_child = _json_example_get_child_for_ref(
                 opml_path, opml_elem, example_index)
-            json_children = [json_child]
+            json_children = [json_child] if json_child else None
         else:
             json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
             if json_elem_array:
@@ -293,8 +297,10 @@ def _json_example_create_subtree(opml_path, opml_root, json_parent, example_inde
 def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
     ref_opml_path = _generate_opml_path_from_ref(opml_path, opml_elem)
     json_child = create_json_example_dict(ref_opml_path, example_index=example_index)
-    if "@schema" in json_child:
+    if '@schema' in json_child:
         del json_child['@schema']
+    if 'examples' in opml_elem.attrib and opml_elem.attrib['examples'] == EXAMPLE_SKIP_CHAR:
+        return None
     return json_child
 
 

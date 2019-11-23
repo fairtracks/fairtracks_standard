@@ -5,13 +5,14 @@
     "study_ref": "UW_ChipSeq",
     "sample_ref": "geo:GSM945229",
     "technique": {
-        "term_url": "http://purl.obolibrary.org/obo/OBI_0000716",
-        "term_value": "ChIP-seq assay"
+        "term_url": "http://purl.obolibrary.org/obo/OBI_0002017",
+        "term_value": "histone modification identification by ChIP-Seq assay"
     },
-    "target": {
+    "sequence_feature": {
         "term_url": "http://purl.obolibrary.org/obo/SO_0001706",
         "term_value": "H3K4_trimethylation"
     },
+    "target": "H3K4_trimethylation",
     "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
     "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
 }
