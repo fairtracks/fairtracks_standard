@@ -1,0 +1,5 @@
+{
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
+    "term_url": "http://purl.obolibrary.org/obo/NCIT_C14165",
+    "term_value": "Normal"
+}

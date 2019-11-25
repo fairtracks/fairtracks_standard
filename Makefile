@@ -18,8 +18,8 @@ GIT_HOOKS_FILES := $(patsubst $(LOCAL_GIT_HOOKS_DIR)/%,$(GIT_HOOKS_DIR)/%,${LOCA
 OVERVIEW_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.opml)
 OVERVIEW_RAW_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.raw.opml)
 OVERVIEW_RAW_OLD_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.raw.opml.old)
-EXAMPLE_FILES := $(wildcard $(EXAMPLE_DIR)/*.example.json)
-SCHEMA_FILES := $(wildcard $(SCHEMA_DIR)/*.schema.json)
+EXAMPLE_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(EXAMPLE_DIR)/%,${OVERVIEW_FILES:.overview.opml=.example.json})
+SCHEMA_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(SCHEMA_DIR)/%,${OVERVIEW_FILES:.overview.opml=.schema.json})
 
 .ONESHELL:
 
@@ -56,17 +56,13 @@ clean: rawclean
 	rm -rf $(VENV_DIR)
 	rm -f $(GIT_HOOKS_FILES)
 
-opml: $(OVERVIEW_RAW_FILES)
+opml: $(OVERVIEW_FILES)
 
 json: $(SCHEMA_FILES) $(EXAMPLE_FILES)
 
-$(SCHEMA_DIR)/fairtracks_%.schema.json: $(OVERVIEW_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(VENV_ACTIVATE)
+$(SCHEMA_DIR)/%.schema.json: $(OVERVIEW_DIR)/%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(VENV_ACTIVATE)
 	$(VENV_ACTIVATE)
-	python3 $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/fairtracks_$*.overview.opml $(SCHEMA_DIR)/fairtracks_$*.schema.json
-
-$(SCHEMA_DIR)/fairtracks.schema.json: $(OVERVIEW_DIR)/fairtracks.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(VENV_ACTIVATE)
-	$(VENV_ACTIVATE)
-	python3 $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/fairtracks.overview.opml $(SCHEMA_DIR)/fairtracks.schema.json
+	python3 $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/$*.overview.opml $(SCHEMA_DIR)/$*.schema.json
 
 $(EXAMPLE_DIR)/fairtracks_%.example.json: $(OVERVIEW_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(VENV_ACTIVATE)
 	$(VENV_ACTIVATE)

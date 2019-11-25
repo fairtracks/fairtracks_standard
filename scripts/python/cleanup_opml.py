@@ -27,7 +27,7 @@ def cleanup_opml_file(opml_in_path, opml_out_path):
     xml_string = '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_string
 
     with open(opml_out_path, 'w') as opml_out_file:
-        opml_out_file.write(xml_string)
+        opml_out_file.write(xml_string + '\n')
 
 
 if __name__ == "__main__":

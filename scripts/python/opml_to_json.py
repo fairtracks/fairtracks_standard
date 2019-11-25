@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import xml.etree.ElementTree as ElementTree
 
 from collections import OrderedDict, namedtuple, defaultdict
@@ -59,15 +60,25 @@ RuleCategory = namedtuple('RuleCategory', ('if_property', 'if_property_child',
                                            'then_property', 'then_value'))
 
 
+class ArgumentParserError(Exception): pass
+
+
+class ThrowingArgumentParser(argparse.ArgumentParser):
+    def error(self, message):
+        raise ArgumentParserError(message)
+
+
 # Public methods
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate JSON schema or example '
-                                                 'JSON from OPML overview file')
-    parser.add_argument('json_type', choices=['schema', 'single_example', 'full_example'])
-    parser.add_argument('in_opml', type=argparse.FileType('r'))
-    parser.add_argument('out_json', type=argparse.FileType('r+'))
-    args = parser.parse_args()
+    try:
+        args = _parseArgs(out_file_mode='r+')
+    except ArgumentParserError:
+        try:
+            args = _parseArgs(out_file_mode='w')
+        except ArgumentParserError as e:
+            print('Error - {}'.format(e), file=sys.stderr)
+            sys.exit(1)
 
     if args.json_type == 'schema':
         json_dict = create_json_schema_dict(args.in_opml.name)
@@ -77,6 +88,15 @@ def main():
         json_dict = create_json_example_dict(args.in_opml.name)
 
     if_changed_write_json_file(args.out_json, json_dict)
+
+
+def _parseArgs(out_file_mode):
+    parser = ThrowingArgumentParser(description='Generate JSON schema or example '
+                                                'JSON from OPML overview file')
+    parser.add_argument('json_type', choices=['schema', 'single_example', 'full_example'])
+    parser.add_argument('in_opml', type=argparse.FileType('r'))
+    parser.add_argument('out_json', type=argparse.FileType(out_file_mode))
+    return parser.parse_args()
 
 
 def create_json_schema_dict(opml_path):
@@ -107,7 +127,10 @@ def create_json_example_dict(opml_path, example_index=None):
 def if_changed_write_json_file(json_file, json_dict):
     new_signature = compute_signature_from_json_content(json_dict)
     try:
-        old_json_dict = json.load(json_file)
+        try:
+            old_json_dict = json.load(json_file)
+        except (io.UnsupportedOperation, json.JSONDecodeError):
+            old_json_dict = {}
         old_signature_from_content = compute_signature_from_json_content(old_json_dict)
         old_signature_stored = _json_dict_extract_signature(old_json_dict)
         do_write = (new_signature != old_signature_from_content) or \
@@ -120,7 +143,8 @@ def if_changed_write_json_file(json_file, json_dict):
     if do_write:
         json_file.seek(0)
         json_file.truncate()
-        json_file.write(json.dumps(json_dict, indent=4))
+        json_file.write(json.dumps(json_dict, indent=4) + '\n')
+        json_file.flush()
     else:
         os.utime(json_file.name)
 
