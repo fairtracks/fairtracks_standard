@@ -1,12 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 389020e5a7080b8cd13d53dc24d5a1fc3bcff20417b28a70f31884712a6589f0",
-    "title": "FAIRification of Genomic Tracks JSON Schema - Track",
+    "$comment": "JSON signature: 8b80a8c2a7bca13df4728546b20fe3841cd76cfe50ed126cd2395313a4bf1366",
+    "title": "Track",
     "type": "object",
     "properties": {
         "@schema": {
-            "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
+            "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
@@ -38,12 +38,14 @@
         "experiment_ref": {
             "description": "Reference to the experiment of the track (using the submitter-local identifier of the sample)",
             "type": "string",
+            "format": "foreign_ref",
             "examples": [
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP"
-            ]
+            ],
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json#local_id"
         },
         "raw_file_ids": {
             "type": "array",

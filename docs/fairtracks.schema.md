@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema Schema
+# FAIRtracks Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json
@@ -8,23 +8,23 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------ |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks.schema.json](../json/schema/fairtracks.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema Properties
+# FAIRtracks Properties
 
-| Property                            | Type                                                     | Required     | Nullable | Defined by                                                |
-| ----------------------------------- | -------------------------------------------------------- | ------------ | -------- | --------------------------------------------------------- |
-| [@schema](#schema)                  | `const`                                                  | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [collection_info](#collection_info) | `object`                                                 | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [doc_info](#doc_info)               | `object`                                                 | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [experiments](#experiments)         | FAIRification of Genomic Tracks JSON Schema - Experiment | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [samples](#samples)                 | FAIRification of Genomic Tracks JSON Schema - Sample     | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [studies](#studies)                 | FAIRification of Genomic Tracks JSON Schema - Study      | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| [tracks](#tracks)                   | FAIRification of Genomic Tracks JSON Schema - Track      | **Required** | No       | FAIRification of Genomic Tracks JSON Schema (this schema) |
-| `*`                                 | any                                                      | Additional   | Yes      | this schema _allows_ additional properties                |
+| Property                            | Type       | Required     | Nullable | Defined by                                 |
+| ----------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                  | `const`    | **Required** | No       | FAIRtracks (this schema)                   |
+| [collection_info](#collection_info) | `object`   | **Required** | No       | FAIRtracks (this schema)                   |
+| [doc_info](#doc_info)               | `object`   | **Required** | No       | FAIRtracks (this schema)                   |
+| [experiments](#experiments)         | Experiment | **Required** | No       | FAIRtracks (this schema)                   |
+| [samples](#samples)                 | Sample     | **Required** | No       | FAIRtracks (this schema)                   |
+| [studies](#studies)                 | Study      | **Required** | No       | FAIRtracks (this schema)                   |
+| [tracks](#tracks)                   | Track      | **Required** | No       | FAIRtracks (this schema)                   |
+| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of '\$id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 
@@ -40,6 +40,8 @@ The value of this property **must** be equal to:
 ```
 
 ## collection_info
+
+General information about the collection of tracks that is annotated in the current FAIRtracks JSON document
 
 `collection_info`
 
@@ -301,6 +303,8 @@ https://www.encodeproject.org/search
 
 ## doc_info
 
+Version and related information about the current FAIRtracks JSON document
+
 `doc_info`
 
 - is **required**
@@ -380,76 +384,84 @@ Version of this FAIRtracks JSON document
 
 ## experiments
 
+Array of JSON documents describing the different experiments that have produced data for the track collection
+
 `experiments`
 
 - is **required**
-- type: FAIRification of Genomic Tracks JSON Schema - Experiment
+- type: Experiment
 - at least `1` items in the array
 - defined in this schema
 
 ### experiments Type
 
-Array type: FAIRification of Genomic Tracks JSON Schema - Experiment
+Array type: Experiment
 
 All items must be of the type:
 
-- [FAIRification of Genomic Tracks JSON Schema - Experiment](fairtracks_experiment.schema.md) –
+- [Experiment](fairtracks_experiment.schema.md) –
 - constIf:
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json`
 
 ## samples
 
+Array of JSON documents describing the different samples that have been analyzed to create the track collection
+
 `samples`
 
 - is **required**
-- type: FAIRification of Genomic Tracks JSON Schema - Sample
+- type: Sample
 - at least `1` items in the array
 - defined in this schema
 
 ### samples Type
 
-Array type: FAIRification of Genomic Tracks JSON Schema - Sample
+Array type: Sample
 
 All items must be of the type:
 
-- [FAIRification of Genomic Tracks JSON Schema - Sample](fairtracks_sample.schema.md) –
+- [Sample](fairtracks_sample.schema.md) –
 - constIf:
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json`
 
 ## studies
 
+Array of JSON documents describing different studies that have produced data for the track collection
+
 `studies`
 
 - is **required**
-- type: FAIRification of Genomic Tracks JSON Schema - Study
+- type: Study
 - at least `1` items in the array
 - defined in this schema
 
 ### studies Type
 
-Array type: FAIRification of Genomic Tracks JSON Schema - Study
+Array type: Study
 
 All items must be of the type:
 
-- [FAIRification of Genomic Tracks JSON Schema - Study](fairtracks_study.schema.md) –
+- [Study](fairtracks_study.schema.md) –
 - constIf:
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json`
 
 ## tracks
 
+Array of JSON documents describing the different track files in the collection
+
 `tracks`
 
 - is **required**
-- type: FAIRification of Genomic Tracks JSON Schema - Track
+- type: Track
 - at least `1` items in the array
 - defined in this schema
 
 ### tracks Type
 
-Array type: FAIRification of Genomic Tracks JSON Schema - Track
+Array type: Track
 
 All items must be of the type:
 
-- [FAIRification of Genomic Tracks JSON Schema - Track](fairtracks_track.schema.md) –
+- [Track](fairtracks_track.schema.md) –
 - constIf:
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json`

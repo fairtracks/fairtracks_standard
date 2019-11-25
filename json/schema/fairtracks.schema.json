@@ -1,18 +1,19 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: c5a97ae267b8d5c50d54c514834682cc3ca0595dc0a06d18565999ef6830954f",
-    "title": "FAIRification of Genomic Tracks JSON Schema",
+    "$comment": "JSON signature: 011e53ef14e6583efa055d671a554ffe713c10c68ca460063d2d6b933b88def7",
+    "title": "FAIRtracks",
     "type": "object",
     "properties": {
         "@schema": {
-            "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
+            "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
         },
         "doc_info": {
+            "description": "Version and related information about the current FAIRtracks JSON document",
             "type": "object",
             "properties": {
                 "doc_url": {
@@ -40,6 +41,7 @@
             ]
         },
         "collection_info": {
+            "description": "General information about the collection of tracks that is annotated in the current FAIRtracks JSON document",
             "type": "object",
             "properties": {
                 "short_name": {
@@ -146,6 +148,7 @@
             ]
         },
         "studies": {
+            "description": "Array of JSON documents describing different studies that have produced data for the track collection",
             "type": "array",
             "minItems": 1,
             "items": {
@@ -153,6 +156,7 @@
             }
         },
         "experiments": {
+            "description": "Array of JSON documents describing the different experiments that have produced data for the track collection",
             "type": "array",
             "minItems": 1,
             "items": {
@@ -160,6 +164,7 @@
             }
         },
         "samples": {
+            "description": "Array of JSON documents describing the different samples that have been analyzed to create the track collection",
             "type": "array",
             "minItems": 1,
             "items": {
@@ -167,6 +172,7 @@
             }
         },
         "tracks": {
+            "description": "Array of JSON documents describing the different track files in the collection",
             "type": "array",
             "minItems": 1,
             "items": {

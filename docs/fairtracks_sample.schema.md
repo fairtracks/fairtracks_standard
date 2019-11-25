@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema - Sample Schema
+# Sample Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json
@@ -8,26 +8,26 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------- |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_sample.schema.json](../json/schema/fairtracks_sample.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema - Sample Properties
+# Sample Properties
 
-| Property                                  | Type      | Required     | Nullable | Defined by                                                         |
-| ----------------------------------------- | --------- | ------------ | -------- | ------------------------------------------------------------------ |
-| [@schema](#schema)                        | `const`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [abnormal_cell_type](#abnormal_cell_type) | `object`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [biospecimen_class](#biospecimen_class)   | `object`  | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [cell_line](#cell_line)                   | `object`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [cell_type](#cell_type)                   | `object`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [global_id](#global_id)                   | `string`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [local_id](#local_id)                     | `string`  | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [main_type](#main_type)                   | `string`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [organism_part](#organism_part)           | `object`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| [phenotype](#phenotype)                   | reference | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Sample (this schema) |
-| `*`                                       | any       | Additional   | Yes      | this schema _allows_ additional properties                         |
+| Property                                  | Type      | Required     | Nullable | Defined by                                 |
+| ----------------------------------------- | --------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                        | `const`   | Optional     | No       | Sample (this schema)                       |
+| [abnormal_cell_type](#abnormal_cell_type) | `object`  | Optional     | No       | Sample (this schema)                       |
+| [biospecimen_class](#biospecimen_class)   | `object`  | **Required** | No       | Sample (this schema)                       |
+| [cell_line](#cell_line)                   | `object`  | Optional     | No       | Sample (this schema)                       |
+| [cell_type](#cell_type)                   | `object`  | Optional     | No       | Sample (this schema)                       |
+| [global_id](#global_id)                   | `string`  | Optional     | No       | Sample (this schema)                       |
+| [local_id](#local_id)                     | `string`  | **Required** | No       | Sample (this schema)                       |
+| [main_type](#main_type)                   | `string`  | Optional     | No       | Sample (this schema)                       |
+| [organism_part](#organism_part)           | `object`  | Optional     | No       | Sample (this schema)                       |
+| [phenotype](#phenotype)                   | reference | **Required** | No       | Sample (this schema)                       |
+| `*`                                       | any       | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of 'id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 

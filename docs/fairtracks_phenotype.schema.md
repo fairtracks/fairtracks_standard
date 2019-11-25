@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema - Phenotype Schema
+# Phenotype Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json
@@ -8,19 +8,19 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------------- |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_phenotype.schema.json](../json/schema/fairtracks_phenotype.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema - Phenotype Properties
+# Phenotype Properties
 
-| Property                  | Type     | Required     | Nullable | Default                                        | Defined by                                                            |
-| ------------------------- | -------- | ------------ | -------- | ---------------------------------------------- | --------------------------------------------------------------------- |
-| [@schema](#schema)        | `const`  | Optional     | No       |                                                | FAIRification of Genomic Tracks JSON Schema - Phenotype (this schema) |
-| [term_url](#term_url)     | `string` | **Required** | No       | `"http://purl.obolibrary.org/obo/NCIT_C14165"` | FAIRification of Genomic Tracks JSON Schema - Phenotype (this schema) |
-| [term_value](#term_value) | `string` | Optional     | No       | `"Normal"`                                     | FAIRification of Genomic Tracks JSON Schema - Phenotype (this schema) |
+| Property                  | Type     | Required     | Nullable | Default                                        | Defined by              |
+| ------------------------- | -------- | ------------ | -------- | ---------------------------------------------- | ----------------------- |
+| [@schema](#schema)        | `const`  | Optional     | No       |                                                | Phenotype (this schema) |
+| [term_url](#term_url)     | `string` | **Required** | No       | `"http://purl.obolibrary.org/obo/NCIT_C14165"` | Phenotype (this schema) |
+| [term_value](#term_value) | `string` | Optional     | No       | `"Normal"`                                     | Phenotype (this schema) |
 | `*`                       | any      | Additional   | Yes      | this schema _allows_ additional properties     |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of 'id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 

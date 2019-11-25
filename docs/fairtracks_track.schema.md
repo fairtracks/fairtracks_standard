@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema - Track Schema
+# Track Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json
@@ -8,29 +8,29 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------ |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_track.schema.json](../json/schema/fairtracks_track.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema - Track Properties
+# Track Properties
 
-| Property                            | Type       | Required     | Nullable | Defined by                                                        |
-| ----------------------------------- | ---------- | ------------ | -------- | ----------------------------------------------------------------- |
-| [@schema](#schema)                  | `const`    | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [checksum](#checksum)               | `object`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [content_type](#content_type)       | `object`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [experiment_ref](#experiment_ref)   | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [file_format](#file_format)         | `object`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [file_name](#file_name)             | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [file_url](#file_url)               | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [genome_assembly](#genome_assembly) | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [global_id](#global_id)             | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [label_long](#label_long)           | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [label_short](#label_short)         | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [local_id](#local_id)               | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| [raw_file_ids](#raw_file_ids)       | `string[]` | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Track (this schema) |
-| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties                        |
+| Property                            | Type       | Required     | Nullable | Defined by                                 |
+| ----------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                  | `const`    | Optional     | No       | Track (this schema)                        |
+| [checksum](#checksum)               | `object`   | **Required** | No       | Track (this schema)                        |
+| [content_type](#content_type)       | `object`   | **Required** | No       | Track (this schema)                        |
+| [experiment_ref](#experiment_ref)   | `string`   | **Required** | No       | Track (this schema)                        |
+| [file_format](#file_format)         | `object`   | **Required** | No       | Track (this schema)                        |
+| [file_name](#file_name)             | `string`   | Optional     | No       | Track (this schema)                        |
+| [file_url](#file_url)               | `string`   | **Required** | No       | Track (this schema)                        |
+| [genome_assembly](#genome_assembly) | `string`   | **Required** | No       | Track (this schema)                        |
+| [global_id](#global_id)             | `string`   | Optional     | No       | Track (this schema)                        |
+| [label_long](#label_long)           | `string`   | **Required** | No       | Track (this schema)                        |
+| [label_short](#label_short)         | `string`   | **Required** | No       | Track (this schema)                        |
+| [local_id](#local_id)               | `string`   | **Required** | No       | Track (this schema)                        |
+| [raw_file_ids](#raw_file_ids)       | `string[]` | Optional     | No       | Track (this schema)                        |
+| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of '\$id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 
@@ -223,6 +223,9 @@ Reference to the experiment of the track (using the submitter-local identifier o
 - is **required**
 - type: `string`
 - defined in this schema
+- format: foreign_ref
+- foreignProperty:
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json#local_id
 
 ### experiment_ref Type
 

@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema - Study Schema
+# Study Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json
@@ -8,22 +8,22 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------ |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_study.schema.json](../json/schema/fairtracks_study.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema - Study Properties
+# Study Properties
 
-| Property                    | Type     | Required     | Nullable | Defined by                                                        |
-| --------------------------- | -------- | ------------ | -------- | ----------------------------------------------------------------- |
-| [@schema](#schema)          | `const`  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| [contact](#contact)         | `object` | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| [global_id](#global_id)     | `string` | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| [local_id](#local_id)       | `string` | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| [publication](#publication) | `string` | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| [study_name](#study_name)   | `string` | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Study (this schema) |
-| `*`                         | any      | Additional   | Yes      | this schema _allows_ additional properties                        |
+| Property                    | Type     | Required     | Nullable | Defined by                                 |
+| --------------------------- | -------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)          | `const`  | Optional     | No       | Study (this schema)                        |
+| [contact](#contact)         | `object` | **Required** | No       | Study (this schema)                        |
+| [global_id](#global_id)     | `string` | Optional     | No       | Study (this schema)                        |
+| [local_id](#local_id)       | `string` | **Required** | No       | Study (this schema)                        |
+| [publication](#publication) | `string` | Optional     | No       | Study (this schema)                        |
+| [study_name](#study_name)   | `string` | **Required** | No       | Study (this schema)                        |
+| `*`                         | any      | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of '\$id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 

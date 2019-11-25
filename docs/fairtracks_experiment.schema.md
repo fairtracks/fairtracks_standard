@@ -1,4 +1,4 @@
-# FAIRification of Genomic Tracks JSON Schema - Experiment Schema
+# Experiment Schema
 
 ```
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json
@@ -8,32 +8,32 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ---------------------------------------------------------------------- |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_experiment.schema.json](../json/schema/fairtracks_experiment.schema.json) |
 
-# FAIRification of Genomic Tracks JSON Schema - Experiment Properties
+# Experiment Properties
 
-| Property                                                      | Type       | Required     | Nullable | Defined by                                                             |
-| ------------------------------------------------------------- | ---------- | ------------ | -------- | ---------------------------------------------------------------------- |
-| [@schema](#schema)                                            | `const`    | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [aggregated_from](#aggregated_from)                           | `string[]` | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [compute_protocol_description](#compute_protocol_description) | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [gene_id](#gene_id)                                           | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [gene_product_type](#gene_product_type)                       | `object`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [global_id](#global_id)                                       | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [lab_protocol_description](#lab_protocol_description)         | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [local_id](#local_id)                                         | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [macromolecular_structure](#macromolecular_structure)         | `object`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [phenotype](#phenotype)                                       | reference  | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [sample_ref](#sample_ref)                                     | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [sequence_feature](#sequence_feature)                         | `object`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [study_ref](#study_ref)                                       | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [target](#target)                                             | `string`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [target_details](#target_details)                             | `string`   | Optional     | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| [technique](#technique)                                       | `object`   | **Required** | No       | FAIRification of Genomic Tracks JSON Schema - Experiment (this schema) |
-| `*`                                                           | any        | Additional   | Yes      | this schema _allows_ additional properties                             |
+| Property                                                      | Type       | Required     | Nullable | Defined by                                 |
+| ------------------------------------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                                            | `const`    | Optional     | No       | Experiment (this schema)                   |
+| [aggregated_from](#aggregated_from)                           | `string[]` | Optional     | No       | Experiment (this schema)                   |
+| [compute_protocol_description](#compute_protocol_description) | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [gene_id](#gene_id)                                           | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [gene_product_type](#gene_product_type)                       | `object`   | Optional     | No       | Experiment (this schema)                   |
+| [global_id](#global_id)                                       | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [lab_protocol_description](#lab_protocol_description)         | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [local_id](#local_id)                                         | `string`   | **Required** | No       | Experiment (this schema)                   |
+| [macromolecular_structure](#macromolecular_structure)         | `object`   | Optional     | No       | Experiment (this schema)                   |
+| [phenotype](#phenotype)                                       | reference  | Optional     | No       | Experiment (this schema)                   |
+| [sample_ref](#sample_ref)                                     | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [sequence_feature](#sequence_feature)                         | `object`   | Optional     | No       | Experiment (this schema)                   |
+| [study_ref](#study_ref)                                       | `string`   | **Required** | No       | Experiment (this schema)                   |
+| [target](#target)                                             | `string`   | **Required** | No       | Experiment (this schema)                   |
+| [target_details](#target_details)                             | `string`   | Optional     | No       | Experiment (this schema)                   |
+| [technique](#technique)                                       | `object`   | **Required** | No       | Experiment (this schema)                   |
+| `*`                                                           | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
-The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value
-of 'id' in the linked schema
+The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '\$id' in the linked
+schema
 
 `@schema`
 

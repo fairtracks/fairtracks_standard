@@ -12,35 +12,31 @@ The FAIRtracks standard consists of a main JSON Schema and a set of subschemas. 
 of track metadata must validate towards the main FAIRtracks JSON Schema to be said to follow 
 the standard.
 
->  Note: We will use the term "JSON document" in the broad sense, as any JSON content that 
->  validates against a JSON Schema, be it the main FAIRtracks schema or one of the subschemas. Due 
->  to the structure described below, FAIRtracks-validated metadata for a track collection will 
->  consist of a single JSON document containing sub-documents that again validate towards the 
->  different subchemas.
-
 ### Documentation of the FAIRtracks JSON Schemas
 
 - The main FAIRtracks JSON Schema is simply named `fairtracks.schema.json` and is documented here:
 
-  Title | Documentation 
-  ----- | -------------
-  FAIRtracks JSON Schema | [fairtracks.schema.json](docs/fairtracks.schema.md)
+  Title | JSON Schema   | Documentation 
+  ----- | ------------- | -------------
+  FAIRtracks JSON Schema | [fairtracks.schema.json](json/schema/fairtracks.schema.json) | [fairtracks.schema.md](docs/fairtracks.schema.md)
 
-- This top-level FAIRtracks JSON Schema consist of four main subschemas, representing the main object 
-  types:
+- This top-level FAIRtracks JSON Schema contains, in addition to some general metadata fields, four 
+  arrays of JSON sub-documents for the four main object types in FAIRtracks: `studies`, `experiments`, `samples`, 
+  and `tracks`. Each of these object types are described in a separate sub-schema:
 
-  Title | Documentation 
-  ----- | -------------
-  Study | [fairtracks_study.schema.json](docs/fairtracks_study.schema.json)
-  Experiment | [fairtracks_experiment.schema.json](docs/fairtracks_experiment.schema.json)
-  Sample | [fairtracks_sample.schema.json](docs/fairtracks_sample.schema.json)
-  Track | [fairtracks_track.schema.json](docs/fairtracks_track.schema.json)
+  Title | JSON Schema   | Documentation 
+  ----- | ------------- | -------------
+  Study | [fairtracks_study.schema.json](json/schema/fairtracks_study.schema.json) | [fairtracks_study.schema.md](docs/fairtracks_study.schema.md)
+  Experiment | [fairtracks_experiment.schema.json](json/schema/fairtracks_experiment.schema.json) | [fairtracks_experiment.schema.md](docs/fairtracks_experiment.schema.md)
+  Sample | [fairtracks_sample.schema.json](json/schema/fairtracks_sample.schema.json) | [fairtracks_sample.schema.md](docs/fairtracks_sample.schema.md)
+  Track | [fairtracks_track.schema.json](json/schema/fairtracks_track.schema.json) | [fairtracks_track.schema.md](docs/fairtracks_track.schema.md)
 
-- FAIRtracks also contains the following convenience subschemas:
+- FAIRtracks also contains the following convenience sub-schemas:
 
-  Title | Documentation 
-  ----- | -------------
-  Phenotype | [fairtracks_phenotype.schema.json](docs/fairtracks_track.schema.json)
+  Title | JSON Schema   | Documentation 
+  ----- | ------------- | -------------
+  Phenotype | [fairtracks_phenotype.schema.json](json/schema/fairtracks_phenotype.schema.json) | [fairtracks_phenotype.schema.md](docs/fairtracks_phenotype.schema.md)
+
 
 ## Making changes to the standard
 
