@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 8b80a8c2a7bca13df4728546b20fe3841cd76cfe50ed126cd2395313a4bf1366",
+    "$comment": "JSON signature: 5a86d31edf390cfb80b7e73135058ec223132e3c7430de73c2f5d179f868212e",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -120,10 +120,11 @@
             "description": "File format of the track data file",
             "type": "object",
             "properties": {
-                "term_url": {
+                "term_id": {
                     "description": "URL linking to an ontology term",
                     "type": "string",
                     "format": "term",
+                    "pattern": "^(https?|ftp)://",
                     "ontology": "http://edamontology.org/EDAM_1.21.owl",
                     "matchType": "exact",
                     "examples": [
@@ -133,7 +134,7 @@
                         "http://edamontology.org/format_3006"
                     ]
                 },
-                "term_value": {
+                "term_label": {
                     "description": "Exact value according to the ontology used",
                     "type": "string",
                     "examples": [
@@ -146,17 +147,18 @@
                 }
             },
             "required": [
-                "term_url"
+                "term_id"
             ]
         },
         "content_type": {
             "description": "Type of content represented by the track data file (narrow peaks, signal, region, etc.)",
             "type": "object",
             "properties": {
-                "term_url": {
+                "term_id": {
                     "description": "URL linking to an ontology term",
                     "type": "string",
                     "format": "term",
+                    "pattern": "^(https?|ftp)://",
                     "ontology": "http://edamontology.org/EDAM_1.21.owl",
                     "matchType": "exact",
                     "examples": [
@@ -166,7 +168,7 @@
                         "http://edamontology.org/data_3002"
                     ]
                 },
-                "term_value": {
+                "term_label": {
                     "description": "Exact value according to the ontology used",
                     "type": "string",
                     "examples": [

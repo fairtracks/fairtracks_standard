@@ -13,12 +13,12 @@
     "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
     "genome_assembly": "GRCh38",
     "file_format": {
-        "term_url": "http://edamontology.org/format_3613",
-        "term_value": "ENCODE narrow peak format"
+        "term_id": "http://edamontology.org/format_3613",
+        "term_label": "ENCODE narrow peak format"
     },
     "content_type": {
-        "term_url": "http://edamontology.org/data_3002",
-        "term_value": "Annotation track"
+        "term_id": "http://edamontology.org/data_3002",
+        "term_label": "Annotation track"
     },
     "checksum": {
         "cs_method": "MD5",

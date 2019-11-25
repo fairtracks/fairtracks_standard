@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
-    "$comment": "JSON signature: ddbcbba5f5c6ac95a24d3e2dc9b017ff6360a449b9f2e9149f6853a3ea40eada",
+    "$comment": "JSON signature: 8197353c1d4532971c6bc0f39ab60d5dc28f2a91cc7127f2601bc35cb7a79c89",
     "title": "Phenotype",
     "type": "object",
     "properties": {
@@ -12,10 +12,11 @@
             "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
         },
-        "term_url": {
+        "term_id": {
             "description": "URL linking to an ontology term",
             "type": "string",
             "format": "term",
+            "pattern": "^(https?|ftp)://",
             "default": "http://purl.obolibrary.org/obo/NCIT_C14165",
             "ontology": "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl",
             "ancestors": [
@@ -25,7 +26,7 @@
             ],
             "matchType": "exact"
         },
-        "term_value": {
+        "term_label": {
             "description": "Exact value according to the ontology used",
             "type": "string",
             "default": "Normal",
@@ -33,7 +34,7 @@
         }
     },
     "required": [
-        "term_url"
+        "term_id"
     ],
     "additionalProperties": true
 }

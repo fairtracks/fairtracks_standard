@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "e39e561a08334ee8abc0ce0151777f0cdd7a25e5feecee6165a3b969e4627c0c",
-        "doc_date": "2019-11-25T15:04:52"
+        "doc_version": "a462eea8911d9362eec9cd8d905671c163455dda78d5e2387d58c4299590ad93",
+        "doc_date": "2019-11-26T00:40:15"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -37,12 +37,12 @@
             "study_ref": "UW_ChipSeq",
             "sample_ref": "geo:GSM945229",
             "technique": {
-                "term_url": "http://purl.obolibrary.org/obo/OBI_0002017",
-                "term_value": "histone modification identification by ChIP-Seq assay"
+                "term_id": "http://purl.obolibrary.org/obo/OBI_0002017",
+                "term_label": "histone modification identification by ChIP-Seq assay"
             },
             "sequence_feature": {
-                "term_url": "http://purl.obolibrary.org/obo/SO_0001706",
-                "term_value": "H3K4_trimethylation"
+                "term_id": "http://purl.obolibrary.org/obo/SO_0001706",
+                "term_label": "H3K4_trimethylation"
             },
             "target": "H3K4_trimethylation",
             "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
@@ -54,20 +54,20 @@
             "global_id": "biosample:SAMN01731491",
             "local_id": "geo:GSM945229",
             "biospecimen_class": {
-                "term_url": "http://purl.obolibrary.org/obo/NCIT_C16403",
-                "term_value": "Cell Line"
+                "term_id": "http://purl.obolibrary.org/obo/NCIT_C16403",
+                "term_label": "Cell Line"
             },
             "cell_line": {
-                "term_url": "http://purl.obolibrary.org/obo/CL_0000236",
-                "term_value": "H1-hESC"
+                "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+                "term_label": "H1-hESC"
             },
             "organism_part": {
-                "term_url": "http://purl.obolibrary.org/obo/CL_0002322",
-                "term_value": "embryonic stem cell"
+                "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
+                "term_label": "embryonic stem cell"
             },
             "phenotype": {
-                "term_url": "http://purl.obolibrary.org/obo/NCIT_C14165",
-                "term_value": "Normal"
+                "term_id": "http://purl.obolibrary.org/obo/NCIT_C14165",
+                "term_label": "Normal"
             },
             "main_type": "H1-hESC"
         }
@@ -87,12 +87,12 @@
             "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
             "genome_assembly": "GRCh38",
             "file_format": {
-                "term_url": "http://edamontology.org/format_3613",
-                "term_value": "ENCODE narrow peak format"
+                "term_id": "http://edamontology.org/format_3613",
+                "term_label": "ENCODE narrow peak format"
             },
             "content_type": {
-                "term_url": "http://edamontology.org/data_3002",
-                "term_value": "Annotation track"
+                "term_id": "http://edamontology.org/data_3002",
+                "term_label": "Annotation track"
             },
             "checksum": {
                 "cs_method": "MD5",
@@ -113,12 +113,12 @@
             "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO",
             "genome_assembly": "GRCh38",
             "file_format": {
-                "term_url": "http://edamontology.org/format_3004",
-                "term_value": "bigBed"
+                "term_id": "http://edamontology.org/format_3004",
+                "term_label": "bigBed"
             },
             "content_type": {
-                "term_url": "http://edamontology.org/data_3002",
-                "term_value": "Annotation track"
+                "term_id": "http://edamontology.org/data_3002",
+                "term_label": "Annotation track"
             },
             "checksum": {
                 "cs_method": "MD5",
@@ -139,12 +139,12 @@
             "label_long": "H3K4me3 ChIP-seq of B cell fold change over control rep1 ENCSR000DQP - ENCFF717PIO",
             "genome_assembly": "GRCh38",
             "file_format": {
-                "term_url": "http://edamontology.org/format_3006",
-                "term_value": "bigWig"
+                "term_id": "http://edamontology.org/format_3006",
+                "term_label": "bigWig"
             },
             "content_type": {
-                "term_url": "http://edamontology.org/data_3002",
-                "term_value": "Annotation track"
+                "term_id": "http://edamontology.org/data_3002",
+                "term_label": "Annotation track"
             },
             "checksum": {
                 "cs_method": "MD5",
@@ -165,12 +165,12 @@
             "label_long": "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC",
             "genome_assembly": "GRCh38",
             "file_format": {
-                "term_url": "http://edamontology.org/format_3006",
-                "term_value": "bigWig"
+                "term_id": "http://edamontology.org/format_3006",
+                "term_label": "bigWig"
             },
             "content_type": {
-                "term_url": "http://edamontology.org/data_3002",
-                "term_value": "Annotation track"
+                "term_id": "http://edamontology.org/data_3002",
+                "term_label": "Annotation track"
             },
             "checksum": {
                 "cs_method": "MD5",
