@@ -26,7 +26,7 @@ def cleanup_opml_file(schema_docs_fp):
     for line in fileinput.input(schema_docs_fp, inplace=True):
         if prevLineIfEmptyProperty and line.startswith('  '):
             print(prevLineIfEmptyProperty, end='')
-            prevLineIfEmptyProperty = None
+        prevLineIfEmptyProperty = None
 
         json_schema_fp = prefix + JSON_SUFFIX
         json_schema_link = "[{}]({})".format(json_schema_fp, json_schema_fp)
