@@ -1,0 +1,187 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
+    "$comment": "JSON signature: c5a97ae267b8d5c50d54c514834682cc3ca0595dc0a06d18565999ef6830954f",
+    "title": "FAIRification of Genomic Tracks JSON Schema",
+    "type": "object",
+    "properties": {
+        "@schema": {
+            "description": "The JSON schema absolute URL. Used for link JSON data to a particular version of the JSON schema. Must match the value of '$id' in the linked schema",
+            "type": "string",
+            "format": "uri",
+            "pattern": "^(https?|ftp)://",
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
+        },
+        "doc_info": {
+            "type": "object",
+            "properties": {
+                "doc_url": {
+                    "description": "URL to this FAIRtracks JSON document",
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
+                    "examples": [
+                        "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json"
+                    ]
+                },
+                "doc_version": {
+                    "description": "Version of this FAIRtracks JSON document",
+                    "type": "string"
+                },
+                "doc_date": {
+                    "description": "Creation date of this version of this FAIRtracks document",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "doc_version",
+                "doc_date"
+            ]
+        },
+        "collection_info": {
+            "type": "object",
+            "properties": {
+                "short_name": {
+                    "description": "Short name of the track collection. Suggested maximum length is 17 characters",
+                    "type": "string",
+                    "examples": [
+                        "ENCODE example"
+                    ]
+                },
+                "long_name": {
+                    "description": "Long name of the track collection. Suggested maximum length is 80 characters",
+                    "type": "string",
+                    "examples": [
+                        "Example of a few tracks created by from the ENCODE Project"
+                    ]
+                },
+                "description_url": {
+                    "description": "URL to a web page or file describing the track collection",
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
+                    "examples": [
+                        "https://www.encodeproject.org/help/project-overview/"
+                    ]
+                },
+                "source_repo": {
+                    "type": "object",
+                    "properties": {
+                        "repo_url": {
+                            "description": "URL to the track repository containing the collection (e.g., the Track Hub Registry)",
+                            "type": "string",
+                            "format": "uri",
+                            "pattern": "^(https?|ftp)://",
+                            "examples": [
+                                "https://www.encodeproject.org/search"
+                            ]
+                        },
+                        "local_id": {
+                            "description": "Submitter-local identifier (within track repository) for the collection",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "repo_url"
+                    ]
+                },
+                "orig_metadata_url": {
+                    "description": "URL to track collection metadata in its original form (might contain more than the relevant metadata)",
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?|ftp)://",
+                    "examples": [
+                        "https://www.encodeproject.org/search/?format=json"
+                    ]
+                },
+                "contact": {
+                    "description": "Contact information for the track collection",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Name of contact person/organization",
+                            "type": "string",
+                            "examples": [
+                                "ENCODE DCC"
+                            ]
+                        },
+                        "e-mail": {
+                            "description": "E-mail to contact person/organization",
+                            "type": "string",
+                            "format": "idn-email",
+                            "examples": [
+                                "encode-help@lists.stanford.edu"
+                            ]
+                        },
+                        "orcid": {
+                            "description": "ORCID to contact person",
+                            "type": "string",
+                            "format": "curie",
+                            "namespace": "orcid",
+                            "matchType": "canonical"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "anyOf": [
+                        {
+                            "required": [
+                                "e-mail"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "orcid"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "short_name",
+                "long_name",
+                "contact"
+            ]
+        },
+        "studies": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json"
+            }
+        },
+        "experiments": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"
+            }
+        },
+        "samples": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json"
+            }
+        },
+        "tracks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
+            }
+        }
+    },
+    "required": [
+        "@schema",
+        "doc_info",
+        "collection_info",
+        "studies",
+        "experiments",
+        "samples",
+        "tracks"
+    ],
+    "additionalProperties": true
+}
