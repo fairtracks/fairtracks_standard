@@ -2,6 +2,7 @@ import argparse
 import fileinput
 import os
 import re
+from urllib.parse import unquote
 
 DOCS_SUFFIX = '.schema.md'
 JSON_SUFFIX = '.schema.json'
@@ -16,6 +17,10 @@ def main():
     for schema_docs_fp in args.schema_docs_filepaths:
         print("Cleaning up markdown file: {}...".format(schema_docs_fp))
         cleanup_opml_file(schema_docs_fp)
+
+
+def unescape(match):
+    return unquote('%{}'.format(match.group(1)))
 
 
 def cleanup_opml_file(schema_docs_fp):
@@ -34,6 +39,10 @@ def cleanup_opml_file(schema_docs_fp):
             new_json_schema_fp = SCHEMA_DIR + json_schema_fp
             new_json_schema_link = "[{}]({})".format(json_schema_fp, new_json_schema_fp)
             print(line.replace(json_schema_link, new_json_schema_link), end='')
+
+        elif '&amp;#x' in line:
+            line = re.sub("&amp;#x([0-9A-F][0-9A-F]);", unescape, line)
+            print(line, end='')
 
         elif re.match("^- [a-zA-Z]+:$", line):
             prevLineIfEmptyProperty = line

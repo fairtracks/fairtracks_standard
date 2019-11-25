@@ -161,7 +161,7 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;help&amp;#x2F;project-overview&amp;#x2F;](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fhelp%2Fproject-overview%2F>)
+  [https://www.encodeproject.org/help/project-overview/](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fhelp%2Fproject-overview%2F>)
 
 ##### description_url Example
 
@@ -211,7 +211,7 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;search&amp;#x2F;?format&amp;#x3D;json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fsearch%2F%3Fformat%3Djson>)
+  [https://www.encodeproject.org/search/?format=json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fsearch%2F%3Fformat%3Djson>)
 
 ##### orig_metadata_url Example
 
@@ -290,7 +290,7 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;search](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fsearch>)
+  [https://www.encodeproject.org/search](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Fsearch>)
 
 ##### repo_url Example
 
@@ -357,7 +357,7 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;raw.githubusercontent.com&amp;#x2F;fairtracks&amp;#x2F;fairtracks_standard&amp;#x2F;master&amp;#x2F;json&amp;#x2F;examples&amp;#x2F;fairtracks.example.json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fraw.githubusercontent.com%2Ffairtracks%2Ffairtracks_standard%2Fmaster%2Fjson%2Fexamples%2Ffairtracks.example.json>)
+  [https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fraw.githubusercontent.com%2Ffairtracks%2Ffairtracks_standard%2Fmaster%2Fjson%2Fexamples%2Ffairtracks.example.json>)
 
 ##### doc_url Example
 

@@ -391,13 +391,13 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;files&amp;#x2F;ENCFF625ZYB&amp;#x2F;@@download&amp;#x2F;ENCFF625ZYB.bed.gz](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF625ZYB%2F%40%40download%2FENCFF625ZYB.bed.gz>)
+  [https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF625ZYB%2F%40%40download%2FENCFF625ZYB.bed.gz>)
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;files&amp;#x2F;ENCFF718EPO&amp;#x2F;@@download&amp;#x2F;ENCFF718EPO.bigBed](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF718EPO%2F%40%40download%2FENCFF718EPO.bigBed>)
+  [https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF718EPO%2F%40%40download%2FENCFF718EPO.bigBed>)
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;files&amp;#x2F;ENCFF717PIO&amp;#x2F;@@download&amp;#x2F;ENCFF717PIO.bigWig](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF717PIO%2F%40%40download%2FENCFF717PIO.bigWig>)
+  [https://www.encodeproject.org/files/ENCFF717PIO/@@download/ENCFF717PIO.bigWig](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF717PIO%2F%40%40download%2FENCFF717PIO.bigWig>)
 - test example:
-  [https:&amp;#x2F;&amp;#x2F;www.encodeproject.org&amp;#x2F;files&amp;#x2F;ENCFF955LOC&amp;#x2F;@@download&amp;#x2F;ENCFF955LOC.bigWig](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF955LOC%2F%40%40download%2FENCFF955LOC.bigWig>)
+  [https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig](<https://regexr.com/?expression=%5E(https%3F%7Cftp%7Crsync)%3A%2F%2F&text=https%3A%2F%2Fwww.encodeproject.org%2Ffiles%2FENCFF955LOC%2F%40%40download%2FENCFF955LOC.bigWig>)
 
 ### file_url Examples
 
