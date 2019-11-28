@@ -11,8 +11,8 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "0bec8270beb9195e254fb0cfdf96e01b39b65a3a00def5c0c67acf2bde64e383",
-        "doc_date": "2020-01-08T18:26:45"
+        "doc_version": "05408f0bdafd4729e2a8a35a59d9745add3bb47dfe2a5c2da6db40a883cc7165",
+        "doc_date": "2020-01-08T18:36:33"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -106,10 +106,8 @@
                 "term_id": "http://edamontology.org/format_3613",
                 "term_label": "ENCODE narrow peak format"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Narrow peaks",
+            "geometric_track_type": "Segments",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
@@ -133,10 +131,8 @@
                 "term_id": "http://edamontology.org/format_3004",
                 "term_label": "bigBed"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Narrow peaks",
+            "geometric_track_type": "Segments",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "6d2c6c99a7407f1c49ab163e41d9b575"
@@ -160,10 +156,8 @@
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Signal values (fold change)",
+            "geometric_track_type": "Step function",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "550ae974bf94f1deb1676613ab24a5da"
@@ -187,10 +181,8 @@
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Signal values (p-value)",
+            "geometric_track_type": "Step function",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "942ea96e86313d4338cf3fd020882c4d"
