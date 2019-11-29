@@ -183,7 +183,7 @@ b. `make rawclean`
   - Should only be run if you are sure that all changes in the raw OPML files have propagated to
     other files, i.e. you should make sure that you have run `make` first.
   - Raw OPML files must be removed prior to running any `git` command, as explained 
-    [above]((#2-main-process--with--make--targets--for-making-changes-to-the-standard), section
+    [above](#2-main-process--with--make--targets--for-making-changes-to-the-standard), section
     2a.
       
 c. `make clean`
