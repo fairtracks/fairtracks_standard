@@ -7,10 +7,6 @@
     <outline _key="local_id" description="Submitter-local identifier (within investigation/hub) for study" examples="UW_ChipSeq" required="true" type="string" unique="true" />
     <outline _key="study_name" description="Name of the study" examples="Histone Modifications by ChIP-seq from ENCODE/University of Washington" required="true" type="string" />
     <outline _key="publication" description="Pubmed identifier (dataset or publication)" examples="pubmed:22955617" format="curie" matchType="canonical" namespace="pubmed" required="false" type="string" />
-    <outline _key="contact" description="Contact information for study" required="true" type="object">
-      <outline _key="name" description="Name of contact person/organization" examples="ENCODE DCC" required="true" type="string" />
-      <outline _key="e-mail" description="E-mail to contact person/organization" examples="encode-help@lists.stanford.edu" format="idn-email" requireAnyOf="true" required="false" type="string" />
-      <outline _key="orcid" comments="ORCID - Needs GDPR consent" description="ORCID to contact person" format="curie" matchType="canonical" namespace="orcid" requireAnyOf="true" required="false" type="string" />
-    </outline>
+    <outline _key="contact" description="Contact information for study" ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json" required="true" type="object" />
   </body>
 </opml>

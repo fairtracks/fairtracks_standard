@@ -36,6 +36,7 @@ the standard.
   Title | JSON Schema   | Schema documentation | Example JSON document
   ----- | ------------- | -------------------- | ---------------------
   Phenotype | [fairtracks_phenotype.schema.json](json/schema/fairtracks_phenotype.schema.json) | [fairtracks_phenotype.schema.md](docs/fairtracks_phenotype.schema.md) | [fairtracks_phenotype.example.json](json/schema/fairtracks_phenotype.example.json)
+  Contact | [fairtracks_contact.schema.json](json/schema/fairtracks_contact.schema.json) | [fairtracks_contact.schema.md](docs/fairtracks_contact.schema.md) | [fairtracks_contact.example.json](json/schema/fairtracks_contact.example.json)
 
 
 ## Making changes to the standard

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 011e53ef14e6583efa055d671a554ffe713c10c68ca460063d2d6b933b88def7",
+    "$comment": "JSON signature: 3b478bf5a854c0dbfe6af8eb18d2d0ddc3e3c397c5586cf1af08e50fce7a573e",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -100,45 +100,7 @@
                 "contact": {
                     "description": "Contact information for the track collection",
                     "type": "object",
-                    "properties": {
-                        "name": {
-                            "description": "Name of contact person/organization",
-                            "type": "string",
-                            "examples": [
-                                "ENCODE DCC"
-                            ]
-                        },
-                        "e-mail": {
-                            "description": "E-mail to contact person/organization",
-                            "type": "string",
-                            "format": "idn-email",
-                            "examples": [
-                                "encode-help@lists.stanford.edu"
-                            ]
-                        },
-                        "orcid": {
-                            "description": "ORCID to contact person",
-                            "type": "string",
-                            "format": "curie",
-                            "namespace": "orcid",
-                            "matchType": "canonical"
-                        }
-                    },
-                    "required": [
-                        "name"
-                    ],
-                    "anyOf": [
-                        {
-                            "required": [
-                                "e-mail"
-                            ]
-                        },
-                        {
-                            "required": [
-                                "orcid"
-                            ]
-                        }
-                    ]
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json"
                 }
             },
             "required": [
