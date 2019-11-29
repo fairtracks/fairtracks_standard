@@ -5,7 +5,7 @@
   * [Overview of structure of the FAIRtracks standard](#overview-of-structure-of-the-fairtracks-standard)
   * [Making changes to the standard](#making-changes-to-the-standard)
     + [Dependencies for running the scripts](#dependencies-for-running-the-scripts)
-    + [Contributing](#contributing)
+    + [Overview of how to contribute](#overview-of-how-to-contribute)
     + [Overview of file types and auto-generation](#overview-of-file-types-and-auto-generation)
     + [1. Automatic `make` targets for initial setup](#1-automatic--make--targets-for-initial-setup)
     + [2. Main process (with `make` targets) for making changes to the standard](#2-main-process--with--make--targets--for-making-changes-to-the-standard)
@@ -68,44 +68,47 @@ https://fairtracks.github.io/
 - An OPML editor is also recommended, but not required. See 
   [OPML editors](opml-editors) below for more information.
 
-### Contributing
+### Overview of how to contribute
 
 1. Create personal fork in GitHub ("Fork" button).
-2. Clone the fork to your computer (e.g., ``git clone https://github.com/myusername/fairtracks_standard.git``).
-3. Run ``make raw``, and edit the raw OPML files to your liking. For more information about the
-   ``make`` targets, see [below](#overview-of-file-types-and-auto-generation).
-4. Run ``make`` or ``make all`` until you are satisfied with the changes.
-5. Run ``make rawclean`` to remove the raw OPML files before committing.
-6. Commit and push your changes to a feature branch in your personal fork and create a pull 
-   request, as described in the standard.
+2. Clone the fork to your computer (e.g., `git clone https://github.com/myusername/fairtracks_standard.git`).
+3. Run `make raw`, and edit the raw OPML files to your liking. For more information about the
+   `make` targets, see [below](#overview-of-file-types-and-auto-generation).
+4. Run `make` or `make all`
+5. Repeat step 4 and 5 until you are satisfied with the changes.
+6. Run `make rawclean` to remove the raw OPML files before committing.
+7. Commit and push your changes to a feature branch in your personal fork and create a pull 
+   request, as described in the standard
    [GitHub Flow workflow](https://guides.github.com/introduction/flow/).
-7. Once the Pull Request is accepted:
-   - Pull the latest changes in the ``master`` branch to your local repo.
-   - Rebase your feature branch on top of ``master``.
+8. Once the Pull Request is accepted:
+   - Pull the latest changes in the `master` branch to your local repo.
+   - Rebase your feature branch on top of `master`.
    - Make sure that all commits are consistently built. The automatically installed 
-     ``git-hooks`` will also check for consistency. To make a commit consistent, rebuild it 
-     with the ``rebuild_all.sh`` script. To clean up previous commits, use interactive rebase as
+     `git-hooks` will also check for consistency. To make a commit consistent, rebuild it 
+     with the `rebuild_all.sh`  script. To clean up previous commits, use interactive rebase as
      described under [1b. make git-hooks](#1-automatic-make-targets-for-initial-setup) below.
-8. Force push your feature branch to your personal fork, which should update the pull request, and
+9. Force push your feature branch to your personal fork, which should update the pull request, and
    notify us.
 
 ### Overview of file types and auto-generation
 
 There is an inherent order to the different types of files in this repo, defined in the `Makefile`.
-The FAIRtracks standard is fully defined in the OPML files found under `json/overview`, and all 
-the JSON Schema and JSON example files are automatically generated based on those files. Such 
-automatic file generation are handled by various `make` targets:
+The FAIRtracks standard is almost fully defined in the OPML files found under `json/overview`, with
+just a small bit of top-level logic being handled by 
+[opml_to_json.py](scripts/python/opml_to_json.py). All the JSON Schema and JSON example files are 
+automatically generated based upon the OPML files. Such automatic file generation are handled by 
+various `make` targets:
 
 ### 1. Automatic `make` targets for initial setup
 
 These `make` targets are run automatically if needed by the other `make` 
 targets, but are also available for manual use if there is need.
 
-a. `make .venv`
+a. `make venv`
   - Autogenerates a Python virtual environment in the `.venv` directory, 
     if not already present. In case the Python executable you want to link up to the virtual
     environment is located in a non-standard path, you can use the environment variable `
-    PYTHON_EXE` before the first `make .venv` command. For instance:
+    PYTHON_EXE` before the first `make venv` command. For instance:
 
     ```bash
     PYTHON_EXE=/path/to/my/python3 make .venv
@@ -117,12 +120,12 @@ b. `make git-hooks`
     1. All changed files are committed together
     2. All secondary files have been recompiled with `make`
      
-    The checks are run before git commits or remote pushes is finalized.
+    The checks are run before git commits or remote pushes are finalized.
     
     It is especially important that the git hooks are installed before merging or rebasing is done, 
     as the SHA256 signatures of the JSON files may then need to be recalculated (by `make`) on 
-    merged/rebased commits. To fix such issues (which will appear when trying a remote push) one 
-    will need to carry out an interactive rebase:
+    merged/rebased commits. To fix such issues (which will appear when trying to push to GitHub) 
+    one will need to carry out an interactive rebase:
     
     1. Start interactive rebase: `git rebase -i $FIRST_COMMIT^`,
        where `$FIRST_COMMIT` is the first commit that need editing (you can find this in the log
@@ -136,7 +139,7 @@ b. `make git-hooks`
     6. `git rebase --continue`
     7. Repeat iii-vi for all commits selected for editing.
 
-c. ``make jsonschema2md``
+c. `make jsonschema2md`
   - Installs the node package ["jsonschema2md"](https://github.com/adobe/jsonschema2md)
     which is used to generate the JSON Schema documentation. The package is installed under 
     "node_modules", together with all its dependencies.
@@ -147,19 +150,25 @@ The following process should be followed when changing the contents of the `FAIR
 itself:
 
 a. `make raw`
-  - This makes copies of the existing *.opml files into similarly names *.raw.opml files.
-  - You only need to run this once. If you accidentally run the command twice, any existing raw 
-    OPML files will be renamed to *.raw.opml.old.
+  - This makes copies of the existing *.opml files into similarly names *.raw.opml files. The raw
+    OPML files are made to be opened for editing in specialized outlining tools. As such tools 
+    vary in the exact content of the exportet OPML files, the raw OPML files need to be compiled
+    into standardized, cleaned-up versions before they are committed to git.
+  - You only need to run `make raw` once. If you accidentally run the command twice, any existing
+    raw OPML files will be renamed to *.raw.opml.old.
   - The raw OPML files are ignored by git and can be edited in an OPML editor of choice. See 
     [OPML file format](#opml-file-format) below for more information.
+  - Be sure to delete the raw OPML files (with `make rawclean`) before carrying out any git
+    commands. This is important, as e.g. changing branches will not change the raw OPML files, as
+    they are ignored by git. Thus, if one fails to remove the raw OPML files before switching 
+    commits, `make` will just regenerate the prevous commit on top of the new one. 
 
 b. `make` or `make all`
   - After the raw OPML files have been edited, `make` runs:
-    - `make opml` to generate cleaned up,
-    standardized versons of the raw OPML files, and 
-    - `make json` to generate JSON Schema files
-    and related example JSON files from the cleaned up OPML files.
-    - `make docs` to generate Markdown documentation files under the ``docs`` directory.
+    - `make opml` to generate cleaned up, standardized versons of the raw OPML files, and 
+    - `make json` to generate JSON Schema files and related example JSON files from the cleaned 
+      up OPML files.
+    - `make docs` to generate Markdown documentation files under the `docs` directory.
     
     All the generated JSON Schema files, as well as the top-level JSON example file, include a 
     stable SHA256 signature of their contents.
@@ -173,9 +182,13 @@ b. `make rawclean`
   - Removes all raw OPML and related .old files.
   - Should only be run if you are sure that all changes in the raw OPML files have propagated to
     other files, i.e. you should make sure that you have run `make` first.
+  - Raw OPML files must be removed prior to running any `git` command, as explained 
+    [above]((#2-main-process--with--make--targets--for-making-changes-to-the-standard), section
+    2a.
       
 c. `make clean`
-  - Runs `make rawclean` and also removes the virtual environment in the `.venv` directory.
+  - Runs `make rawclean`, in addition to removing the virtual environment in the `.venv` directory,
+    the git hooks, and the `node_modules` directory.
 
 ## OPML file format
 
@@ -183,14 +196,15 @@ c. `make clean`
 outlining software.
 
 ### OPML editors
-OPML can be edited by specific outlining tools, but as the format it is a subtype of XML 
+Raw OPML files can be edited by specific outlining tools, but as the format it is a subtype of XML 
 one can also use generic XML editors:
   - On Mac OS, we recommend using the commercial tool 
     [OmniOutliner](https://www.omnigroup.com/omnioutliner), as there are really no open source
     alternatives with similar user interface. 
   - As an open source, platform-agnostic alternative, we recommend 
     [TreeLine](http://treeline.bellz.org/).
-  - The OPML files can of course also be edited manually.
+  - The OPML files can of course also be edited manually, in which case you can ignore the raw OPML
+    files completely.
  
 ### How the FAIRtracks standard is defined in OPML
 - Each `<outline>` tag defines a JSON property, with the hierarchy defined by the XML hierarchy.
