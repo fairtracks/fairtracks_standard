@@ -12,8 +12,8 @@
             "term_label": "H1-hESC"
         },
         "organism_part": {
-            "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
-            "term_label": "embryonic stem cell"
+            "term_id": "http://purl.obolibrary.org/obo/UBERON_0000922",
+            "term_label": "embryo"
         },
         "summary": "H1-hESC"
     },

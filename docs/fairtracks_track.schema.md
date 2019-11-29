@@ -157,7 +157,7 @@ URL linking to an ontology term
 - is optional
 - type: `string`
 - format: term
-- ontology: http://edamontology.org/EDAM_1.21.owl
+- ontology: http://edamontology.org/EDAM.owl
 - matchType: exact
 
 ##### term_id Type
@@ -292,7 +292,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://edamontology.org/EDAM_1.21.owl
+- ontology: http://edamontology.org/EDAM.owl
 - matchType: exact
 
 ##### term_id Type

@@ -46,7 +46,7 @@ URL linking to an ontology term
 - default: `"http://purl.obolibrary.org/obo/NCIT_C14165"`
 - defined in this schema
 - format: term
-- ontology: http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl
+- ontology: http://purl.obolibrary.org/obo/ncit.owl
 - ancestors:
   http://purl.obolibrary.org/obo/NCIT_C7057,http://purl.obolibrary.org/obo/NCIT_C22187,http://purl.obolibrary.org/obo/NCIT_C14165
 - matchType: exact
