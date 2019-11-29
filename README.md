@@ -232,7 +232,7 @@ one can also use generic XML editors:
   
   For more information, please visit the FAIRtracks validator GitHub repository (see [VALIDATION.md](VALIDATION.md) for directions).
 
-- The `constif` and `requireIf` attributes require the value to follow a specific pattern:
+- The `constIf` and `requireIf` attributes require the value to follow a specific pattern:
 
   Pattern part | Description | Attribute(s) | Obligatory | Example
   ------------ | ----------- | ------------ | ---------- | -------
