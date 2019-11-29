@@ -16,7 +16,7 @@ then
   exit 1
 else
   printf "Removing existing Python virtual environment in '%s'...\n" "$venv_dir"
-  rm -rf "$venv_dir"
+  rm -rf "$venv_dir" || exit $?
   printf "Creating new Python virtual environment in '%s'...\n" "$venv_dir"
-  $PYTHON_EXE -m venv "$venv_dir"
+  $PYTHON_EXE -m venv "$venv_dir" || exit $?
 fi
