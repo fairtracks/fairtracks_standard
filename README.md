@@ -3,7 +3,6 @@
 # Table of contents
 - [FAIRtracks - metadata standard for genomic tracks](#fairtracks---metadata-standard-for-genomic-tracks)
   * [Overview of structure of the FAIRtracks standard](#overview-of-structure-of-the-fairtracks-standard)
-    + [Documentation of the FAIRtracks JSON Schemas](#documentation-of-the-fairtracks-json-schemas)
   * [Making changes to the standard](#making-changes-to-the-standard)
     + [Dependencies for running the scripts](#dependencies-for-running-the-scripts)
     + [Contributing](#contributing)
@@ -29,8 +28,6 @@ https://fairtracks.github.io/
 The FAIRtracks standard consists of a main JSON Schema and a set of subschemas. A JSON document 
 of track metadata must validate towards the main FAIRtracks JSON Schema to be said to follow 
 the standard.
-
-### Documentation of the FAIRtracks JSON Schemas
 
 - The main FAIRtracks JSON Schema is simply named `fairtracks.schema.json` and is documented here:
 
