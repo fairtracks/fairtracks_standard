@@ -8,7 +8,7 @@
     + [Overview of how to contribute](#overview-of-how-to-contribute)
     + [Overview of file types and auto-generation](#overview-of-file-types-and-auto-generation)
     + [1. Automatic `make` targets for initial setup](#1-automatic--make--targets-for-initial-setup)
-    + [2. Main process (with `make` targets) for making changes to the standard](#2-main-process--with--make--targets--for-making-changes-to-the-standard)
+    + [2. Main process (with `make` targets) for making changes to the standard](#2-main-process-with-make-targets-for-making-changes-to-the-standard)
     + [3. `make` targets for overview and cleanup](#3--make--targets-for-overview-and-cleanup)
   * [OPML file format](#opml-file-format)
     + [OPML editors](#opml-editors)
@@ -183,7 +183,7 @@ b. `make rawclean`
   - Should only be run if you are sure that all changes in the raw OPML files have propagated to
     other files, i.e. you should make sure that you have run `make` first.
   - Raw OPML files must be removed prior to running any `git` command, as explained 
-    [above](#2-main-process--with--make--targets--for-making-changes-to-the-standard), section
+    [above](#2-main-process-with-make-targets-for-making-changes-to-the-standard), section
     2a.
       
 c. `make clean`
