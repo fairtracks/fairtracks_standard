@@ -59,7 +59,7 @@ the standard.
 3. Run ``make raw``, and edit the raw OPML files to your liking. For more information about the
    ``make`` targets, see [below](#overview-of-file-types-and-auto-generation).
 4. Run ``make`` or ``make all`` until you are satisfied with the changes.
-5. Run ``make rawclean`` to remove the OPML files before committing.
+5. Run ``make rawclean`` to remove the raw OPML files before committing.
 6. Commit and push your changes to a feature branch in your personal fork and create a pull 
    request, as described in the standard.
    [GitHub Flow workflow](https://guides.github.com/introduction/flow/).
