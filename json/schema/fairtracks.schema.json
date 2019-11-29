@@ -1,16 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 3b478bf5a854c0dbfe6af8eb18d2d0ddc3e3c397c5586cf1af08e50fce7a573e",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks.schema.json",
+    "$comment": "JSON signature: fe3e7b857fe4cb00a4169a308cecffca199f6f1d1b9ed14cdfa3b47dd04f0bf7",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
         "@schema": {
-            "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
+            "description": "The absolute URL of the most recent major version of the relevant FAIRtracks JSON Schema that is backwards-compatible with the current JSON document. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json"
         },
         "doc_info": {
             "description": "Version and related information about the current FAIRtracks JSON document",
