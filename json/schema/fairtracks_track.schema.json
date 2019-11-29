@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 5a86d31edf390cfb80b7e73135058ec223132e3c7430de73c2f5d179f868212e",
+    "$comment": "JSON signature: d3cb625238af299167dc11aad49fda36aaa1fcabaec75f51393584048a551455",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -34,6 +34,29 @@
                 "encode:ENCFF955LOC"
             ],
             "unique": true
+        },
+        "assembly_id": {
+            "description": "Genome assembly identifier, resolvable by identifiers.org. Tracks should be annotated with the lowest version of the reference genome that contains all the sequences referenced by the track. Also, GCF (Refseq) ids should be preferred to GCA (Genbank) ids",
+            "type": "string",
+            "format": "curie",
+            "namespace": "insdc.gca",
+            "matchType": "canonical",
+            "examples": [
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26"
+            ]
+        },
+        "assembly_name": {
+            "description": "Genome assembly name or synonym, according to the NCBI Assembly database. For tracks following UCSC-style chromosome names (e.g., \"chr1\"), the UCSC synonym should be used instead of the official name",
+            "type": "string",
+            "examples": [
+                "hg38",
+                "hg38",
+                "hg38",
+                "hg38"
+            ]
         },
         "experiment_ref": {
             "description": "Reference to the experiment of the track (using the submitter-local identifier of the sample)",
@@ -104,16 +127,6 @@
                 "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO",
                 "H3K4me3 ChIP-seq of B cell fold change over control rep1 ENCSR000DQP - ENCFF717PIO",
                 "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC"
-            ]
-        },
-        "genome_assembly": {
-            "description": "An assembly identifier (using UCSC nomenclature)",
-            "type": "string",
-            "examples": [
-                "GRCh38",
-                "GRCh38",
-                "GRCh38",
-                "GRCh38"
             ]
         },
         "file_format": {
@@ -217,11 +230,12 @@
     },
     "required": [
         "local_id",
+        "assembly_id",
+        "assembly_name",
         "experiment_ref",
         "file_url",
         "label_short",
         "label_long",
-        "genome_assembly",
         "file_format",
         "content_type",
         "checksum"
