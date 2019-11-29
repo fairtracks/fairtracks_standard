@@ -1,3 +1,5 @@
+![alt text](docs/fairtracks_logo.png "FAIRtracks logo")
+
 # FAIRtracks - metadata standard for genomic tracks
 
 FAIRtracks is a set of JSON Schemas developed through the ELIXIR implementation study: 
