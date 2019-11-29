@@ -54,19 +54,23 @@ the standard.
 
 ### Contributing
 
-1. Create personal fork in GitHub ("Fork" button)
-2. Clone the fork to your computer (e.g., ``git clone https://github.com/myusername/fairtracks_standard.git``)
-3. Commit and push your changes to a feature branch in your personal fork and create a pull 
-   request, as described in the standard 
+1. Create personal fork in GitHub ("Fork" button).
+2. Clone the fork to your computer (e.g., ``git clone https://github.com/myusername/fairtracks_standard.git``).
+3. Run ``make raw``, and edit the raw OPML files to your liking. For more information about the
+   ``make`` targets, see [below](#overview-of-file-types-and-auto-generation).
+4. Run ``make`` or ``make all`` until you are satisfied with the changes.
+5. Run ``make rawclean`` to remove the OPML files before committing.
+6. Commit and push your changes to a feature branch in your personal fork and create a pull 
+   request, as described in the standard.
    [GitHub Flow workflow](https://guides.github.com/introduction/flow/).
-4. Once the Pull Request is accepted:
-   - Pull the latest changes in the ``master`` branch to your local repo
-   - Rebase your feature branch on top of ``master``
+7. Once the Pull Request is accepted:
+   - Pull the latest changes in the ``master`` branch to your local repo.
+   - Rebase your feature branch on top of ``master``.
    - Make sure that all commits are consistently built. The automatically installed 
      ``git-hooks`` will also check for consistency. To make a commit consistent, rebuild it 
      with the ``rebuild_all.sh`` script. To clean up previous commits, use interactive rebase as
      described under [1b. make git-hooks](#1-automatic-make-targets-for-initial-setup) below.
-5. Force push your feature branch to your personal fork, which should update the pull request, and
+8. Force push your feature branch to your personal fork, which should update the pull request, and
    notify us.
 
 ### Overview of file types and auto-generation
