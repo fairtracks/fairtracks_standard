@@ -25,9 +25,9 @@ https://fairtracks.github.io/
 
 ## Overview of structure of the FAIRtracks standard
 
-The FAIRtracks standard consists of a main JSON Schema and a set of subschemas. A JSON document 
-of track metadata must validate towards the main FAIRtracks JSON Schema to be said to follow 
-the standard.
+- The FAIRtracks standard consists of a main JSON Schema and a set of subschemas. A JSON document 
+  of track metadata must validate towards the main FAIRtracks JSON Schema to be said to follow 
+  the standard.
 
 - The main FAIRtracks JSON Schema is simply named `fairtracks.schema.json` and is documented here:
 
