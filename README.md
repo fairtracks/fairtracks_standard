@@ -1,5 +1,21 @@
 ![alt text](docs/fairtracks_logo.png "FAIRtracks logo")
 
+# Table of contents
+- [FAIRtracks - metadata standard for genomic tracks](#fairtracks---metadata-standard-for-genomic-tracks)
+  * [Overview of structure of the FAIRtracks standard](#overview-of-structure-of-the-fairtracks-standard)
+    + [Documentation of the FAIRtracks JSON Schemas](#documentation-of-the-fairtracks-json-schemas)
+  * [Making changes to the standard](#making-changes-to-the-standard)
+    + [Dependencies for running the scripts](#dependencies-for-running-the-scripts)
+    + [Contributing](#contributing)
+    + [Overview of file types and auto-generation](#overview-of-file-types-and-auto-generation)
+    + [1. Automatic `make` targets for initial setup](#1-automatic--make--targets-for-initial-setup)
+    + [2. Main process (with `make` targets) for making changes to the standard](#2-main-process--with--make--targets--for-making-changes-to-the-standard)
+    + [3. `make` targets for overview and cleanup](#3--make--targets-for-overview-and-cleanup)
+  * [OPML file format](#opml-file-format)
+    + [OPML editors](#opml-editors)
+    + [How the FAIRtracks standard is defined in OPML](#how-the-fairtracks-standard-is-defined-in-opml)
+  * [Validation](#validation)
+
 # FAIRtracks - metadata standard for genomic tracks
 
 FAIRtracks is a set of JSON Schemas developed through the ELIXIR implementation study: 
