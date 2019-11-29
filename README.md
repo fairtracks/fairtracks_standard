@@ -151,21 +151,21 @@ itself:
 
 a. `make raw`
   - This makes copies of the existing *.opml files into similarly names *.raw.opml files. The raw
-    OPML files are made to be opened for editing in specialized outlining tools. As such tools 
-    vary in the exact content of the exportet OPML files, the raw OPML files need to be compiled
-    into standardized, cleaned-up versions before they are committed to git.
+    OPML files are made to be opened for editing in [specialized outlining tools](#opml-editors). 
+    As such tools vary in the exact content of the exported OPML files, the raw OPML files need 
+    to be compiled into standardized, cleaned-up versions before they are committed to git.
   - You only need to run `make raw` once. If you accidentally run the command twice, any existing
     raw OPML files will be renamed to *.raw.opml.old.
   - The raw OPML files are ignored by git and can be edited in an OPML editor of choice. See 
     [OPML file format](#opml-file-format) below for more information.
   - Be sure to delete the raw OPML files (with `make rawclean`) before carrying out any git
-    commands. This is important, as e.g. changing branches will not change the raw OPML files, as
-    they are ignored by git. Thus, if one fails to remove the raw OPML files before switching 
-    commits, `make` will just regenerate the prevous commit on top of the new one. 
+    commands. This is important, as *e.g.* changing branches will not change the raw OPML files, 
+    since they are ignored by git. Thus, if one fails to remove the raw OPML files before 
+    switching commits, `make` will just regenerate the prevous commit on top of the new one. 
 
 b. `make` or `make all`
   - After the raw OPML files have been edited, `make` runs:
-    - `make opml` to generate cleaned up, standardized versons of the raw OPML files, and 
+    - `make opml` to generate cleaned up, standardized versons of the raw OPML files.
     - `make json` to generate JSON Schema files and related example JSON files from the cleaned 
       up OPML files.
     - `make docs` to generate Markdown documentation files under the `docs` directory.
