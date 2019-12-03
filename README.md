@@ -213,7 +213,7 @@ one can also use generic XML editors:
 
   Attribute | Description
   --------- | -----------
-  `_key` | The key of the JSON property.
+  `_name` | The name of the JSON property.
   `const` | Constant value (the only value allowed).
   `default` | Default value if no value is provided.
   `description` | Human-readable description of the property.

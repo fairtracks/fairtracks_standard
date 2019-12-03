@@ -154,10 +154,10 @@ def if_changed_write_json_file(json_file, json_dict):
 def _json_schema_create_root(opml_root):
     json_dict = NestedOrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
-    json_dict['$id'] = opml_root.find(".//outline[@_key='@schema']").attrib['const']
+    json_dict['$id'] = opml_root.find(".//outline[@_name='@schema']").attrib['const']
     json_dict['$comment'] = ""
-    json_dict['title'] = opml_root.find(".//outline[@_key='#toplevel']").attrib['title']
-    json_dict['type'] = opml_root.find(".//outline[@_key='#toplevel']").attrib['type']
+    json_dict['title'] = opml_root.find(".//outline[@_name='#toplevel']").attrib['title']
+    json_dict['type'] = opml_root.find(".//outline[@_name='#toplevel']").attrib['type']
     return json_dict
 
 
@@ -208,7 +208,7 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        name = element.attrib['_key']
+        name = _get_json_el_name(element)
         json_parent['properties'][name] = json_child
 
         _json_schema_update_parent_required(json_parent, element, name)
@@ -329,8 +329,8 @@ def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
 def _json_example_add_children_to_parent(element, json_children, json_parent):
     if isinstance(json_parent, dict):
         assert(len(json_children) == 1)
-        key = element.attrib['_key']
-        json_parent[key] = json_children[0]
+        name = _get_json_el_name(element)
+        json_parent[name] = json_children[0]
     else:  # array
         for json_child in json_children:
             json_parent.append(json_child)
@@ -443,6 +443,10 @@ def _json_example_add_signature(json_dict):
 
 # General helper methods
 
+def _get_json_el_name(element):
+    return element.attrib.get('_name')
+
+
 def _json_dict_extract_signature(json_dict):
     try:
         if '$schema' in json_dict:  # JSON Schema
@@ -455,9 +459,9 @@ def _json_dict_extract_signature(json_dict):
 
 
 def _ignore_element(opml_elem):
-    key = opml_elem.attrib.get('_key')
-    if key:
-        return key.startswith('#')
+    name = _get_json_el_name(opml_elem)
+    if name:
+        return name.startswith('#')
     else:
         return False
 
