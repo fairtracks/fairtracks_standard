@@ -208,31 +208,31 @@ def _json_schema_add_child_to_parent(element, json_child, json_parent):
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        name = _get_json_el_name(element)
-        json_parent['properties'][name] = json_child
+        json_parent['properties'][_get_json_el_name(element)] = json_child
 
-        _json_schema_update_parent_required(json_parent, element, name)
-        _json_schema_update_parent_require_anyof(json_parent, element, name)
-        _json_schema_update_parent_ifthen(json_parent, element, name)
+        _json_schema_update_parent_required(json_parent, element)
+        _json_schema_update_parent_require_anyof(json_parent, element)
+        _json_schema_update_parent_ifthen(json_parent, element)
 
 
-def _json_schema_update_parent_required(json_parent, element, name):
+def _json_schema_update_parent_required(json_parent, element):
     if element.attrib['required'] == 'true':
         if 'required' not in json_parent:
             json_parent['required'] = []
-        json_parent['required'].append(name)
+        json_parent['required'].append(_get_json_el_name(element))
 
 
-def _json_schema_update_parent_require_anyof(json_parent, element, name):
+def _json_schema_update_parent_require_anyof(json_parent, element):
     if 'requireAnyOf' in element.attrib and element.attrib['requireAnyOf'] == 'true':
         if 'anyOf' not in json_parent:
             json_parent['anyOf'] = []
-        json_parent['anyOf'].append({'required': [name]})
+        json_parent['anyOf'].append({'required': [_get_json_el_name(element)]})
 
 
-def _json_schema_update_parent_ifthen(json_parent, element, name):
+def _json_schema_update_parent_ifthen(json_parent, element):
     for if_then_attrib in IF_THEN_ATTRIBS:
         if if_then_attrib in element.attrib and element.attrib[if_then_attrib] != '':
+            el_name = _get_json_el_name(element)
             full_attrib = element.attrib[if_then_attrib]
             all_rules = re.findall('\|?'
                                    '(?:(\w+)/)?'  # if_property
@@ -269,10 +269,10 @@ def _json_schema_update_parent_ifthen(json_parent, element, name):
                             cur_json_object['anyOf'].append(NestedOrderedDict(const=if_value))
 
                     if if_then_attrib == 'requireIf':
-                        if_then_json_object['then']['required'] = [name]
+                        if_then_json_object['then']['required'] = [el_name]
                     elif if_then_attrib == 'constIf':
                         assert cat.then_value
-                        cur_json_object = if_then_json_object['then']['properties'][name]
+                        cur_json_object = if_then_json_object['then']['properties'][el_name]
                         if cat.then_property:
                             cur_json_object = cur_json_object['properties'][cat.then_property]
                         cur_json_object['const'] = cat.then_value
