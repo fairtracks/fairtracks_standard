@@ -250,12 +250,11 @@ one can also use generic XML editors:
 
   Pattern part | Description | Attribute(s) | Obligatory | Example
   ------------ | ----------- | ------------ | ---------- | -------
-  `if_property_parent/` | Parent of if_property | `constIf` `requireIf` | No | `technique/`
-  `if_property=` | Sibling property (of current property) to check. (If `if_property_parent` is defined this will be a sibling-child.) | `constIf` `requireIf`  | Yes | `term_url=`
+  `if_property=` | Relative JSON Pointer to property to check | `constIf` `requireIf`  | Yes | `2/technique/term_id=`
   `if_value` | Value to check for | `constIf` `requireIf`  | Yes | `http://purl.obolibrary.org/obo/OBI_0001853`
   `;` | If-then delimiter | `constIf` | Yes | `;`
-  `then_property=` | Child-property of current property to get `const` value | `constIf` | No | `term_url=`
-  `then_value` | `const` value for current property (or a child if `then_property` is defined) | `constIf` | Yes | `http://purl.obolibrary.org/obo/SO_0000685`
+  `then_property=` | Relative JSON Pointer to property to acquire `const` value | `constIf` | No | `1/term_id=`
+  `then_value` | `const` value for `then_property` | `constIf` | Yes | `http://purl.obolibrary.org/obo/SO_0000685`
   <code>&#124;</code> | Pattern delimiter (between patterns if more than one) | `constIf` `requireIf` | No |
   
 - In order to support multiple OPML editors, the first `<outline>` tag in the OPML files (the one 
