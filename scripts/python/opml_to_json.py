@@ -161,79 +161,79 @@ def _json_schema_create_root(opml_root):
     return json_dict
 
 
-def _json_schema_create_subtree(opml_root, json_parent):
-    for opml_elem in opml_root:
-        json_child = _json_schema_create_child(opml_elem)
-        _json_schema_create_subtree(opml_root=opml_elem, json_parent=json_child)
-        _json_schema_add_child_to_parent(opml_elem, json_child, json_parent)
+def _json_schema_create_subtree(opml_parent, json_parent):
+    for opml_child in opml_parent:
+        json_child = _json_schema_create_child(opml_child)
+        _json_schema_create_subtree(opml_parent=opml_child, json_parent=json_child)
+        _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_parent)
 
 
-def _json_schema_create_child(opml_elem):
+def _json_schema_create_child(opml_child):
     json_child = NestedOrderedDict()
 
     for attrib in ATTRIBS_TO_IMPORT:
-        _json_schema_add_attrib_to_child(opml_elem, json_child, attrib)
+        _json_schema_add_attrib_to_child(opml_child, json_child, attrib)
 
-    if 'type' in opml_elem.attrib and opml_elem.attrib['type'] == 'array':
+    if 'type' in opml_child.attrib and opml_child.attrib['type'] == 'array':
         json_child['items'] = NestedOrderedDict()
 
-    if 'examples' in opml_elem.attrib and opml_elem.attrib['examples'] == EXAMPLE_SKIP_CHAR:
+    if 'examples' in opml_child.attrib and opml_child.attrib['examples'] == EXAMPLE_SKIP_CHAR:
         del json_child['examples']
 
     return json_child
 
 
-def _json_schema_add_attrib_to_child(opml_elem, json_child, attrib_name):
-    if attrib_name in opml_elem.attrib:
-        element_value = opml_elem.attrib[attrib_name]
+def _json_schema_add_attrib_to_child(opml_child, json_child, attrib_name):
+    if attrib_name in opml_child.attrib:
+        attrib_value = opml_child.attrib[attrib_name]
         if attrib_name in ATTRIB_CONVERT_MAPPINGS:
             attrib_name = ATTRIB_CONVERT_MAPPINGS[attrib_name]
-        if element_value:
-            if element_value in BOOLEAN_MAP.keys():
-                json_child[attrib_name] = BOOLEAN_MAP[element_value]
+        if attrib_value:
+            if attrib_value in BOOLEAN_MAP.keys():
+                json_child[attrib_name] = BOOLEAN_MAP[attrib_value]
             elif attrib_name in ALWAYS_ARRAY_ATTRIBS or \
-                    (ARRAY_SPLIT_CHAR_LEVEL_1 in element_value and
+                    (ARRAY_SPLIT_CHAR_LEVEL_1 in attrib_value and
                      attrib_name not in NEVER_ARRAY_ATTRIBS):
-                json_child[attrib_name] = element_value.split(ARRAY_SPLIT_CHAR_LEVEL_1)
+                json_child[attrib_name] = attrib_value.split(ARRAY_SPLIT_CHAR_LEVEL_1)
             elif attrib_name in INTEGER_ATTRIBS:
-                json_child[attrib_name] = int(element_value)
+                json_child[attrib_name] = int(attrib_value)
             else:
-                json_child[attrib_name] = element_value
+                json_child[attrib_name] = attrib_value
 
 
-def _json_schema_add_child_to_parent(element, json_child, json_parent):
-    if _ignore_element(element):
+def _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_parent):
+    if _ignore_element(opml_child):
         return
 
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        json_parent['properties'][_get_json_el_name(element)] = json_child
+        json_parent['properties'][_get_json_el_name(opml_child)] = json_child
 
-        _json_schema_update_parent_required(json_parent, element)
-        _json_schema_update_parent_require_anyof(json_parent, element)
-        _json_schema_update_parent_ifthen(json_parent, element)
+        _json_schema_update_parent_required(json_parent, opml_child)
+        _json_schema_update_parent_require_anyof(json_parent, opml_child)
+        _json_schema_update_parent_ifthen(json_parent, opml_child)
 
 
-def _json_schema_update_parent_required(json_parent, element):
-    if element.attrib['required'] == 'true':
+def _json_schema_update_parent_required(json_parent, opml_child):
+    if opml_child.attrib['required'] == 'true':
         if 'required' not in json_parent:
             json_parent['required'] = []
-        json_parent['required'].append(_get_json_el_name(element))
+        json_parent['required'].append(_get_json_el_name(opml_child))
 
 
-def _json_schema_update_parent_require_anyof(json_parent, element):
-    if 'requireAnyOf' in element.attrib and element.attrib['requireAnyOf'] == 'true':
+def _json_schema_update_parent_require_anyof(json_parent, opml_child):
+    if 'requireAnyOf' in opml_child.attrib and opml_child.attrib['requireAnyOf'] == 'true':
         if 'anyOf' not in json_parent:
             json_parent['anyOf'] = []
-        json_parent['anyOf'].append({'required': [_get_json_el_name(element)]})
+        json_parent['anyOf'].append({'required': [_get_json_el_name(opml_child)]})
 
 
-def _json_schema_update_parent_ifthen(json_parent, element):
+def _json_schema_update_parent_ifthen(json_parent, opml_child):
     for if_then_attrib in IF_THEN_ATTRIBS:
-        if if_then_attrib in element.attrib and element.attrib[if_then_attrib] != '':
-            el_name = _get_json_el_name(element)
-            full_attrib = element.attrib[if_then_attrib]
+        if if_then_attrib in opml_child.attrib and opml_child.attrib[if_then_attrib] != '':
+            el_name = _get_json_el_name(opml_child)
+            full_attrib = opml_child.attrib[if_then_attrib]
             all_rules = re.findall('\|?'
                                    '(?:(\w+)/)?'  # if_property
                                    '(\w+)='  # if_property_child
@@ -292,44 +292,44 @@ def _json_schema_add_signature(json_dict):
 
 # JSON example internal methods
 
-def _json_example_create_subtree(opml_path, opml_root, json_parent, example_index):
+def _json_example_create_subtree(opml_path, opml_parent, json_parent, example_index):
     num_children_created = 0
 
-    for opml_elem in opml_root:
-        if _ignore_element(opml_elem):
+    for opml_child in opml_parent:
+        if _ignore_element(opml_child):
             continue
 
         json_children = None
-        if _is_ref(opml_elem):
+        if _is_ref(opml_child):
             json_child = _json_example_get_child_for_ref(
-                opml_path, opml_elem, example_index)
+                opml_path, opml_child, example_index)
             json_children = [json_child] if json_child else None
         else:
-            json_elem_array = _json_example_convert_opml_elem_to_json_array(opml_elem)
-            if json_elem_array:
+            json_child_array = _json_example_convert_opml_elem_to_json_array(opml_child)
+            if json_child_array:
                 json_children = _json_example_get_children_recursively(
-                    opml_path, opml_elem, json_elem_array, example_index)
+                    opml_path, opml_child, json_child_array, example_index)
         if json_children:
-            _json_example_add_children_to_parent(opml_elem, json_children, json_parent)
+            _json_example_add_children_to_parent(opml_child, json_children, json_parent)
             num_children_created += len(json_children)
 
     return num_children_created
 
 
-def _json_example_get_child_for_ref(opml_path, opml_elem, example_index):
-    ref_opml_path = _generate_opml_path_from_ref(opml_path, opml_elem)
+def _json_example_get_child_for_ref(opml_path, opml_parent, example_index):
+    ref_opml_path = _generate_opml_path_from_ref(opml_path, opml_parent)
     json_child = create_json_example_dict(ref_opml_path, example_index=example_index)
     if '@schema' in json_child:
         del json_child['@schema']
-    if 'examples' in opml_elem.attrib and opml_elem.attrib['examples'] == EXAMPLE_SKIP_CHAR:
+    if 'examples' in opml_parent.attrib and opml_parent.attrib['examples'] == EXAMPLE_SKIP_CHAR:
         return None
     return json_child
 
 
-def _json_example_add_children_to_parent(element, json_children, json_parent):
+def _json_example_add_children_to_parent(opml_child, json_children, json_parent):
     if isinstance(json_parent, dict):
         assert(len(json_children) == 1)
-        name = _get_json_el_name(element)
+        name = _get_json_el_name(opml_child)
         json_parent[name] = json_children[0]
     else:  # array
         for json_child in json_children:
@@ -367,9 +367,9 @@ def _json_example_convert_opml_elem_to_json_array(opml_elem):
             return None
 
 
-def _json_example_get_children_recursively(opml_path, opml_elem, json_elem_array, example_index):
-    json_child = json_elem_array[example_index if example_index is not None else 0]
-    if _is_example_content(json_elem_array):
+def _json_example_get_children_recursively(opml_parent, opml_child, json_child_array, example_index):
+    json_child = json_child_array[example_index if example_index is not None else 0]
+    if _is_example_content(json_child_array):
         if _is_array(json_child):  # two-level example array, reduce a level
             return json_child
         else:
@@ -390,8 +390,8 @@ def _json_example_get_children_recursively(opml_path, opml_elem, json_elem_array
     for grandchild_example_index in grandchildren_example_indices:
         try:
             num_grandchildren_created = _json_example_create_subtree(
-                opml_path,
-                opml_root=opml_elem,
+                opml_parent,
+                opml_parent=opml_child,
                 json_parent=json_child,
                 example_index=grandchild_example_index
             )
@@ -481,8 +481,8 @@ def _get_ref(opml_elem):
     return opml_elem.attrib['ref']
 
 
-def _is_array(json_child):
-    return isinstance(json_child, list)
+def _is_array(json_elem):
+    return isinstance(json_elem, list)
 
 
 if __name__ == "__main__":
