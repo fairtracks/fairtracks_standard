@@ -6,17 +6,19 @@
         "term_id": "http://purl.obolibrary.org/obo/NCIT_C16403",
         "term_label": "Cell Line"
     },
-    "cell_line": {
-        "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
-        "term_label": "H1-hESC"
-    },
-    "organism_part": {
-        "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
-        "term_label": "embryonic stem cell"
+    "sample_type": {
+        "cell_line": {
+            "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+            "term_label": "H1-hESC"
+        },
+        "organism_part": {
+            "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
+            "term_label": "embryonic stem cell"
+        },
+        "summary": "H1-hESC"
     },
     "phenotype": {
         "term_id": "http://purl.obolibrary.org/obo/NCIT_C14165",
         "term_label": "Normal"
-    },
-    "main_type": "H1-hESC"
+    }
 }

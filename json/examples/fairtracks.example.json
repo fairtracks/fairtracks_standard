@@ -2,8 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks.schema.json",
     "doc_info": {
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
-        "doc_version": "a462eea8911d9362eec9cd8d905671c163455dda78d5e2387d58c4299590ad93",
-        "doc_date": "2019-11-26T00:40:15"
+        "doc_version": "7101018aa86865c8cb0e2abf8902cf6ee2476b549fd02d5d7b276249e0cba296",
+        "doc_date": "2019-12-04T16:34:56"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -40,11 +40,13 @@
                 "term_id": "http://purl.obolibrary.org/obo/OBI_0002017",
                 "term_label": "histone modification identification by ChIP-Seq assay"
             },
-            "sequence_feature": {
-                "term_id": "http://purl.obolibrary.org/obo/SO_0001706",
-                "term_label": "H3K4_trimethylation"
+            "target": {
+                "sequence_feature": {
+                    "term_id": "http://purl.obolibrary.org/obo/SO_0001706",
+                    "term_label": "H3K4_trimethylation"
+                },
+                "summary": "H3K4_trimethylation"
             },
-            "target": "H3K4_trimethylation",
             "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
             "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
         }
@@ -57,19 +59,21 @@
                 "term_id": "http://purl.obolibrary.org/obo/NCIT_C16403",
                 "term_label": "Cell Line"
             },
-            "cell_line": {
-                "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
-                "term_label": "H1-hESC"
-            },
-            "organism_part": {
-                "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
-                "term_label": "embryonic stem cell"
+            "sample_type": {
+                "cell_line": {
+                    "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+                    "term_label": "H1-hESC"
+                },
+                "organism_part": {
+                    "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
+                    "term_label": "embryonic stem cell"
+                },
+                "summary": "H1-hESC"
             },
             "phenotype": {
                 "term_id": "http://purl.obolibrary.org/obo/NCIT_C14165",
                 "term_label": "Normal"
-            },
-            "main_type": "H1-hESC"
+            }
         }
     ],
     "tracks": [
