@@ -8,6 +8,7 @@ import sys
 import xml.etree.ElementTree as ElementTree
 
 from collections import OrderedDict, namedtuple, defaultdict
+from copy import copy
 from datetime import datetime
 
 from json_signature import compute_signature_from_json_content
@@ -56,8 +57,7 @@ class NestedOrderedDict(OrderedDict):
         return val
 
 
-RuleCategory = namedtuple('RuleCategory', ('if_property', 'if_property_child',
-                                           'then_property', 'then_value'))
+RuleCategory = namedtuple('RuleCategory', ('if_pointer', 'then_pointer', 'then_value'))
 
 
 class ArgumentParserError(Exception): pass
@@ -99,22 +99,22 @@ def _parseArgs(out_file_mode):
     return parser.parse_args()
 
 
-def create_json_schema_dict(opml_path):
-    opml_root = ElementTree.parse(opml_path).find('./body')
+def create_json_schema_dict(opml_file_path):
+    opml_root = ElementTree.parse(opml_file_path).find('./body')
 
     json_schema_dict = _json_schema_create_root(opml_root)
-    _json_schema_create_subtree(opml_root, json_parent=json_schema_dict)
+    _json_schema_create_subtree(opml_root, json_parent=json_schema_dict, json_path=[])
     json_schema_dict = _json_schema_add_end_root_attribs(json_schema_dict)
     json_schema_dict = _json_schema_add_signature(json_schema_dict)
 
     return json_schema_dict
 
 
-def create_json_example_dict(opml_path, example_index=None):
-    opml_root = ElementTree.parse(opml_path).find('./body')
+def create_json_example_dict(opml_file_path, example_index=None):
+    opml_root = ElementTree.parse(opml_file_path).find('./body')
 
     json_example_dict = NestedOrderedDict()
-    _json_example_create_subtree(opml_path, opml_root,
+    _json_example_create_subtree(opml_file_path, opml_root,
                                  json_parent=json_example_dict,
                                  example_index=example_index)
 
@@ -161,11 +161,17 @@ def _json_schema_create_root(opml_root):
     return json_dict
 
 
-def _json_schema_create_subtree(opml_parent, json_parent):
+def _json_schema_create_subtree(opml_parent, json_parent, json_path):
     for opml_child in opml_parent:
         json_child = _json_schema_create_child(opml_child)
-        _json_schema_create_subtree(opml_parent=opml_child, json_parent=json_child)
-        _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_parent)
+        parent_name = _get_opml_el_name(opml_parent)
+        child_json_path = json_path + [parent_name] if parent_name else json_path
+        _json_schema_create_subtree(opml_parent=opml_child,
+                                    json_parent=json_child,
+                                    json_path=child_json_path)
+        _json_schema_add_child_to_parent(
+            opml_child, opml_parent, json_child, json_parent, child_json_path
+        )
 
 
 def _json_schema_create_child(opml_child):
@@ -201,81 +207,117 @@ def _json_schema_add_attrib_to_child(opml_child, json_child, attrib_name):
                 json_child[attrib_name] = attrib_value
 
 
-def _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_parent):
+def _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_parent, json_path):
     if _ignore_element(opml_child):
         return
 
     if 'items' in json_parent:
         json_parent['items'] = json_child
     else:
-        json_parent['properties'][_get_json_el_name(opml_child)] = json_child
+        child_name = _get_opml_el_name(opml_child)
+        parent_name = _get_opml_el_name(opml_parent)
+        json_parent['properties'][child_name] = json_child
 
         _json_schema_update_parent_required(json_parent, opml_child)
         _json_schema_update_parent_require_anyof(json_parent, opml_child)
-        _json_schema_update_parent_ifthen(json_parent, opml_child)
+        _json_schema_update_parent_ifthen(json_parent, opml_child,
+                                          json_path + [child_name], if_level=1)
 
 
 def _json_schema_update_parent_required(json_parent, opml_child):
     if opml_child.attrib['required'] == 'true':
         if 'required' not in json_parent:
             json_parent['required'] = []
-        json_parent['required'].append(_get_json_el_name(opml_child))
+        json_parent['required'].append(_get_opml_el_name(opml_child))
 
 
 def _json_schema_update_parent_require_anyof(json_parent, opml_child):
     if 'requireAnyOf' in opml_child.attrib and opml_child.attrib['requireAnyOf'] == 'true':
         if 'anyOf' not in json_parent:
             json_parent['anyOf'] = []
-        json_parent['anyOf'].append({'required': [_get_json_el_name(opml_child)]})
+        json_parent['anyOf'].append({'required': [_get_opml_el_name(opml_child)]})
 
 
-def _json_schema_update_parent_ifthen(json_parent, opml_child):
+def _json_schema_update_parent_ifthen(json_parent, opml_child, json_path, if_level):
+    for opml_grandchild in opml_child:
+        grandchild_name = _get_opml_el_name(opml_grandchild)
+        _json_schema_update_parent_ifthen(json_parent, opml_grandchild,
+                                          json_path + [grandchild_name], if_level+1)
+
     for if_then_attrib in IF_THEN_ATTRIBS:
         if if_then_attrib in opml_child.attrib and opml_child.attrib[if_then_attrib] != '':
-            el_name = _get_json_el_name(opml_child)
+            el_name = _get_opml_el_name(opml_child)
             full_attrib = opml_child.attrib[if_then_attrib]
-            all_rules = re.findall('\|?'
-                                   '(?:(\w+)/)?'  # if_property
-                                   '(\w+)='  # if_property_child
-                                   '([\w\/\:\.]+)'  # if_value
-                                   '(?:;'
-                                   '(?:(\w+)=)?'  # then_property
-                                   '([\w\/\:\.]+))?',  # then_value
+            all_rules = re.findall(r'\|?'
+                                   r'(\d(?:/\w+)*)'  # if_pointer
+                                   r'='
+                                   r'([\w\/\:\.]+)'  # if_value
+                                   r'(?:;'  # start 'then' (constIf only)
+                                   r'(0(?:/\w+)*)'  # then_pointer
+                                   r'='
+                                   r'([\w\/\:\.]+)'  # then_value
+                                   r')?',  # end 'then'
                                    full_attrib)
-            if all_rules:
+            if not all_rules:
+                raise ValueError('{}.{}: Not able to parse attribute value "{}"'.format(
+                                 el_name, if_then_attrib, full_attrib))
+
+            all_rules_by_category = defaultdict(list)
+            for rule in all_rules:
+                if_value = rule[1]
+                rule_cat = RuleCategory(rule[0], rule[2], rule[3])
+                all_rules_by_category[rule_cat].append(if_value)
+
+            for cat, if_values in all_rules_by_category.items():
+                assert cat.if_pointer
+                level = int(cat.if_pointer[0])
+                assert level > 0
+                if level != if_level:
+                    continue
+
+                if_then_json_object = NestedOrderedDict()
                 if 'allOf' not in json_parent:
                     json_parent['allOf'] = []
+                json_parent['allOf'].append(if_then_json_object)
 
-                all_rules_by_category = defaultdict(list)
-                for rule in all_rules:
-                    if_value = rule[2]
-                    rule_cat = RuleCategory(*(rule[:2] + rule[3:]))
-                    all_rules_by_category[rule_cat].append(if_value)
+                cur_json_object = if_then_json_object['if']
+                cur_json_object = _add_property_path_from_rel_pointer(
+                    cur_json_object, json_path, cat.if_pointer
+                )
 
-                for cat, if_values in all_rules_by_category.items():
-                    assert cat.if_property
-                    if_then_json_object = NestedOrderedDict()
-                    json_parent['allOf'].append(if_then_json_object)
+                if len(if_values) == 1:
+                    cur_json_object['const'] = if_values[0]
+                else:
+                    cur_json_object['anyOf'] = []
+                    for if_value in if_values:
+                        cur_json_object['anyOf'].append(NestedOrderedDict(const=if_value))
 
-                    cur_json_object = if_then_json_object['if']['properties'][cat.if_property]
-                    if cat.if_property_child:
-                        cur_json_object = cur_json_object['properties'][cat.if_property_child]
+                cur_json_object = if_then_json_object['then']
+                if if_then_attrib == 'requireIf':
+                    cur_json_object = _add_property_path_from_rel_pointer(
+                        cur_json_object, json_path, '1'
+                    )
+                    cur_json_object['required'] = [el_name]
+                elif if_then_attrib == 'constIf':
+                    assert cat.then_value
+                    cur_json_object = _add_property_path_from_rel_pointer(
+                        cur_json_object, json_path, cat.then_pointer
+                    )
+                    cur_json_object['const'] = cat.then_value
 
-                    if len(if_values) == 1:
-                        cur_json_object['const'] = if_values[0]
-                    else:
-                        cur_json_object['anyOf'] = []
-                        for if_value in if_values:
-                            cur_json_object['anyOf'].append(NestedOrderedDict(const=if_value))
 
-                    if if_then_attrib == 'requireIf':
-                        if_then_json_object['then']['required'] = [el_name]
-                    elif if_then_attrib == 'constIf':
-                        assert cat.then_value
-                        cur_json_object = if_then_json_object['then']['properties'][el_name]
-                        if cat.then_property:
-                            cur_json_object = cur_json_object['properties'][cat.then_property]
-                        cur_json_object['const'] = cat.then_value
+def _add_property_path_from_rel_pointer(cur_json_object, json_path, rel_pointer_str):
+    rel_pointer = rel_pointer_str.split('/')
+    level = int(rel_pointer[0])
+    pointer_path = rel_pointer[1:] if len(rel_pointer) > 1 else []
+
+    property_names = copy(json_path)
+    property_names[len(property_names)-level:] = pointer_path
+
+    for i, name in enumerate(property_names):
+        cur_json_object = cur_json_object['properties'][name]
+
+    return cur_json_object
 
 
 def _json_schema_add_end_root_attribs(json_dict):
@@ -292,7 +334,7 @@ def _json_schema_add_signature(json_dict):
 
 # JSON example internal methods
 
-def _json_example_create_subtree(opml_path, opml_parent, json_parent, example_index):
+def _json_example_create_subtree(opml_file_path, opml_parent, json_parent, example_index):
     num_children_created = 0
 
     for opml_child in opml_parent:
@@ -302,13 +344,13 @@ def _json_example_create_subtree(opml_path, opml_parent, json_parent, example_in
         json_children = None
         if _is_ref(opml_child):
             json_child = _json_example_get_child_for_ref(
-                opml_path, opml_child, example_index)
+                opml_file_path, opml_child, example_index)
             json_children = [json_child] if json_child else None
         else:
             json_child_array = _json_example_convert_opml_elem_to_json_array(opml_child)
             if json_child_array:
                 json_children = _json_example_get_children_recursively(
-                    opml_path, opml_child, json_child_array, example_index)
+                    opml_file_path, opml_child, json_child_array, example_index)
         if json_children:
             _json_example_add_children_to_parent(opml_child, json_children, json_parent)
             num_children_created += len(json_children)
@@ -316,9 +358,9 @@ def _json_example_create_subtree(opml_path, opml_parent, json_parent, example_in
     return num_children_created
 
 
-def _json_example_get_child_for_ref(opml_path, opml_parent, example_index):
-    ref_opml_path = _generate_opml_path_from_ref(opml_path, opml_parent)
-    json_child = create_json_example_dict(ref_opml_path, example_index=example_index)
+def _json_example_get_child_for_ref(opml_file_path, opml_parent, example_index):
+    ref_opml_file_path = _generate_opml_file_path_from_ref(opml_file_path, opml_parent)
+    json_child = create_json_example_dict(ref_opml_file_path, example_index=example_index)
     if '@schema' in json_child:
         del json_child['@schema']
     if 'examples' in opml_parent.attrib and opml_parent.attrib['examples'] == EXAMPLE_SKIP_CHAR:
@@ -329,7 +371,7 @@ def _json_example_get_child_for_ref(opml_path, opml_parent, example_index):
 def _json_example_add_children_to_parent(opml_child, json_children, json_parent):
     if isinstance(json_parent, dict):
         assert(len(json_children) == 1)
-        name = _get_json_el_name(opml_child)
+        name = _get_opml_el_name(opml_child)
         json_parent[name] = json_children[0]
     else:  # array
         for json_child in json_children:
@@ -443,7 +485,7 @@ def _json_example_add_signature(json_dict):
 
 # General helper methods
 
-def _get_json_el_name(element):
+def _get_opml_el_name(element):
     return element.attrib.get('_name')
 
 
@@ -459,7 +501,7 @@ def _json_dict_extract_signature(json_dict):
 
 
 def _ignore_element(opml_elem):
-    name = _get_json_el_name(opml_elem)
+    name = _get_opml_el_name(opml_elem)
     if name:
         return name.startswith('#')
     else:
@@ -470,9 +512,9 @@ def _is_ref(opml_elem):
     return 'ref' in opml_elem.attrib
 
 
-def _generate_opml_path_from_ref(opml_path, opml_elem):
+def _generate_opml_file_path_from_ref(opml_file_path, opml_elem):
     return os.path.join(
-        os.path.dirname(opml_path),
+        os.path.dirname(opml_file_path),
         os.path.basename(_get_ref(opml_elem)).replace('.schema.json', '.overview.opml')
     )
 
