@@ -215,7 +215,6 @@ def _json_schema_add_child_to_parent(opml_child, opml_parent, json_child, json_p
         json_parent['items'] = json_child
     else:
         child_name = _get_opml_el_name(opml_child)
-        parent_name = _get_opml_el_name(opml_parent)
         json_parent['properties'][child_name] = json_child
 
         _json_schema_update_parent_required(json_parent, opml_child)
@@ -275,9 +274,10 @@ def _json_schema_update_parent_ifthen(json_parent, opml_child, json_path, if_lev
                 if level != if_level:
                     continue
 
-                if_then_json_object = NestedOrderedDict()
                 if 'allOf' not in json_parent:
                     json_parent['allOf'] = []
+
+                if_then_json_object = NestedOrderedDict()
                 json_parent['allOf'].append(if_then_json_object)
 
                 cur_json_object = if_then_json_object['if']
