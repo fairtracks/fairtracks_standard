@@ -40,11 +40,13 @@
                 "term_id": "http://purl.obolibrary.org/obo/OBI_0002017",
                 "term_label": "histone modification identification by ChIP-Seq assay"
             },
-            "sequence_feature": {
-                "term_id": "http://purl.obolibrary.org/obo/SO_0001706",
-                "term_label": "H3K4_trimethylation"
+            "target": {
+                "sequence_feature": {
+                    "term_id": "http://purl.obolibrary.org/obo/SO_0001706",
+                    "term_label": "H3K4_trimethylation"
+                },
+                "summary": "H3K4_trimethylation"
             },
-            "target": "H3K4_trimethylation",
             "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
             "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
         }
@@ -59,19 +61,21 @@
                 "term_id": "http://purl.obolibrary.org/obo/NCIT_C16403",
                 "term_label": "Cell Line"
             },
-            "cell_line": {
-                "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
-                "term_label": "H1-hESC"
-            },
-            "organism_part": {
-                "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
-                "term_label": "embryonic stem cell"
+            "sample_type": {
+                "cell_line": {
+                    "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+                    "term_label": "H1-hESC"
+                },
+                "organism_part": {
+                    "term_id": "http://purl.obolibrary.org/obo/CL_0002322",
+                    "term_label": "embryonic stem cell"
+                },
+                "summary": "H1-hESC"
             },
             "phenotype": {
                 "term_id": "http://purl.obolibrary.org/obo/NCIT_C14165",
                 "term_label": "Normal"
-            },
-            "main_type": "H1-hESC"
+            }
         }
     ],
     "tracks": [
@@ -93,10 +97,8 @@
                 "term_id": "http://edamontology.org/format_3613",
                 "term_label": "ENCODE narrow peak format"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Narrow peaks",
+            "geometric_track_type": "Segments",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
@@ -120,10 +122,8 @@
                 "term_id": "http://edamontology.org/format_3004",
                 "term_label": "bigBed"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Narrow peaks",
+            "geometric_track_type": "Segments",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "6d2c6c99a7407f1c49ab163e41d9b575"
@@ -147,10 +147,8 @@
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Signal values (fold change)",
+            "geometric_track_type": "Step function",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "550ae974bf94f1deb1676613ab24a5da"
@@ -174,10 +172,8 @@
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
             },
-            "content_type": {
-                "term_id": "http://edamontology.org/data_3002",
-                "term_label": "Annotation track"
-            },
+            "type_of_condensed_data": "Signal values (p-value)",
+            "geometric_track_type": "Step function",
             "checksum": {
                 "cs_method": "MD5",
                 "cs_hash": "942ea96e86313d4338cf3fd020882c4d"

@@ -53,14 +53,14 @@ General information about the collection of tracks that is annotated in the curr
 
 `object` with following properties:
 
-| Property            | Type   | Required     |
-| ------------------- | ------ | ------------ |
-| `contact`           | object | **Required** |
-| `description_url`   | string | Optional     |
-| `long_name`         | string | **Required** |
-| `orig_metadata_url` | string | Optional     |
-| `short_name`        | string | **Required** |
-| `source_repo`       | object | Optional     |
+| Property            | Type    | Required     |
+| ------------------- | ------- | ------------ |
+| `contact`           | Contact | **Required** |
+| `description_url`   | string  | Optional     |
+| `long_name`         | string  | **Required** |
+| `orig_metadata_url` | string  | Optional     |
+| `short_name`        | string  | **Required** |
+| `source_repo`       | object  | Optional     |
 
 #### contact
 
@@ -69,74 +69,12 @@ Contact information for the track collection
 `contact`
 
 - is **required**
-- type: `object`
+- type: Contact
 
 ##### contact Type
 
-`object` with following properties:
-
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `e-mail` | string | Optional     |
-| `name`   | string | **Required** |
-| `orcid`  | string | Optional     |
-
-#### e-mail
-
-E-mail to contact person/organization
-
-`e-mail`
-
-- is optional
-- type: `string`
-- format: idn-email
-
-##### e-mail Type
-
-`string`
-
-- format: `idn-email` – international email address (according to [RFC 6531](https://tools.ietf.org/html/rfc6531))
-
-##### e-mail Example
-
-```json
-encode-help@lists.stanford.edu
-```
-
-#### name
-
-Name of contact person/organization
-
-`name`
-
-- is **required**
-- type: `string`
-
-##### name Type
-
-`string`
-
-##### name Example
-
-```json
-ENCODE DCC
-```
-
-#### orcid
-
-ORCID to contact person
-
-`orcid`
-
-- is optional
-- type: `string`
-- format: curie
-- namespace: orcid
-- matchType: canonical
-
-##### orcid Type
-
-`string`
+- [Contact](fairtracks_contact.schema.md) –
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
 
 #### description_url
 
