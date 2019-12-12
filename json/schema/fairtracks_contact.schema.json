@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json",
+    "$comment": "JSON signature: c2af8a168cd989b6f9e42bff276483f5b11e1d3fb8ad15414e881039df172022",
+    "title": "Contact",
+    "type": "object",
+    "properties": {
+        "@schema": {
+            "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
+            "type": "string",
+            "format": "uri",
+            "pattern": "^(https?|ftp)://",
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json"
+        },
+        "name": {
+            "description": "Name of contact person/organization",
+            "type": "string",
+            "examples": [
+                "ENCODE DCC"
+            ]
+        },
+        "e-mail": {
+            "description": "E-mail to contact person/organization",
+            "type": "string",
+            "format": "idn-email",
+            "examples": [
+                "encode-help@lists.stanford.edu"
+            ]
+        },
+        "orcid": {
+            "description": "ORCID to contact person",
+            "type": "string",
+            "format": "curie",
+            "namespace": "orcid",
+            "matchType": "canonical"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "anyOf": [
+        {
+            "required": [
+                "e-mail"
+            ]
+        },
+        {
+            "required": [
+                "orcid"
+            ]
+        }
+    ],
+    "additionalProperties": true
+}

@@ -2,6 +2,8 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
     "global_id": "fairtracks:1",
     "local_id": "encode:ENCFF625ZYB",
+    "assembly_id": "insdc.gca:GCF_000001405.26",
+    "assembly_name": "hg38",
     "experiment_ref": "encode:ENCSR000DQP",
     "raw_file_ids": [
         "encode: ENCFF207FGO",
@@ -11,15 +13,12 @@
     "file_name": "r1.narrowPeak.gz",
     "label_short": "ENCFF625ZYB",
     "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
-    "genome_assembly": "GRCh38",
     "file_format": {
         "term_id": "http://edamontology.org/format_3613",
         "term_label": "ENCODE narrow peak format"
     },
-    "content_type": {
-        "term_id": "http://edamontology.org/data_3002",
-        "term_label": "Annotation track"
-    },
+    "type_of_condensed_data": "Narrow peaks",
+    "geometric_track_type": "Segments",
     "checksum": {
         "cs_method": "MD5",
         "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"

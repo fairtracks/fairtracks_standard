@@ -20,3 +20,5 @@ else
   printf "Creating new Python virtual environment in '%s'...\n" "$venv_dir"
   $PYTHON_EXE -m venv "$venv_dir" || exit $?
 fi
+
+ln -sf "$(which node)" "$venv_dir/bin/node"

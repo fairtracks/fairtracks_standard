@@ -101,45 +101,7 @@
                 "contact": {
                     "description": "Contact information for the track collection",
                     "type": "object",
-                    "properties": {
-                        "name": {
-                            "description": "Name of contact person/organization",
-                            "type": "string",
-                            "examples": [
-                                "ENCODE DCC"
-                            ]
-                        },
-                        "e-mail": {
-                            "description": "E-mail to contact person/organization",
-                            "type": "string",
-                            "format": "idn-email",
-                            "examples": [
-                                "encode-help@lists.stanford.edu"
-                            ]
-                        },
-                        "orcid": {
-                            "description": "ORCID to contact person",
-                            "type": "string",
-                            "format": "curie",
-                            "namespace": "orcid",
-                            "matchType": "canonical"
-                        }
-                    },
-                    "required": [
-                        "name"
-                    ],
-                    "anyOf": [
-                        {
-                            "required": [
-                                "e-mail"
-                            ]
-                        },
-                        {
-                            "required": [
-                                "orcid"
-                            ]
-                        }
-                    ]
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json"
                 }
             },
             "required": [

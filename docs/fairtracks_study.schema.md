@@ -8,12 +8,19 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------ |
 | Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [fairtracks_study.schema.json](../json/schema/fairtracks_study.schema.json) |
 
+## Schema Hierarchy
+
+- Study
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json`
+  - [Contact](fairtracks_contact.schema.md)
+    `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
+
 # Study Properties
 
 | Property                    | Type     | Required     | Nullable | Defined by                                 |
 | --------------------------- | -------- | ------------ | -------- | ------------------------------------------ |
 | [@schema](#schema)          | `const`  | Optional     | No       | Study (this schema)                        |
-| [contact](#contact)         | `object` | **Required** | No       | Study (this schema)                        |
+| [contact](#contact)         | Contact  | **Required** | No       | Study (this schema)                        |
 | [global_id](#global_id)     | `string` | Optional     | No       | Study (this schema)                        |
 | [local_id](#local_id)       | `string` | **Required** | No       | Study (this schema)                        |
 | [publication](#publication) | `string` | Optional     | No       | Study (this schema)                        |
@@ -45,75 +52,13 @@ Contact information for study
 `contact`
 
 - is **required**
-- type: `object`
+- type: Contact
 - defined in this schema
 
 ### contact Type
 
-`object` with following properties:
-
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `e-mail` | string | Optional     |
-| `name`   | string | **Required** |
-| `orcid`  | string | Optional     |
-
-#### e-mail
-
-E-mail to contact person/organization
-
-`e-mail`
-
-- is optional
-- type: `string`
-- format: idn-email
-
-##### e-mail Type
-
-`string`
-
-- format: `idn-email` – international email address (according to [RFC 6531](https://tools.ietf.org/html/rfc6531))
-
-##### e-mail Example
-
-```json
-encode-help@lists.stanford.edu
-```
-
-#### name
-
-Name of contact person/organization
-
-`name`
-
-- is **required**
-- type: `string`
-
-##### name Type
-
-`string`
-
-##### name Example
-
-```json
-ENCODE DCC
-```
-
-#### orcid
-
-ORCID to contact person
-
-`orcid`
-
-- is optional
-- type: `string`
-- format: curie
-- namespace: orcid
-- matchType: canonical
-
-##### orcid Type
-
-`string`
+- [Contact](fairtracks_contact.schema.md) –
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
 
 ## global_id
 
