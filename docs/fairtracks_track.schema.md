@@ -10,22 +10,23 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 
 # Track Properties
 
-| Property                            | Type       | Required     | Nullable | Defined by                                 |
-| ----------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
-| [@schema](#schema)                  | `const`    | Optional     | No       | Track (this schema)                        |
-| [checksum](#checksum)               | `object`   | **Required** | No       | Track (this schema)                        |
-| [content_type](#content_type)       | `object`   | **Required** | No       | Track (this schema)                        |
-| [experiment_ref](#experiment_ref)   | `string`   | **Required** | No       | Track (this schema)                        |
-| [file_format](#file_format)         | `object`   | **Required** | No       | Track (this schema)                        |
-| [file_name](#file_name)             | `string`   | Optional     | No       | Track (this schema)                        |
-| [file_url](#file_url)               | `string`   | **Required** | No       | Track (this schema)                        |
-| [genome_assembly](#genome_assembly) | `string`   | **Required** | No       | Track (this schema)                        |
-| [global_id](#global_id)             | `string`   | Optional     | No       | Track (this schema)                        |
-| [label_long](#label_long)           | `string`   | **Required** | No       | Track (this schema)                        |
-| [label_short](#label_short)         | `string`   | **Required** | No       | Track (this schema)                        |
-| [local_id](#local_id)               | `string`   | **Required** | No       | Track (this schema)                        |
-| [raw_file_ids](#raw_file_ids)       | `string[]` | Optional     | No       | Track (this schema)                        |
-| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
+| Property                                          | Type       | Required     | Nullable | Defined by                                 |
+| ------------------------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                                | `const`    | Optional     | No       | Track (this schema)                        |
+| [checksum](#checksum)                             | `object`   | **Required** | No       | Track (this schema)                        |
+| [experiment_ref](#experiment_ref)                 | `string`   | **Required** | No       | Track (this schema)                        |
+| [file_format](#file_format)                       | `object`   | **Required** | No       | Track (this schema)                        |
+| [file_name](#file_name)                           | `string`   | Optional     | No       | Track (this schema)                        |
+| [file_url](#file_url)                             | `string`   | **Required** | No       | Track (this schema)                        |
+| [genome_assembly](#genome_assembly)               | `string`   | **Required** | No       | Track (this schema)                        |
+| [geometric_track_type](#geometric_track_type)     | `enum`     | **Required** | No       | Track (this schema)                        |
+| [global_id](#global_id)                           | `string`   | Optional     | No       | Track (this schema)                        |
+| [label_long](#label_long)                         | `string`   | **Required** | No       | Track (this schema)                        |
+| [label_short](#label_short)                       | `string`   | **Required** | No       | Track (this schema)                        |
+| [local_id](#local_id)                             | `string`   | **Required** | No       | Track (this schema)                        |
+| [raw_file_ids](#raw_file_ids)                     | `string[]` | Optional     | No       | Track (this schema)                        |
+| [type_of_condensed_data](#type_of_condensed_data) | `enum`     | **Required** | No       | Track (this schema)                        |
+| `*`                                               | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
@@ -127,106 +128,6 @@ MD5
 
 ```json
 MD5
-```
-
-## content_type
-
-Type of content represented by the track data file (narrow peaks, signal, region, etc.)
-
-`content_type`
-
-- is **required**
-- type: `object`
-- defined in this schema
-
-### content_type Type
-
-`object` with following properties:
-
-| Property     | Type   | Required |
-| ------------ | ------ | -------- |
-| `term_id`    | string | Optional |
-| `term_label` | string | Optional |
-
-#### term_id
-
-URL linking to an ontology term
-
-`term_id`
-
-- is optional
-- type: `string`
-- format: term
-- ontology: http://edamontology.org/EDAM_1.21.owl
-- matchType: exact
-
-##### term_id Type
-
-`string`
-
-All instances must conform to this regular expression
-
-```regex
-^(https?|ftp)://
-```
-
-- test example:
-  [http://edamontology.org/data_3002](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fedamontology.org%2Fdata_3002>)
-- test example:
-  [http://edamontology.org/data_3002](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fedamontology.org%2Fdata_3002>)
-- test example:
-  [http://edamontology.org/data_3002](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fedamontology.org%2Fdata_3002>)
-- test example:
-  [http://edamontology.org/data_3002](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fedamontology.org%2Fdata_3002>)
-
-##### term_id Examples
-
-```json
-http://edamontology.org/data_3002
-```
-
-```json
-http://edamontology.org/data_3002
-```
-
-```json
-http://edamontology.org/data_3002
-```
-
-```json
-http://edamontology.org/data_3002
-```
-
-#### term_label
-
-Exact value according to the ontology used
-
-`term_label`
-
-- is optional
-- type: `string`
-- autogenerated: true
-
-##### term_label Type
-
-`string`
-
-##### term_label Examples
-
-```json
-Annotation track
-```
-
-```json
-Annotation track
-```
-
-```json
-Annotation track
-```
-
-```json
-Annotation track
 ```
 
 ## experiment_ref
@@ -479,6 +380,57 @@ An assembly identifier (using UCSC nomenclature)
 "GRCh38"
 ```
 
+## geometric_track_type
+
+Geometric type of track, according to the delineation of tracks into one of fifteen logical track types based upon
+their core informational properties (see doi:10.1186/1471-2105-12-494)
+
+`geometric_track_type`
+
+- is **required**
+- type: `enum`
+- defined in this schema
+
+The value of this property **must** be equal to one of the [known values below](#geometric_track_type-known-values).
+
+### geometric_track_type Known Values
+
+| Value                     | Description |
+| ------------------------- | ----------- |
+| `Points`                  |             |
+| `Valued points`           |             |
+| `Segments`                |             |
+| `Valued segments`         |             |
+| `Genome partition`        |             |
+| `Step function`           |             |
+| `Function`                |             |
+| `Linked points`           |             |
+| `Linked valued points`    |             |
+| `Linked segments`         |             |
+| `Linked valued segments`  |             |
+| `Linked genome partition` |             |
+| `Linked step function`    |             |
+| `Linked function`         |             |
+| `Linked base pairs`       |             |
+
+### geometric_track_type Examples
+
+```json
+"Segments"
+```
+
+```json
+"Segments"
+```
+
+```json
+"Step function"
+```
+
+```json
+"Step function"
+```
+
 ## global_id
 
 Global track identifier, resolvable by identifiers.org [to be created by us]
@@ -626,3 +578,60 @@ Array type: `string[]`
 All items must be of the type: `string`
 
 List of identifiers to raw data files used to create track (typically BAM), resolvable by identifiers.org
+
+## type_of_condensed_data
+
+Type of condensed track data: Track data, by definition, is formed downstream of some data condensation process.
+However, the condensed data vary in form and content, technically speaking, and thus in their interpretation. Still,
+there is a limited set of common types of condensed track data which are able to describe the vast majority of track
+files
+
+`type_of_condensed_data`
+
+- is **required**
+- type: `enum`
+- defined in this schema
+
+The value of this property **must** be equal to one of the [known values below](#type_of_condensed_data-known-values).
+
+### type_of_condensed_data Known Values
+
+| Value                            | Description |
+| -------------------------------- | ----------- |
+| `Sequence-derived regions`       |             |
+| `Experimentally-derived regions` |             |
+| `Predicted regions`              |             |
+| `Predicted segmentation`         |             |
+| `Population-derived variants`    |             |
+| `Individual variants`            |             |
+| `Peaks`                          |             |
+| `Broad peaks`                    |             |
+| `Narrow peaks`                   |             |
+| `Gapped peaks`                   |             |
+| `Signal values (fold change)`    |             |
+| `Signal values (p-value)`        |             |
+| `Signal values (log likelihood)` |             |
+| `Signal values (other)`          |             |
+| `Read coverage`                  |             |
+| `Read counts`                    |             |
+| `Mapped single-end reads`        |             |
+| `Mapped paired-end reads`        |             |
+| `Other`                          |             |
+
+### type_of_condensed_data Examples
+
+```json
+"Narrow peaks"
+```
+
+```json
+"Narrow peaks"
+```
+
+```json
+"Signal values (fold change)"
+```
+
+```json
+"Signal values (p-value)"
+```
