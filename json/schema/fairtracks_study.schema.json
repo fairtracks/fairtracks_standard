@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json",
-    "$comment": "JSON signature: fecaf5560b4186c673d1bbce0e3ff589c97ee343aac070f2dffe191bf721068a",
+    "$comment": "JSON signature: 3dccd9e0054f1761147275bbd5ecb6036779fcdaedffd2b1b48d531f9dd21679",
     "title": "Study",
     "type": "object",
     "properties": {
@@ -53,45 +53,7 @@
         "contact": {
             "description": "Contact information for study",
             "type": "object",
-            "properties": {
-                "name": {
-                    "description": "Name of contact person/organization",
-                    "type": "string",
-                    "examples": [
-                        "ENCODE DCC"
-                    ]
-                },
-                "e-mail": {
-                    "description": "E-mail to contact person/organization",
-                    "type": "string",
-                    "format": "idn-email",
-                    "examples": [
-                        "encode-help@lists.stanford.edu"
-                    ]
-                },
-                "orcid": {
-                    "description": "ORCID to contact person",
-                    "type": "string",
-                    "format": "curie",
-                    "namespace": "orcid",
-                    "matchType": "canonical"
-                }
-            },
-            "required": [
-                "name"
-            ],
-            "anyOf": [
-                {
-                    "required": [
-                        "e-mail"
-                    ]
-                },
-                {
-                    "required": [
-                        "orcid"
-                    ]
-                }
-            ]
+            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json"
         }
     },
     "required": [
