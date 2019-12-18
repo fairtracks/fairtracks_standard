@@ -4,3 +4,4 @@ printf "Force 'make' to rebuild all targets except 'venv' and 'git-hooks', which
 
 make venv || exit $?
 make -W .venv/bin/activate all || exit $?
+make rawclean

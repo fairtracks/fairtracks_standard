@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@adobe/jsonschema2md": "^3.3.1"
+  }
+}
