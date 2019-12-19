@@ -155,6 +155,11 @@ def _json_schema_create_root(opml_root):
     json_dict = NestedOrderedDict()
     json_dict['$schema'] = "http://json-schema.org/draft-07/schema#"
     json_dict['$id'] = opml_root.find(".//outline[@_name='@schema']").attrib['const']
+
+    version_url = opml_root.find(".//outline[@_name='#version_url']")
+    if version_url is not None:
+        json_dict['$version_url'] = version_url.attrib['const']
+
     json_dict['$comment'] = ""
     json_dict['title'] = opml_root.find(".//outline[@_name='#toplevel']").attrib['title']
     json_dict['type'] = opml_root.find(".//outline[@_name='#toplevel']").attrib['type']
