@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 714f4a2f97827dca7c335b663f3fda119025bc6398841c9e24abcf6d5381c981",
+    "$comment": "JSON signature: 1764f3a36d296343c6e6a73514d1676ea1a9195c70671547ba3b0fd650e258e9",
     "title": "Experiment",
     "type": "object",
     "properties": {
@@ -72,8 +72,8 @@
                     "format": "term",
                     "pattern": "^(https?|ftp)://",
                     "ontology": [
-                        "http://purl.obolibrary.org/obo/obi/2018-08-27/obi.owl",
-                        "http://edamontology.org/EDAM_1.21.owl"
+                        "http://purl.obolibrary.org/obo/obi.owl",
+                        "http://edamontology.org/EDAM.owl"
                     ],
                     "ancestors": [
                         "http://purl.obolibrary.org/obo/OBI_0000011",
@@ -110,7 +110,7 @@
                             "type": "string",
                             "format": "term",
                             "pattern": "^(https?|ftp)://",
-                            "ontology": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
+                            "ontology": "http://purl.obolibrary.org/obo/so.owl",
                             "ancestors": "http://purl.obolibrary.org/obo/SO_0000110",
                             "matchType": "exact",
                             "examples": [
@@ -145,7 +145,7 @@
                             "type": "string",
                             "format": "term",
                             "pattern": "^(https?|ftp)://",
-                            "ontology": "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl",
+                            "ontology": "http://purl.obolibrary.org/obo/ncit.owl",
                             "ancestors": "http://purl.obolibrary.org/obo/NCIT_C26548",
                             "matchType": "exact"
                         },
@@ -168,7 +168,7 @@
                             "type": "string",
                             "format": "term",
                             "pattern": "^(https?|ftp)://",
-                            "ontology": "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl",
+                            "ontology": "http://purl.obolibrary.org/obo/ncit.owl",
                             "ancestors": "http://purl.obolibrary.org/obo/NCIT_C14134",
                             "matchType": "exact"
                         },

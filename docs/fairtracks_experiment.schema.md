@@ -255,7 +255,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl
+- ontology: http://purl.obolibrary.org/obo/ncit.owl
 - ancestors: http://purl.obolibrary.org/obo/NCIT_C26548
 - matchType: exact
 
@@ -311,7 +311,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl
+- ontology: http://purl.obolibrary.org/obo/ncit.owl
 - ancestors: http://purl.obolibrary.org/obo/NCIT_C14134
 - matchType: exact
 
@@ -384,7 +384,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl
+- ontology: http://purl.obolibrary.org/obo/so.owl
 - ancestors: http://purl.obolibrary.org/obo/SO_0000110
 - matchType: exact
 
@@ -489,7 +489,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://purl.obolibrary.org/obo/obi/2018-08-27/obi.owl,http://edamontology.org/EDAM_1.21.owl
+- ontology: http://purl.obolibrary.org/obo/obi.owl,http://edamontology.org/EDAM.owl
 - ancestors: http://purl.obolibrary.org/obo/OBI_0000011,http://edamontology.org/operation_0004
 - matchType: exact
 

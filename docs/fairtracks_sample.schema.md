@@ -66,7 +66,7 @@ URL linking to an ontology term
 - is **required**
 - type: `enum`
 - format: term
-- ontology: http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl
+- ontology: http://purl.obolibrary.org/obo/ncit.owl
 - matchType: exact
 
 The value of this property **must** be equal to one of the [known values below](#biospecimen_class-known-values).
@@ -225,7 +225,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl
+- ontology: http://purl.obolibrary.org/obo/ncit.owl
 - ancestors: http://purl.obolibrary.org/obo/NCIT_C12801
 - matchType: exact
 
@@ -281,7 +281,7 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: https://github.com/EBISPOT/efo/releases/download/v3.5.1/efo.owl
+- ontology: http://www.ebi.ac.uk/efo/efo.owl
 - ancestors: http://purl.obolibrary.org/obo/CL_0000010
 - matchType: exact
 
@@ -352,8 +352,8 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: https://github.com/EBISPOT/efo/releases/download/v3.5.1/efo.owl
-- ancestors: http://www.ebi.ac.uk/efo/EFO_0000324
+- ontology: http://purl.obolibrary.org/obo/cl.owl
+- ancestors: http://purl.obolibrary.org/obo/CL_0000003
 - matchType: exact
 
 ##### term_id Type
@@ -410,8 +410,8 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: https://github.com/EBISPOT/efo/releases/download/v3.5.1/efo.owl
-- ancestors: http://www.ebi.ac.uk/efo/EFO_0000635
+- ontology: http://purl.obolibrary.org/obo/uberon.owl
+- ancestors: http://purl.obolibrary.org/obo/UBERON_0000465
 - matchType: exact
 
 ##### term_id Type
@@ -425,12 +425,12 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [http://purl.obolibrary.org/obo/CL_0002322](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCL_0002322>)
+  [http://purl.obolibrary.org/obo/UBERON_0000922](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000922>)
 
 ##### term_id Example
 
 ```json
-http://purl.obolibrary.org/obo/CL_0002322
+http://purl.obolibrary.org/obo/UBERON_0000922
 ```
 
 #### term_label
@@ -450,7 +450,7 @@ Exact value according to the ontology used
 ##### term_label Example
 
 ```json
-embryonic stem cell
+embryo
 ```
 
 #### summary

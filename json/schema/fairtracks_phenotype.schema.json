@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
-    "$comment": "JSON signature: 8197353c1d4532971c6bc0f39ab60d5dc28f2a91cc7127f2601bc35cb7a79c89",
+    "$comment": "JSON signature: b0f8bb04fc90c2a86f5f2304bc258dd456d1fa6b7a544555487517d84c6faf63",
     "title": "Phenotype",
     "type": "object",
     "properties": {
@@ -18,7 +18,7 @@
             "format": "term",
             "pattern": "^(https?|ftp)://",
             "default": "http://purl.obolibrary.org/obo/NCIT_C14165",
-            "ontology": "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl",
+            "ontology": "http://purl.obolibrary.org/obo/ncit.owl",
             "ancestors": [
                 "http://purl.obolibrary.org/obo/NCIT_C7057",
                 "http://purl.obolibrary.org/obo/NCIT_C22187",
