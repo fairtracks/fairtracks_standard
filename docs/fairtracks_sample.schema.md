@@ -352,8 +352,8 @@ URL linking to an ontology term
 - is **required**
 - type: `string`
 - format: term
-- ontology: http://www.ebi.ac.uk/efo/efo.owl
-- ancestors: http://www.ebi.ac.uk/efo/EFO_0000324
+- ontology: http://purl.obolibrary.org/obo/cl.owl
+- ancestors: http://purl.obolibrary.org/obo/CL_0000003
 - matchType: exact
 
 ##### term_id Type

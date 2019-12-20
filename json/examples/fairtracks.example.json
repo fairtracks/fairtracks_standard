@@ -4,14 +4,15 @@
         "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
         "doc_ontology_versions": {
             "http://edamontology.org/EDAM.owl": "http://edamontology.org/EDAM_1.21.owl",
+            "http://purl.obolibrary.org/obo/cl.owl": "http://purl.obolibrary.org/obo/cl/releases/2019-08-12/cl.owl",
             "http://www.ebi.ac.uk/efo/efo.owl": "https://github.com/EBISPOT/efo/releases/download/v3.12.0/efo.owl",
             "http://purl.obolibrary.org/obo/ncit.owl": "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl",
             "http://purl.obolibrary.org/obo/obi.owl": "http://purl.obolibrary.org/obo/obi/2019-11-12/obi.owl",
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "a4565a1090b042a3995f6d6b66698a7f5b144876d4236219ae163b240a0726d5",
-        "doc_date": "2019-12-20T14:52:59"
+        "doc_version": "e62c337707c85584dd857b398233bf579c4173ef2d440339d1ec11fa506a8496",
+        "doc_date": "2019-12-20T15:15:35"
     },
     "collection_info": {
         "short_name": "ENCODE example",
