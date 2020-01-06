@@ -23,6 +23,7 @@ ATTRIBS_TO_IMPORT = [
     'const',
     'default',
     'ontology',
+    'ontologyTermId',
     'ancestors',
     'namespace',
     'matchType',
@@ -185,6 +186,8 @@ def _json_schema_create_child(opml_child):
     for attrib in ATTRIBS_TO_IMPORT:
         _json_schema_add_attrib_to_child(opml_child, json_child, attrib)
 
+    _json_schema_add_ontology_term_pair_to_child(opml_child, json_child)
+
     if 'type' in opml_child.attrib and opml_child.attrib['type'] == 'array':
         json_child['items'] = NestedOrderedDict()
 
@@ -192,6 +195,19 @@ def _json_schema_create_child(opml_child):
         del json_child['examples']
 
     return json_child
+
+
+def _json_schema_add_ontology_term_pair_to_child(opml_elem, json_child):
+    ONTOLOGY_TERM_PAIR = 'ontologyTermPair'
+    if ONTOLOGY_TERM_PAIR in opml_elem.attrib:
+        full_attrib = opml_elem.attrib[ONTOLOGY_TERM_PAIR]
+        if full_attrib not in ['', '.']:
+            id_label_pointer_pair = re.findall(r'id=(0\/\w+);label=(0\/\w+)', full_attrib)
+            assert len(id_label_pointer_pair) == 1
+            ontologyTermPair = NestedOrderedDict()
+            ontologyTermPair['id'] = id_label_pointer_pair[0][0]
+            ontologyTermPair['label'] = id_label_pointer_pair[0][1]
+            json_child[ONTOLOGY_TERM_PAIR] = ontologyTermPair
 
 
 def _json_schema_add_attrib_to_child(opml_child, json_child, attrib_name):

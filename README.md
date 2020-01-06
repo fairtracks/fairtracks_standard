@@ -239,7 +239,8 @@ one can also use generic XML editors:
   `foreignProperty` | JSON Pointer to a linked identifier property in another schema. Two JSON documents, one following the current schema and the other following the foreign schema, are related if the values in the two linked properties are the same.
   `matchType` | Validation rule. For properties in `curie` format: either `basic`, `loose`, or `canonical`. For properties in `curie` format: either `exact`, `suffix`, or `label`.
   `namespace` | Namespaces, separated by <code>&#124;</code>, registered in http://identifiers.org. Is used to validate `curie` values.
-  `ontology` | Ontology URLs, separated by <code>&#124;</code>, in OWL format. To be used to validate properties in `term` format.
+  `ontology` | URLs to downloadable ontologies in OWL format, separated by <code>&#124;</code>. To be used to validate properties in `term` format, which is used for ontology `term_id` properties.
+  `ontologyTermPair` | Pair of JSON Pointers in the format `id=IDPTR;label=LABELPTR`, where `IDPTR` and `LABELPTR` are JSON Pointers to, respectively, an ontology term id and its corresponding (primary) label. Currently only pointers to child properties are supported, e.g. `id=0/term_id;label=0/term_label`. To be used in autogeneration and validation.
   `requireAnyOf` | For every level of the object hierarchy, at least one of the properties with `requireAnyOf="true"` at that level is `required`.
   `requireIf` | If the specified `if_property` has the specified `if_value`, the current property is `required`.
   `unique` | If `"true"` the value of the current property must be unique across all JSON documents.
