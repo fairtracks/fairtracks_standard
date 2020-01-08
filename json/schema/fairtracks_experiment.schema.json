@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 1764f3a36d296343c6e6a73514d1676ea1a9195c70671547ba3b0fd650e258e9",
+    "$comment": "JSON signature: 585be133148edeef121d866658d34c837075202117d9460821484842eee16d06",
     "title": "Experiment",
     "type": "object",
     "properties": {
@@ -65,6 +65,10 @@
         "technique": {
             "description": "Main technique used in experiment (e.g., laboratory, computational or statistical technique)",
             "type": "object",
+            "ontologyTermPair": {
+                "id": "0/term_id",
+                "label": "0/term_label"
+            },
             "properties": {
                 "term_id": {
                     "description": "URL linking to an ontology term",
@@ -104,6 +108,10 @@
                 "sequence_feature": {
                     "description": "Sequence feature targeted by the experiment",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -139,6 +147,10 @@
                 "gene_product_type": {
                     "description": "Gene product type targeted by the experiment (e.g., miRNA)",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -162,6 +174,10 @@
                 "macromolecular_structure": {
                     "description": "Macromolecular structure targeted by the experiment (e.g., chromatin strucure)",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -185,7 +201,11 @@
                 "phenotype": {
                     "description": "Main phenotype (e.g. disease) connected to the sample",
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    }
                 },
                 "target_details": {
                     "description": "Important details about the target of the experiment (to be included in the 'target' property)",

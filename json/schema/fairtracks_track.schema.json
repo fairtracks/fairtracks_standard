@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: d00897f25010c79ae5df66d89795258085d5e71b6b82f9b0af8acc8aa691165a",
+    "$comment": "JSON signature: 95a7e314962243e059f3a003f55a752a278fa690f2eb3b0338d2447c7ca09dc2",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -119,6 +119,10 @@
         "file_format": {
             "description": "File format of the track data file",
             "type": "object",
+            "ontologyTermPair": {
+                "id": "0/term_id",
+                "label": "0/term_label"
+            },
             "properties": {
                 "term_id": {
                     "description": "URL linking to an ontology term",
@@ -153,6 +157,10 @@
         "content_type": {
             "description": "Type of content represented by the track data file (narrow peaks, signal, region, etc.)",
             "type": "object",
+            "ontologyTermPair": {
+                "id": "0/term_id",
+                "label": "0/term_label"
+            },
             "properties": {
                 "term_id": {
                     "description": "URL linking to an ontology term",

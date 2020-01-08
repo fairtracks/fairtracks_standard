@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json",
-    "$comment": "JSON signature: 03cd48101eb018576a72dc7d4ada0ca31e0a8257eba0a04fd59a5b54adfbc276",
+    "$comment": "JSON signature: 08f1950ce1e8070028dfa3d91a52b92df7e1c0d42f208a868b9c3451d8d70394",
     "title": "Sample",
     "type": "object",
     "properties": {
@@ -33,6 +33,10 @@
         "biospecimen_class": {
             "description": "Main type of structural unit to be used for classification of the sample",
             "type": "object",
+            "ontologyTermPair": {
+                "id": "0/term_id",
+                "label": "0/term_label"
+            },
             "properties": {
                 "term_id": {
                     "description": "URL linking to an ontology term",
@@ -77,6 +81,10 @@
                 "cell_type": {
                     "description": "Cell type of isolated normal cells in the sample. This property should only be used if biospecimen_class is set to \"Cell\".",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -100,6 +108,10 @@
                 "abnormal_cell_type": {
                     "description": "Cell type of isolated abnormal cells in the sample. This property should only be used if biospecimen_class is set to \"Abnormal Cell\".",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -123,6 +135,10 @@
                 "cell_line": {
                     "description": "Cultured cell line used in the sample. This property should only be used if biospecimen_class is set to \"Cell Line\".",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -152,6 +168,10 @@
                 "organism_part": {
                     "description": "Part of organism (typically tissue or organ) from which the sample was taken, or cell line was derived from. This property  must be used is biospecimen_class is set to \"Organism Part\", but can also be used for the other values of biospecimen_class.",
                     "type": "object",
+                    "ontologyTermPair": {
+                        "id": "0/term_id",
+                        "label": "0/term_label"
+                    },
                     "properties": {
                         "term_id": {
                             "description": "URL linking to an ontology term",
@@ -191,7 +211,11 @@
         "phenotype": {
             "description": "Main phenotype (e.g. disease) connected to the sample",
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
+            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
+            "ontologyTermPair": {
+                "id": "0/term_id",
+                "label": "0/term_label"
+            }
         }
     },
     "required": [
