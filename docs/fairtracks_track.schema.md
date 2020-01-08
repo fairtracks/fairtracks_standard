@@ -10,22 +10,23 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 
 # Track Properties
 
-| Property                            | Type       | Required     | Nullable | Defined by                                 |
-| ----------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
-| [@schema](#schema)                  | `const`    | Optional     | No       | Track (this schema)                        |
-| [checksum](#checksum)               | `object`   | **Required** | No       | Track (this schema)                        |
-| [content_type](#content_type)       | `object`   | **Required** | No       | Track (this schema)                        |
-| [experiment_ref](#experiment_ref)   | `string`   | **Required** | No       | Track (this schema)                        |
-| [file_format](#file_format)         | `object`   | **Required** | No       | Track (this schema)                        |
-| [file_name](#file_name)             | `string`   | Optional     | No       | Track (this schema)                        |
-| [file_url](#file_url)               | `string`   | **Required** | No       | Track (this schema)                        |
-| [genome_assembly](#genome_assembly) | `string`   | **Required** | No       | Track (this schema)                        |
-| [global_id](#global_id)             | `string`   | Optional     | No       | Track (this schema)                        |
-| [label_long](#label_long)           | `string`   | **Required** | No       | Track (this schema)                        |
-| [label_short](#label_short)         | `string`   | **Required** | No       | Track (this schema)                        |
-| [local_id](#local_id)               | `string`   | **Required** | No       | Track (this schema)                        |
-| [raw_file_ids](#raw_file_ids)       | `string[]` | Optional     | No       | Track (this schema)                        |
-| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
+| Property                          | Type       | Required     | Nullable | Defined by                                 |
+| --------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                | `const`    | Optional     | No       | Track (this schema)                        |
+| [assembly_id](#assembly_id)       | `string`   | **Required** | No       | Track (this schema)                        |
+| [assembly_name](#assembly_name)   | `string`   | **Required** | No       | Track (this schema)                        |
+| [checksum](#checksum)             | `object`   | **Required** | No       | Track (this schema)                        |
+| [content_type](#content_type)     | `object`   | **Required** | No       | Track (this schema)                        |
+| [experiment_ref](#experiment_ref) | `string`   | **Required** | No       | Track (this schema)                        |
+| [file_format](#file_format)       | `object`   | **Required** | No       | Track (this schema)                        |
+| [file_name](#file_name)           | `string`   | Optional     | No       | Track (this schema)                        |
+| [file_url](#file_url)             | `string`   | **Required** | No       | Track (this schema)                        |
+| [global_id](#global_id)           | `string`   | Optional     | No       | Track (this schema)                        |
+| [label_long](#label_long)         | `string`   | **Required** | No       | Track (this schema)                        |
+| [label_short](#label_short)       | `string`   | **Required** | No       | Track (this schema)                        |
+| [local_id](#local_id)             | `string`   | **Required** | No       | Track (this schema)                        |
+| [raw_file_ids](#raw_file_ids)     | `string[]` | Optional     | No       | Track (this schema)                        |
+| `*`                               | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
@@ -43,6 +44,76 @@ The value of this property **must** be equal to:
 
 ```json
 "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
+```
+
+## assembly_id
+
+Genome assembly identifier, resolvable by identifiers.org. Tracks should be annotated with the lowest version of the
+reference genome that contains all the sequences referenced by the track. Also, GCF (Refseq) ids should be preferred to
+GCA (Genbank) ids
+
+`assembly_id`
+
+- is **required**
+- type: `string`
+- defined in this schema
+- format: curie
+- namespace: insdc.gca
+- matchType: canonical
+
+### assembly_id Type
+
+`string`
+
+### assembly_id Examples
+
+```json
+"insdc.gca:GCF_000001405.26"
+```
+
+```json
+"insdc.gca:GCF_000001405.26"
+```
+
+```json
+"insdc.gca:GCF_000001405.26"
+```
+
+```json
+"insdc.gca:GCF_000001405.26"
+```
+
+## assembly_name
+
+Genome assembly name or synonym, according to the NCBI Assembly database. For tracks following UCSC-style chromosome
+names (e.g., "chr1"), the UCSC synonym should be used instead of the official name
+
+`assembly_name`
+
+- is **required**
+- type: `string`
+- defined in this schema
+
+### assembly_name Type
+
+`string`
+
+### assembly_name Examples
+
+```json
+"hg38"
+```
+
+```json
+"hg38"
+```
+
+```json
+"hg38"
+```
+
+```json
+"hg38"
 ```
 
 ## checksum
@@ -445,38 +516,6 @@ All instances must conform to this regular expression
 
 ```json
 "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig"
-```
-
-## genome_assembly
-
-An assembly identifier (using UCSC nomenclature)
-
-`genome_assembly`
-
-- is **required**
-- type: `string`
-- defined in this schema
-
-### genome_assembly Type
-
-`string`
-
-### genome_assembly Examples
-
-```json
-"GRCh38"
-```
-
-```json
-"GRCh38"
-```
-
-```json
-"GRCh38"
-```
-
-```json
-"GRCh38"
 ```
 
 ## global_id

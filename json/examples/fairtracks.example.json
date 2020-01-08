@@ -11,8 +11,8 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "e62c337707c85584dd857b398233bf579c4173ef2d440339d1ec11fa506a8496",
-        "doc_date": "2019-12-20T15:15:35"
+        "doc_version": "0bec8270beb9195e254fb0cfdf96e01b39b65a3a00def5c0c67acf2bde64e383",
+        "doc_date": "2020-01-08T18:26:45"
     },
     "collection_info": {
         "short_name": "ENCODE example",
@@ -64,6 +64,8 @@
         {
             "global_id": "biosample:SAMN01731491",
             "local_id": "geo:GSM945229",
+            "species_id": "taxonomy:9606",
+            "species_name": "Homo sapiens",
             "biospecimen_class": {
                 "term_id": "http://purl.obolibrary.org/obo/NCIT_C16403",
                 "term_label": "Cell Line"
@@ -89,6 +91,8 @@
         {
             "global_id": "fairtracks:1",
             "local_id": "encode:ENCFF625ZYB",
+            "assembly_id": "insdc.gca:GCF_000001405.26",
+            "assembly_name": "hg38",
             "experiment_ref": "encode:ENCSR000DQP",
             "raw_file_ids": [
                 "encode: ENCFF207FGO",
@@ -98,7 +102,6 @@
             "file_name": "r1.narrowPeak.gz",
             "label_short": "ENCFF625ZYB",
             "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
-            "genome_assembly": "GRCh38",
             "file_format": {
                 "term_id": "http://edamontology.org/format_3613",
                 "term_label": "ENCODE narrow peak format"
@@ -115,6 +118,8 @@
         {
             "global_id": "fairtracks:2",
             "local_id": "encode:ENCFF718EPO",
+            "assembly_id": "insdc.gca:GCF_000001405.26",
+            "assembly_name": "hg38",
             "experiment_ref": "encode:ENCSR000DQP",
             "raw_file_ids": [
                 "encode:ENCFF207FGO",
@@ -124,7 +129,6 @@
             "file_name": "r1.narrowPeak.bb",
             "label_short": "ENCFF718EPO",
             "label_long": "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO",
-            "genome_assembly": "GRCh38",
             "file_format": {
                 "term_id": "http://edamontology.org/format_3004",
                 "term_label": "bigBed"
@@ -141,6 +145,8 @@
         {
             "global_id": "fairtracks:3",
             "local_id": "encode:ENCFF717PIO",
+            "assembly_id": "insdc.gca:GCF_000001405.26",
+            "assembly_name": "hg38",
             "experiment_ref": "encode:ENCSR000DQP",
             "raw_file_ids": [
                 "encode:ENCFF207FGO",
@@ -150,7 +156,6 @@
             "file_name": "r1.fc_signal.bw",
             "label_short": "ENCFF717PIO",
             "label_long": "H3K4me3 ChIP-seq of B cell fold change over control rep1 ENCSR000DQP - ENCFF717PIO",
-            "genome_assembly": "GRCh38",
             "file_format": {
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
@@ -167,6 +172,8 @@
         {
             "global_id": "fairtracks:4",
             "local_id": "encode:ENCFF955LOC",
+            "assembly_id": "insdc.gca:GCF_000001405.26",
+            "assembly_name": "hg38",
             "experiment_ref": "encode:ENCSR000DQP",
             "raw_file_ids": [
                 "encode:ENCFF207FGO",
@@ -176,7 +183,6 @@
             "file_name": "r1.pvalue_signal.bw",
             "label_short": " ENCFF955LOC",
             "label_long": "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC",
-            "genome_assembly": "GRCh38",
             "file_format": {
                 "term_id": "http://edamontology.org/format_3006",
                 "term_label": "bigWig"
