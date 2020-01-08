@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 7f34b2d014b53522967d0ab077fe6f5e4e0ead95634910d00f919c9ae950fd80",
+    "$comment": "JSON signature: 294ce7770e822ea76fd94f25c394426c5ba85106623e8feb477cf36f62085eda",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -23,7 +23,7 @@
                     "format": "uri",
                     "pattern": "^(https?|ftp)://",
                     "examples": [
-                        "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json"
+                        "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json"
                     ]
                 },
                 "doc_ontology_versions": {
@@ -180,7 +180,7 @@
                 "contact": {
                     "description": "Contact information for the track collection",
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json"
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json"
                 }
             },
             "required": [
@@ -194,7 +194,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json"
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json"
             }
         },
         "experiments": {
@@ -202,7 +202,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
             }
         },
         "samples": {
@@ -210,7 +210,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json"
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json"
             }
         },
         "tracks": {
@@ -218,7 +218,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
+                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json"
             }
         }
     },

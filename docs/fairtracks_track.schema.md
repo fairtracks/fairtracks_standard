@@ -1,7 +1,7 @@
 # Track Schema
 
 ```
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json
 ```
 
 | Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                                   |
@@ -44,7 +44,7 @@ schema
 The value of this property **must** be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json"
 ```
 
 ## assembly_id
@@ -212,7 +212,7 @@ Reference to the experiment of the track (using the submitter-local identifier o
 - defined in this schema
 - format: foreign_ref
 - foreignProperty:
-  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json#local_id
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#local_id
 
 ### experiment_ref Type
 

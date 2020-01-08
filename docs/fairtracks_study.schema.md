@@ -1,7 +1,7 @@
 # Study Schema
 
 ```
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json
 ```
 
 | Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                                   |
@@ -11,9 +11,9 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/sch
 ## Schema Hierarchy
 
 - Study
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json`
   - [Contact](fairtracks_contact.schema.md)
-    `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
+    `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json`
 
 # Study Properties
 
@@ -42,7 +42,7 @@ schema
 The value of this property **must** be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json"
 ```
 
 ## contact
@@ -58,7 +58,7 @@ Contact information for study
 ### contact Type
 
 - [Contact](fairtracks_contact.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json`
 
 ## global_id
 

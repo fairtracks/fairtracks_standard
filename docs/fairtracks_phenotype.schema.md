@@ -1,7 +1,7 @@
 # Phenotype Schema
 
 ```
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json
 ```
 
 | Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                                           |
@@ -32,7 +32,7 @@ schema
 The value of this property **must** be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json"
 ```
 
 ## term_id

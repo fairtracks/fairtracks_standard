@@ -1,5 +1,5 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json",
     "global_id": "fairtracks:1",
     "local_id": "encode:ENCFF625ZYB",
     "assembly_id": "insdc.gca:GCF_000001405.26",

@@ -74,7 +74,7 @@ Contact information for the track collection
 ##### contact Type
 
 - [Contact](fairtracks_contact.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_contact.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json`
 
 #### description_url
 
@@ -529,12 +529,12 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fraw.githubusercontent.com%2Ffairtracks%2Ffairtracks_standard%2Fmaster%2Fjson%2Fexamples%2Ffairtracks.example.json>)
+  [https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=https%3A%2F%2Fraw.githubusercontent.com%2Ffairtracks%2Ffairtracks_standard%2Fv1%2Fcurrent%2Fjson%2Fexamples%2Ffairtracks.example.json>)
 
 ##### doc_url Example
 
 ```json
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json
 ```
 
 #### doc_version
@@ -568,7 +568,7 @@ Array type: Experiment
 All items must be of the type:
 
 - [Experiment](fairtracks_experiment.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json`
 
 ## samples
 
@@ -588,7 +588,7 @@ Array type: Sample
 All items must be of the type:
 
 - [Sample](fairtracks_sample.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json`
 
 ## studies
 
@@ -608,7 +608,7 @@ Array type: Study
 All items must be of the type:
 
 - [Study](fairtracks_study.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json`
 
 ## tracks
 
@@ -628,4 +628,4 @@ Array type: Track
 All items must be of the type:
 
 - [Track](fairtracks_track.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json`
+  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json`

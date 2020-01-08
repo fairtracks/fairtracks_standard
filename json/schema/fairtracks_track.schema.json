@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: 5f1c71315cbb62b9099c46820cac6066ef83ee805f8ef4c9467332c2a71705ff",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json",
+    "$comment": "JSON signature: 8389c9961ae91941e03d4794a7575481a12c072a0f1724e4acc7f06d0ef0bf64",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -10,7 +10,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_track.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json"
         },
         "global_id": {
             "description": "Global track identifier, resolvable by identifiers.org [to be created by us]",
@@ -68,7 +68,7 @@
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#local_id"
         },
         "raw_file_ids": {
             "type": "array",

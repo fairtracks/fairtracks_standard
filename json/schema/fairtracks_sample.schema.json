@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json",
-    "$comment": "JSON signature: 4ba8196da4adff886a0b01e5b52d289bffd063746dd2bd0ab6f48a646ce01d71",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json",
+    "$comment": "JSON signature: ce90442bc7fb16e7d5062b911958d11a34bcd610652e27e2fced9a3f4a9d8ca7",
     "title": "Sample",
     "type": "object",
     "properties": {
@@ -10,7 +10,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json"
         },
         "global_id": {
             "description": "Global sample identifier, resolvable by identifiers.org",
@@ -229,7 +229,7 @@
         "phenotype": {
             "description": "Main phenotype (e.g. disease) connected to the sample",
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
+            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
             "ontologyTermPair": {
                 "id": "0/term_id",
                 "label": "0/term_label"

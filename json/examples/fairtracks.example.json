@@ -1,7 +1,7 @@
 {
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "doc_info": {
-        "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/examples/fairtracks.example.json",
+        "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json",
         "doc_ontology_versions": {
             "http://edamontology.org/EDAM.owl": "http://edamontology.org/EDAM_1.21.owl",
             "http://purl.obolibrary.org/obo/cl.owl": "http://purl.obolibrary.org/obo/cl/releases/2019-08-12/cl.owl",
@@ -11,8 +11,8 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "05408f0bdafd4729e2a8a35a59d9745add3bb47dfe2a5c2da6db40a883cc7165",
-        "doc_date": "2020-01-08T18:36:33"
+        "doc_version": "5a35c5495739fd9d6fb1447e355ec2338777605ed0b7fe1be74b0e8314c23e14",
+        "doc_date": "2020-01-08T18:44:05"
     },
     "collection_info": {
         "short_name": "ENCODE example",

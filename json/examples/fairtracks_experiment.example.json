@@ -1,5 +1,5 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
     "global_id": "geo:GSE35583",
     "local_id": "encode:ENCSR000DQP",
     "study_ref": "UW_ChipSeq",

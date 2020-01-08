@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
-    "$comment": "JSON signature: b0f8bb04fc90c2a86f5f2304bc258dd456d1fa6b7a544555487517d84c6faf63",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
+    "$comment": "JSON signature: c56584aa5716fb0730026a5f92f0d126930895f063049ca751e3aa80df6bd4d8",
     "title": "Phenotype",
     "type": "object",
     "properties": {
@@ -10,7 +10,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json"
         },
         "term_id": {
             "description": "URL linking to an ontology term",

@@ -1,7 +1,7 @@
 # Experiment Schema
 
 ```
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json
 ```
 
 | Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                                             |
@@ -39,7 +39,7 @@ schema
 The value of this property **must** be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
 ```
 
 ## aggregated_from
@@ -154,7 +154,7 @@ Reference to the sample of the experiment (using the submitter-local identifier 
 - defined in this schema
 - format: foreign_ref
 - foreignProperty:
-  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json#local_id
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id
 
 ### sample_ref Type
 
@@ -177,7 +177,7 @@ Reference to the study that generated the sample (using the submitter-local iden
 - defined in this schema
 - format: foreign_ref
 - foreignProperty:
-  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json#local_id
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id
 
 ### study_ref Type
 

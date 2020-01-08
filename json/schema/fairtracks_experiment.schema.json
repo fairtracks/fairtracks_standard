@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 585be133148edeef121d866658d34c837075202117d9460821484842eee16d06",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
+    "$comment": "JSON signature: f75ed466496ca775de41091058a54316c484067bfc3478dc3f3b1e68b17a399e",
     "title": "Experiment",
     "type": "object",
     "properties": {
@@ -10,7 +10,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_experiment.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
         },
         "global_id": {
             "description": "Global experiment identifier, resolvable by identifiers.org",
@@ -40,7 +40,7 @@
             "examples": [
                 "UW_ChipSeq"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_study.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id"
         },
         "sample_ref": {
             "description": "Reference to the sample of the experiment (using the submitter-local identifier of the sample)",
@@ -49,7 +49,7 @@
             "examples": [
                 "geo:GSM945229"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_sample.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id"
         },
         "aggregated_from": {
             "description": "References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)",
@@ -201,7 +201,7 @@
                 "phenotype": {
                     "description": "Main phenotype (e.g. disease) connected to the sample",
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/master/json/schema/fairtracks_phenotype.schema.json",
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
                     "ontologyTermPair": {
                         "id": "0/term_id",
                         "label": "0/term_label"
