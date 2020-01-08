@@ -17,10 +17,8 @@
         "term_id": "http://edamontology.org/format_3613",
         "term_label": "ENCODE narrow peak format"
     },
-    "content_type": {
-        "term_id": "http://edamontology.org/data_3002",
-        "term_label": "Annotation track"
-    },
+    "type_of_condensed_data": "Narrow peaks",
+    "geometric_track_type": "Segments",
     "checksum": {
         "cs_method": "MD5",
         "cs_hash": "0ab98dbd2a2193ab3e09df030ea4f934"
