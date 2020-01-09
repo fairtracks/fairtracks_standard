@@ -12,7 +12,7 @@
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
         "doc_version": "5a35c5495739fd9d6fb1447e355ec2338777605ed0b7fe1be74b0e8314c23e14",
-        "doc_date": "2020-01-08T18:44:05"
+        "doc_date": "2020-01-09T02:14:04Z"
     },
     "collection_info": {
         "short_name": "ENCODE example",

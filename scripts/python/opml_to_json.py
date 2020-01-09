@@ -493,7 +493,7 @@ def _json_example_add_doc_info_attribs(json_dict):
     if 'doc_info' in json_dict:
         json_dict['doc_info']['doc_version'] = ""
         json_dict['doc_info']['doc_date'] = \
-            datetime.now().replace(microsecond=0).isoformat()
+            datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'
     return json_dict
 
 
