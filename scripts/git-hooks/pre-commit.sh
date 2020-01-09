@@ -14,7 +14,7 @@ then
 fi
 
 printf "Running './rebuild_all.sh'...\n" 1>&2
-"$repo_basedir"/rebuild_all.sh >/dev/null || exit $?
+"$repo_basedir"/rebuild_all.sh >/dev/null 2>&1 || exit $?
 
 if ! check_no_uncommitted
 then
