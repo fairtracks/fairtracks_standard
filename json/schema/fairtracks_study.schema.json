@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
-    "$comment": "JSON signature: a92e301f3a5164eac1980d14862d96ca3360ae06610324653f40f838fc3a0007",
+    "$comment": "JSON signature: 0bbfc7cf69d3ef6e2aeb128d889eb4d23216c309f8529aaac08152be5fa4df66",
     "title": "Study",
     "type": "object",
     "properties": {
@@ -26,12 +26,21 @@
             ]
         },
         "local_id": {
-            "description": "Submitter-local identifier (within investigation/hub) for study",
+            "description": "Submitter-local identifier (within the track collection) for the study",
             "type": "string",
             "examples": [
                 "UW_ChipSeq"
             ],
             "unique": true
+        },
+        "collection_ref": {
+            "description": "Reference to the track collection containg the study (using the submitter-local identifier of the collection)",
+            "type": "string",
+            "format": "foreign_ref",
+            "examples": [
+                "encode_example"
+            ],
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#collection_info/local_id"
         },
         "study_name": {
             "description": "Name of the study",
@@ -58,6 +67,7 @@
     },
     "required": [
         "local_id",
+        "collection_ref",
         "study_name",
         "contact"
     ],

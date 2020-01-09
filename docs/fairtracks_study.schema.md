@@ -17,15 +17,16 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 # Study Properties
 
-| Property                    | Type     | Required     | Nullable | Defined by                                 |
-| --------------------------- | -------- | ------------ | -------- | ------------------------------------------ |
-| [@schema](#schema)          | `const`  | Optional     | No       | Study (this schema)                        |
-| [contact](#contact)         | Contact  | **Required** | No       | Study (this schema)                        |
-| [global_id](#global_id)     | `string` | Optional     | No       | Study (this schema)                        |
-| [local_id](#local_id)       | `string` | **Required** | No       | Study (this schema)                        |
-| [publication](#publication) | `string` | Optional     | No       | Study (this schema)                        |
-| [study_name](#study_name)   | `string` | **Required** | No       | Study (this schema)                        |
-| `*`                         | any      | Additional   | Yes      | this schema _allows_ additional properties |
+| Property                          | Type     | Required     | Nullable | Defined by                                 |
+| --------------------------------- | -------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                | `const`  | Optional     | No       | Study (this schema)                        |
+| [collection_ref](#collection_ref) | `string` | **Required** | No       | Study (this schema)                        |
+| [contact](#contact)               | Contact  | **Required** | No       | Study (this schema)                        |
+| [global_id](#global_id)           | `string` | Optional     | No       | Study (this schema)                        |
+| [local_id](#local_id)             | `string` | **Required** | No       | Study (this schema)                        |
+| [publication](#publication)       | `string` | Optional     | No       | Study (this schema)                        |
+| [study_name](#study_name)         | `string` | **Required** | No       | Study (this schema)                        |
+| `*`                               | any      | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
@@ -43,6 +44,29 @@ The value of this property **must** be equal to:
 
 ```json
 "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json"
+```
+
+## collection_ref
+
+Reference to the track collection containg the study (using the submitter-local identifier of the collection)
+
+`collection_ref`
+
+- is **required**
+- type: `string`
+- defined in this schema
+- format: foreign_ref
+- foreignProperty:
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#collection_info/local_id
+
+### collection_ref Type
+
+`string`
+
+### collection_ref Example
+
+```json
+"encode_example"
 ```
 
 ## contact
@@ -85,7 +109,7 @@ Global study identifier, resolvable by identifiers.org
 
 ## local_id
 
-Submitter-local identifier (within investigation/hub) for study
+Submitter-local identifier (within the track collection) for the study
 
 `local_id`
 
