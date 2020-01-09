@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: f75ed466496ca775de41091058a54316c484067bfc3478dc3f3b1e68b17a399e",
+    "$comment": "JSON signature: de4efb15a348488992467361c21f90339d5cf1481fa7528000e6eff7985f3305",
     "title": "Experiment",
     "type": "object",
     "properties": {
@@ -40,7 +40,7 @@
             "examples": [
                 "UW_ChipSeq"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks_study.schema.json#local_id"
         },
         "sample_ref": {
             "description": "Reference to the sample of the experiment (using the submitter-local identifier of the sample)",
@@ -49,7 +49,7 @@
             "examples": [
                 "geo:GSM945229"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks_sample.schema.json#local_id"
         },
         "aggregated_from": {
             "description": "References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)",
@@ -201,7 +201,7 @@
                 "phenotype": {
                     "description": "Main phenotype (e.g. disease) connected to the sample",
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
+                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks_phenotype.schema.json",
                     "ontologyTermPair": {
                         "id": "0/term_id",
                         "label": "0/term_label"
