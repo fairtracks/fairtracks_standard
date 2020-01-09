@@ -4,7 +4,7 @@ VENV_DIR = .venv
 LOCAL_GIT_HOOKS_DIR = scripts/git-hooks
 GIT_HOOKS_DIR = .git/hooks
 NODE_MODULES_DIR = node_modules
-OVERVIEW_DIR = json/overview
+OPML_DIR = opml
 EXAMPLE_DIR = json/examples
 SCHEMA_DIR = json/schema
 DOCS_DIR = docs
@@ -20,16 +20,16 @@ CLEANUP_DOCS_SCRIPT = scripts/python/cleanup_docs.py
 
 LOCAL_GIT_HOOKS_FILES := $(wildcard $(LOCAL_GIT_HOOKS_DIR)/*.sh)
 GIT_HOOKS_FILES := $(patsubst $(LOCAL_GIT_HOOKS_DIR)/%,$(GIT_HOOKS_DIR)/%,${LOCAL_GIT_HOOKS_FILES:.sh=})
-OVERVIEW_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.opml)
-OVERVIEW_RAW_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.raw.opml)
-OVERVIEW_RAW_OLD_FILES := $(wildcard $(OVERVIEW_DIR)/*.overview.raw.opml.old)
-EXAMPLE_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(EXAMPLE_DIR)/%,${OVERVIEW_FILES:.overview.opml=.example.json})
-SCHEMA_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(SCHEMA_DIR)/%,${OVERVIEW_FILES:.overview.opml=.schema.json})
+OPML_FILES := $(wildcard $(OPML_DIR)/*.overview.opml)
+OPML_RAW_FILES := $(wildcard $(OPML_DIR)/*.overview.raw.opml)
+OPML_RAW_OLD_FILES := $(wildcard $(OPML_DIR)/*.overview.raw.opml.old)
+EXAMPLE_FILES := $(patsubst $(OPML_DIR)/%,$(EXAMPLE_DIR)/%,${OPML_FILES:.overview.opml=.example.json})
+SCHEMA_FILES := $(patsubst $(OPML_DIR)/%,$(SCHEMA_DIR)/%,${OPML_FILES:.overview.opml=.schema.json})
 
 JSONSCHEMA2MD_DIR = $(NODE_MODULES_DIR)/\@adobe/jsonschema2md
 JSONSCHEMA2MD_BIN_PATH = $(NODE_MODULES_DIR)/.bin/jsonschema2md
-DOCS_MARKDOWN_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(DOCS_DIR)/%,${OVERVIEW_FILES:.overview.opml=.schema.md})
-DOCS_SCHEMA_FILES := $(patsubst $(OVERVIEW_DIR)/%,$(DOCS_DIR)/%,${OVERVIEW_FILES:.overview.opml=.schema.json})
+DOCS_MARKDOWN_FILES := $(patsubst $(OPML_DIR)/%,$(DOCS_DIR)/%,${OPML_FILES:.overview.opml=.schema.md})
+DOCS_SCHEMA_FILES := $(patsubst $(OPML_DIR)/%,$(DOCS_DIR)/%,${OPML_FILES:.overview.opml=.schema.json})
 
 .PHONY:  all git-hooks venv raw json signature opml rawclean clean docs
 
@@ -49,35 +49,35 @@ $(GIT_HOOKS_DIR)/%: $(LOCAL_GIT_HOOKS_DIR)/%.sh Makefile $(VENV_ACTIVATE)
 git-hooks: $(GIT_HOOKS_FILES)
 
 raw: $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CREATE_RAW_OPML_SCRIPT) $(OVERVIEW_DIR)
+	. $(VENV_ACTIVATE); python3 $(CREATE_RAW_OPML_SCRIPT) $(OPML_DIR)
 
 signature: $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(COMPUTE_SIGNATURE_SCRIPT) $(SCHEMA_FILES)
 	. $(VENV_ACTIVATE); python3 $(COMPUTE_SIGNATURE_SCRIPT) $(EXAMPLE_FILES)
 
 rawclean:
-	rm -f $(OVERVIEW_RAW_FILES) $(OVERVIEW_RAW_OLD_FILES)
+	rm -f $(OPML_RAW_FILES) $(OPML_RAW_OLD_FILES)
 
 clean: rawclean
 	rm -rf $(VENV_DIR)
 	rm -f $(GIT_HOOKS_FILES)
 	rm -rf $(NODE_MODULES_DIR)
 
-opml: $(OVERVIEW_FILES)
+opml: $(OPML_FILES)
 
 json: $(SCHEMA_FILES) $(EXAMPLE_FILES)
 
-$(SCHEMA_DIR)/%.schema.json: $(OVERVIEW_DIR)/%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) schema $(OVERVIEW_DIR)/$*.overview.opml $(SCHEMA_DIR)/$*.schema.json
+$(SCHEMA_DIR)/%.schema.json: $(OPML_DIR)/%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) schema $(OPML_DIR)/$*.overview.opml $(SCHEMA_DIR)/$*.schema.json
 
-$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OVERVIEW_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) single_example $(OVERVIEW_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
+$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OPML_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) single_example $(OPML_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
 
-$(EXAMPLE_DIR)/fairtracks.example.json: $(OVERVIEW_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) full_example $(OVERVIEW_DIR)/fairtracks.overview.opml $(EXAMPLE_DIR)/fairtracks.example.json
+$(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) full_example $(OPML_DIR)/fairtracks.overview.opml $(EXAMPLE_DIR)/fairtracks.example.json
 
-$(OVERVIEW_DIR)/fairtrack%.overview.opml: $(OVERVIEW_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OVERVIEW_DIR)/fairtrack$*.overview.raw.opml $(OVERVIEW_DIR)/fairtrack$*.overview.opml
+$(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
 
 .SECONDARY: jsonschema2md
 
