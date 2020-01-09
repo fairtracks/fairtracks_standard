@@ -228,7 +228,7 @@ URL linking to an ontology term
 - type: `string`
 - format: term
 - ontology: http://purl.obolibrary.org/obo/ncit.owl
-- ancestors: http://purl.obolibrary.org/obo/NCIT_C12801
+- ancestors: http://purl.obolibrary.org/obo/NCIT_C12913
 - matchType: exact
 
 ##### term_id Type
