@@ -1,9 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 printf "Running pre-push...\n"  1>&2
 
 repo_basedir=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")/../..
-. "$repo_basedir/scripts/sh/common.sh"
+. "$repo_basedir/scripts/bash/common.sh"
 
 remote="$1"
 url="$2"

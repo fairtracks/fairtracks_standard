@@ -10,8 +10,8 @@ SCHEMA_DIR = json/schema
 DOCS_DIR = docs
 
 VENV_ACTIVATE = $(VENV_DIR)/bin/activate
-INSTALL_GIT_HOOKS_SCRIPT = scripts/sh/install_git_hooks.sh
-INSTALL_VENV_SCRIPT = scripts/sh/install_venv.sh
+INSTALL_GIT_HOOKS_SCRIPT = scripts/bash/install_git_hooks.sh
+INSTALL_VENV_SCRIPT = scripts/bash/install_venv.sh
 CLEANUP_OPML_SCRIPT = scripts/python/cleanup_opml.py
 CREATE_RAW_OPML_SCRIPT = scripts/python/create_raw_opml.py
 CONVERT_SCRIPT = scripts/python/opml_to_json.py

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 printf "Install git-hooks...\n" 1>&2
 

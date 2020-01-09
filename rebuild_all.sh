@@ -1,1 +1,1 @@
-scripts/sh/rebuild_all.sh
+scripts/bash/rebuild_all.sh

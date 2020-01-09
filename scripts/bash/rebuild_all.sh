@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 printf "Force 'make' to rebuild all targets except 'venv' and 'git-hooks', which are only built if needed...\n"
 

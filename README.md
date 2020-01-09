@@ -58,8 +58,8 @@ https://fairtracks.github.io/
 
 ### Dependencies for running the scripts
 
-- Linux-like shell with "sh" or one of its subtypes, e.g. "bash". Mac OS X will do, but you 
-  probably need to install either XCode (from the App Store) or the 
+- Linux-like shell with "bash". Mac OS X will do, but you probably need to install either XCode 
+  (from the App Store) or the 
   [XCode Command line tools](https://developer.apple.com/download/more/?=command%20line%20tools).
 - Python >= 3.6
 - Node.js (>= v8) [and npm (>= 3.10.8), which is typically included with Node.js]
