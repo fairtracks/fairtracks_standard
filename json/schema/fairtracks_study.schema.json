@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
-    "$comment": "JSON signature: b17130d6264ce8be8160a7df4e75ff202dd35516d299e9179fd6de5964aa0ef5",
+    "$comment": "JSON signature: a447552dc9ba691e890dbb5a217a56bb541330e82dfd0de33c5950b1f1f8b4ec",
     "title": "Study",
     "type": "object",
     "properties": {
@@ -34,7 +34,7 @@
             "unique": true
         },
         "collection_ref": {
-            "description": "Reference to the track collection containg the study (using the submitter-local identifier of the collection)",
+            "description": "Reference to the track collection containing the study (using the submitter-local identifier of the collection)",
             "type": "string",
             "format": "foreign_ref",
             "examples": [

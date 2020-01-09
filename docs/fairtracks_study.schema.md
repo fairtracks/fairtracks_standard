@@ -48,7 +48,7 @@ The value of this property **must** be equal to:
 
 ## collection_ref
 
-Reference to the track collection containg the study (using the submitter-local identifier of the collection)
+Reference to the track collection containing the study (using the submitter-local identifier of the collection)
 
 `collection_ref`
 

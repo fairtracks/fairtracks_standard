@@ -111,7 +111,7 @@ https://www.encodeproject.org/help/project-overview/
 
 #### doc_ref
 
-Reference to the JSON document containg the study (using the identifier of the document)
+Reference to the JSON document containing the study (using the identifier of the document)
 
 `doc_ref`
 
