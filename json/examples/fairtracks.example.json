@@ -12,8 +12,8 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "79b8ece4a4a161876775163c30d00493c617e317effa6b216db19b7373f13329",
-        "doc_date": "2020-01-09T03:14:13Z"
+        "doc_version": "fd86035cf10c8c4d0f1e1d7143b0d85ff6c9c0821cbe7a7eae35ad9c2e0bc654",
+        "doc_date": "2020-01-09T03:31:51Z"
     },
     "collection_info": {
         "source_repo_url": "https://www.encodeproject.org/search",
@@ -74,7 +74,7 @@
             },
             "sample_type": {
                 "cell_line": {
-                    "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+                    "term_id": "http://www.ebi.ac.uk/efo/EFO_0003042",
                     "term_label": "H1-hESC"
                 },
                 "organism_part": {

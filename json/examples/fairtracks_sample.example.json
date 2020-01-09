@@ -10,7 +10,7 @@
     },
     "sample_type": {
         "cell_line": {
-            "term_id": "http://purl.obolibrary.org/obo/CL_0000236",
+            "term_id": "http://www.ebi.ac.uk/efo/EFO_0003042",
             "term_label": "H1-hESC"
         },
         "organism_part": {

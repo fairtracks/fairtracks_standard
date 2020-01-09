@@ -298,12 +298,12 @@ All instances must conform to this regular expression
 ```
 
 - test example:
-  [http://purl.obolibrary.org/obo/CL_0000236](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCL_0000236>)
+  [http://www.ebi.ac.uk/efo/EFO_0003042](<https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F&text=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0003042>)
 
 ##### term_id Example
 
 ```json
-http://purl.obolibrary.org/obo/CL_0000236
+http://www.ebi.ac.uk/efo/EFO_0003042
 ```
 
 #### term_label
