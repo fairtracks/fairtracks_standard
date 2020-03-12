@@ -2,7 +2,7 @@
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "doc_info": {
         "local_id": "0",
-        "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json",
+        "doc_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/examples/fairtracks.example.json",
         "doc_ontology_versions": {
             "http://edamontology.org/EDAM.owl": "http://edamontology.org/EDAM_1.21.owl",
             "http://purl.obolibrary.org/obo/cl.owl": "http://purl.obolibrary.org/obo/cl/releases/2019-08-12/cl.owl",
@@ -12,8 +12,8 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "fd86035cf10c8c4d0f1e1d7143b0d85ff6c9c0821cbe7a7eae35ad9c2e0bc654",
-        "doc_date": "2020-01-09T03:31:51Z"
+        "doc_version": "b7f0a720ce8ffdfb7502e94f4760fb14be93baaa6b350d0088034e05e74f5695",
+        "doc_date": "2020-03-12T23:52:44Z"
     },
     "collection_info": {
         "source_repo_url": "https://www.encodeproject.org/search",

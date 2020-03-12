@@ -212,7 +212,7 @@ Reference to the experiment of the track (using the submitter-local identifier o
 - defined in this schema
 - format: foreign_ref
 - foreignProperty:
-  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#local_id
+  https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/schema/fairtracks_experiment.schema.json#local_id
 
 ### experiment_ref Type
 
