@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: ab163c14654146401d587cb72b527e56d6ee5532cb0e70eb1225a56041a2f48c",
+    "$comment": "JSON signature: d798b47e1a89f8537eec3731aedd516f8e7592274c255ad861add8c9071ab1a5",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -68,7 +68,7 @@
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP"
             ],
-            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks_experiment.schema.json#local_id"
+            "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/schema/fairtracks_experiment.schema.json#local_id"
         },
         "raw_file_ids": {
             "type": "array",
