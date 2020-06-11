@@ -27,19 +27,19 @@
       <outline _name="long_name" description="Long name of the track collection. Suggested maximum length is 80 characters" examples="Example of a few tracks created by from the ENCODE Project" required="true" type="string" />
       <outline _name="description_url" description="URL to a web page or file describing the track collection" examples="https://www.encodeproject.org/help/project-overview/" format="uri" pattern="^(https?|ftp)://" required="false" type="string" />
       <outline _name="orig_metadata_url" description="URL to track collection metadata in its original form (might contain more than the relevant metadata)" examples="https://www.encodeproject.org/search/?format=json" format="uri" pattern="^(https?|ftp)://" required="false" type="string" />
-      <outline _name="contact" description="Contact information for the track collection" ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json" required="true" type="object" />
+      <outline _name="contact" description="Contact information for the track collection" ref="fairtracks_contact.schema.json" required="true" type="object" />
     </outline>
     <outline _name="studies" description="Array of JSON documents describing different studies that have produced data for the track collection" minItems="1" required="true" type="array">
-      <outline ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json" />
+      <outline ref="fairtracks_study.schema.json" />
     </outline>
     <outline _name="experiments" description="Array of JSON documents describing the different experiments that have produced data for the track collection" minItems="1" required="true" type="array">
-      <outline ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json" />
+      <outline ref="fairtracks_experiment.schema.json" />
     </outline>
     <outline _name="samples" description="Array of JSON documents describing the different samples that have been analyzed to create the track collection" minItems="1" required="true" type="array">
-      <outline ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json" />
+      <outline ref="fairtracks_sample.schema.json" />
     </outline>
     <outline _name="tracks" description="Array of JSON documents describing the different track files in the collection" minItems="1" required="true" type="array">
-      <outline ref="https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json" />
+      <outline ref="fairtracks_track.schema.json" />
     </outline>
   </body>
 </opml>

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json",
-    "$comment": "JSON signature: d8dc42a3ae1796f85f0500d294f52a51bbce479d4df60a5be5d2587571b779ec",
+    "$comment": "JSON signature: 01ed38f79182e9ef630ccb271d13e7aa7b8f62fff0adffb7b9fa278108a12bb7",
     "title": "Sample",
     "type": "object",
     "properties": {
@@ -229,7 +229,7 @@
         "phenotype": {
             "description": "Main phenotype (e.g. disease) connected to the sample",
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
+            "$ref": "fairtracks_phenotype.schema.json",
             "ontologyTermPair": {
                 "id": "0/term_id",
                 "label": "0/term_label"
