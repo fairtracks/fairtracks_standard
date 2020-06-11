@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@adobe/jsonschema2md": "^3.3.1"
+    "@adobe/jsonschema2md": "^4.1.3"
   }
 }

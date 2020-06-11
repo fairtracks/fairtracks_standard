@@ -1,0 +1,38 @@
+# Untitled undefined type in Sample Schema
+
+```txt
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/then
+```
+
+
+
+
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
+| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------ |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [fairtracks_sample.schema.json\*](../json/schema/fairtracks_sample.schema.json "open original schema") |
+
+## then Type
+
+unknown
+
+# undefined Properties
+
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                           |
+| :-------------------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sample_type](#sample_type) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-3-then-properties-sample_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/then/properties/sample_type") |
+
+## sample_type
+
+
+
+
+`sample_type`
+
+-   is optional
+-   Type: unknown
+-   cannot be null
+-   defined in: [Sample](fairtracks_sample-allof-3-then-properties-sample_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/then/properties/sample_type")
+
+### sample_type Type
+
+unknown
