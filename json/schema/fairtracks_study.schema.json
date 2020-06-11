@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
-    "$comment": "JSON signature: a447552dc9ba691e890dbb5a217a56bb541330e82dfd0de33c5950b1f1f8b4ec",
+    "$comment": "JSON signature: 1961a412d76dc863c8eb6e33d349f4024dcb41c3ed4aaef8d9e199dcfc94f4a8",
     "title": "Study",
     "type": "object",
     "properties": {
@@ -63,7 +63,7 @@
         "contact": {
             "description": "Contact information for study",
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json"
+            "$ref": "fairtracks_contact.schema.json"
         }
     },
     "required": [

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 65bf5c2f2a14f3748eaf9e6d4d61c1fa5dcc8bf6080aace34799fcc2a867a5c2",
+    "$comment": "JSON signature: 586e679a011112e93eaa5a3b4d3b9b0e5f93d63ac1d3cfe8ea5bc258f568577c",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -197,7 +197,7 @@
                 "contact": {
                     "description": "Contact information for the track collection",
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json"
+                    "$ref": "fairtracks_contact.schema.json"
                 }
             },
             "required": [
@@ -212,7 +212,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json"
+                "$ref": "fairtracks_study.schema.json"
             }
         },
         "experiments": {
@@ -220,7 +220,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
+                "$ref": "fairtracks_experiment.schema.json"
             }
         },
         "samples": {
@@ -228,7 +228,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json"
+                "$ref": "fairtracks_sample.schema.json"
             }
         },
         "tracks": {
@@ -236,7 +236,7 @@
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json"
+                "$ref": "fairtracks_track.schema.json"
             }
         }
     },
