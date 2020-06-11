@@ -33,7 +33,7 @@ https://fairtracks.github.io/
 
   Title | JSON Schema   | Schema documentation | Example JSON document
   ----- | ------------- | -------------------- | ---------------------
-  FAIRtracks JSON Schema | [fairtracks.schema.json](json/schema/fairtracks.schema.json) | [fairtracks.schema.md](docs/fairtracks.schema.md) | [fairtracks.example.json](json/examples/fairtracks.example.json)
+  FAIRtracks JSON Schema | [fairtracks.schema.json](json/schema/fairtracks.schema.json) | [fairtracks.md](docs/fairtracks.md) | [fairtracks.example.json](json/examples/fairtracks.example.json)
 
 - This top-level FAIRtracks JSON Schema contains, in addition to some general metadata fields, four 
   arrays of JSON sub-documents for the four main object types in FAIRtracks: `studies`, `experiments`, `samples`, 
@@ -41,17 +41,17 @@ https://fairtracks.github.io/
 
   Title | JSON Schema   | Schema documentation | Example JSON document
   ----- | ------------- | -------------------- | ---------------------
-  Study | [fairtracks_study.schema.json](json/schema/fairtracks_study.schema.json) | [fairtracks_study.schema.md](docs/fairtracks_study.schema.md) | [fairtracks_study.example.json](json/examples/fairtracks_study.example.json)
-  Experiment | [fairtracks_experiment.schema.json](json/schema/fairtracks_experiment.schema.json) | [fairtracks_experiment.schema.md](docs/fairtracks_experiment.schema.md) | [fairtracks_experiment.example.json](json/examples/fairtracks_experiment.example.json)
-  Sample | [fairtracks_sample.schema.json](json/schema/fairtracks_sample.schema.json) | [fairtracks_sample.schema.md](docs/fairtracks_sample.schema.md) | [fairtracks_sample.example.json](json/examples/fairtracks_sample.example.json)
-  Track | [fairtracks_track.schema.json](json/schema/fairtracks_track.schema.json) | [fairtracks_track.schema.md](docs/fairtracks_track.schema.md) | [fairtracks_track.example.json](json/examples/fairtracks_track.example.json)
+  Study | [fairtracks_study.schema.json](json/schema/fairtracks_study.schema.json) | [fairtracks_study.md](docs/fairtracks_study.md) | [fairtracks_study.example.json](json/examples/fairtracks_study.example.json)
+  Experiment | [fairtracks_experiment.schema.json](json/schema/fairtracks_experiment.schema.json) | [fairtracks_experiment.md](docs/fairtracks_experiment.md) | [fairtracks_experiment.example.json](json/examples/fairtracks_experiment.example.json)
+  Sample | [fairtracks_sample.schema.json](json/schema/fairtracks_sample.schema.json) | [fairtracks_sample.md](docs/fairtracks_sample.md) | [fairtracks_sample.example.json](json/examples/fairtracks_sample.example.json)
+  Track | [fairtracks_track.schema.json](json/schema/fairtracks_track.schema.json) | [fairtracks_track.md](docs/fairtracks_track.md) | [fairtracks_track.example.json](json/examples/fairtracks_track.example.json)
 
 - FAIRtracks also contains the following convenience sub-schemas:
 
   Title | JSON Schema   | Schema documentation | Example JSON document
   ----- | ------------- | -------------------- | ---------------------
-  Phenotype | [fairtracks_phenotype.schema.json](json/schema/fairtracks_phenotype.schema.json) | [fairtracks_phenotype.schema.md](docs/fairtracks_phenotype.schema.md) | [fairtracks_phenotype.example.json](json/examples/fairtracks_phenotype.example.json)
-  Contact | [fairtracks_contact.schema.json](json/schema/fairtracks_contact.schema.json) | [fairtracks_contact.schema.md](docs/fairtracks_contact.schema.md) | [fairtracks_contact.example.json](json/examples/fairtracks_contact.example.json)
+  Phenotype | [fairtracks_phenotype.schema.json](json/schema/fairtracks_phenotype.schema.json) | [fairtracks_phenotype.md](docs/fairtracks_phenotype.md) | [fairtracks_phenotype.example.json](json/examples/fairtracks_phenotype.example.json)
+  Contact | [fairtracks_contact.schema.json](json/schema/fairtracks_contact.schema.json) | [fairtracks_contact.md](docs/fairtracks_contact.md) | [fairtracks_contact.example.json](json/examples/fairtracks_contact.example.json)
 
 
 ## Making changes to the standard
