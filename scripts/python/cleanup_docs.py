@@ -33,6 +33,7 @@ def cleanup_opml_file(schema_docs_fp):
             print(prevLineIfEmptyProperty, end='')
         prevLineIfEmptyProperty = None
 
+        # Fix path to JSON schema files
         json_schema_fp = prefix + JSON_SUFFIX
         json_schema_link = "[{}]({})".format(json_schema_fp, json_schema_fp)
         if json_schema_link in line:
@@ -40,10 +41,12 @@ def cleanup_opml_file(schema_docs_fp):
             new_json_schema_link = "[{}]({})".format(json_schema_fp, new_json_schema_fp)
             print(line.replace(json_schema_link, new_json_schema_link), end='')
 
+        # Remove erroneous URL-encoded '&' chars
         elif '&amp;#x' in line:
             line = re.sub("&amp;#x([0-9A-F][0-9A-F]);", unescape, line)
             print(line, end='')
 
+        # Remove empty properties
         elif re.match("^- [a-zA-Z]+:$", line):
             prevLineIfEmptyProperty = line
 
