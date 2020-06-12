@@ -19,11 +19,11 @@ The type of the sample
 
 | Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
 | :---------------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cell_type](#cell_type)                   | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-cell_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_type")                   |
-| [abnormal_cell_type](#abnormal_cell_type) | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-abnormal_cell_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/abnormal_cell_type") |
-| [cell_line](#cell_line)                   | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-cell_line.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line")                   |
-| [organism_part](#organism_part)           | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-organism_part.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part")           |
-| [summary](#summary)                       | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-summary.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/summary")                       |
+| [cell_type](#cell_type)                   | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-cell_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_type")                   |
+| [abnormal_cell_type](#abnormal_cell_type) | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-abnormal_cell_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/abnormal_cell_type") |
+| [cell_line](#cell_line)                   | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-cell_line.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line")                   |
+| [organism_part](#organism_part)           | `object` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-organism_part.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part")           |
+| [summary](#summary)                       | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample_type-properties-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/summary")                       |
 
 ## cell_type
 
@@ -35,7 +35,7 @@ Cell type of isolated normal cells in the sample. This property should only be u
 -   is optional
 -   Type: `object` ([Details](fairtracks_sample-properties-sample_type-properties-cell_type.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-cell_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_type")
+-   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-cell_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_type")
 
 ### cell_type Type
 
@@ -51,7 +51,7 @@ Cell type of isolated abnormal cells in the sample. This property should only be
 -   is optional
 -   Type: `object` ([Details](fairtracks_sample-properties-sample_type-properties-abnormal_cell_type.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-abnormal_cell_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/abnormal_cell_type")
+-   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-abnormal_cell_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/abnormal_cell_type")
 
 ### abnormal_cell_type Type
 
@@ -67,7 +67,7 @@ Cultured cell line used in the sample. This property should only be used if bios
 -   is optional
 -   Type: `object` ([Details](fairtracks_sample-properties-sample_type-properties-cell_line.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-cell_line.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line")
+-   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-cell_line.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line")
 
 ### cell_line Type
 
@@ -83,7 +83,7 @@ Part of organism (typically tissue or organ) from which the sample was taken, or
 -   is optional
 -   Type: `object` ([Details](fairtracks_sample-properties-sample_type-properties-organism_part.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-organism_part.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part")
+-   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-organism_part.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part")
 
 ### organism_part Type
 
@@ -99,7 +99,8 @@ Summary of 'sample_type', copied from 'cell_type', 'abnormal_cell_type', 'cell_l
 -   is optional
 -   Type: `string`
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-summary.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/summary")
+-   defined in: [Sample](fairtracks_sample-properties-sample_type-properties-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/summary")
+-   autogenerated: true
 
 ### summary Type
 

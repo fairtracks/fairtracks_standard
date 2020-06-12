@@ -19,7 +19,7 @@ unknown
 
 | Property            | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                     |
 | :------------------ | ------ | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id) | Merged | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-2-if-properties-technique-properties-term_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/2/if/properties/technique/properties/term_id") |
+| [term_id](#term_id) | Merged | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-2-if-properties-technique-properties-term_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/2/if/properties/technique/properties/term_id") |
 
 ## term_id
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: merged type ([Details](fairtracks_experiment-allof-2-if-properties-technique-properties-term_id.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-allof-2-if-properties-technique-properties-term_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/2/if/properties/technique/properties/term_id")
+-   defined in: [Experiment](fairtracks_experiment-allof-2-if-properties-technique-properties-term_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/2/if/properties/technique/properties/term_id")
 
 ### term_id Type
 

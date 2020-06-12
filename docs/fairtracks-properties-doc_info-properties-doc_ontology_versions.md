@@ -19,15 +19,15 @@ URLs to the version of the ontologies used in the JSON document
 
 | Property                                                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                  |
 | :-------------------------------------------------------------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [http://edamontology.org/EDAM.owl](#http://edamontology.org/EDAM.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-edamowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//edamontology.org/EDAM.owl")            |
-| [http://purl.obolibrary.org/obo/cl.owl](#http://purl.obolibrary.org/obo/cl.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-clowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/cl.owl")         |
-| [http://www.ebi.ac.uk/efo/efo.owl](#http://www.ebi.ac.uk/efo/efo.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-efoowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//www.ebi.ac.uk/efo/efo.owl")             |
-| [http://purl.obolibrary.org/obo/ncit.owl](#http://purl.obolibrary.org/obo/ncit.owl)     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-ncitowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/ncit.owl")     |
-| [http://purl.obolibrary.org/obo/obi.owl](#http://purl.obolibrary.org/obo/obi.owl)       | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-obiowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/obi.owl")       |
-| [http://purl.obolibrary.org/obo/so.owl](#http://purl.obolibrary.org/obo/so.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-soowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/so.owl")         |
-| [http://purl.obolibrary.org/obo/uberon.owl](#http://purl.obolibrary.org/obo/uberon.owl) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-uberonowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/uberon.owl") |
+| [http://edamontology.org/EDAM.owl](#http://edamontology.org/EDAM.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-edamowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://edamontology.org/EDAM.owl")            |
+| [http://purl.obolibrary.org/obo/cl.owl](#http://purl.obolibrary.org/obo/cl.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-clowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")         |
+| [http://www.ebi.ac.uk/efo/efo.owl](#http://www.ebi.ac.uk/efo/efo.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-efoowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")             |
+| [http://purl.obolibrary.org/obo/ncit.owl](#http://purl.obolibrary.org/obo/ncit.owl)     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-ncitowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")     |
+| [http://purl.obolibrary.org/obo/obi.owl](#http://purl.obolibrary.org/obo/obi.owl)       | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-obiowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl")       |
+| [http://purl.obolibrary.org/obo/so.owl](#http://purl.obolibrary.org/obo/so.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-soowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")         |
+| [http://purl.obolibrary.org/obo/uberon.owl](#http://purl.obolibrary.org/obo/uberon.owl) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-uberonowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl") |
 
-## http&#x3A;//edamontology.org/EDAM.owl
+## http://edamontology.org/EDAM.owl
 
 
 
@@ -37,7 +37,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-edamowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//edamontology.org/EDAM.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-edamowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://edamontology.org/EDAM.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### EDAM.owl Type
 
@@ -61,7 +63,7 @@ URLs to the version of the ontologies used in the JSON document
 "http://edamontology.org/EDAM_1.21.owl"
 ```
 
-## http&#x3A;//purl.obolibrary.org/obo/cl.owl
+## http://purl.obolibrary.org/obo/cl.owl
 
 
 
@@ -71,7 +73,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-clowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/cl.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-clowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### cl.owl Type
 
@@ -95,7 +99,7 @@ URLs to the version of the ontologies used in the JSON document
 "http://purl.obolibrary.org/obo/cl/releases/2019-08-12/cl.owl"
 ```
 
-## http&#x3A;//www.ebi.ac.uk/efo/efo.owl
+## http://www.ebi.ac.uk/efo/efo.owl
 
 
 
@@ -105,7 +109,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-efoowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//www.ebi.ac.uk/efo/efo.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-efoowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### efo.owl Type
 
@@ -129,7 +135,7 @@ URLs to the version of the ontologies used in the JSON document
 "https://github.com/EBISPOT/efo/releases/download/v3.12.0/efo.owl"
 ```
 
-## http&#x3A;//purl.obolibrary.org/obo/ncit.owl
+## http://purl.obolibrary.org/obo/ncit.owl
 
 
 
@@ -139,7 +145,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-ncitowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/ncit.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-ncitowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### ncit.owl Type
 
@@ -163,7 +171,7 @@ URLs to the version of the ontologies used in the JSON document
 "http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl"
 ```
 
-## http&#x3A;//purl.obolibrary.org/obo/obi.owl
+## http://purl.obolibrary.org/obo/obi.owl
 
 
 
@@ -173,7 +181,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-obiowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/obi.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-obiowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### obi.owl Type
 
@@ -197,7 +207,7 @@ URLs to the version of the ontologies used in the JSON document
 "http://purl.obolibrary.org/obo/obi/2019-11-12/obi.owl"
 ```
 
-## http&#x3A;//purl.obolibrary.org/obo/so.owl
+## http://purl.obolibrary.org/obo/so.owl
 
 
 
@@ -207,7 +217,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-soowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/so.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-soowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### so.owl Type
 
@@ -231,7 +243,7 @@ URLs to the version of the ontologies used in the JSON document
 "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl"
 ```
 
-## http&#x3A;//purl.obolibrary.org/obo/uberon.owl
+## http://purl.obolibrary.org/obo/uberon.owl
 
 
 
@@ -241,7 +253,9 @@ URLs to the version of the ontologies used in the JSON document
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-uberonowl.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http&#x3A;//purl.obolibrary.org/obo/uberon.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-doc_info-properties-doc_ontology_versions-properties-uberonowl.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl")
+-   format: "uri"
+-   autogenerated: true
 
 ### uberon.owl Type
 
