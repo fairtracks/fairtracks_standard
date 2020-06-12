@@ -19,7 +19,7 @@ unknown
 
 | Property                              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                     |
 | :------------------------------------ | ------------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sequence_feature](#sequence_feature) | Not specified | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-0-then-properties-target-properties-sequence_feature.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature") |
+| [sequence_feature](#sequence_feature) | Not specified | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-0-then-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature") |
 
 ## sequence_feature
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-allof-0-then-properties-target-properties-sequence_feature.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature")
+-   defined in: [Experiment](fairtracks_experiment-allof-0-then-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature")
 
 ### sequence_feature Type
 

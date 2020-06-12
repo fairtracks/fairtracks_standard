@@ -19,7 +19,7 @@ unknown
 
 | Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
 | :-------------------------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [biospecimen_class](#biospecimen_class) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-1-if-properties-biospecimen_class.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/1/if/properties/biospecimen_class") |
+| [biospecimen_class](#biospecimen_class) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-1-if-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/1/if/properties/biospecimen_class") |
 
 ## biospecimen_class
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-allof-1-if-properties-biospecimen_class.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/1/if/properties/biospecimen_class")
+-   defined in: [Sample](fairtracks_sample-allof-1-if-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/1/if/properties/biospecimen_class")
 
 ### biospecimen_class Type
 

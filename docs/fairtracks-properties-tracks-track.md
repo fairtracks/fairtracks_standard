@@ -22,21 +22,21 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
 | :------------------------------------------------ | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@schema](#@schema)                               | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-schema.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/@schema")                                |
-| [global_id](#global_id)                           | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-global_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/global_id")                           |
-| [local_id](#local_id)                             | `string` | Required | cannot be null | [Track](fairtracks_track-properties-local_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/local_id")                             |
-| [assembly_id](#assembly_id)                       | `string` | Required | cannot be null | [Track](fairtracks_track-properties-assembly_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_id")                       |
-| [assembly_name](#assembly_name)                   | `string` | Required | cannot be null | [Track](fairtracks_track-properties-assembly_name.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name")                   |
-| [experiment_ref](#experiment_ref)                 | `string` | Required | cannot be null | [Track](fairtracks_track-properties-experiment_ref.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/experiment_ref")                 |
-| [raw_file_ids](#raw_file_ids)                     | `array`  | Optional | cannot be null | [Track](fairtracks_track-properties-raw_file_ids.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids")                     |
-| [file_url](#file_url)                             | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file_url.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_url")                             |
-| [file_name](#file_name)                           | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-file_name.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_name")                           |
-| [label_short](#label_short)                       | `string` | Required | cannot be null | [Track](fairtracks_track-properties-label_short.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_short")                       |
-| [label_long](#label_long)                         | `string` | Required | cannot be null | [Track](fairtracks_track-properties-label_long.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_long")                         |
-| [file_format](#file_format)                       | `object` | Required | cannot be null | [Track](fairtracks_track-properties-file_format.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_format")                       |
-| [type_of_condensed_data](#type_of_condensed_data) | `string` | Required | cannot be null | [Track](fairtracks_track-properties-type_of_condensed_data.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/type_of_condensed_data") |
-| [geometric_track_type](#geometric_track_type)     | `string` | Required | cannot be null | [Track](fairtracks_track-properties-geometric_track_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/geometric_track_type")     |
-| [checksum](#checksum)                             | `object` | Required | cannot be null | [Track](fairtracks_track-properties-checksum.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum")                             |
+| [@schema](#@schema)                               | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/@schema")                                |
+| [global_id](#global_id)                           | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/global_id")                           |
+| [local_id](#local_id)                             | `string` | Required | cannot be null | [Track](fairtracks_track-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/local_id")                             |
+| [assembly_id](#assembly_id)                       | `string` | Required | cannot be null | [Track](fairtracks_track-properties-assembly_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_id")                       |
+| [assembly_name](#assembly_name)                   | `string` | Required | cannot be null | [Track](fairtracks_track-properties-assembly_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name")                   |
+| [experiment_ref](#experiment_ref)                 | `string` | Required | cannot be null | [Track](fairtracks_track-properties-experiment_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/experiment_ref")                 |
+| [raw_file_ids](#raw_file_ids)                     | `array`  | Optional | cannot be null | [Track](fairtracks_track-properties-raw_file_ids.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids")                     |
+| [file_url](#file_url)                             | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file_url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_url")                             |
+| [file_name](#file_name)                           | `string` | Optional | cannot be null | [Track](fairtracks_track-properties-file_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_name")                           |
+| [label_short](#label_short)                       | `string` | Required | cannot be null | [Track](fairtracks_track-properties-label_short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_short")                       |
+| [label_long](#label_long)                         | `string` | Required | cannot be null | [Track](fairtracks_track-properties-label_long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_long")                         |
+| [file_format](#file_format)                       | `object` | Required | cannot be null | [Track](fairtracks_track-properties-file_format.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_format")                       |
+| [type_of_condensed_data](#type_of_condensed_data) | `string` | Required | cannot be null | [Track](fairtracks_track-properties-type_of_condensed_data.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/type_of_condensed_data") |
+| [geometric_track_type](#geometric_track_type)     | `string` | Required | cannot be null | [Track](fairtracks_track-properties-geometric_track_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/geometric_track_type")     |
+| [checksum](#checksum)                             | `object` | Required | cannot be null | [Track](fairtracks_track-properties-checksum.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum")                             |
 | Additional Properties                             | Any      | Optional | can be null    |                                                                                                                                                                                                                               |
 
 ## @schema
@@ -49,7 +49,8 @@ The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must matc
 -   is optional
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-schema.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/@schema")
+-   defined in: [Track](fairtracks_track-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/@schema")
+-   format: "uri"
 
 ### @schema Type
 
@@ -83,7 +84,9 @@ Global track identifier, resolvable by identifiers.org [to be created by us]
 -   is optional
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-global_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/global_id")
+-   defined in: [Track](fairtracks_track-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/global_id")
+-   namespace: "fairtracks"
+-   autogenerated: true
 
 ### global_id Type
 
@@ -117,7 +120,8 @@ Submitter-local identifier (within investigation/hub) for study (in CURIE-format
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-local_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/local_id")
+-   defined in: [Track](fairtracks_track-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/local_id")
+-   unique: true
 
 ### local_id Type
 
@@ -151,7 +155,10 @@ Genome assembly identifier, resolvable by identifiers.org. Tracks should be anno
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-assembly_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_id")
+-   defined in: [Track](fairtracks_track-properties-assembly_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_id")
+-   format: "curie"
+-   namespace: "insdc.gca"
+-   matchType: "canonical"
 
 ### assembly_id Type
 
@@ -189,7 +196,7 @@ Genome assembly name or synonym, according to the NCBI Assembly database. For tr
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-assembly_name.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name")
+-   defined in: [Track](fairtracks_track-properties-assembly_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name")
 
 ### assembly_name Type
 
@@ -223,7 +230,9 @@ Reference to the experiment of the track (using the submitter-local identifier o
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-experiment_ref.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/experiment_ref")
+-   defined in: [Track](fairtracks_track-properties-experiment_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/experiment_ref")
+-   format: "foreign_ref"
+-   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#local_id"
 
 ### experiment_ref Type
 
@@ -261,7 +270,7 @@ Reference to the experiment of the track (using the submitter-local identifier o
 -   is optional
 -   Type: `string[]`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-raw_file_ids.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids")
+-   defined in: [Track](fairtracks_track-properties-raw_file_ids.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids")
 
 ### raw_file_ids Type
 
@@ -281,7 +290,8 @@ A URL to the track data file
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-file_url.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_url")
+-   defined in: [Track](fairtracks_track-properties-file_url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_url")
+-   format: "uri"
 
 ### file_url Type
 
@@ -327,7 +337,8 @@ Name of the track file
 -   is optional
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-file_name.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_name")
+-   defined in: [Track](fairtracks_track-properties-file_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_name")
+-   autogenerated: true
 
 ### file_name Type
 
@@ -361,7 +372,7 @@ A short label of the track file. Suggested maximum length is 17 characters
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-label_short.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_short")
+-   defined in: [Track](fairtracks_track-properties-label_short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_short")
 
 ### label_short Type
 
@@ -395,7 +406,7 @@ A long label of the track file. Suggested maximum length is 80 characters
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-label_long.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_long")
+-   defined in: [Track](fairtracks_track-properties-label_long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_long")
 
 ### label_long Type
 
@@ -429,7 +440,7 @@ File format of the track data file
 -   is required
 -   Type: `object` ([Details](fairtracks_track-properties-file_format.md))
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-file_format.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_format")
+-   defined in: [Track](fairtracks_track-properties-file_format.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_format")
 
 ### file_format Type
 
@@ -445,7 +456,7 @@ Type of condensed track data: Track data, by definition, is formed downstream of
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-type_of_condensed_data.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/type_of_condensed_data")
+-   defined in: [Track](fairtracks_track-properties-type_of_condensed_data.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/type_of_condensed_data")
 
 ### type_of_condensed_data Type
 
@@ -505,7 +516,7 @@ Geometric type of track, according to the delineation of tracks into one of fift
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-geometric_track_type.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/geometric_track_type")
+-   defined in: [Track](fairtracks_track-properties-geometric_track_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/geometric_track_type")
 
 ### geometric_track_type Type
 
@@ -561,7 +572,7 @@ Geometric type of track, according to the delineation of tracks into one of fift
 -   is required
 -   Type: `object` ([Details](fairtracks_track-properties-checksum.md))
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-checksum.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum")
+-   defined in: [Track](fairtracks_track-properties-checksum.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum")
 
 ### checksum Type
 

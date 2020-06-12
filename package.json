@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@adobe/jsonschema2md": "https://github.com/fairtracks/jsonschema2md/tarball/relative-ref"
+    "@adobe/jsonschema2md": "https://github.com/fairtracks/jsonschema2md/tarball/fairtracks"
   }
 }

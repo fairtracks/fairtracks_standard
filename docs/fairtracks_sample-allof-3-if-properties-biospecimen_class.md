@@ -19,7 +19,7 @@ unknown
 
 | Property            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
 | :------------------ | ------------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-3-if-properties-biospecimen_class-properties-term_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/if/properties/biospecimen_class/properties/term_id") |
+| [term_id](#term_id) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-3-if-properties-biospecimen_class-properties-term_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/if/properties/biospecimen_class/properties/term_id") |
 
 ## term_id
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-allof-3-if-properties-biospecimen_class-properties-term_id.md "https&#x3A;//raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/if/properties/biospecimen_class/properties/term_id")
+-   defined in: [Sample](fairtracks_sample-allof-3-if-properties-biospecimen_class-properties-term_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/3/if/properties/biospecimen_class/properties/term_id")
 
 ### term_id Type
 
