@@ -1,7 +1,12 @@
-name: Example data validation
+name: BLUEPRINT data validation
 
 on:
   push:
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - master
 
 jobs:
 
@@ -45,7 +50,7 @@ jobs:
         source .py3env/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt -c constraints.txt
-        python fairGTrackJsonValidate.py ../../json/schema ../../json/examples > validation.log
+        python fairGTrackJsonValidate.py ../../json/schema ../../json/blueprint > validation.log
         python report.py
         python validate.py
 
