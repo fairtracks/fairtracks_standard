@@ -1,0 +1,45 @@
+name: Example data validation
+
+on:
+  push:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8]
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - name: Checkout fairtracks/fairtracks_standard
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Generate schema
+      run: ./rebuild_all.sh
+
+    - name: Checkout fairtracks/fairtracks_validator
+      uses: actions/checkout@master
+      with:
+        name: fairtracks/fairtracks_validator
+
+    - name: Install dependencies
+      run: |
+        cd fairtracks_validator
+        python -m venv .py3env
+        source .py3env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt -c constraints.txt
+
