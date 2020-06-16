@@ -44,7 +44,7 @@ jobs:
 
     - name: Run validation
       run: |
-        cp report.py fairtracks_validator/python
+        cp summary.py fairtracks_validator/python
         cp validate.py fairtracks_validator/python
         cd fairtracks_validator/python
         python -m venv .py3env
@@ -52,10 +52,10 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt -c constraints.txt
         python fairGTrackJsonValidate.py ../../json/schema ../../json/blueprint/blueprint_${{ matrix.blueprint-version }}.json > validation.log
-        python report.py
+        python summary.py
         python validate.py
 
-    - name: Upload validation report
+    - name: Upload validation logs
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
