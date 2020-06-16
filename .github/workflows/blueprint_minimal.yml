@@ -1,4 +1,4 @@
-name: BLUEPRINT data validation
+name: BLUEPRINT minimal data validation
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
         source .py3env/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt -c constraints.txt
-        python fairGTrackJsonValidate.py ../../json/schema ../../json/blueprint > validation.log
+        python fairGTrackJsonValidate.py ../../json/schema ../../json/blueprint/blueprint_minimal.json > validation.log
         python report.py
         python validate.py
 
@@ -58,5 +58,5 @@ jobs:
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
-        name: validation-python${{ matrix.python-version }}-node${{ matrix.node-version }}.log
+        name: validation-blueprint-minimal-python${{ matrix.python-version }}-node${{ matrix.node-version }}.log
         path: fairtracks_validator/python/validation.log
