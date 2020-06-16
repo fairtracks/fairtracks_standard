@@ -5,5 +5,6 @@ pattern = re.compile('Path: /[^\n]*')
 lines = re.findall(pattern, open('validation.log', 'r').read())
 print('\tTotal errors: ', len(lines))
 print('\tMerged errors: ')
-print(*[''] + [' [{}] {}'.format(*u) for u in enumerate(sorted(set(re.sub('/\\d+/', '/X/', e) for e in lines)))],
-      sep='\n')
+substituted_lines = list(re.sub('/\\d+/', '/X/', e) for e in lines)
+errors = {i: substituted_lines.count(i) for i in substituted_lines}
+print('\n'.join('\t\t[{}] {}'.format(*e) for e in enumerate(errors.items())))
