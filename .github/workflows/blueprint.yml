@@ -44,8 +44,8 @@ jobs:
 
     - name: Run validation
       run: |
-        cp summary.py fairtracks_validator/python
-        cp validate.py fairtracks_validator/python
+        cp scripts/python/summary.py fairtracks_validator/python
+        cp scripts/python/validate.py fairtracks_validator/python
         cd fairtracks_validator/python
         python -m venv .py3env
         source .py3env/bin/activate
