@@ -1,0 +1,57 @@
+name: Example data validation
+
+on:
+  push:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+        node-version: [12.x]
+
+    steps:
+    - name: Checkout fairtracks/fairtracks_standard
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Generate schema
+      run: |
+        make raw
+        make json
+
+    - name: Clone fairtracks/fairtracks_validator
+      run: git clone https://github.com/fairtracks/fairtracks_validator.git
+
+    - name: Run validation
+      run: |
+        cp scripts/python/summary.py fairtracks_validator/python
+        cp scripts/python/validate.py fairtracks_validator/python
+        cd fairtracks_validator/python
+        python -m venv .py3env
+        source .py3env/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt -c constraints.txt
+        python fairGTrackJsonValidate.py ../../json/schema ../../json/examples > validation.log
+        python summary.py
+        python validate.py
+
+    - name: Upload validation logs
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: validation-example-python${{ matrix.python-version }}-node${{ matrix.node-version }}.log
+        path: fairtracks_validator/python/validation.log
