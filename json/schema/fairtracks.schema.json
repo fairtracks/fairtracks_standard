@@ -249,5 +249,155 @@
         "samples",
         "tracks"
     ],
-    "additionalProperties": true
+    "additionalProperties": true,
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "doc_info": {
+                        "properties": {
+                            "augmented_data": {
+                                "const": true
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "doc_info": {
+                        "required": [
+                            "local_id",
+                            "doc_url"
+                        ],
+                        "properties": {
+                            "doc_ontology_versions": {
+                                "required": [
+                                    "http://edamontology.org/EDAM.owl",
+                                    "http://purl.obolibrary.org/obo/cl.owl",
+                                    "http://www.ebi.ac.uk/efo/efo.owl",
+                                    "http://purl.obolibrary.org/obo/ncit.owl",
+                                    "http://purl.obolibrary.org/obo/obi.owl",
+                                    "http://purl.obolibrary.org/obo/so.owl",
+                                    "http://purl.obolibrary.org/obo/uberon.owl"
+                                ]
+                            }
+                        }
+                    },
+                    "collection_info": {
+                        "required": [
+                            "local_id",
+                            "doc_ref"
+                        ]
+                    },
+                    "studies": {
+                        "items": {
+                            "required": [
+                                "collection_ref"
+                            ]
+                        }
+                    },
+                    "experiments": {
+                        "items": {
+                            "properties": {
+                                "technique": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                },
+                                "target": {
+                                    "properties": {
+                                        "sequence_feature": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "gene_product_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "macromolecular_structure": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "phenotype": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "summary"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "samples": {
+                        "items": {
+                            "required": [
+                                "species_name"
+                            ],
+                            "properties": {
+                                "biospecimen_class": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                },
+                                "sample_type": {
+                                    "properties": {
+                                        "cell_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "abnormal_cell_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "cell_line": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "organism_part": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "summary"
+                                    ]
+                                },
+                                "phenotype": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "tracks": {
+                        "items": {
+                            "required": [
+                                "global_id",
+                                "file_name"
+                            ],
+                            "properties": {
+                                "file_format": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
 }

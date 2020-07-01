@@ -10,16 +10,16 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 # FAIRtracks Properties
 
-| Property                            | Type       | Required     | Nullable | Defined by                                 |
-| ----------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ |
-| [@schema](#schema)                  | `const`    | **Required** | No       | FAIRtracks (this schema)                   |
-| [collection_info](#collection_info) | `object`   | **Required** | No       | FAIRtracks (this schema)                   |
-| [doc_info](#doc_info)               | `object`   | **Required** | No       | FAIRtracks (this schema)                   |
-| [experiments](#experiments)         | Experiment | **Required** | No       | FAIRtracks (this schema)                   |
-| [samples](#samples)                 | Sample     | **Required** | No       | FAIRtracks (this schema)                   |
-| [studies](#studies)                 | Study      | **Required** | No       | FAIRtracks (this schema)                   |
-| [tracks](#tracks)                   | Track      | **Required** | No       | FAIRtracks (this schema)                   |
-| `*`                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
+| Property                            | Type      | Required     | Nullable | Defined by                                 |
+| ----------------------------------- | --------- | ------------ | -------- | ------------------------------------------ |
+| [@schema](#schema)                  | `const`   | **Required** | No       | FAIRtracks (this schema)                   |
+| [collection_info](#collection_info) | `object`  | **Required** | No       | FAIRtracks (this schema)                   |
+| [doc_info](#doc_info)               | `object`  | **Required** | No       | FAIRtracks (this schema)                   |
+| [experiments](#experiments)         | reference | **Required** | No       | FAIRtracks (this schema)                   |
+| [samples](#samples)                 | reference | **Required** | No       | FAIRtracks (this schema)                   |
+| [studies](#studies)                 | reference | **Required** | No       | FAIRtracks (this schema)                   |
+| [tracks](#tracks)                   | reference | **Required** | No       | FAIRtracks (this schema)                   |
+| `*`                                 | any       | Additional   | Yes      | this schema _allows_ additional properties |
 
 ## @schema
 
@@ -53,16 +53,16 @@ General information about the track collection that is annotated in the current 
 
 `object` with following properties:
 
-| Property            | Type    | Required     |
-| ------------------- | ------- | ------------ |
-| `contact`           | Contact | **Required** |
-| `description_url`   | string  | Optional     |
-| `doc_ref`           | string  | Optional     |
-| `local_id`          | string  | Optional     |
-| `long_name`         | string  | **Required** |
-| `orig_metadata_url` | string  | Optional     |
-| `short_name`        | string  | **Required** |
-| `source_repo_url`   | string  | **Required** |
+| Property            | Type   | Required     |
+| ------------------- | ------ | ------------ |
+| `contact`           | object | **Required** |
+| `description_url`   | string | Optional     |
+| `doc_ref`           | string | Optional     |
+| `local_id`          | string | Optional     |
+| `long_name`         | string | **Required** |
+| `orig_metadata_url` | string | Optional     |
+| `short_name`        | string | **Required** |
+| `source_repo_url`   | string | **Required** |
 
 #### contact
 
@@ -71,12 +71,15 @@ Contact information for the track collection
 `contact`
 
 - is **required**
-- type: Contact
+- type: reference
 
 ##### contact Type
 
-- [Contact](fairtracks_contact.schema.md) –
-  `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json`
+`object` with following properties:
+
+| Property | Type | Required |
+| -------- | ---- | -------- |
+
 
 #### description_url
 
@@ -597,17 +600,17 @@ Array of JSON documents describing the different experiments that have produced 
 `experiments`
 
 - is **required**
-- type: Experiment
+- type: reference
 - at least `1` items in the array
 - defined in this schema
 
 ### experiments Type
 
-Array type: Experiment
+Array type: reference
 
 All items must be of the type:
 
-- [Experiment](fairtracks_experiment.schema.md) –
+- []() –
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json`
 
 ## samples
@@ -617,17 +620,17 @@ Array of JSON documents describing the different samples that have been analyzed
 `samples`
 
 - is **required**
-- type: Sample
+- type: reference
 - at least `1` items in the array
 - defined in this schema
 
 ### samples Type
 
-Array type: Sample
+Array type: reference
 
 All items must be of the type:
 
-- [Sample](fairtracks_sample.schema.md) –
+- []() –
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json`
 
 ## studies
@@ -637,17 +640,17 @@ Array of JSON documents describing different studies that have produced data for
 `studies`
 
 - is **required**
-- type: Study
+- type: reference
 - at least `1` items in the array
 - defined in this schema
 
 ### studies Type
 
-Array type: Study
+Array type: reference
 
 All items must be of the type:
 
-- [Study](fairtracks_study.schema.md) –
+- []() –
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json`
 
 ## tracks
@@ -657,15 +660,19 @@ Array of JSON documents describing the different track files in the collection
 `tracks`
 
 - is **required**
-- type: Track
+- type: reference
 - at least `1` items in the array
 - defined in this schema
 
 ### tracks Type
 
-Array type: Track
+Array type: reference
 
 All items must be of the type:
 
-- [Track](fairtracks_track.schema.md) –
+- []() –
   `https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json`
+
+**All** of the following _requirements_ need to be fulfilled.
+
+#### Requirement 1
