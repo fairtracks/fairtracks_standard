@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: ab918721a506857f5b81622763c4cc973ba48ce14ec374063926d80b18e3d671",
+    "$comment": "JSON signature: 821b067b8f6bafd87ffe85f246352b2b214f62e18cc0294b346be08e90771e5a",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -143,12 +143,19 @@
                     "description": "Creation date of this version of this FAIRtracks document",
                     "type": "string",
                     "format": "date-time"
+                },
+                "has_augmented_metadata": {
+                    "title": "Contains Augmented Metadata",
+                    "description": "Set to true if the metadata properties with augmented=True is set in the JSON document, as returned by the fairtracks_augment service",
+                    "type": "string",
+                    "default": false
                 }
             },
             "required": [
                 "doc_ontology_versions",
                 "doc_version",
-                "doc_date"
+                "doc_date",
+                "has_augmented_metadata"
             ]
         },
         "collection_info": {
@@ -282,6 +289,156 @@
         "experiments",
         "samples",
         "tracks"
+    ],
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "doc_info": {
+                        "properties": {
+                            "has_augmented_metadata": {
+                                "const": true
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "doc_info": {
+                        "required": [
+                            "local_id",
+                            "doc_url"
+                        ],
+                        "properties": {
+                            "doc_ontology_versions": {
+                                "required": [
+                                    "http://edamontology.org/EDAM.owl",
+                                    "http://purl.obolibrary.org/obo/cl.owl",
+                                    "http://www.ebi.ac.uk/efo/efo.owl",
+                                    "http://purl.obolibrary.org/obo/ncit.owl",
+                                    "http://purl.obolibrary.org/obo/obi.owl",
+                                    "http://purl.obolibrary.org/obo/so.owl",
+                                    "http://purl.obolibrary.org/obo/uberon.owl"
+                                ]
+                            }
+                        }
+                    },
+                    "collection_info": {
+                        "required": [
+                            "local_id",
+                            "doc_ref"
+                        ]
+                    },
+                    "studies": {
+                        "items": {
+                            "required": [
+                                "collection_ref"
+                            ]
+                        }
+                    },
+                    "experiments": {
+                        "items": {
+                            "properties": {
+                                "technique": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                },
+                                "target": {
+                                    "properties": {
+                                        "sequence_feature": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "gene_product_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "macromolecular_structure": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "phenotype": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "summary"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "samples": {
+                        "items": {
+                            "required": [
+                                "species_name"
+                            ],
+                            "properties": {
+                                "biospecimen_class": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                },
+                                "sample_type": {
+                                    "properties": {
+                                        "cell_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "abnormal_cell_type": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "cell_line": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        },
+                                        "organism_part": {
+                                            "required": [
+                                                "term_label"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "summary"
+                                    ]
+                                },
+                                "phenotype": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "tracks": {
+                        "items": {
+                            "required": [
+                                "global_id",
+                                "file_name"
+                            ],
+                            "properties": {
+                                "file_format": {
+                                    "required": [
+                                        "term_label"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     ],
     "additionalProperties": true
 }
