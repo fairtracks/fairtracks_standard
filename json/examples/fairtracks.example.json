@@ -12,8 +12,9 @@
             "http://purl.obolibrary.org/obo/so.owl": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl",
             "http://purl.obolibrary.org/obo/uberon.owl": "http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
         },
-        "doc_version": "9e9fa2d46112ada6c64c161c9587613cd778ec042ba65740265da1a3e8a34224",
-        "doc_date": "2020-07-07T19:02:59Z"
+        "has_augmented_metadata": "false",
+        "doc_version": "1a278148091b02bd56e5db4bf892deb5f034fa8df3134466dd7e9ab4147012e2",
+        "doc_date": "2020-07-08T03:27:37Z"
     },
     "collection_info": {
         "source_repo_url": "https://www.encodeproject.org/search",

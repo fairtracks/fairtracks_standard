@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: ab918721a506857f5b81622763c4cc973ba48ce14ec374063926d80b18e3d671
+> JSON signature: 821b067b8f6bafd87ffe85f246352b2b214f62e18cc0294b346be08e90771e5a
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |
@@ -17,6 +17,10 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 ## FAIRtracks Type
 
 `object` ([FAIRtracks](fairtracks.md))
+
+all of
+
+-   [Untitled undefined type in FAIRtracks](fairtracks-allof-0.md "check type definition")
 
 # FAIRtracks Properties
 
