@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/has_augmented_metadata
 ```
 
-Set to true if the metadata properties with augmented=True is set in the JSON document, as returned by the fairtracks_augment service
+Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -13,4 +13,10 @@ Set to true if the metadata properties with augmented=True is set in the JSON do
 
 ## has_augmented_metadata Type
 
-`string` ([Contains Augmented Metadata](fairtracks-properties-document-info-properties-contains-augmented-metadata.md))
+`boolean` ([Contains Augmented Metadata](fairtracks-properties-document-info-properties-contains-augmented-metadata.md))
+
+## has_augmented_metadata Examples
+
+```json
+false
+```

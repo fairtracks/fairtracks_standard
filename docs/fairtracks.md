@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 821b067b8f6bafd87ffe85f246352b2b214f62e18cc0294b346be08e90771e5a
+> JSON signature: 4c110f3fd16bbfced9ddd4f93e917a7e551aff9146881f9949aca10ee26507cd
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |

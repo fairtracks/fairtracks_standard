@@ -18,7 +18,7 @@
       </outline>
       <outline _name="doc_version" description="Version of this FAIRtracks JSON document" required="true" title="Document Version" type="string" />
       <outline _name="doc_date" description="Creation date of this version of this FAIRtracks document" format="date-time" required="true" title="Document Creation Date" type="string" />
-      <outline _name="has_augmented_metadata" default="false" description="Set to true if the metadata properties with augmented=True is set in the JSON document, as returned by the fairtracks_augment service" required="true" title="Contains Augmented Metadata" type="string" />
+      <outline _name="has_augmented_metadata" description="Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service" examples="false" required="true" title="Contains Augmented Metadata" type="boolean" />
     </outline>
     <outline _name="collection_info" description="General information about the track collection that is annotated in the current FAIRtracks JSON document" required="true" title="Track Collection Info" type="object">
       <outline _name="source_repo_url" description="URL to the track repository containing the collection (e.g., the Track Hub Registry)" examples="https://www.encodeproject.org/search" format="uri" pattern="^(https?|ftp)://" required="true" title="Source Repo URL" type="string" />

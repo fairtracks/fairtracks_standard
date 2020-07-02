@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 821b067b8f6bafd87ffe85f246352b2b214f62e18cc0294b346be08e90771e5a",
+    "$comment": "JSON signature: 4c110f3fd16bbfced9ddd4f93e917a7e551aff9146881f9949aca10ee26507cd",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -146,9 +146,11 @@
                 },
                 "has_augmented_metadata": {
                     "title": "Contains Augmented Metadata",
-                    "description": "Set to true if the metadata properties with augmented=True is set in the JSON document, as returned by the fairtracks_augment service",
-                    "type": "string",
-                    "default": false
+                    "description": "Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service",
+                    "type": "boolean",
+                    "examples": [
+                        false
+                    ]
                 }
             },
             "required": [
