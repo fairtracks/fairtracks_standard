@@ -1,11 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 4d12673f2792746c75fa80cb87bf7220e7b6d4f6cc3480e19fbc812ca14f4a47",
+    "$comment": "JSON signature: ac1c93f5815423cc7e3b4f6b3e5a7b72cc6134298920d93a58385c14ba3a364d",
     "title": "Experiment",
     "type": "object",
     "properties": {
         "@schema": {
+            "title": "Schema URL",
             "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
@@ -13,6 +14,7 @@
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
         },
         "global_id": {
+            "title": "Global ID",
             "description": "Global experiment identifier, resolvable by identifiers.org",
             "type": "string",
             "format": "curie",
@@ -26,6 +28,7 @@
             ]
         },
         "local_id": {
+            "title": "Local ID",
             "description": "Submitter-local identifier (within investigation/hub) for experiment (in CURIE-format, if applicable)",
             "type": "string",
             "examples": [
@@ -34,6 +37,7 @@
             "unique": true
         },
         "study_ref": {
+            "title": "Study Reference",
             "description": "Reference to the study that generated the sample (using the submitter-local identifier of the study)",
             "type": "string",
             "format": "foreign_ref",
@@ -43,6 +47,7 @@
             "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id"
         },
         "sample_ref": {
+            "title": "Sample Reference",
             "description": "Reference to the sample of the experiment (using the submitter-local identifier of the sample)",
             "type": "string",
             "format": "foreign_ref",
@@ -52,6 +57,7 @@
             "foreignProperty": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id"
         },
         "aggregated_from": {
+            "title": "References to Primary Experiments",
             "description": "References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)",
             "type": "array",
             "items": {
@@ -63,6 +69,7 @@
             }
         },
         "technique": {
+            "title": "Experimental Technique",
             "description": "Main technique used in experiment (e.g., laboratory, computational or statistical technique)",
             "type": "object",
             "ontologyTermPair": {
@@ -71,6 +78,7 @@
             },
             "properties": {
                 "term_id": {
+                    "title": "Term ID",
                     "description": "URL linking to an ontology term",
                     "type": "string",
                     "format": "term",
@@ -89,6 +97,7 @@
                     ]
                 },
                 "term_label": {
+                    "title": "Term Label",
                     "description": "Exact value according to the ontology used",
                     "type": "string",
                     "examples": [
@@ -102,10 +111,12 @@
             ]
         },
         "target": {
+            "title": "Experiment Target",
             "description": "Main target of the experiment",
             "type": "object",
             "properties": {
                 "sequence_feature": {
+                    "title": "Target: Sequence Feature",
                     "description": "Sequence feature targeted by the experiment",
                     "type": "object",
                     "ontologyTermPair": {
@@ -114,6 +125,7 @@
                     },
                     "properties": {
                         "term_id": {
+                            "title": "Term ID",
                             "description": "URL linking to an ontology term",
                             "type": "string",
                             "format": "term",
@@ -126,6 +138,7 @@
                             ]
                         },
                         "term_label": {
+                            "title": "Term Label",
                             "description": "Exact value according to the ontology used",
                             "type": "string",
                             "examples": [
@@ -139,12 +152,14 @@
                     ]
                 },
                 "gene_id": {
+                    "title": "Target: Gene",
                     "description": "HGNC identifier for gene targeted by the experiment (e.g., specific transcription factor used as ChIP-seq antibody).",
                     "type": "string",
                     "namespace": "hgnc",
                     "matchType": "canonical"
                 },
                 "gene_product_type": {
+                    "title": "Target: Gene Product Type",
                     "description": "Gene product type targeted by the experiment (e.g., miRNA)",
                     "type": "object",
                     "ontologyTermPair": {
@@ -153,6 +168,7 @@
                     },
                     "properties": {
                         "term_id": {
+                            "title": "Term ID",
                             "description": "URL linking to an ontology term",
                             "type": "string",
                             "format": "term",
@@ -162,6 +178,7 @@
                             "matchType": "exact"
                         },
                         "term_label": {
+                            "title": "Term Label",
                             "description": "Exact value according to the ontology used",
                             "type": "string",
                             "autogenerated": true
@@ -172,6 +189,7 @@
                     ]
                 },
                 "macromolecular_structure": {
+                    "title": "Target: Macromolecular Structure",
                     "description": "Macromolecular structure targeted by the experiment (e.g., chromatin strucure)",
                     "type": "object",
                     "ontologyTermPair": {
@@ -180,6 +198,7 @@
                     },
                     "properties": {
                         "term_id": {
+                            "title": "Term ID",
                             "description": "URL linking to an ontology term",
                             "type": "string",
                             "format": "term",
@@ -189,6 +208,7 @@
                             "matchType": "exact"
                         },
                         "term_label": {
+                            "title": "Term Label",
                             "description": "Exact value according to the ontology used",
                             "type": "string",
                             "autogenerated": true
@@ -199,6 +219,7 @@
                     ]
                 },
                 "phenotype": {
+                    "title": "Target: Phenotype",
                     "description": "Main phenotype (e.g. disease) connected to the sample",
                     "type": "object",
                     "$ref": "fairtracks_phenotype.schema.json",
@@ -208,10 +229,12 @@
                     }
                 },
                 "target_details": {
+                    "title": "Target Details",
                     "description": "Important details about the target of the experiment (to be included in the 'target' property)",
                     "type": "string"
                 },
                 "summary": {
+                    "title": "Experiment Target (Summary)",
                     "description": "Summary of 'target', copied from 'sequence_feature', 'gene_id', 'gene_product', or 'macromolecular_structure' (and adding 'target_detail'), according to 'technique'",
                     "type": "string",
                     "examples": [
@@ -222,6 +245,7 @@
             }
         },
         "lab_protocol_description": {
+            "title": "Lab Protocol Description",
             "description": "Free-text description of lab protocol, or URL to such description",
             "type": "string",
             "examples": [
@@ -229,6 +253,7 @@
             ]
         },
         "compute_protocol_description": {
+            "title": "Compute Protocol Description",
             "description": "Free-text description of computational protocol, or URL to such description",
             "type": "string",
             "examples": [

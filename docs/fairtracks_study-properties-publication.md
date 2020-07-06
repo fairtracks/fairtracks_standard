@@ -1,4 +1,4 @@
-# Untitled string in Study Schema
+# Publication Schema
 
 ```txt
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/publication
@@ -13,7 +13,7 @@ Pubmed identifier (dataset or publication)
 
 ## publication Type
 
-`string`
+`string` ([Publication](fairtracks_study-properties-publication.md))
 
 ## publication Constraints
 

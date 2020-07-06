@@ -1,4 +1,4 @@
-# Untitled string in Contact Schema
+# ORCID Schema
 
 ```txt
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/orcid
@@ -13,7 +13,7 @@ ORCID to contact person
 
 ## orcid Type
 
-`string`
+`string` ([ORCID](fairtracks_contact-properties-orcid.md))
 
 ## orcid Constraints
 

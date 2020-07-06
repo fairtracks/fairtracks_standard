@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: daba8d50c607720756379d7846d10565cbc1b38101e8014311927710541ba83b
+> JSON signature: 6bf498ea83732cb9184385d7e659f11ee396f39fd46971dbe5d06b57f17f069e
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
@@ -25,13 +25,13 @@ any of
 
 # Contact Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :-------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@schema](#@schema)   | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/@schema") |
-| [name](#name)         | `string` | Required | cannot be null | [Contact](fairtracks_contact-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/name")      |
-| [e-mail](#e-mail)     | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-e-mail.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail")  |
-| [orcid](#orcid)       | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-orcid.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/orcid")    |
-| Additional Properties | Any      | Optional | can be null    |                                                                                                                                                                                                      |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                               |
+| :-------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@schema](#@schema)   | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/@schema") |
+| [name](#name)         | `string` | Required | cannot be null | [Contact](fairtracks_contact-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/name")          |
+| [e-mail](#e-mail)     | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-e-mail.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail")      |
+| [orcid](#orcid)       | `string` | Optional | cannot be null | [Contact](fairtracks_contact-properties-orcid.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/orcid")        |
+| Additional Properties | Any      | Optional | can be null    |                                                                                                                                                                                                          |
 
 ## @schema
 
@@ -41,14 +41,14 @@ The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must matc
 `@schema`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Schema URL](fairtracks_contact-properties-schema-url.md))
 -   cannot be null
--   defined in: [Contact](fairtracks_contact-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/@schema")
+-   defined in: [Contact](fairtracks_contact-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/@schema")
 -   format: "uri"
 
 ### @schema Type
 
-`string`
+`string` ([Schema URL](fairtracks_contact-properties-schema-url.md))
 
 ### @schema Constraints
 
@@ -76,13 +76,13 @@ Name of contact person/organization
 `name`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([Name](fairtracks_contact-properties-name.md))
 -   cannot be null
 -   defined in: [Contact](fairtracks_contact-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/name")
 
 ### name Type
 
-`string`
+`string` ([Name](fairtracks_contact-properties-name.md))
 
 ### name Examples
 
@@ -98,14 +98,14 @@ E-mail to contact person/organization
 `e-mail`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([E-mail](fairtracks_contact-properties-e-mail.md))
 -   cannot be null
 -   defined in: [Contact](fairtracks_contact-properties-e-mail.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail")
 -   format: "idn-email"
 
 ### e-mail Type
 
-`string`
+`string` ([E-mail](fairtracks_contact-properties-e-mail.md))
 
 ### e-mail Constraints
 
@@ -125,7 +125,7 @@ ORCID to contact person
 `orcid`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([ORCID](fairtracks_contact-properties-orcid.md))
 -   cannot be null
 -   defined in: [Contact](fairtracks_contact-properties-orcid.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/orcid")
 -   format: "curie"
@@ -134,7 +134,7 @@ ORCID to contact person
 
 ### orcid Type
 
-`string`
+`string` ([ORCID](fairtracks_contact-properties-orcid.md))
 
 ### orcid Constraints
 

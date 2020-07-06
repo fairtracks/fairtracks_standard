@@ -1,4 +1,4 @@
-# Untitled array in FAIRtracks Schema
+# Samples Schema
 
 ```txt
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/samples

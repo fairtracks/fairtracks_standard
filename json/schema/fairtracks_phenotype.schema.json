@@ -1,11 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
-    "$comment": "JSON signature: c56584aa5716fb0730026a5f92f0d126930895f063049ca751e3aa80df6bd4d8",
+    "$comment": "JSON signature: f807ce206cb0c89510c5708a328ddc4f2b1427352585a6aa87f68b73756a3e61",
     "title": "Phenotype",
     "type": "object",
     "properties": {
         "@schema": {
+            "title": "Schema URL",
             "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
@@ -13,6 +14,7 @@
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json"
         },
         "term_id": {
+            "title": "Term ID",
             "description": "URL linking to an ontology term",
             "type": "string",
             "format": "term",
@@ -27,6 +29,7 @@
             "matchType": "exact"
         },
         "term_label": {
+            "title": "Term Label",
             "description": "Exact value according to the ontology used",
             "type": "string",
             "default": "Normal",

@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 4d12673f2792746c75fa80cb87bf7220e7b6d4f6cc3480e19fbc812ca14f4a47
+> JSON signature: ac1c93f5815423cc7e3b4f6b3e5a7b72cc6134298920d93a58385c14ba3a364d
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                   |
@@ -27,16 +27,16 @@ any of
 
 | Property                                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
 | :------------------------------------------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@schema](#@schema)                                           | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/@schema")                                            |
-| [global_id](#global_id)                                       | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/global_id")                                       |
-| [local_id](#local_id)                                         | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/local_id")                                         |
-| [study_ref](#study_ref)                                       | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-study_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref")                                       |
-| [sample_ref](#sample_ref)                                     | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-sample_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref")                                     |
-| [aggregated_from](#aggregated_from)                           | `array`  | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-aggregated_from.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from")                           |
-| [technique](#technique)                                       | `object` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/technique")                                       |
-| [target](#target)                                             | `object` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target")                                             |
-| [lab_protocol_description](#lab_protocol_description)         | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-lab_protocol_description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/lab_protocol_description")         |
-| [compute_protocol_description](#compute_protocol_description) | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-compute_protocol_description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description") |
+| [@schema](#@schema)                                           | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/@schema")                                        |
+| [global_id](#global_id)                                       | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/global_id")                                       |
+| [local_id](#local_id)                                         | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/local_id")                                         |
+| [study_ref](#study_ref)                                       | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-study-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref")                                 |
+| [sample_ref](#sample_ref)                                     | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-sample-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref")                               |
+| [aggregated_from](#aggregated_from)                           | `array`  | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-references-to-primary-experiments.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from")         |
+| [technique](#technique)                                       | `object` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-experimental-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/technique")                          |
+| [target](#target)                                             | `object` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target")                                  |
+| [lab_protocol_description](#lab_protocol_description)         | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-lab-protocol-description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/lab_protocol_description")         |
+| [compute_protocol_description](#compute_protocol_description) | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-compute-protocol-description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description") |
 | Additional Properties                                         | Any      | Optional | can be null    |                                                                                                                                                                                                                                                          |
 
 ## @schema
@@ -47,14 +47,14 @@ The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must matc
 `@schema`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Schema URL](fairtracks_experiment-properties-schema-url.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/@schema")
+-   defined in: [Experiment](fairtracks_experiment-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/@schema")
 -   format: "uri"
 
 ### @schema Type
 
-`string`
+`string` ([Schema URL](fairtracks_experiment-properties-schema-url.md))
 
 ### @schema Constraints
 
@@ -82,16 +82,16 @@ Global experiment identifier, resolvable by identifiers.org
 `global_id`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Global ID](fairtracks_experiment-properties-global-id.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/global_id")
+-   defined in: [Experiment](fairtracks_experiment-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/global_id")
 -   format: "curie"
 -   namespace: \["geo","ega.experiment"]
 -   matchType: "canonical"
 
 ### global_id Type
 
-`string`
+`string` ([Global ID](fairtracks_experiment-properties-global-id.md))
 
 ### global_id Constraints
 
@@ -111,14 +111,14 @@ Submitter-local identifier (within investigation/hub) for experiment (in CURIE-f
 `local_id`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([Local ID](fairtracks_experiment-properties-local-id.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/local_id")
+-   defined in: [Experiment](fairtracks_experiment-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/local_id")
 -   unique: true
 
 ### local_id Type
 
-`string`
+`string` ([Local ID](fairtracks_experiment-properties-local-id.md))
 
 ### local_id Examples
 
@@ -134,15 +134,15 @@ Reference to the study that generated the sample (using the submitter-local iden
 `study_ref`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([Study Reference](fairtracks_experiment-properties-study-reference.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-study_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref")
+-   defined in: [Experiment](fairtracks_experiment-properties-study-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref")
 -   format: "foreign_ref"
 -   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id"
 
 ### study_ref Type
 
-`string`
+`string` ([Study Reference](fairtracks_experiment-properties-study-reference.md))
 
 ### study_ref Constraints
 
@@ -162,15 +162,15 @@ Reference to the sample of the experiment (using the submitter-local identifier 
 `sample_ref`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Sample Reference](fairtracks_experiment-properties-sample-reference.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-sample_ref.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref")
+-   defined in: [Experiment](fairtracks_experiment-properties-sample-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref")
 -   format: "foreign_ref"
 -   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id"
 
 ### sample_ref Type
 
-`string`
+`string` ([Sample Reference](fairtracks_experiment-properties-sample-reference.md))
 
 ### sample_ref Constraints
 
@@ -192,7 +192,7 @@ References to external experiments used as basis for aggregated data generation 
 -   is optional
 -   Type: `string[]`
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-aggregated_from.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from")
+-   defined in: [Experiment](fairtracks_experiment-properties-references-to-primary-experiments.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from")
 
 ### aggregated_from Type
 
@@ -206,13 +206,13 @@ Main technique used in experiment (e.g., laboratory, computational or statistica
 `technique`
 
 -   is required
--   Type: `object` ([Details](fairtracks_experiment-properties-technique.md))
+-   Type: `object` ([Experimental Technique](fairtracks_experiment-properties-experimental-technique.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/technique")
+-   defined in: [Experiment](fairtracks_experiment-properties-experimental-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/technique")
 
 ### technique Type
 
-`object` ([Details](fairtracks_experiment-properties-technique.md))
+`object` ([Experimental Technique](fairtracks_experiment-properties-experimental-technique.md))
 
 ## target
 
@@ -222,13 +222,13 @@ Main target of the experiment
 `target`
 
 -   is required
--   Type: `object` ([Details](fairtracks_experiment-properties-target.md))
+-   Type: `object` ([Experiment Target](fairtracks_experiment-properties-experiment-target.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target")
 
 ### target Type
 
-`object` ([Details](fairtracks_experiment-properties-target.md))
+`object` ([Experiment Target](fairtracks_experiment-properties-experiment-target.md))
 
 ## lab_protocol_description
 
@@ -238,13 +238,13 @@ Free-text description of lab protocol, or URL to such description
 `lab_protocol_description`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Lab Protocol Description](fairtracks_experiment-properties-lab-protocol-description.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-lab_protocol_description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/lab_protocol_description")
+-   defined in: [Experiment](fairtracks_experiment-properties-lab-protocol-description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/lab_protocol_description")
 
 ### lab_protocol_description Type
 
-`string`
+`string` ([Lab Protocol Description](fairtracks_experiment-properties-lab-protocol-description.md))
 
 ### lab_protocol_description Examples
 
@@ -260,13 +260,13 @@ Free-text description of computational protocol, or URL to such description
 `compute_protocol_description`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Compute Protocol Description](fairtracks_experiment-properties-compute-protocol-description.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-compute_protocol_description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description")
+-   defined in: [Experiment](fairtracks_experiment-properties-compute-protocol-description.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description")
 
 ### compute_protocol_description Type
 
-`string`
+`string` ([Compute Protocol Description](fairtracks_experiment-properties-compute-protocol-description.md))
 
 ### compute_protocol_description Examples
 

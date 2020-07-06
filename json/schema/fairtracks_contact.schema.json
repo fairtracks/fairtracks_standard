@@ -1,11 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json",
-    "$comment": "JSON signature: daba8d50c607720756379d7846d10565cbc1b38101e8014311927710541ba83b",
+    "$comment": "JSON signature: 6bf498ea83732cb9184385d7e659f11ee396f39fd46971dbe5d06b57f17f069e",
     "title": "Contact",
     "type": "object",
     "properties": {
         "@schema": {
+            "title": "Schema URL",
             "description": "The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema",
             "type": "string",
             "format": "uri",
@@ -13,6 +14,7 @@
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json"
         },
         "name": {
+            "title": "Name",
             "description": "Name of contact person/organization",
             "type": "string",
             "examples": [
@@ -20,6 +22,7 @@
             ]
         },
         "e-mail": {
+            "title": "E-mail",
             "description": "E-mail to contact person/organization",
             "type": "string",
             "format": "idn-email",
@@ -28,6 +31,7 @@
             ]
         },
         "orcid": {
+            "title": "ORCID",
             "description": "ORCID to contact person",
             "type": "string",
             "format": "curie",
