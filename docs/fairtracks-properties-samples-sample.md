@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 01ed38f79182e9ef630ccb271d13e7aa7b8f62fff0adffb7b9fa278108a12bb7
+> JSON signature: 7b6ac547e6aedf4905b530c42cbc8341080a03cb98cc8be39836f31a3182261b
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -27,17 +27,17 @@ all of
 
 # Sample Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                      |
-| :-------------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [@schema](#@schema)                     | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/@schema")                               |
-| [global_id](#global_id)                 | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/global_id")                          |
-| [local_id](#local_id)                   | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/local_id")                            |
-| [species_id](#species_id)               | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-species_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_id")                        |
-| [species_name](#species_name)           | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-species_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_name")                    |
-| [biospecimen_class](#biospecimen_class) | `object` | Required | cannot be null | [Sample](fairtracks_sample-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class")          |
-| [sample_type](#sample_type)             | `object` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type")                      |
-| [phenotype](#phenotype)                 | `object` | Required | cannot be null | [Sample](fairtracks_experiment-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/phenotype") |
-| Additional Properties                   | Any      | Optional | can be null    |                                                                                                                                                                                                                                 |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                 |
+| :-------------------------------------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [@schema](#@schema)                     | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-version-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/@schema")                                     |
+| [global_id](#global_id)                 | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/global_id")                                     |
+| [local_id](#local_id)                   | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/local_id")                                       |
+| [species_id](#species_id)               | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-species-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_id")                                   |
+| [species_name](#species_name)           | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-species-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_name")                               |
+| [biospecimen_class](#biospecimen_class) | `object` | Required | cannot be null | [Sample](fairtracks_sample-properties-biospecimen-class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class")                     |
+| [sample_type](#sample_type)             | `object` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type")                                 |
+| [phenotype](#phenotype)                 | `object` | Required | cannot be null | [Sample](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/phenotype") |
+| Additional Properties                   | Any      | Optional | can be null    |                                                                                                                                                                                                                                            |
 
 ## @schema
 
@@ -47,14 +47,14 @@ The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must matc
 `@schema`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Version URL](fairtracks_sample-properties-version-url.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-schema.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/@schema")
+-   defined in: [Sample](fairtracks_sample-properties-version-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/@schema")
 -   format: "uri"
 
 ### @schema Type
 
-`string`
+`string` ([Version URL](fairtracks_sample-properties-version-url.md))
 
 ### @schema Constraints
 
@@ -82,16 +82,16 @@ Global sample identifier, resolvable by identifiers.org
 `global_id`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Global ID](fairtracks_sample-properties-global-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-global_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/global_id")
+-   defined in: [Sample](fairtracks_sample-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/global_id")
 -   format: "curie"
 -   namespace: "biosample"
 -   matchType: "canonical"
 
 ### global_id Type
 
-`string`
+`string` ([Global ID](fairtracks_sample-properties-global-id.md))
 
 ### global_id Constraints
 
@@ -111,14 +111,14 @@ Submitter-local identifier (within investigation/hub) for sample (in CURIE-forma
 `local_id`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([Local ID](fairtracks_sample-properties-local-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-local_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/local_id")
+-   defined in: [Sample](fairtracks_sample-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/local_id")
 -   unique: true
 
 ### local_id Type
 
-`string`
+`string` ([Local ID](fairtracks_sample-properties-local-id.md))
 
 ### local_id Examples
 
@@ -134,16 +134,16 @@ Species identifier, resolvable by identifiers.org
 `species_id`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([Species ID](fairtracks_sample-properties-species-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-species_id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_id")
+-   defined in: [Sample](fairtracks_sample-properties-species-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_id")
 -   format: "curie"
 -   namespace: "taxonomy"
 -   matchType: "canonical"
 
 ### species_id Type
 
-`string`
+`string` ([Species ID](fairtracks_sample-properties-species-id.md))
 
 ### species_id Constraints
 
@@ -163,14 +163,14 @@ Species name according to the NCBI Taxonomy database (<https://www.ncbi.nlm.nih.
 `species_name`
 
 -   is optional
--   Type: `string`
+-   Type: `string` ([Species Name](fairtracks_sample-properties-species-name.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-species_name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_name")
+-   defined in: [Sample](fairtracks_sample-properties-species-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_name")
 -   autogenerated: true
 
 ### species_name Type
 
-`string`
+`string` ([Species Name](fairtracks_sample-properties-species-name.md))
 
 ### species_name Examples
 
@@ -186,13 +186,13 @@ Main type of structural unit to be used for classification of the sample
 `biospecimen_class`
 
 -   is required
--   Type: `object` ([Details](fairtracks_sample-properties-biospecimen_class.md))
+-   Type: `object` ([Biospecimen Class](fairtracks_sample-properties-biospecimen-class.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class")
+-   defined in: [Sample](fairtracks_sample-properties-biospecimen-class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class")
 
 ### biospecimen_class Type
 
-`object` ([Details](fairtracks_sample-properties-biospecimen_class.md))
+`object` ([Biospecimen Class](fairtracks_sample-properties-biospecimen-class.md))
 
 ## sample_type
 
@@ -202,32 +202,32 @@ The type of the sample
 `sample_type`
 
 -   is required
--   Type: `object` ([Details](fairtracks_sample-properties-sample_type.md))
+-   Type: `object` ([Sample Type](fairtracks_sample-properties-sample-type.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type")
+-   defined in: [Sample](fairtracks_sample-properties-sample-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type")
 
 ### sample_type Type
 
-`object` ([Details](fairtracks_sample-properties-sample_type.md))
+`object` ([Sample Type](fairtracks_sample-properties-sample-type.md))
 
 ## phenotype
 
 Main phenotype (e.g. disease) connected to the sample
 
 
-> JSON signature: c56584aa5716fb0730026a5f92f0d126930895f063049ca751e3aa80df6bd4d8
+> JSON signature: f807ce206cb0c89510c5708a328ddc4f2b1427352585a6aa87f68b73756a3e61
 >
 
 `phenotype`
 
 -   is required
--   Type: `object` ([Phenotype](fairtracks_experiment-properties-target-properties-phenotype.md))
+-   Type: `object` ([Phenotype](fairtracks_experiment-properties-experiment-target-properties-phenotype.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_experiment-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/phenotype")
+-   defined in: [Sample](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/phenotype")
 
 ### phenotype Type
 
-`object` ([Phenotype](fairtracks_experiment-properties-target-properties-phenotype.md))
+`object` ([Phenotype](fairtracks_experiment-properties-experiment-target-properties-phenotype.md))
 
 ## Additional Properties
 

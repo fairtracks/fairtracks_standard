@@ -1,4 +1,4 @@
-# Untitled string in Contact Schema
+# E-mail Schema
 
 ```txt
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail
@@ -13,7 +13,7 @@ E-mail to contact person/organization
 
 ## e-mail Type
 
-`string`
+`string` ([E-mail](fairtracks_contact-properties-e-mail.md))
 
 ## e-mail Constraints
 

@@ -1,4 +1,4 @@
-# Untitled string in Contact Schema
+# Name Schema
 
 ```txt
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/name
@@ -13,7 +13,7 @@ Name of contact person/organization
 
 ## name Type
 
-`string`
+`string` ([Name](fairtracks_contact-properties-name.md))
 
 ## name Examples
 
