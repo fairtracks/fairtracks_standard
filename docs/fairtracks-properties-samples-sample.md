@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 37c76e18d41f2bffa02b3d9f4abdc9e307fe7e52124a1a6b65d4735a6ed2200f
+> JSON signature: 54b967c3b3f4a4a3330ecf609625cbe885abcae7b66ef2df6b96d77c53698744
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -215,7 +215,7 @@ The type of the sample
 Main phenotype (e.g. disease) connected to the sample
 
 
-> JSON signature: 59a93cf731c06d7aa1f56bd263219efd685670434905815f7416f999fe9c32a4
+> JSON signature: 4d3168aa90d882318ca2a18837e93ab8d3e7e1ab916a3ea6eea195df169d9700
 >
 
 `phenotype`
