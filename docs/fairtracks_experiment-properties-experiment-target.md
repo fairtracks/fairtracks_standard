@@ -98,7 +98,7 @@ Macromolecular structure targeted by the experiment (e.g., chromatin strucure)
 Main phenotype (e.g. disease) connected to the sample
 
 
-> JSON signature: f807ce206cb0c89510c5708a328ddc4f2b1427352585a6aa87f68b73756a3e61
+> JSON signature: 59a93cf731c06d7aa1f56bd263219efd685670434905815f7416f999fe9c32a4
 >
 
 `phenotype`

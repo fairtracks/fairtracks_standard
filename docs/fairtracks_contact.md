@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 6bf498ea83732cb9184385d7e659f11ee396f39fd46971dbe5d06b57f17f069e
+> JSON signature: 72e3547ba563194f5e0f7f6239c1bce06461f35bddffc30ae4267a96d99179ba
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
@@ -35,7 +35,7 @@ any of
 
 ## @schema
 
-The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema
+The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema within the same major version as the JSON document follows (which should ensure compatibility). Must match the value of '$id' in the linked schema
 
 
 `@schema`

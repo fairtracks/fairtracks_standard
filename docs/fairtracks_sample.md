@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 7b6ac547e6aedf4905b530c42cbc8341080a03cb98cc8be39836f31a3182261b
+> JSON signature: 37c76e18d41f2bffa02b3d9f4abdc9e307fe7e52124a1a6b65d4735a6ed2200f
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
@@ -41,7 +41,7 @@ all of
 
 ## @schema
 
-The JSON Schema absolute URL. Used to link JSON data to a JSON schema. Must match the value of '$id' in the linked schema
+The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema within the same major version as the JSON document follows (which should ensure compatibility). Must match the value of '$id' in the linked schema
 
 
 `@schema`
@@ -215,7 +215,7 @@ The type of the sample
 Main phenotype (e.g. disease) connected to the sample
 
 
-> JSON signature: f807ce206cb0c89510c5708a328ddc4f2b1427352585a6aa87f68b73756a3e61
+> JSON signature: 59a93cf731c06d7aa1f56bd263219efd685670434905815f7416f999fe9c32a4
 >
 
 `phenotype`

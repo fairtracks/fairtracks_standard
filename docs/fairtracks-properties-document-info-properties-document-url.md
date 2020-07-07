@@ -30,5 +30,5 @@ URL to this FAIRtracks JSON document
 ## doc_url Examples
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/examples/fairtracks.example.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/examples/fairtracks.example.json"
 ```

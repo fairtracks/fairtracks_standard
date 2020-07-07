@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: bb75ec84f308e26b27ec49536d320cd8077732de0a0eba59d3b5b7c104f1cf83
+> JSON signature: ea6580597c9306d92e09b834cd0b85a1d8baa2e6d3c3ad5cecabf3055fbc594d
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |
@@ -33,7 +33,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 ## @schema
 
-The absolute URL of the most recent major version of the relevant FAIRtracks JSON Schema that is backwards-compatible with the current JSON document. Must match the value of '$id' in the linked schema
+The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema within the same major version as the JSON document follows (which should ensure compatibility). Must match the value of '$id' in the linked schema
 
 
 `@schema`
