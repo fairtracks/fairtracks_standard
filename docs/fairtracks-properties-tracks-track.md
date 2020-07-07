@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 7dbfad4b4ac9646775feadb2940eca6abb8663819fd666b4269cccab45808d27
+> JSON signature: 542c88827c2484762bdfbd3deafe566c62fa27c5fcb3ab6fc171b856c8b203e2
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -232,7 +232,7 @@ Reference to the experiment of the track (using the submitter-local identifier o
 -   cannot be null
 -   defined in: [Track](fairtracks_track-properties-experiment-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/experiment_ref")
 -   format: "foreign_ref"
--   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#local_id"
+-   foreignProperty: "fairtracks_experiment.schema.json#local_id"
 
 ### experiment_ref Type
 
