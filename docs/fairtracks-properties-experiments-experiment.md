@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: ac1c93f5815423cc7e3b4f6b3e5a7b72cc6134298920d93a58385c14ba3a364d
+> JSON signature: 00bc59c6f56e7d4ef21706fc154557bb77c1a30ec6d03ca89c93981be7e668e8
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -138,7 +138,7 @@ Reference to the study that generated the sample (using the submitter-local iden
 -   cannot be null
 -   defined in: [Experiment](fairtracks_experiment-properties-study-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref")
 -   format: "foreign_ref"
--   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#local_id"
+-   foreignProperty: "fairtracks_study.schema.json#local_id"
 
 ### study_ref Type
 
@@ -166,7 +166,7 @@ Reference to the sample of the experiment (using the submitter-local identifier 
 -   cannot be null
 -   defined in: [Experiment](fairtracks_experiment-properties-sample-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref")
 -   format: "foreign_ref"
--   foreignProperty: "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#local_id"
+-   foreignProperty: "fairtracks_sample.schema.json#local_id"
 
 ### sample_ref Type
 
