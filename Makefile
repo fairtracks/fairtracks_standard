@@ -70,14 +70,20 @@ opml: $(OPML_FILES)
 
 json: $(SCHEMA_FILES) $(EXAMPLE_FILES)
 
-$(SCHEMA_DIR)/%.schema.json: $(OPML_DIR)/%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) schema $(OPML_DIR)/$*.overview.opml $(SCHEMA_DIR)/$*.schema.json
+$(SCHEMA_DIR)/%.schema.json: $(OPML_DIR)/%.overview.opml $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/$*.overview.opml $(OPML_DIR)/$*.overview.opml.tmp $(VERSION_INI)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) schema $(OPML_DIR)/$*.overview.opml.tmp $(SCHEMA_DIR)/$*.schema.json
+	rm $(OPML_DIR)/$*.overview.opml.tmp
 
-$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OPML_DIR)/fairtracks_%.overview.opml $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) single_example $(OPML_DIR)/fairtracks_$*.overview.opml $(EXAMPLE_DIR)/fairtracks_$*.example.json
+$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OPML_DIR)/fairtracks_%.overview.opml $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/fairtracks_$*.overview.opml $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(VERSION_INI)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) single_example $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks_$*.example.json
+	rm $(OPML_DIR)/fairtracks_$*.overview.opml.tmp
 
-$(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) full_example $(OPML_DIR)/fairtracks.overview.opml $(EXAMPLE_DIR)/fairtracks.example.json
+$(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/fairtracks.overview.opml $(OPML_DIR)/fairtracks.overview.opml.tmp $(VERSION_INI)
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) full_example $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.example.json
+	rm $(OPML_DIR)/fairtracks.overview.opml.tmp
 
 $(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
