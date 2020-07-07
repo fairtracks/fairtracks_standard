@@ -235,7 +235,7 @@ URL to track collection metadata in its original form (might contain more than t
 Contact information for the track collection
 
 
-> JSON signature: 6bf498ea83732cb9184385d7e659f11ee396f39fd46971dbe5d06b57f17f069e
+> JSON signature: 72e3547ba563194f5e0f7f6239c1bce06461f35bddffc30ae4267a96d99179ba
 >
 
 `contact`
