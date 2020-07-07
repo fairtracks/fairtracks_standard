@@ -8,6 +8,9 @@ OPML_DIR = opml
 EXAMPLE_DIR = json/examples
 SCHEMA_DIR = json/schema
 DOCS_DIR = docs
+README_FILE = README.md
+README_TEMPLATE = README-template.md
+VERSION_INI = version.ini
 
 VENV_ACTIVATE = $(VENV_DIR)/bin/activate
 INSTALL_GIT_HOOKS_SCRIPT = scripts/bash/install_git_hooks.sh
@@ -17,6 +20,7 @@ CREATE_RAW_OPML_SCRIPT = scripts/python/create_raw_opml.py
 CONVERT_SCRIPT = scripts/python/opml_to_json.py
 COMPUTE_SIGNATURE_SCRIPT = scripts/python/json_signature.py
 CLEANUP_DOCS_SCRIPT = scripts/python/cleanup_docs.py
+SUBSTITUTE_SCRIPT = scripts/python/substitute_from_config.py
 
 LOCAL_GIT_HOOKS_FILES := $(wildcard $(LOCAL_GIT_HOOKS_DIR)/*.sh)
 GIT_HOOKS_FILES := $(patsubst $(LOCAL_GIT_HOOKS_DIR)/%,$(GIT_HOOKS_DIR)/%,${LOCAL_GIT_HOOKS_FILES:.sh=})
@@ -78,6 +82,9 @@ $(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(CONVERT_SCRIPT) $(COMPUT
 $(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
 
+$(README_FILE): $(README_TEMPLATE) $(VERSION_INI) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(README_TEMPLATE) $(README_FILE) $(VERSION_INI)
+
 .SECONDARY: jsonschema2md
 
 $(JSONSCHEMA2MD_BIN_PATH): Makefile package.json package-lock.json
@@ -91,4 +98,4 @@ jsonschema2md: $(JSONSCHEMA2MD_BIN_PATH) $(CLEANUP_DOCS_SCRIPT) $(GIT_HOOKS_FILE
 
 $(DOCS_MARKDOWN_FILES): jsonschema2md $(SCHEMA_FILES) ;
 
-docs: $(DOCS_MARKDOWN_FILES)
+docs: $(README_FILE) $(DOCS_MARKDOWN_FILES)

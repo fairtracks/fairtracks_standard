@@ -28,7 +28,7 @@ https://fairtracks.github.io/
 
 ## FAIRtracks version information
 
-**FAIRtracks v1.0.1**
+**FAIRtracks v$breaking.$feature.$fix$release_markdown**
 
 
 ## Overview of structure of the FAIRtracks standard
