@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json",
-    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/schema/fairtracks_phenotype.schema.json",
-    "$comment": "JSON signature: 59a93cf731c06d7aa1f56bd263219efd685670434905815f7416f999fe9c32a4",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_phenotype.schema.json",
+    "$comment": "JSON signature: 4d3168aa90d882318ca2a18837e93ab8d3e7e1ab916a3ea6eea195df169d9700",
     "title": "Phenotype",
     "type": "object",
     "properties": {

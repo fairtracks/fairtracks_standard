@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json",
-    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.1/json/schema/fairtracks_contact.schema.json",
-    "$comment": "JSON signature: 72e3547ba563194f5e0f7f6239c1bce06461f35bddffc30ae4267a96d99179ba",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_contact.schema.json",
+    "$comment": "JSON signature: a924577aa4346db45ec899bce65fec7e61eb7fd069485779178e88e90464e03c",
     "title": "Contact",
     "type": "object",
     "properties": {
