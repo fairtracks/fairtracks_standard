@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 68c0ab9767ec34823f75b7d43e802df0d24965d62b8e76a28d2a7547033cc98d",
+    "$comment": "JSON signature: 229af3691d787874dd4ccf474cbacfb9c5966a67ad9866bee402d8ab24c7042d",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -131,6 +131,14 @@
                         "http://purl.obolibrary.org/obo/uberon.owl"
                     ]
                 },
+                "has_augmented_metadata": {
+                    "title": "Contains Augmented Metadata",
+                    "description": "Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service",
+                    "type": "boolean",
+                    "examples": [
+                        false
+                    ]
+                },
                 "doc_version": {
                     "title": "Document Version",
                     "description": "Version of this FAIRtracks JSON document",
@@ -141,22 +149,14 @@
                     "description": "Creation date of this version of this FAIRtracks document",
                     "type": "string",
                     "format": "date-time"
-                },
-                "has_augmented_metadata": {
-                    "title": "Contains Augmented Metadata",
-                    "description": "Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service",
-                    "type": "boolean",
-                    "examples": [
-                        false
-                    ]
                 }
             },
             "required": [
                 "local_id",
                 "doc_ontology_versions",
+                "has_augmented_metadata",
                 "doc_version",
-                "doc_date",
-                "has_augmented_metadata"
+                "doc_date"
             ]
         },
         "collection_info": {
