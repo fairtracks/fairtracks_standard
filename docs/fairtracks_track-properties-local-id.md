@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/local_id
 ```
 
-Submitter-local identifier (within investigation/hub) for study (in CURIE-format, if applicable)
+Submitter-local identifier (within investigation/hub) for track (in CURIE-format, if applicable)
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |

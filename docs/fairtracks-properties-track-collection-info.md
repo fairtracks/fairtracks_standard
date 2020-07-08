@@ -19,9 +19,9 @@ General information about the track collection that is annotated in the current 
 
 | Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
 | :-------------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [source_repo_url](#source_repo_url)     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")         |
-| [local_id](#local_id)                   | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")                       |
-| [doc_ref](#doc_ref)                     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/doc_ref")              |
+| [source_repo_url](#source_repo_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")         |
+| [local_id](#local_id)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")                       |
+| [doc_ref](#doc_ref)                     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/doc_ref")              |
 | [short_name](#short_name)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")                   |
 | [long_name](#long_name)                 | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")                     |
 | [description_url](#description_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")         |
@@ -35,7 +35,7 @@ URL to the track repository containing the collection (e.g., the Track Hub Regis
 
 `source_repo_url`
 
--   is required
+-   is optional
 -   Type: `string` ([Source Repo URL](fairtracks-properties-track-collection-info-properties-source-repo-url.md))
 -   cannot be null
 -   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")
@@ -70,12 +70,11 @@ Submitter-local identifier (within track repository) for the collection
 
 `local_id`
 
--   is optional
+-   is required
 -   Type: `string` ([Local ID](fairtracks-properties-track-collection-info-properties-local-id.md))
 -   cannot be null
 -   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")
 -   unique: true
--   autogenerated: true
 
 ### local_id Type
 
@@ -94,13 +93,12 @@ Reference to the JSON document containing the study (using the  identifier of th
 
 `doc_ref`
 
--   is optional
+-   is required
 -   Type: `string` ([Document Reference](fairtracks-properties-track-collection-info-properties-document-reference.md))
 -   cannot be null
 -   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/doc_ref")
 -   format: "foreign_ref"
 -   foreignProperty: "fairtracks.schema.json#doc_info/local_id"
--   autogenerated: true
 
 ### doc_ref Type
 
