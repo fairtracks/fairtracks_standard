@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/local_id
 ```
 
-Identifier for this FAIRtracks JSON document (within the TrackFind database)
+Submitter-local identifier (within  track repository) for current FAIRtracks document (in CURIE-format, if applicable)
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
