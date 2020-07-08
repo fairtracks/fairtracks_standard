@@ -19,6 +19,9 @@ else
   rm -rf "$venv_dir" || exit $?
   printf "Creating new Python virtual environment in '%s'...\n" "$venv_dir"
   $PYTHON_EXE -m venv "$venv_dir" || exit $?
+  . "$venv_dir"/bin/activate
+  pip install --upgrade pip
+  pip install -r requirements.txt
 fi
 
 ln -sf "$(which node)" "$venv_dir/bin/node"

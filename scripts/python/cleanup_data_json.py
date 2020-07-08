@@ -1,5 +1,6 @@
 import argparse
 import json
+import requests
 from collections import OrderedDict
 
 
@@ -35,7 +36,9 @@ def cleanup_json_document(json_in_path, json_template_path, json_out_path, augme
     json_example_data = json.load(open(json_template_path), object_pairs_hook=OrderedDict)
     json_root = json.load(open(json_in_path))
 
-
+    if augmented:
+        json_root = requests.post("http://trackfind-dev.gtrack.no:5001/autogenerate",
+                                  json=json_root).json()
 
     ordered_json = TemplateOrderedDict(json_example_data, **json_root)
     json.dump(ordered_json, open(json_out_path, 'w'), indent=4)

@@ -91,9 +91,12 @@ $(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
 
 $(BLUEPRINT_DIR)/blueprint_minimal.json: $(EXAMPLE_DIR)/fairtracks.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
-	mv $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
+	cp $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp $(EXAMPLE_DIR)/fairtracks.example.json $(BLUEPRINT_DIR)/blueprint_minimal.json
-	#rm $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
+	rm $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
+
+$(BLUEPRINT_DIR)/blueprint_augment.json: $(BLUEPRINT_DIR)/blueprint_minimal.json $(EXAMPLE_DIR)/fairtracks.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json $(EXAMPLE_DIR)/fairtracks.example.json $(BLUEPRINT_DIR)/blueprint_augment.json -a
 
 $(README_FILE): $(README_TEMPLATE) $(VERSION_INI) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(README_TEMPLATE) $(README_FILE) $(VERSION_INI)
