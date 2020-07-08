@@ -6,6 +6,7 @@ GIT_HOOKS_DIR = .git/hooks
 NODE_MODULES_DIR = node_modules
 OPML_DIR = opml
 EXAMPLE_DIR = json/examples
+BLUEPRINT_DIR = json/blueprint
 SCHEMA_DIR = json/schema
 DOCS_DIR = docs
 README_FILE = README.md
@@ -18,6 +19,7 @@ INSTALL_VENV_SCRIPT = scripts/bash/install_venv.sh
 CLEANUP_OPML_SCRIPT = scripts/python/cleanup_opml.py
 CREATE_RAW_OPML_SCRIPT = scripts/python/create_raw_opml.py
 CONVERT_SCRIPT = scripts/python/opml_to_json.py
+CLEANUP_DATA_SCRIPT = scripts/python/cleanup_data_json.py
 COMPUTE_SIGNATURE_SCRIPT = scripts/python/json_signature.py
 CLEANUP_DOCS_SCRIPT = scripts/python/cleanup_docs.py
 SUBSTITUTE_SCRIPT = scripts/python/substitute_from_config.py
@@ -68,7 +70,7 @@ clean: rawclean
 
 opml: $(OPML_FILES)
 
-json: $(SCHEMA_FILES) $(EXAMPLE_FILES)
+json: $(SCHEMA_FILES) $(EXAMPLE_FILES) $(BLUEPRINT_DIR)/blueprint_minimal.json
 
 $(SCHEMA_DIR)/%.schema.json: $(OPML_DIR)/%.overview.opml $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/$*.overview.opml $(OPML_DIR)/$*.overview.opml.tmp $(VERSION_INI)
@@ -87,6 +89,11 @@ $(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(VERSION_INI) $(CONVERT_S
 
 $(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
+
+$(BLUEPRINT_DIR)/blueprint_minimal.json: $(EXAMPLE_DIR)/fairtracks.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
+	mv $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp $(EXAMPLE_DIR)/fairtracks.example.json $(BLUEPRINT_DIR)/blueprint_minimal.json
+	#rm $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
 
 $(README_FILE): $(README_TEMPLATE) $(VERSION_INI) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(README_TEMPLATE) $(README_FILE) $(VERSION_INI)
