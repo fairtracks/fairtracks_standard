@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: bcb7cfbcaf3ffaedcc4b4bb501afdf583b7a7901cdc56aa1a7650f432912d6ce",
+    "$comment": "JSON signature: ed944ef67a39c4b0b7a46d10f7c2977b084602ea99792edc79aef766d2346daf",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -18,13 +18,7 @@
             "title": "Global ID",
             "description": "Global track identifier, resolvable by identifiers.org [to be created by us]",
             "type": "string",
-            "namespace": "fairtracks",
-            "examples": [
-                "fairtracks:1",
-                "fairtracks:2",
-                "fairtracks:3",
-                "fairtracks:4"
-            ]
+            "namespace": "fairtracks"
         },
         "local_id": {
             "title": "Local ID",
@@ -32,9 +26,13 @@
             "type": "string",
             "examples": [
                 "encode:ENCFF625ZYB",
+                "encode:ENCFF490NHU",
                 "encode:ENCFF718EPO",
+                "encode:ENCFF447OHZ",
                 "encode:ENCFF717PIO",
-                "encode:ENCFF955LOC"
+                "encode:ENCFF615CNJ",
+                "encode:ENCFF955LOC",
+                "encode:ENCFF492CEQ"
             ],
             "unique": true
         },
@@ -49,6 +47,10 @@
                 "insdc.gca:GCF_000001405.26",
                 "insdc.gca:GCF_000001405.26",
                 "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
+                "insdc.gca:GCF_000001405.26",
                 "insdc.gca:GCF_000001405.26"
             ]
         },
@@ -57,6 +59,10 @@
             "description": "Genome assembly name or synonym, according to the NCBI Assembly database. For tracks following UCSC-style chromosome names (e.g., \"chr1\"), the UCSC synonym should be used instead of the official name",
             "type": "string",
             "examples": [
+                "hg38",
+                "hg38",
+                "hg38",
+                "hg38",
                 "hg38",
                 "hg38",
                 "hg38",
@@ -69,6 +75,10 @@
             "type": "string",
             "format": "foreign_ref",
             "examples": [
+                "encode:ENCSR000DQP",
+                "encode:ENCSR000DQP",
+                "encode:ENCSR000DQP",
+                "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP",
                 "encode:ENCSR000DQP",
@@ -86,10 +96,15 @@
                 "format": "curie",
                 "matchType": "canonical",
                 "examples": [
-                    "encode: ENCFF207FGO;encode:ENCFF842FEQ",
                     "encode:ENCFF207FGO;encode:ENCFF842FEQ",
+                    "encode:ENCFF207FGO;encode:ENCFF642FEV",
                     "encode:ENCFF207FGO;encode:ENCFF842FEQ",
-                    "encode:ENCFF207FGO;encode:ENCFF842FEQ"
+                    "encode:ENCFF207FGO;encode:ENCFF642FEV",
+                    "encode:ENCFF207FGO;encode:ENCFF842FEQ",
+                    "encode:ENCFF207FGO;encode:ENCFF642FEV",
+                    "encode:ENCFF207FGO;encode:ENCFF842FEQ",
+                    "encode:ENCFF207FGO;encode:ENCFF642FEV",
+                    ""
                 ]
             }
         },
@@ -101,9 +116,13 @@
             "pattern": "^(https?|ftp|rsync)://",
             "examples": [
                 "https://www.encodeproject.org/files/ENCFF625ZYB/@@download/ENCFF625ZYB.bed.gz",
+                "https://www.encodeproject.org/files/ENCFF490NHU/@@download/ENCFF490NHU.bed.gz",
                 "https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed",
+                "https://www.encodeproject.org/files/ENCFF447OHZ/@@download/ENCFF447OHZ.bigBed",
                 "https://www.encodeproject.org/files/ENCFF717PIO/@@download/ENCFF717PIO.bigWig",
-                "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig"
+                "https://www.encodeproject.org/files/ENCFF615CNJ/@@download/ENCFF615CNJ.bigWig",
+                "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig",
+                "https://www.encodeproject.org/files/ENCFF492CEQ/@@download/ENCFF492CEQ.bigWig"
             ]
         },
         "file_name": {
@@ -111,22 +130,30 @@
             "description": "Name of the track file",
             "type": "string",
             "examples": [
-                "r1.narrowPeak.gz",
-                "r1.narrowPeak.bb",
-                "r1.fc_signal.bw",
-                "r1.pvalue_signal.bw"
+                "ENCFF625ZYB.bed.gz",
+                "ENCFF490NHU.bed.gz",
+                "ENCFF718EPO.bigBed",
+                "ENCFF447OHZ.bigBed",
+                "ENCFF717PIO.bigWig",
+                "ENCFF615CNJ.bigWig",
+                "ENCFF955LOC.bigWig",
+                "ENCFF492CEQ.bigWig"
             ],
-            "autogenerated": true
+            "augmented": true
         },
         "label_short": {
             "title": "Label (Short)",
-            "description": "A short label of the track file. Suggested maximum length is 17 characters",
+            "description": "A short label of the track file. Suggested maximum length is 25 characters",
             "type": "string",
             "examples": [
-                "ENCFF625ZYB",
-                "ENCFF718EPO",
-                "ENCFF717PIO",
-                " ENCFF955LOC"
+                "H3K4me3 B cell peaks r1",
+                "H3K4me3 B cell peaks r2",
+                "H3K4me3 B cell peaks r1",
+                " H3K4me3 B cell peaks r2",
+                "H3K4me3 B cell fold change r1",
+                "H3K4me3 B cell fold change r2",
+                "H3K4me3 B cell signal p-value r1",
+                "H3K4me3 B cell p-value r2"
             ]
         },
         "label_long": {
@@ -135,9 +162,13 @@
             "type": "string",
             "examples": [
                 "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF625ZYB",
+                "H3K4me3 ChIP-seq of B cell peaks rep2 ENCSR000DQP - ENCFF490NHU",
                 "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO",
+                "H3K4me3 ChIP-seq of B cell peaks rep2 ENCSR000DQP - ENCFF447OHZ",
                 "H3K4me3 ChIP-seq of B cell fold change over control rep1 ENCSR000DQP - ENCFF717PIO",
-                "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC"
+                "H3K4me3 ChIP-seq of B cell fold change over control rep2 ENCSR000DQP - ENCFF615CNJ",
+                "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC",
+                "H3K4me3 ChIP-seq of B cell signal p-value rep2 ENCSR000DQP - ENCFF492CEQ"
             ]
         },
         "file_format": {
@@ -159,7 +190,11 @@
                     "matchType": "exact",
                     "examples": [
                         "http://edamontology.org/format_3613",
+                        "http://edamontology.org/format_3613",
                         "http://edamontology.org/format_3004",
+                        "http://edamontology.org/format_3004",
+                        "http://edamontology.org/format_3006",
+                        "http://edamontology.org/format_3006",
                         "http://edamontology.org/format_3006",
                         "http://edamontology.org/format_3006"
                     ]
@@ -170,11 +205,15 @@
                     "type": "string",
                     "examples": [
                         "ENCODE narrow peak format",
+                        "ENCODE narrow peak format",
                         "bigBed",
+                        "bigBed",
+                        "bigWig",
+                        "bigWig",
                         "bigWig",
                         "bigWig"
                     ],
-                    "autogenerated": true
+                    "augmented": true
                 }
             },
             "required": [
@@ -209,7 +248,11 @@
             "examples": [
                 "Narrow peaks",
                 "Narrow peaks",
+                "Narrow peaks",
+                "Narrow peaks",
                 "Signal values (fold change)",
+                "Signal values (fold change)",
+                "Signal values (p-value)",
                 "Signal values (p-value)"
             ]
         },
@@ -237,6 +280,10 @@
             "examples": [
                 "Segments",
                 "Segments",
+                "Segments",
+                "Segments",
+                "Step function",
+                "Step function",
                 "Step function",
                 "Step function"
             ]
@@ -257,6 +304,10 @@
                         "MD5",
                         "MD5",
                         "MD5",
+                        "MD5",
+                        "MD5",
+                        "MD5",
+                        "MD5",
                         "MD5"
                     ]
                 },
@@ -266,9 +317,13 @@
                     "type": "string",
                     "examples": [
                         "0ab98dbd2a2193ab3e09df030ea4f934",
+                        " 3303226e0604d22900771d965fb7a3d2",
                         "6d2c6c99a7407f1c49ab163e41d9b575",
+                        " aaa951221e1fbb62282bc73060de0339",
                         "550ae974bf94f1deb1676613ab24a5da",
-                        "942ea96e86313d4338cf3fd020882c4d"
+                        " a1b4ae6b4eddd8fbd6edd6bf535d2eb5",
+                        "942ea96e86313d4338cf3fd020882c4d",
+                        " 51a548338912eef85b72aa21a9a2a555"
                     ]
                 }
             },

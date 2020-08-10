@@ -14,9 +14,3 @@ Exact value according to the ontology used
 ## term_label Type
 
 `string` ([Term Label](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md))
-
-## term_label Examples
-
-```json
-"H1-hESC"
-```

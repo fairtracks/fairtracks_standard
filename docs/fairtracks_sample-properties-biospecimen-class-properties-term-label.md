@@ -29,5 +29,9 @@ Exact value according to the ontology used
 ## term_label Examples
 
 ```json
-"Cell Line"
+"Cell"
+```
+
+```json
+"Cell"
 ```

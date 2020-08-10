@@ -18,5 +18,5 @@ Submitter-local identifier (within the track collection) for the study
 ## local_id Examples
 
 ```json
-"UW_ChipSeq"
+"U54HG004592"
 ```

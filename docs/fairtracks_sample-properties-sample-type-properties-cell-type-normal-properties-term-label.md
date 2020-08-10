@@ -14,3 +14,13 @@ Exact value according to the ontology used
 ## term_label Type
 
 `string` ([Term Label](fairtracks_sample-properties-sample-type-properties-cell-type-normal-properties-term-label.md))
+
+## term_label Examples
+
+```json
+"B cell"
+```
+
+```json
+"B cell"
+```

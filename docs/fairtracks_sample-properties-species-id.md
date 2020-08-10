@@ -24,3 +24,7 @@ Species identifier, resolvable by identifiers.org
 ```json
 "taxonomy:9606"
 ```
+
+```json
+"taxonomy:9606"
+```

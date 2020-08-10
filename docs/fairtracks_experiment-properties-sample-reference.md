@@ -22,5 +22,5 @@ Reference to the sample of the experiment (using the submitter-local identifier 
 ## sample_ref Examples
 
 ```json
-"geo:GSM945229"
+"encode:ENCBS192PUU"
 ```

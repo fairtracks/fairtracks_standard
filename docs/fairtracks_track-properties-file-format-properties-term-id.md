@@ -34,7 +34,23 @@ URL linking to an ontology term
 ```
 
 ```json
+"http://edamontology.org/format_3613"
+```
+
+```json
 "http://edamontology.org/format_3004"
+```
+
+```json
+"http://edamontology.org/format_3004"
+```
+
+```json
+"http://edamontology.org/format_3006"
+```
+
+```json
+"http://edamontology.org/format_3006"
 ```
 
 ```json

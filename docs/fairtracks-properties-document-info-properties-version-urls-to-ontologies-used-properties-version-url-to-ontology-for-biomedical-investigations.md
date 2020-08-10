@@ -30,5 +30,5 @@ URL to the version of "Ontology for Biomedical Investigations" used in the JSON 
 ## obi.owl Examples
 
 ```json
-"http://purl.obolibrary.org/obo/obi/2019-11-12/obi.owl"
+"http://purl.obolibrary.org/obo/obi/2020-04-23/obi.owl"
 ```

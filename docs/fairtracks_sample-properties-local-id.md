@@ -18,5 +18,9 @@ Submitter-local identifier (within investigation/hub) for sample (in CURIE-forma
 ## local_id Examples
 
 ```json
-"geo:GSM945229"
+"encode:ENCBS192PUU"
+```
+
+```json
+"encode:ENCBS967QBI"
 ```

@@ -1,7 +1,7 @@
 {
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
     "global_id": "geo:GSE35583",
-    "local_id": "UW_ChipSeq",
+    "local_id": "U54HG004592",
     "collection_ref": "encode_example",
     "study_name": "Histone Modifications by ChIP-seq from ENCODE/University of Washington",
     "publication": "pubmed:22955617",

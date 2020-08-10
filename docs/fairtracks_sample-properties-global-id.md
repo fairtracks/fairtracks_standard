@@ -24,3 +24,7 @@ Global sample identifier, resolvable by identifiers.org
 ```json
 "biosample:SAMN01731491"
 ```
+
+```json
+"biosample:SAMN01731491"
+```

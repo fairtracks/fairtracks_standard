@@ -48,6 +48,22 @@ Geometric type of track, according to the delineation of tracks into one of fift
 ```
 
 ```json
+"Segments"
+```
+
+```json
+"Segments"
+```
+
+```json
+"Step function"
+```
+
+```json
+"Step function"
+```
+
+```json
 "Step function"
 ```
 

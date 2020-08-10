@@ -30,5 +30,5 @@ URL to the version of  "Uber-anatomy ontology" used in the JSON document
 ## uberon.owl Examples
 
 ```json
-"http://purl.obolibrary.org/obo/uberon/releases/2019-06-27/uberon.owl"
+"http://purl.obolibrary.org/obo/uberon/releases/2020-06-30/uberon.owl"
 ```

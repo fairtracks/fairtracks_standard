@@ -14,21 +14,3 @@ Global track identifier, resolvable by identifiers.org [to be created by us]
 ## global_id Type
 
 `string` ([Global ID](fairtracks_track-properties-global-id.md))
-
-## global_id Examples
-
-```json
-"fairtracks:1"
-```
-
-```json
-"fairtracks:2"
-```
-
-```json
-"fairtracks:3"
-```
-
-```json
-"fairtracks:4"
-```

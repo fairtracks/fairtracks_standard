@@ -30,5 +30,5 @@ URL to the version of "NCI Thesaurus OBO Edition" used in the JSON document
 ## ncit.owl Examples
 
 ```json
-"http://purl.obolibrary.org/obo/ncit/releases/2019-09-09/ncit.owl"
+"http://purl.obolibrary.org/obo/ncit/releases/2020-07-17/ncit.owl"
 ```

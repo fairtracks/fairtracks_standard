@@ -18,5 +18,5 @@ Set to true if the metadata properties with augmented=true is set in the JSON do
 ## has_augmented_metadata Examples
 
 ```json
-false
+true
 ```

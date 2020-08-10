@@ -22,7 +22,15 @@ A long label of the track file. Suggested maximum length is 80 characters
 ```
 
 ```json
+"H3K4me3 ChIP-seq of B cell peaks rep2 ENCSR000DQP - ENCFF490NHU"
+```
+
+```json
 "H3K4me3 ChIP-seq of B cell peaks rep1 ENCSR000DQP - ENCFF718EPO"
+```
+
+```json
+"H3K4me3 ChIP-seq of B cell peaks rep2 ENCSR000DQP - ENCFF447OHZ"
 ```
 
 ```json
@@ -30,5 +38,13 @@ A long label of the track file. Suggested maximum length is 80 characters
 ```
 
 ```json
+"H3K4me3 ChIP-seq of B cell fold change over control rep2 ENCSR000DQP - ENCFF615CNJ"
+```
+
+```json
 "H3K4me3 ChIP-seq of B cell signal p-value rep1 ENCSR000DQP - ENCFF955LOC"
+```
+
+```json
+"H3K4me3 ChIP-seq of B cell signal p-value rep2 ENCSR000DQP - ENCFF492CEQ"
 ```
