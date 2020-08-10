@@ -1,26 +1,26 @@
-# Term Label Schema
+# Sample Type Details Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_label
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/details
 ```
 
-Exact value according to the ontology used
+Important details about the sample classification (to be included in the 'sample_type/summary' property)
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [fairtracks_sample.schema.json\*](../json/schema/fairtracks_sample.schema.json "open original schema") |
 
-## term_label Type
+## details Type
 
-`string` ([Term Label](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md))
+`string` ([Sample Type Details](fairtracks_sample-properties-sample-type-properties-sample-type-details.md))
 
-## term_label Examples
+## details Examples
 
 ```json
-"mesoderm"
+"CD20+"
 ```
 
 ```json
-"mesoderm"
+"CD20+"
 ```

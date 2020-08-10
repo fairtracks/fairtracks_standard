@@ -30,5 +30,5 @@ URL to the version of "Experimental Factor Ontology" used in the JSON document
 ## efo.owl Examples
 
 ```json
-"https://github.com/EBISPOT/efo/releases/download/v3.12.0/efo.owl"
+"http://www.ebi.ac.uk/efo/releases/v3.20.0/efo.owl"
 ```

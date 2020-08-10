@@ -52,7 +52,23 @@ Type of condensed track data: Track data, by definition, is formed downstream of
 ```
 
 ```json
+"Narrow peaks"
+```
+
+```json
+"Narrow peaks"
+```
+
+```json
 "Signal values (fold change)"
+```
+
+```json
+"Signal values (fold change)"
+```
+
+```json
+"Signal values (p-value)"
 ```
 
 ```json

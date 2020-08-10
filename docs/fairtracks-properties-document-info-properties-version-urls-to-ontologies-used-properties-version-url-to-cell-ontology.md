@@ -30,5 +30,5 @@ URL to the version of "Cell Ontology" used in the JSON document
 ## cl.owl Examples
 
 ```json
-"http://purl.obolibrary.org/obo/cl/releases/2019-08-12/cl.owl"
+"http://purl.obolibrary.org/obo/cl/releases/2020-05-21/cl.owl"
 ```

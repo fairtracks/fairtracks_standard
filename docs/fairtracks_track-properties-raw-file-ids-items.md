@@ -22,7 +22,11 @@ List of identifiers to raw data files used to create track (typically BAM), reso
 ## items Examples
 
 ```json
-"encode: ENCFF207FGO;encode:ENCFF842FEQ"
+"encode:ENCFF207FGO;encode:ENCFF842FEQ"
+```
+
+```json
+"encode:ENCFF207FGO;encode:ENCFF642FEV"
 ```
 
 ```json
@@ -30,9 +34,25 @@ List of identifiers to raw data files used to create track (typically BAM), reso
 ```
 
 ```json
-"encode:ENCFF207FGO;encode:ENCFF842FEQ"
+"encode:ENCFF207FGO;encode:ENCFF642FEV"
 ```
 
 ```json
 "encode:ENCFF207FGO;encode:ENCFF842FEQ"
+```
+
+```json
+"encode:ENCFF207FGO;encode:ENCFF642FEV"
+```
+
+```json
+"encode:ENCFF207FGO;encode:ENCFF842FEQ"
+```
+
+```json
+"encode:ENCFF207FGO;encode:ENCFF642FEV"
+```
+
+```json
+""
 ```

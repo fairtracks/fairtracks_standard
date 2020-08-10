@@ -22,5 +22,5 @@ Global experiment identifier, resolvable by identifiers.org
 ## global_id Examples
 
 ```json
-"geo:GSE35583"
+"geo:GSM945229"
 ```

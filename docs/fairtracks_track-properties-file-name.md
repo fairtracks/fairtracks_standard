@@ -18,17 +18,33 @@ Name of the track file
 ## file_name Examples
 
 ```json
-"r1.narrowPeak.gz"
+"ENCFF625ZYB.bed.gz"
 ```
 
 ```json
-"r1.narrowPeak.bb"
+"ENCFF490NHU.bed.gz"
 ```
 
 ```json
-"r1.fc_signal.bw"
+"ENCFF718EPO.bigBed"
 ```
 
 ```json
-"r1.pvalue_signal.bw"
+"ENCFF447OHZ.bigBed"
+```
+
+```json
+"ENCFF717PIO.bigWig"
+```
+
+```json
+"ENCFF615CNJ.bigWig"
+```
+
+```json
+"ENCFF955LOC.bigWig"
+```
+
+```json
+"ENCFF492CEQ.bigWig"
 ```

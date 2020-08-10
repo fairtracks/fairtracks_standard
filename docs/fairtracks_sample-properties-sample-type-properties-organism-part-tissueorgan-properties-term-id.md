@@ -30,5 +30,9 @@ URL linking to an ontology term
 ## term_id Examples
 
 ```json
-"http://purl.obolibrary.org/obo/UBERON_0000922"
+"http://purl.obolibrary.org/obo/UBERON_0000926"
+```
+
+```json
+"http://purl.obolibrary.org/obo/UBERON_0000926"
 ```

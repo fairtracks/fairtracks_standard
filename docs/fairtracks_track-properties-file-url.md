@@ -34,7 +34,15 @@ A URL to the track data file
 ```
 
 ```json
+"https://www.encodeproject.org/files/ENCFF490NHU/@@download/ENCFF490NHU.bed.gz"
+```
+
+```json
 "https://www.encodeproject.org/files/ENCFF718EPO/@@download/ENCFF718EPO.bigBed"
+```
+
+```json
+"https://www.encodeproject.org/files/ENCFF447OHZ/@@download/ENCFF447OHZ.bigBed"
 ```
 
 ```json
@@ -42,5 +50,13 @@ A URL to the track data file
 ```
 
 ```json
+"https://www.encodeproject.org/files/ENCFF615CNJ/@@download/ENCFF615CNJ.bigWig"
+```
+
+```json
 "https://www.encodeproject.org/files/ENCFF955LOC/@@download/ENCFF955LOC.bigWig"
+```
+
+```json
+"https://www.encodeproject.org/files/ENCFF492CEQ/@@download/ENCFF492CEQ.bigWig"
 ```

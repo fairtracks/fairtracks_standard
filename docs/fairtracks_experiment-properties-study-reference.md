@@ -22,5 +22,5 @@ Reference to the study that generated the sample (using the submitter-local iden
 ## study_ref Examples
 
 ```json
-"UW_ChipSeq"
+"U54HG004592"
 ```

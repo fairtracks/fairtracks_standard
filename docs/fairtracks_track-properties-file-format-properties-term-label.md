@@ -22,7 +22,23 @@ Exact value according to the ontology used
 ```
 
 ```json
+"ENCODE narrow peak format"
+```
+
+```json
 "bigBed"
+```
+
+```json
+"bigBed"
+```
+
+```json
+"bigWig"
+```
+
+```json
+"bigWig"
 ```
 
 ```json

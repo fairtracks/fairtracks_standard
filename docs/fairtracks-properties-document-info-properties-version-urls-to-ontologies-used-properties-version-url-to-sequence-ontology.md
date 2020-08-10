@@ -30,5 +30,5 @@ URL to the version of "Sequence types and features ontology" used in the JSON do
 ## so.owl Examples
 
 ```json
-"https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v3.1/releases/so-xp.owl/so.owl"
+"http://purl.obolibrary.org/obo/so/2020-08-05/so.owl"
 ```

@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: 1705adde55a3a112135914b3ceb9c52603934a569616b12aed010eb4cc1b1b3d
+> JSON signature: 12069a8f5b5c7b3128ae0ca629d2ecf8d511270c6da02ffc3e6c1ae985c1a15c
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                   |
@@ -100,7 +100,7 @@ Global experiment identifier, resolvable by identifiers.org
 ### global_id Examples
 
 ```json
-"geo:GSE35583"
+"geo:GSM945229"
 ```
 
 ## local_id
@@ -151,7 +151,7 @@ Reference to the study that generated the sample (using the submitter-local iden
 ### study_ref Examples
 
 ```json
-"UW_ChipSeq"
+"U54HG004592"
 ```
 
 ## sample_ref
@@ -179,7 +179,7 @@ Reference to the sample of the experiment (using the submitter-local identifier 
 ### sample_ref Examples
 
 ```json
-"geo:GSM945229"
+"encode:ENCBS192PUU"
 ```
 
 ## aggregated_from

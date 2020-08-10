@@ -1,9 +1,9 @@
 {
     "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
-    "global_id": "geo:GSE35583",
+    "global_id": "geo:GSM945229",
     "local_id": "encode:ENCSR000DQP",
-    "study_ref": "UW_ChipSeq",
-    "sample_ref": "geo:GSM945229",
+    "study_ref": "U54HG004592",
+    "sample_ref": "encode:ENCBS192PUU",
     "technique": {
         "term_id": "http://purl.obolibrary.org/obo/OBI_0002017",
         "term_label": "histone modification identification by ChIP-Seq assay"

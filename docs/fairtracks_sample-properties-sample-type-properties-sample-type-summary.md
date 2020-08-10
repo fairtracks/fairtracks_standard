@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/summary
 ```
 
-Summary of 'sample_type', copied from 'cell_type', 'abnormal_cell_type', 'cell_line', or 'organism_part', according to 'biospecimen_class'
+Main classification of the sample. Summary of 'sample_type' sub-properties: 'cell_type', 'abnormal_cell_type', 'cell_line', or 'organism_part' (and adding 'details'), according to 'biospecimen_class'
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                             |
@@ -18,5 +18,9 @@ Summary of 'sample_type', copied from 'cell_type', 'abnormal_cell_type', 'cell_l
 ## summary Examples
 
 ```json
-"H1-hESC"
+"B cell (mesoderm, CD20+)"
+```
+
+```json
+"B cell (mesoderm, CD20+)"
 ```

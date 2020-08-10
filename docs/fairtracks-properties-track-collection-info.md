@@ -155,7 +155,7 @@ Long name of the track collection. Suggested maximum length is 80 characters
 ### long_name Examples
 
 ```json
-"Example of a few tracks created by from the ENCODE Project"
+"Example of a few tracks created by the ENCODE Project"
 ```
 
 ## description_url

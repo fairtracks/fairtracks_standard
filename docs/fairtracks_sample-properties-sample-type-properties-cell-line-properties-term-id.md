@@ -26,9 +26,3 @@ URL linking to an ontology term
 [try pattern](https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F "try regular expression with regexr.com")
 
 **unknown format**: the value of this string must follow the format: `term`
-
-## term_id Examples
-
-```json
-"http://www.ebi.ac.uk/efo/EFO_0003042"
-```
