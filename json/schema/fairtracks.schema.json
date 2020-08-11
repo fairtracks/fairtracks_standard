@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: ca3836df82aa271ce29dbb576463ae1ba9d17ccf72a962e989c1740a32f0f8dd",
+    "$comment": "JSON signature: f43da4dd8a26cc0f7b81e64126b377075fff7c356956ea4087791130a8f6b23a",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -70,7 +70,7 @@
                             "description": "URL to the version of \"Experimental Factor Ontology\" used in the JSON document",
                             "type": "string",
                             "format": "uri",
-                            "pattern": "^https://github.com/EBISPOT/efo/releases/download/v[0-9]+.[0-9]+.[0-9]+/efo.owl$",
+                            "pattern": "^http://www.ebi.ac.uk/efo/releases/v[0-9]+.[0-9]+.[0-9]+/efo.owl$",
                             "examples": [
                                 "http://www.ebi.ac.uk/efo/releases/v3.20.0/efo.owl"
                             ],
@@ -103,7 +103,7 @@
                             "description": "URL to the version of \"Sequence types and features ontology\" used in the JSON document",
                             "type": "string",
                             "format": "uri",
-                            "pattern": "^https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v[0-9]+\\.[0-9]+/releases/so-xp.owl/so.owl$",
+                            "pattern": "^http://purl.obolibrary.org/obo/so/[0-9]+-[0-9]+-[0-9]+/so.owl$",
                             "examples": [
                                 "http://purl.obolibrary.org/obo/so/2020-08-05/so.owl"
                             ],
