@@ -20,10 +20,10 @@ URL to the version of "Sequence types and features ontology" used in the JSON do
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/v[0-9]+\.[0-9]+/releases/so-xp.owl/so.owl$
+^http://purl.obolibrary.org/obo/so/[0-9]+-[0-9]+-[0-9]+/so.owl$
 ```
 
-[try pattern](https://regexr.com/?expression=%5Ehttps%3A%2F%2Fraw.githubusercontent.com%2FThe-Sequence-Ontology%2FSO-Ontologies%2Fv%5B0-9%5D%2B%5C.%5B0-9%5D%2B%2Freleases%2Fso-xp.owl%2Fso.owl%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5Ehttp%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fso%2F%5B0-9%5D%2B-%5B0-9%5D%2B-%5B0-9%5D%2B%2Fso.owl%24 "try regular expression with regexr.com")
 
 **URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc4291 "check the specification")
 
