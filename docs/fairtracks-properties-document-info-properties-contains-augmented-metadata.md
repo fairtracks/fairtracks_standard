@@ -1,10 +1,10 @@
 # Contains Augmented Metadata Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/has_augmented_metadata
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/has_augmented_metadata
 ```
 
-Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service
+Set to true if the metadata properties with augmented=true is set in this document, as returned by the fairtracks_augment service
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |

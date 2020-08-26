@@ -1,7 +1,7 @@
 # Version URL to "Sequence Ontology" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl
 ```
 
 URL to the version of "Sequence types and features ontology" used in the JSON document
@@ -30,5 +30,5 @@ URL to the version of "Sequence types and features ontology" used in the JSON do
 ## so.owl Examples
 
 ```json
-"http://purl.obolibrary.org/obo/so/2020-08-05/so.owl"
+"http://purl.obolibrary.org/obo/so/2020-08-20/so.owl"
 ```

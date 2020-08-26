@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_track.schema.json",
-    "$comment": "JSON signature: ed944ef67a39c4b0b7a46d10f7c2977b084602ea99792edc79aef766d2346daf",
+    "$comment": "JSON signature: 3346a39721f180dc46c5bc13737fc0f3398ae970322c59e6063a9d4363d7ecda",
     "title": "Track",
     "type": "object",
     "properties": {
@@ -16,7 +16,7 @@
         },
         "global_id": {
             "title": "Global ID",
-            "description": "Global track identifier, resolvable by identifiers.org [to be created by us]",
+            "description": "Global track identifier, resolvable by identifiers.org [to be defined]",
             "type": "string",
             "namespace": "fairtracks"
         },
@@ -103,8 +103,7 @@
                     "encode:ENCFF207FGO;encode:ENCFF842FEQ",
                     "encode:ENCFF207FGO;encode:ENCFF642FEV",
                     "encode:ENCFF207FGO;encode:ENCFF842FEQ",
-                    "encode:ENCFF207FGO;encode:ENCFF642FEV",
-                    ""
+                    "encode:ENCFF207FGO;encode:ENCFF642FEV"
                 ]
             }
         },

@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: ed944ef67a39c4b0b7a46d10f7c2977b084602ea99792edc79aef766d2346daf
+> JSON signature: 3346a39721f180dc46c5bc13737fc0f3398ae970322c59e6063a9d4363d7ecda
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                         |
@@ -76,7 +76,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 
 ## global_id
 
-Global track identifier, resolvable by identifiers.org [to be created by us]
+Global track identifier, resolvable by identifiers.org [to be defined]
 
 
 `global_id`

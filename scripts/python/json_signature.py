@@ -27,11 +27,11 @@ def compute_signature_from_json_file(in_json):
 
 def compute_signature_from_json_content(json_content):
     json_content_copy = copy.deepcopy(json_content)
-    if 'doc_info' in json_content_copy:
-        if 'doc_version' in json_content_copy['doc_info']:
-            del json_content_copy['doc_info']['doc_version']
-        if 'doc_date' in json_content_copy['doc_info']:
-            del json_content_copy['doc_info']['doc_date']
+    if 'document' in json_content_copy:
+        if 'version_date' in json_content_copy['document']:
+            del json_content_copy['document']['version_date']
+        if 'json_signature' in json_content_copy['document']:
+            del json_content_copy['document']['json_signature']
 
     if "$comment" in json_content_copy:
         del json_content_copy['$comment']

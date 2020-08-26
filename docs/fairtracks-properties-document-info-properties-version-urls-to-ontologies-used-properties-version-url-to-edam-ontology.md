@@ -1,7 +1,7 @@
 # Version URL to "EDAM Ontology" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://edamontology.org/EDAM.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://edamontology.org/EDAM.owl
 ```
 
 URL to the version of "Bioinformatics operations, data types, formats, identifiers and topics" (EDAM Ontology) used in the JSON document

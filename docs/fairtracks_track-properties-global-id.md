@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/global_id
 ```
 
-Global track identifier, resolvable by identifiers.org [to be created by us]
+Global track identifier, resolvable by identifiers.org [to be defined]
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |

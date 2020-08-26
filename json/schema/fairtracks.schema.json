@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: f43da4dd8a26cc0f7b81e64126b377075fff7c356956ea4087791130a8f6b23a",
+    "$comment": "JSON signature: ed8f9620a4bcef4f53c8ab572242ec351adbe54e48d272e013848cf5c0a3c41a",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -14,33 +14,48 @@
             "pattern": "^(https?|ftp)://",
             "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json"
         },
-        "doc_info": {
+        "document": {
             "title": "Document info",
-            "description": "Version and related information about the current FAIRtracks JSON document",
+            "description": "Information about the present FAIRtracks document (i.e. a JSON document that validates against any supported release of this JSON schema)",
             "type": "object",
             "properties": {
-                "local_id": {
-                    "title": "Local ID",
-                    "description": "Submitter-local identifier (within  track repository) for current FAIRtracks document (in CURIE-format, if applicable)",
+                "global_id": {
+                    "title": "Global ID",
+                    "description": "Global identifier for the FAIRtracks document, resolvable by identifiers.org ",
                     "type": "string",
+                    "namespace": "doi",
                     "examples": [
-                        "0"
-                    ],
-                    "unique": true
-                },
-                "doc_url": {
-                    "title": "Document URL",
-                    "description": "URL to this FAIRtracks JSON document",
-                    "type": "string",
-                    "format": "uri",
-                    "pattern": "^(https?|ftp)://",
-                    "examples": [
-                        "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/examples/fairtracks.example.json"
+                        "doi:10.5281/zenodo.3984946"
                     ]
                 },
-                "doc_ontology_versions": {
+                "version_id": {
+                    "title": "Version ID",
+                    "description": "Version string (preferably in CURIE form) that uniquely and exactly identifies the present version of the FAIRtracks document among all versions with the same \"global_id\" identifier",
+                    "type": "string",
+                    "examples": [
+                        "doi:10.5281/zenodo.3984947"
+                    ]
+                },
+                "version_date": {
+                    "title": "Version Date",
+                    "description": "Time and date of the last modification of the present version of the FAIRtracks document",
+                    "type": "string",
+                    "format": "date-time",
+                    "examples": [
+                        "2020-07-07T19:02:59Z"
+                    ]
+                },
+                "json_signature": {
+                    "title": "JSON Signature",
+                    "description": "Unique signature derived from the JSON contents of the FAIRtracks document, as defined by the \"scripts/python/json_signature.py\" module in the FAIRtracks GitHub repo (https://github.com/fairtracks/fairtracks_standard).",
+                    "type": "string",
+                    "examples": [
+                        "9e9fa2d46112ada6c64c161c9587613cd778ec042ba65740265da1a3e8a34224"
+                    ]
+                },
+                "ontology_versions": {
                     "title": "Version URLs to Ontologies used",
-                    "description": "URLs to the version of the ontologies used in the JSON document",
+                    "description": "URLs to the version of the ontologies used in the FAIRtracks document",
                     "type": "object",
                     "properties": {
                         "http://edamontology.org/EDAM.owl": {
@@ -72,7 +87,7 @@
                             "format": "uri",
                             "pattern": "^http://www.ebi.ac.uk/efo/releases/v[0-9]+.[0-9]+.[0-9]+/efo.owl$",
                             "examples": [
-                                "http://www.ebi.ac.uk/efo/releases/v3.20.0/efo.owl"
+                                "http://www.ebi.ac.uk/efo/releases/v3.21.0/efo.owl"
                             ],
                             "augmented": true
                         },
@@ -105,7 +120,7 @@
                             "format": "uri",
                             "pattern": "^http://purl.obolibrary.org/obo/so/[0-9]+-[0-9]+-[0-9]+/so.owl$",
                             "examples": [
-                                "http://purl.obolibrary.org/obo/so/2020-08-05/so.owl"
+                                "http://purl.obolibrary.org/obo/so/2020-08-20/so.owl"
                             ],
                             "augmented": true
                         },
@@ -133,30 +148,65 @@
                 },
                 "has_augmented_metadata": {
                     "title": "Contains Augmented Metadata",
-                    "description": "Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service",
+                    "description": "Set to true if the metadata properties with augmented=true is set in this document, as returned by the fairtracks_augment service",
                     "type": "boolean",
                     "examples": [
                         true
                     ]
                 },
-                "doc_version": {
-                    "title": "Document Version",
-                    "description": "Version of this FAIRtracks JSON document",
-                    "type": "string"
-                },
-                "doc_date": {
-                    "title": "Document Creation Date",
-                    "description": "Creation date of this version of this FAIRtracks document",
-                    "type": "string",
-                    "format": "date-time"
+                "augmented_from": {
+                    "title": "Augmented From",
+                    "description": "Information about the non-augmented \"parent\" FAIRtracks document used to generate the augmented FAIRtracks document. Only relevant if 'has_augmented_data' is true",
+                    "type": "object",
+                    "properties": {
+                        "minimal_doc_ref": {
+                            "title": "Minimal Document Reference",
+                            "description": "Reference to the minimal (i.e. non-augmented) FAIRtracks document used to generate the present augmented FAIRtracks document (using the global identifier of the document)",
+                            "type": "string",
+                            "namespace": "doi"
+                        },
+                        "minimal_doc_version": {
+                            "title": "Minimal Document Version",
+                            "description": "Version string (preferably in CURIE form) that uniquely identifies the exact version (among all document versions matching \"minimal_doc_ref\") of the minimal FAIRtracks document used to generate the present augmented FAIRtracks document ",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "minimal_doc_ref",
+                        "minimal_doc_version"
+                    ]
                 }
             },
             "required": [
-                "local_id",
-                "doc_ontology_versions",
-                "has_augmented_metadata",
-                "doc_version",
-                "doc_date"
+                "global_id",
+                "version_id",
+                "version_date",
+                "ontology_versions",
+                "has_augmented_metadata"
+            ],
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "document": {
+                                "properties": {
+                                    "has_augmented_metadata": {
+                                        "const": "true"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "document": {
+                                "required": [
+                                    "augmented_from"
+                                ]
+                            }
+                        }
+                    }
+                }
             ]
         },
         "collection_info": {
@@ -183,15 +233,15 @@
                     ],
                     "unique": true
                 },
-                "doc_ref": {
+                "document_ref": {
                     "title": "Document Reference",
-                    "description": "Reference to the JSON document containing the study (using the  identifier of the document)",
+                    "description": "Reference to the FAIRtracks document containing the track collection (using the global identifier of the document)",
                     "type": "string",
                     "format": "foreign_ref",
                     "examples": [
-                        "0"
+                        "doi:10.5281/zenodo.3984946"
                     ],
-                    "foreignProperty": "fairtracks.schema.json#doc_info/local_id"
+                    "foreignProperty": "fairtracks.schema.json#document/global_id"
                 },
                 "short_name": {
                     "title": "Name (Short)",
@@ -238,7 +288,7 @@
             },
             "required": [
                 "local_id",
-                "doc_ref",
+                "document_ref",
                 "short_name",
                 "long_name",
                 "contact"
@@ -283,7 +333,7 @@
     },
     "required": [
         "@schema",
-        "doc_info",
+        "document",
         "collection_info",
         "studies",
         "experiments",
@@ -294,7 +344,7 @@
         {
             "if": {
                 "properties": {
-                    "doc_info": {
+                    "document": {
                         "properties": {
                             "has_augmented_metadata": {
                                 "const": true
@@ -305,9 +355,9 @@
             },
             "then": {
                 "properties": {
-                    "doc_info": {
+                    "document": {
                         "properties": {
-                            "doc_ontology_versions": {
+                            "ontology_versions": {
                                 "required": [
                                     "http://edamontology.org/EDAM.owl",
                                     "http://purl.obolibrary.org/obo/cl.owl",

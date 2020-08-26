@@ -19,25 +19,25 @@ unknown
 
 | Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                 |
 | :-------------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [doc_info](#doc_info)       | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-doc_info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/doc_info")       |
+| [document](#document)       | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document")       |
 | [studies](#studies)         | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-studies.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/studies")         |
 | [experiments](#experiments) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments") |
 | [samples](#samples)         | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples")         |
 | [tracks](#tracks)           | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-tracks.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/tracks")           |
 
-## doc_info
+## document
 
 
 
 
-`doc_info`
+`document`
 
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-doc_info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/doc_info")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document")
 
-### doc_info Type
+### document Type
 
 unknown
 

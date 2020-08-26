@@ -1,7 +1,7 @@
 # Version URL to "Ontology for Biomedical Investigations" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl
 ```
 
 URL to the version of "Ontology for Biomedical Investigations" used in the JSON document

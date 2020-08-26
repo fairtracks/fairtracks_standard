@@ -1,108 +1,149 @@
 # Document info Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document
 ```
 
-Version and related information about the current FAIRtracks JSON document
+Information about the present FAIRtracks document (i.e. a JSON document that validates against any supported release of this JSON schema)
 
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
 | :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [fairtracks.schema.json\*](../json/schema/fairtracks.schema.json "open original schema") |
 
-## doc_info Type
+## document Type
 
 `object` ([Document info](fairtracks-properties-document-info.md))
 
+all of
+
+-   [Untitled undefined type in FAIRtracks](fairtracks-properties-document-info-allof-0.md "check type definition")
+
 # Document info Properties
 
-| Property                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
-| :------------------------------------------------ | --------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [local_id](#local_id)                             | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/local_id")                                     |
-| [doc_url](#doc_url)                               | `string`  | Optional | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-document-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_url")                                  |
-| [doc_ontology_versions](#doc_ontology_versions)   | `object`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions") |
-| [has_augmented_metadata](#has_augmented_metadata) | `boolean` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-contains-augmented-metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/has_augmented_metadata")    |
-| [doc_version](#doc_version)                       | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_version")                          |
-| [doc_date](#doc_date)                             | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-document-creation-date.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_date")                       |
+| Property                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                               |
+| :------------------------------------------------ | --------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [global_id](#global_id)                           | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/global_id")                                |
+| [version_id](#version_id)                         | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_id")                              |
+| [version_date](#version_date)                     | `string`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-date.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_date")                          |
+| [json_signature](#json_signature)                 | `string`  | Optional | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-json-signature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/json_signature")                      |
+| [ontology_versions](#ontology_versions)           | `object`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions")  |
+| [has_augmented_metadata](#has_augmented_metadata) | `boolean` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-contains-augmented-metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/has_augmented_metadata") |
+| [augmented_from](#augmented_from)                 | `object`  | Optional | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from")                      |
 
-## local_id
+## global_id
 
-Submitter-local identifier (within  track repository) for current FAIRtracks document (in CURIE-format, if applicable)
+Global identifier for the FAIRtracks document, resolvable by identifiers.org 
 
 
-`local_id`
+`global_id`
 
 -   is required
--   Type: `string` ([Local ID](fairtracks-properties-document-info-properties-local-id.md))
+-   Type: `string` ([Global ID](fairtracks-properties-document-info-properties-global-id.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/local_id")
--   unique: true
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/global_id")
+-   namespace: "doi"
 
-### local_id Type
+### global_id Type
 
-`string` ([Local ID](fairtracks-properties-document-info-properties-local-id.md))
+`string` ([Global ID](fairtracks-properties-document-info-properties-global-id.md))
 
-### local_id Examples
+### global_id Examples
 
 ```json
-"0"
+"doi:10.5281/zenodo.3984946"
 ```
 
-## doc_url
+## version_id
 
-URL to this FAIRtracks JSON document
+Version string (preferably in CURIE form) that uniquely and exactly identifies the present version of the FAIRtracks document among all versions with the same "global_id" identifier
 
 
-`doc_url`
+`version_id`
+
+-   is required
+-   Type: `string` ([Version ID](fairtracks-properties-document-info-properties-version-id.md))
+-   cannot be null
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_id")
+
+### version_id Type
+
+`string` ([Version ID](fairtracks-properties-document-info-properties-version-id.md))
+
+### version_id Examples
+
+```json
+"doi:10.5281/zenodo.3984947"
+```
+
+## version_date
+
+Time and date of the last modification of the present version of the FAIRtracks document
+
+
+`version_date`
+
+-   is required
+-   Type: `string` ([Version Date](fairtracks-properties-document-info-properties-version-date.md))
+-   cannot be null
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-date.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_date")
+-   format: "date-time"
+
+### version_date Type
+
+`string` ([Version Date](fairtracks-properties-document-info-properties-version-date.md))
+
+### version_date Constraints
+
+**date time**: the string must be a date time string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+### version_date Examples
+
+```json
+"2020-07-07T19:02:59Z"
+```
+
+## json_signature
+
+Unique signature derived from the JSON contents of the FAIRtracks document, as defined by the "scripts/python/json_signature.py" module in the FAIRtracks GitHub repo (<https://github.com/fairtracks/fairtracks_standard>).
+
+
+`json_signature`
 
 -   is optional
--   Type: `string` ([Document URL](fairtracks-properties-document-info-properties-document-url.md))
+-   Type: `string` ([JSON Signature](fairtracks-properties-document-info-properties-json-signature.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-document-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_url")
--   format: "uri"
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-json-signature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/json_signature")
 
-### doc_url Type
+### json_signature Type
 
-`string` ([Document URL](fairtracks-properties-document-info-properties-document-url.md))
+`string` ([JSON Signature](fairtracks-properties-document-info-properties-json-signature.md))
 
-### doc_url Constraints
-
-**pattern**: the string must match the following regular expression: 
-
-```regexp
-^(https?|ftp)://
-```
-
-[try pattern](https://regexr.com/?expression=%5E(https%3F%7Cftp)%3A%2F%2F "try regular expression with regexr.com")
-
-**URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc4291 "check the specification")
-
-### doc_url Examples
+### json_signature Examples
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/examples/fairtracks.example.json"
+"9e9fa2d46112ada6c64c161c9587613cd778ec042ba65740265da1a3e8a34224"
 ```
 
-## doc_ontology_versions
+## ontology_versions
 
-URLs to the version of the ontologies used in the JSON document
+URLs to the version of the ontologies used in the FAIRtracks document
 
 
-`doc_ontology_versions`
+`ontology_versions`
 
 -   is required
 -   Type: `object` ([Version URLs to Ontologies used](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_ontology_versions")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions")
 
-### doc_ontology_versions Type
+### ontology_versions Type
 
 `object` ([Version URLs to Ontologies used](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used.md))
 
 ## has_augmented_metadata
 
-Set to true if the metadata properties with augmented=true is set in the JSON document, as returned by the fairtracks_augment service
+Set to true if the metadata properties with augmented=true is set in this document, as returned by the fairtracks_augment service
 
 
 `has_augmented_metadata`
@@ -110,7 +151,7 @@ Set to true if the metadata properties with augmented=true is set in the JSON do
 -   is required
 -   Type: `boolean` ([Contains Augmented Metadata](fairtracks-properties-document-info-properties-contains-augmented-metadata.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-contains-augmented-metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/has_augmented_metadata")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-contains-augmented-metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/has_augmented_metadata")
 
 ### has_augmented_metadata Type
 
@@ -122,39 +163,18 @@ Set to true if the metadata properties with augmented=true is set in the JSON do
 true
 ```
 
-## doc_version
+## augmented_from
 
-Version of this FAIRtracks JSON document
+Information about the non-augmented "parent" FAIRtracks document used to generate the augmented FAIRtracks document. Only relevant if 'has_augmented_data' is true
 
 
-`doc_version`
+`augmented_from`
 
--   is required
--   Type: `string` ([Document Version](fairtracks-properties-document-info-properties-document-version.md))
+-   is optional
+-   Type: `object` ([Augmented From](fairtracks-properties-document-info-properties-augmented-from.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_version")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from")
 
-### doc_version Type
+### augmented_from Type
 
-`string` ([Document Version](fairtracks-properties-document-info-properties-document-version.md))
-
-## doc_date
-
-Creation date of this version of this FAIRtracks document
-
-
-`doc_date`
-
--   is required
--   Type: `string` ([Document Creation Date](fairtracks-properties-document-info-properties-document-creation-date.md))
--   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-document-creation-date.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info/properties/doc_date")
--   format: "date-time"
-
-### doc_date Type
-
-`string` ([Document Creation Date](fairtracks-properties-document-info-properties-document-creation-date.md))
-
-### doc_date Constraints
-
-**date time**: the string must be a date time string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+`object` ([Augmented From](fairtracks-properties-document-info-properties-augmented-from.md))

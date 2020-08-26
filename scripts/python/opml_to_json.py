@@ -38,7 +38,7 @@ INTEGER_ATTRIBS = ['minItems']
 ALWAYS_ARRAY_ATTRIBS = ['examples']
 NEVER_ARRAY_ATTRIBS = ['pattern']
 IF_THEN_ATTRIBS = ['constIf', 'requireIf']
-AUGMENTED_METADATA_PROP_PATH = ['doc_info', 'has_augmented_metadata']
+AUGMENTED_METADATA_PROP_PATH = ['document', 'has_augmented_metadata']
 AUGMENTED_ATTRIB = 'augmented'
 ARRAY_SPLIT_CHAR_LEVEL_1 = '|'
 ARRAY_SPLIT_CHAR_LEVEL_2 = ';'
@@ -121,7 +121,7 @@ def create_json_example_dict(opml_file_path, example_index=None):
                                  json_parent=json_example_dict,
                                  example_index=example_index)
 
-    json_example_dict = _json_example_add_doc_info_attribs(json_example_dict)
+    json_example_dict = _json_example_add_document_attribs(json_example_dict)
 
     return json_example_dict
 
@@ -136,6 +136,7 @@ def if_changed_write_json_file(json_file, json_dict):
 
         old_signature_stored = _json_dict_extract_signature(old_json_dict)
         old_signature_from_content = compute_signature_from_json_content(old_json_dict)
+        print(json_file, old_signature_stored, old_signature_from_content, new_signature)
 
         do_write = (old_signature_stored is not None and new_signature != old_signature_stored) \
                    or (new_signature != old_signature_from_content)
@@ -556,11 +557,11 @@ def _is_example_content(json_elem_array):
         return True
 
 
-def _json_example_add_doc_info_attribs(json_dict):
-    if 'doc_info' in json_dict:
-        json_dict['doc_info']['doc_version'] = compute_signature_from_json_content(json_dict)
-        json_dict['doc_info']['doc_date'] = \
+def _json_example_add_document_attribs(json_dict):
+    if 'document' in json_dict:
+        json_dict['document']['version_date'] = \
             datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'
+        json_dict['document']['json_signature'] = compute_signature_from_json_content(json_dict)
     return json_dict
 
 
@@ -626,7 +627,10 @@ def _json_dict_extract_signature(json_dict):
         if '$schema' in json_dict:  # JSON Schema
             return json_dict['$comment'].split(': ')[-1]
         elif '@schema' in json_dict:  # JSON example
-            return json_dict['doc_info']['doc_version']
+            try:
+                return json_dict['document']['json_signature']
+            except KeyError:
+                return json_dict['doc_info']['doc_version']  # For FAIRtracks <= v1.0.2
     except KeyError:
         pass
     return None

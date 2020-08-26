@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 
 
-> JSON signature: f43da4dd8a26cc0f7b81e64126b377075fff7c356956ea4087791130a8f6b23a
+> JSON signature: ed8f9620a4bcef4f53c8ab572242ec351adbe54e48d272e013848cf5c0a3c41a
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                             |
@@ -27,7 +27,7 @@ all of
 | Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                     |
 | :---------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [@schema](#@schema)                 | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/@schema")                    |
-| [doc_info](#doc_info)               | `object` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info")                |
+| [document](#document)               | Merged   | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document")                |
 | [collection_info](#collection_info) | `object` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info") |
 | [studies](#studies)                 | `array`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-studies.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/studies")                       |
 | [experiments](#experiments)         | `array`  | Required | cannot be null | [FAIRtracks](fairtracks-properties-experiments.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/experiments")               |
@@ -70,21 +70,25 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 
 **URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc4291 "check the specification")
 
-## doc_info
+## document
 
-Version and related information about the current FAIRtracks JSON document
+Information about the present FAIRtracks document (i.e. a JSON document that validates against any supported release of this JSON schema)
 
 
-`doc_info`
+`document`
 
 -   is required
 -   Type: `object` ([Document info](fairtracks-properties-document-info.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/doc_info")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document")
 
-### doc_info Type
+### document Type
 
 `object` ([Document info](fairtracks-properties-document-info.md))
+
+all of
+
+-   [Untitled undefined type in FAIRtracks](fairtracks-properties-document-info-allof-0.md "check type definition")
 
 ## collection_info
 

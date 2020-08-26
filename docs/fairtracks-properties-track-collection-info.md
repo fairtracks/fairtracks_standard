@@ -21,7 +21,7 @@ General information about the track collection that is annotated in the current 
 | :-------------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [source_repo_url](#source_repo_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")         |
 | [local_id](#local_id)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")                       |
-| [doc_ref](#doc_ref)                     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/doc_ref")              |
+| [document_ref](#document_ref)           | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")         |
 | [short_name](#short_name)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")                   |
 | [long_name](#long_name)                 | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")                     |
 | [description_url](#description_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")         |
@@ -86,32 +86,32 @@ Submitter-local identifier (within track repository) for the collection
 "encode_example"
 ```
 
-## doc_ref
+## document_ref
 
-Reference to the JSON document containing the study (using the  identifier of the document)
+Reference to the FAIRtracks document containing the track collection (using the global identifier of the document)
 
 
-`doc_ref`
+`document_ref`
 
 -   is required
 -   Type: `string` ([Document Reference](fairtracks-properties-track-collection-info-properties-document-reference.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/doc_ref")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")
 -   format: "foreign_ref"
--   foreignProperty: "fairtracks.schema.json#doc_info/local_id"
+-   foreignProperty: "fairtracks.schema.json#document/global_id"
 
-### doc_ref Type
+### document_ref Type
 
 `string` ([Document Reference](fairtracks-properties-track-collection-info-properties-document-reference.md))
 
-### doc_ref Constraints
+### document_ref Constraints
 
 **unknown format**: the value of this string must follow the format: `foreign_ref`
 
-### doc_ref Examples
+### document_ref Examples
 
 ```json
-"0"
+"doi:10.5281/zenodo.3984946"
 ```
 
 ## short_name

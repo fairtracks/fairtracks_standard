@@ -1,5 +1,9 @@
 import argparse
 import json
+import os
+import tempfile
+from zipfile import ZipFile
+
 import requests
 from collections import OrderedDict
 
@@ -39,8 +43,39 @@ def cleanup_json_document(json_in_path, json_out_path, json_template_path, augme
     json_root = json.load(open(json_in_path))
 
     if augmented:
-        json_root = requests.post("http://trackfind-dev.gtrack.no:5001/autogenerate",
-                                  json=json_root).json()
+        with tempfile.TemporaryDirectory() as tmp:
+            zipPath = os.path.join(tmp, 'schemas.zip')
+            zipFile = ZipFile(zipPath, 'w')
+
+            SCHEMA_DIR = "json/schema"
+            for schema_fn in os.listdir(SCHEMA_DIR):
+                zipFile.write(os.path.join(SCHEMA_DIR, schema_fn))
+
+            zipFile.close()
+
+            # json_root = requests.post("http://localhost:5001/augment",
+            #                           json=json_root).json()
+
+            augmented = False
+            for augment_url in ["http://localhost:5001/augment",
+                                "http://trackfind-dev.gtrack.no:5001/augment"]:
+                try:
+                    print('Trying to connect to "{}"...'.format(augment_url))
+                    ret = requests.post(augment_url,
+                                              files={'data': json.dumps(json_root),
+                                                     'schema': open(zipPath, 'rb')})
+                except requests.exceptions.ConnectionError:
+                    continue
+
+                assert ret.status_code == 200
+                json_root = ret.json()
+                augmented = True
+                print('Augmentation process succeeded!'.format(augment_url))
+                break
+
+            if not augmented:
+                raise Exception('The FAIRtracks augmentation service is not running neither '
+                                'locally nor at: ' + augment_url)
 
     if not json_template_path:
         json_template_path = json_in_path

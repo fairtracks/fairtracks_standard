@@ -52,7 +52,3 @@ List of identifiers to raw data files used to create track (typically BAM), reso
 ```json
 "encode:ENCFF207FGO;encode:ENCFF642FEV"
 ```
-
-```json
-""
-```
