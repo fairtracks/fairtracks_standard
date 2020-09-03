@@ -1,0 +1,11 @@
+{
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
+    "global_id": "geo:GSE35583",
+    "local_id": "U54HG004592",
+    "study_name": "Histone Modifications by ChIP-seq from ENCODE/University of Washington",
+    "publication": "pubmed:22955617",
+    "contact": {
+        "name": "ENCODE DCC",
+        "e-mail": "encode-help@lists.stanford.edu"
+    }
+}

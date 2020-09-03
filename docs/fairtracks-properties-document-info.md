@@ -152,6 +152,7 @@ Set to true if the metadata properties with augmented=true is set in this docume
 -   Type: `boolean` ([Contains Augmented Metadata](fairtracks-properties-document-info-properties-contains-augmented-metadata.md))
 -   cannot be null
 -   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-contains-augmented-metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/has_augmented_metadata")
+-   augmented: true
 
 ### has_augmented_metadata Type
 

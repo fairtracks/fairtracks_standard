@@ -1,0 +1,21 @@
+{
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json",
+    "global_id": "biosample:SAMN01731491",
+    "local_id": "encode:ENCBS192PUU",
+    "species_id": "taxonomy:9606",
+    "biospecimen_class": {
+        "term_id": "http://purl.obolibrary.org/obo/NCIT_C12508"
+    },
+    "sample_type": {
+        "cell_type": {
+            "term_id": "http://purl.obolibrary.org/obo/CL_0000236"
+        },
+        "organism_part": {
+            "term_id": "http://purl.obolibrary.org/obo/UBERON_0000926"
+        },
+        "details": "CD20+"
+    },
+    "phenotype": {
+        "term_id": "http://purl.obolibrary.org/obo/NCIT_C14165"
+    }
+}

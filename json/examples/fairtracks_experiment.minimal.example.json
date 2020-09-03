@@ -1,0 +1,17 @@
+{
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
+    "global_id": "geo:GSM945229",
+    "local_id": "encode:ENCSR000DQP",
+    "study_ref": "U54HG004592",
+    "sample_ref": "encode:ENCBS192PUU",
+    "technique": {
+        "term_id": "http://purl.obolibrary.org/obo/OBI_0002017"
+    },
+    "target": {
+        "sequence_feature": {
+            "term_id": "http://purl.obolibrary.org/obo/SO_0001706"
+        }
+    },
+    "lab_protocol_description": "https://www.encodeproject.org/documents/8f459e88-6344-434f-8f9f-6375a9ff1880/@@download/attachment/CD20%2B_Stam_protocol.pdf",
+    "compute_protocol_description": "https://www.encodeproject.org/documents/6f6351d4-9310-4a3b-a3c2-70ecac47b28b/@@download/attachment/ChIP-seq_Mapping_Pipeline_Overview.pdf"
+}

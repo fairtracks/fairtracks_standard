@@ -29,7 +29,9 @@ GIT_HOOKS_FILES := $(patsubst $(LOCAL_GIT_HOOKS_DIR)/%,$(GIT_HOOKS_DIR)/%,${LOCA
 OPML_FILES := $(wildcard $(OPML_DIR)/*.overview.opml)
 OPML_RAW_FILES := $(wildcard $(OPML_DIR)/*.overview.raw.opml)
 OPML_RAW_OLD_FILES := $(wildcard $(OPML_DIR)/*.overview.raw.opml.old)
-EXAMPLE_FILES := $(patsubst $(OPML_DIR)/%,$(EXAMPLE_DIR)/%,${OPML_FILES:.overview.opml=.example.json})
+EXAMPLE_MINIMAL_FILES := $(patsubst $(OPML_DIR)/%,$(EXAMPLE_DIR)/%,${OPML_FILES:.overview.opml=.minimal.example.json})
+EXAMPLE_AUGMENTED_FILES := $(patsubst $(OPML_DIR)/%,$(EXAMPLE_DIR)/%,${OPML_FILES:.overview.opml=.augmented.example.json})
+EXAMPLE_FILES := $(EXAMPLE_MINIMAL_FILES) $(EXAMPLE_AUGMENTED_FILES)
 SCHEMA_FILES := $(patsubst $(OPML_DIR)/%,$(SCHEMA_DIR)/%,${OPML_FILES:.overview.opml=.schema.json})
 
 JSONSCHEMA2MD_DIR = $(NODE_MODULES_DIR)/\@adobe/jsonschema2md
@@ -77,29 +79,34 @@ $(SCHEMA_DIR)/%.schema.json: $(OPML_DIR)/%.overview.opml $(VERSION_INI) $(CONVER
 	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) schema $(OPML_DIR)/$*.overview.opml.tmp $(SCHEMA_DIR)/$*.schema.json
 	rm $(OPML_DIR)/$*.overview.opml.tmp
 
-$(EXAMPLE_DIR)/fairtracks_%.example.json: $(OPML_DIR)/fairtracks_%.overview.opml $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+$(EXAMPLE_DIR)/fairtracks_%.augmented.example.json $(EXAMPLE_DIR)/fairtracks_%.minimal.example.json: $(OPML_DIR)/fairtracks_%.overview.opml $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/fairtracks_$*.overview.opml $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(VERSION_INI)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) single_example $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks_$*.example.json
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) --example_type augmented single_example $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks_$*.augmented.example.json
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) --example_type minimal single_example $(OPML_DIR)/fairtracks_$*.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks_$*.minimal.example.json
 	rm $(OPML_DIR)/fairtracks_$*.overview.opml.tmp
 
-$(EXAMPLE_DIR)/fairtracks.example.json: $(OPML_FILES) $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
+$(EXAMPLE_DIR)/fairtracks.augmented.example.json $(EXAMPLE_DIR)/fairtracks.minimal.example.json: $(OPML_FILES) $(VERSION_INI) $(CONVERT_SCRIPT) $(COMPUTE_SIGNATURE_SCRIPT) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(OPML_DIR)/fairtracks.overview.opml $(OPML_DIR)/fairtracks.overview.opml.tmp $(VERSION_INI)
-	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) full_example $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.example.json
-	cp $(EXAMPLE_DIR)/fairtracks.example.json $(EXAMPLE_DIR)/fairtracks.example.json.tmp
-	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(EXAMPLE_DIR)/fairtracks.example.json $(EXAMPLE_DIR)/fairtracks.example.json --augment
-	diff -u $(EXAMPLE_DIR)/fairtracks.example.json $(EXAMPLE_DIR)/fairtracks.example.json.tmp
-	rm $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.example.json.tmp
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) --example_type augmented full_example $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.augmented.example.json
+	. $(VENV_ACTIVATE); python3 $(CONVERT_SCRIPT) --example_type minimal full_example $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.minimal.example.json
+	cp $(EXAMPLE_DIR)/fairtracks.augmented.example.json $(EXAMPLE_DIR)/fairtracks.augmented.example.json.tmp
+	cp $(EXAMPLE_DIR)/fairtracks.minimal.example.json $(EXAMPLE_DIR)/fairtracks.minimal.example.json.tmp
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(EXAMPLE_DIR)/fairtracks.augmented.example.json $(EXAMPLE_DIR)/fairtracks.augmented.example.json --augment
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(EXAMPLE_DIR)/fairtracks.minimal.example.json $(EXAMPLE_DIR)/fairtracks.minimal.example.json
+	diff -u $(EXAMPLE_DIR)/fairtracks.augmented.example.json $(EXAMPLE_DIR)/fairtracks.augmented.example.json.tmp
+	diff -u $(EXAMPLE_DIR)/fairtracks.minimal.example.json $(EXAMPLE_DIR)/fairtracks.minimal.example.json.tmp
+	rm $(OPML_DIR)/fairtracks.overview.opml.tmp $(EXAMPLE_DIR)/fairtracks.augmented.example.json.tmp $(EXAMPLE_DIR)/fairtracks.minimal.example.json.tmp
 
 $(OPML_DIR)/fairtrack%.overview.opml: $(OPML_DIR)/fairtrack%.overview.raw.opml $(CLEANUP_OPML_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(CLEANUP_OPML_SCRIPT) $(OPML_DIR)/fairtrack$*.overview.raw.opml $(OPML_DIR)/fairtrack$*.overview.opml
 
-$(BLUEPRINT_DIR)/blueprint_minimal.json: $(EXAMPLE_DIR)/fairtracks.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
+$(BLUEPRINT_DIR)/blueprint_minimal.json: $(EXAMPLE_DIR)/fairtracks.augmented.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
 	cp $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
-	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp $(BLUEPRINT_DIR)/blueprint_minimal.json --follow-template $(EXAMPLE_DIR)/fairtracks.example.json
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp $(BLUEPRINT_DIR)/blueprint_minimal.json --follow-template $(EXAMPLE_DIR)/fairtracks.augmented.example.json
 	rm $(BLUEPRINT_DIR)/blueprint_minimal.json.tmp
 
-$(BLUEPRINT_DIR)/blueprint_augmented.json: $(BLUEPRINT_DIR)/blueprint_minimal.json $(EXAMPLE_DIR)/fairtracks.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
-	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_augmented.json --follow-template $(EXAMPLE_DIR)/fairtracks.example.json --augment
+$(BLUEPRINT_DIR)/blueprint_augmented.json: $(BLUEPRINT_DIR)/blueprint_minimal.json $(EXAMPLE_DIR)/fairtracks.augmented.example.json $(CLEANUP_DATA_SCRIPT) $(GIT_HOOKS_FILES)
+	. $(VENV_ACTIVATE); python3 $(CLEANUP_DATA_SCRIPT) $(BLUEPRINT_DIR)/blueprint_minimal.json $(BLUEPRINT_DIR)/blueprint_augmented.json --follow-template $(EXAMPLE_DIR)/fairtracks.augmented.example.json --augment
 
 $(README_FILE): $(README_TEMPLATE) $(VERSION_INI) $(SUBSTITUTE_SCRIPT) $(GIT_HOOKS_FILES)
 	. $(VENV_ACTIVATE); python3 $(SUBSTITUTE_SCRIPT) $(README_TEMPLATE) $(README_FILE) $(VERSION_INI)

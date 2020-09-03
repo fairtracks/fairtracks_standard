@@ -85,11 +85,16 @@ def main():
 
     if args.json_type == 'schema':
         json_dict = create_json_schema_dict(args.in_opml.name)
-    elif args.json_type == 'single_example':
-        json_dict = create_json_example_dict(args.in_opml.name, example_index=0)
-    else:  # full_example
-        json_dict = create_json_example_dict(args.in_opml.name)
-
+    else:  # example
+        assert hasattr(args, 'example_type')
+        augment = args.example_type == 'augmented'
+        
+        if args.json_type == 'single_example':
+            json_dict = create_json_example_dict(args.in_opml.name, example_index=0,
+                                                 augment=augment)
+        else:  # full_example
+            json_dict = create_json_example_dict(args.in_opml.name, augment=augment)
+    
     if_changed_write_json_file(args.out_json, json_dict)
 
 
@@ -99,6 +104,7 @@ def _parseArgs(out_file_mode):
     parser.add_argument('json_type', choices=['schema', 'single_example', 'full_example'])
     parser.add_argument('in_opml', type=argparse.FileType('r'))
     parser.add_argument('out_json', type=argparse.FileType(out_file_mode))
+    parser.add_argument('--example_type', choices=['minimal', 'augmented'])
     return parser.parse_args()
 
 
@@ -113,13 +119,14 @@ def create_json_schema_dict(opml_file_path):
     return json_schema_dict
 
 
-def create_json_example_dict(opml_file_path, example_index=None):
+def create_json_example_dict(opml_file_path, example_index=None, augment=True):
     opml_root = _get_root_opml_elem(opml_file_path)
 
     json_example_dict = NestedOrderedDict()
     _json_example_create_subtree(opml_file_path, opml_root,
                                  json_parent=json_example_dict,
-                                 example_index=example_index)
+                                 example_index=example_index,
+                                 augment=augment)
 
     json_example_dict = _json_example_add_document_attribs(json_example_dict)
 
@@ -416,23 +423,26 @@ def _json_schema_add_signature(json_dict):
 
 # JSON example internal methods
 
-def _json_example_create_subtree(opml_file_path, opml_parent, json_parent, example_index):
+def _json_example_create_subtree(opml_file_path, opml_parent, json_parent, example_index, augment):
     num_children_created = 0
 
     for opml_child in opml_parent:
         if _opml_is_ignore_elem(opml_child):
             continue
+            
+        if not augment and _opml_is_augmented(opml_child):
+            continue
 
         json_children = None
         if _opml_is_ref(opml_child):
             json_child = _json_example_get_child_for_ref(
-                opml_file_path, opml_child, example_index)
+                opml_file_path, opml_child, example_index, augment)
             json_children = [json_child] if json_child else None
         else:
             json_child_array = _json_example_convert_opml_elem_to_json_array(opml_child)
             if json_child_array:
                 json_children = _json_example_get_children_recursively(
-                    opml_file_path, opml_child, json_child_array, example_index)
+                    opml_file_path, opml_child, json_child_array, example_index, augment)
         if json_children:
             _json_example_add_children_to_parent(opml_child, json_children, json_parent)
             num_children_created += len(json_children)
@@ -440,9 +450,10 @@ def _json_example_create_subtree(opml_file_path, opml_parent, json_parent, examp
     return num_children_created
 
 
-def _json_example_get_child_for_ref(opml_file_path, opml_parent, example_index):
+def _json_example_get_child_for_ref(opml_file_path, opml_parent, example_index, augment):
     ref_opml_file_path = _generate_opml_file_path_from_ref(opml_file_path, opml_parent)
-    json_child = create_json_example_dict(ref_opml_file_path, example_index=example_index)
+    json_child = create_json_example_dict(ref_opml_file_path, example_index=example_index,
+                                          augment=augment)
     if '@schema' in json_child:
         del json_child['@schema']
     if 'examples' in opml_parent.attrib and opml_parent.attrib['examples'] == EXAMPLE_SKIP_CHAR:
@@ -498,7 +509,8 @@ def _json_example_convert_opml_elem_to_json_array(opml_elem):
         return examples
 
 
-def _json_example_get_children_recursively(opml_parent, opml_child, json_child_array, example_index):
+def _json_example_get_children_recursively(opml_parent, opml_child, json_child_array, 
+                                           example_index, augment):
     json_child = json_child_array[example_index if example_index is not None else 0]
     if _is_example_content(json_child_array):
         if _json_is_array(json_child):  # two-level example array, reduce a level
@@ -524,7 +536,8 @@ def _json_example_get_children_recursively(opml_parent, opml_child, json_child_a
                 opml_parent,
                 opml_parent=opml_child,
                 json_parent=json_child,
-                example_index=grandchild_example_index
+                example_index=grandchild_example_index,
+                augment=augment
             )
         except IndexError:
             pass

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
     "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: d3a1df54db68135698babd1a5a7b87dbde04d0540bce923158dbd9c9fafc7e33",
+    "$comment": "JSON signature: 655e973af2740e19e5a9e78a1b1bd0a58f48e8355cbc6a0995cde42ab98ebd56",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -150,9 +150,11 @@
                     "title": "Contains Augmented Metadata",
                     "description": "Set to true if the metadata properties with augmented=true is set in this document, as returned by the fairtracks_augment service",
                     "type": "boolean",
+                    "default": false,
                     "examples": [
                         true
-                    ]
+                    ],
+                    "augmented": true
                 },
                 "augmented_from": {
                     "title": "Augmented From",
@@ -368,7 +370,10 @@
                                     "http://purl.obolibrary.org/obo/uberon.owl"
                                 ]
                             }
-                        }
+                        },
+                        "required": [
+                            "has_augmented_metadata"
+                        ]
                     },
                     "studies": {
                         "items": {
