@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document
 ```
 
 
@@ -19,7 +19,7 @@ unknown
 
 | Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                     |
 | :-------------------------------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ontology_versions](#ontology_versions) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-document-properties-ontology_versions.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document/properties/ontology_versions") |
+| [ontology_versions](#ontology_versions) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-document-properties-ontology_versions.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document/properties/ontology_versions") |
 
 ## ontology_versions
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-document-properties-ontology_versions.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document/properties/ontology_versions")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-document-properties-ontology_versions.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/document/properties/ontology_versions")
 
 ### ontology_versions Type
 

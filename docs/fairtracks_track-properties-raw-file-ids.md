@@ -1,7 +1,7 @@
 # Raw File IDs Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/raw_file_ids
 ```
 
 

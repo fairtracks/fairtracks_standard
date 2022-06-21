@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if
 ```
 
 
@@ -19,7 +19,7 @@ unknown
 
 | Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
 | :-------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [document](#document) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-properties-document-info-allof-0-if-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if/properties/document") |
+| [document](#document) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-properties-document-info-allof-0-if-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if/properties/document") |
 
 ## document
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-allof-0-if-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if/properties/document")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-allof-0-if-properties-document.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/allOf/0/if/properties/document")
 
 ### document Type
 

@@ -1,7 +1,7 @@
 # Version Date Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_date
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_date
 ```
 
 Time and date of the last modification of the present version of the FAIRtracks document

@@ -1,10 +1,10 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json",
     "document": {
         "global_id": "doi:10.5281/zenodo.3984946",
         "version_id": "doi:10.5281/zenodo.3984947",
-        "version_date": "2020-08-25T15:47:15Z",
-        "json_signature": "0072fe6c5ea8b12a34ca1bfdee70ed2bff86c08f8c76a6aae0415d5050ad564a",
+        "version_date": "2020-09-03T13:33:37Z",
+        "json_signature": "7a070f4372c449d98383da0806a33d74969bb3e001e6104c9b51c9a28a3986eb",
         "ontology_versions": {
             "http://edamontology.org/EDAM.owl": "http://edamontology.org/EDAM_1.21.owl",
             "http://purl.obolibrary.org/obo/cl.owl": "http://purl.obolibrary.org/obo/cl/releases/2020-05-21/cl.owl",

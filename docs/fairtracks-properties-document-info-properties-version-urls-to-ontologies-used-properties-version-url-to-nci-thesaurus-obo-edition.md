@@ -1,7 +1,7 @@
 # Version URL to "NCI Thesaurus OBO EDITION" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl
 ```
 
 URL to the version of "NCI Thesaurus OBO Edition" used in the JSON document

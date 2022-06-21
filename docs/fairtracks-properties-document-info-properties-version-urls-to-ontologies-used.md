@@ -1,7 +1,7 @@
 # Version URLs to Ontologies used Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions
 ```
 
 URLs to the version of the ontologies used in the FAIRtracks document
@@ -19,13 +19,13 @@ URLs to the version of the ontologies used in the FAIRtracks document
 
 | Property                                                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                      |
 | :-------------------------------------------------------------------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [http://edamontology.org/EDAM.owl](#http://edamontology.org/EDAM.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-edam-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://edamontology.org/EDAM.owl")                                |
-| [http://purl.obolibrary.org/obo/cl.owl](#http://purl.obolibrary.org/obo/cl.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-cell-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")                           |
-| [http://www.ebi.ac.uk/efo/efo.owl](#http://www.ebi.ac.uk/efo/efo.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-experimental-factor-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")                 |
-| [http://purl.obolibrary.org/obo/ncit.owl](#http://purl.obolibrary.org/obo/ncit.owl)     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-nci-thesaurus-obo-edition.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")             |
-| [http://purl.obolibrary.org/obo/obi.owl](#http://purl.obolibrary.org/obo/obi.owl)       | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-ontology-for-biomedical-investigations.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl") |
-| [http://purl.obolibrary.org/obo/so.owl](#http://purl.obolibrary.org/obo/so.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-sequence-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")                       |
-| [http://purl.obolibrary.org/obo/uberon.owl](#http://purl.obolibrary.org/obo/uberon.owl) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-uberon-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl")                     |
+| [http://edamontology.org/EDAM.owl](#http://edamontology.org/EDAM.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-edam-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://edamontology.org/EDAM.owl")                                |
+| [http://purl.obolibrary.org/obo/cl.owl](#http://purl.obolibrary.org/obo/cl.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-cell-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")                           |
+| [http://www.ebi.ac.uk/efo/efo.owl](#http://www.ebi.ac.uk/efo/efo.owl)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-experimental-factor-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")                 |
+| [http://purl.obolibrary.org/obo/ncit.owl](#http://purl.obolibrary.org/obo/ncit.owl)     | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-nci-thesaurus-obo-edition.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")             |
+| [http://purl.obolibrary.org/obo/obi.owl](#http://purl.obolibrary.org/obo/obi.owl)       | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-ontology-for-biomedical-investigations.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl") |
+| [http://purl.obolibrary.org/obo/so.owl](#http://purl.obolibrary.org/obo/so.owl)         | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-sequence-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")                       |
+| [http://purl.obolibrary.org/obo/uberon.owl](#http://purl.obolibrary.org/obo/uberon.owl) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-uberon-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl")                     |
 
 ## http://edamontology.org/EDAM.owl
 
@@ -37,7 +37,7 @@ URL to the version of "Bioinformatics operations, data types, formats, identifie
 -   is required
 -   Type: `string` ([Version URL to "EDAM Ontology"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-edam-ontology.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-edam-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://edamontology.org/EDAM.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-edam-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://edamontology.org/EDAM.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -73,7 +73,7 @@ URL to the version of "Cell Ontology" used in the JSON document
 -   is required
 -   Type: `string` ([Version URL to "Cell Ontology"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-cell-ontology.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-cell-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-cell-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/cl.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -109,7 +109,7 @@ URL to the version of "Experimental Factor Ontology" used in the JSON document
 -   is required
 -   Type: `string` ([Version URL to "Experimental Factor Ontology"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-experimental-factor-ontology.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-experimental-factor-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-experimental-factor-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -145,7 +145,7 @@ URL to the version of "NCI Thesaurus OBO Edition" used in the JSON document
 -   is required
 -   Type: `string` ([Version URL to "NCI Thesaurus OBO EDITION"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-nci-thesaurus-obo-edition.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-nci-thesaurus-obo-edition.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-nci-thesaurus-obo-edition.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/ncit.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -181,7 +181,7 @@ URL to the version of "Ontology for Biomedical Investigations" used in the JSON 
 -   is required
 -   Type: `string` ([Version URL to "Ontology for Biomedical Investigations"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-ontology-for-biomedical-investigations.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-ontology-for-biomedical-investigations.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-ontology-for-biomedical-investigations.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/obi.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -217,7 +217,7 @@ URL to the version of "Sequence types and features ontology" used in the JSON do
 -   is required
 -   Type: `string` ([Version URL to "Sequence Ontology"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-sequence-ontology.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-sequence-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-sequence-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/so.owl")
 -   format: "uri"
 -   augmented: true
 
@@ -253,7 +253,7 @@ URL to the version of  "Uber-anatomy ontology" used in the JSON document
 -   is required
 -   Type: `string` ([Version URL to "Uberon Ontology"](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-uberon-ontology.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-uberon-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-version-urls-to-ontologies-used-properties-version-url-to-uberon-ontology.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl")
 -   format: "uri"
 -   augmented: true
 

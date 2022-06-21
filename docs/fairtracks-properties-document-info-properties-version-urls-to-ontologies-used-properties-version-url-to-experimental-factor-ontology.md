@@ -1,7 +1,7 @@
 # Version URL to "Experimental Factor Ontology" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://www.ebi.ac.uk/efo/efo.owl
 ```
 
 URL to the version of "Experimental Factor Ontology" used in the JSON document

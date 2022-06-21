@@ -1,7 +1,7 @@
 # Target: Gene Product Type Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type
 ```
 
 Gene product type targeted by the experiment (e.g., miRNA)
@@ -19,8 +19,8 @@ Gene product type targeted by the experiment (e.g., miRNA)
 
 | Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                           |
 | :------------------------ | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id)       | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_id")       |
-| [term_label](#term_label) | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_label") |
+| [term_id](#term_id)       | `string` | Required | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_id")       |
+| [term_label](#term_label) | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_label") |
 
 ## term_id
 
@@ -32,7 +32,7 @@ URL linking to an ontology term
 -   is required
 -   Type: `string` ([Term ID](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-id.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_id")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_id")
 -   format: "term"
 -   ontology: "http://purl.obolibrary.org/obo/ncit.owl"
 -   ancestors: "http://purl.obolibrary.org/obo/NCIT_C26548"
@@ -64,7 +64,7 @@ Exact value according to the ontology used
 -   is optional
 -   Type: `string` ([Term Label](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-label.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_label")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type/properties/term_label")
 -   augmented: true
 
 ### term_label Type

@@ -1,7 +1,7 @@
 # Schema URL Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/@schema
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/@schema
 ```
 
 The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema within the same major version as the JSON document follows (which should ensure compatibility). Must match the value of '$id' in the linked schema
@@ -20,7 +20,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 **constant**: the value of this property must be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json"
 ```
 
 **pattern**: the string must match the following regular expression: 

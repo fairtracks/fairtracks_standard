@@ -1,7 +1,7 @@
 # Species Name Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/species_name
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/species_name
 ```
 
 Species name according to the NCBI Taxonomy database (<https://www.ncbi.nlm.nih.gov/taxonomy>)

@@ -1,7 +1,7 @@
 # Samples Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/samples
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/samples
 ```
 
 Array of JSON documents describing the different samples that have been analyzed to create the track collection

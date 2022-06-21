@@ -1,7 +1,7 @@
 # Untitled undefined type in Experiment Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target
 ```
 
 
@@ -19,7 +19,7 @@ unknown
 
 | Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
 | :-------------------------------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [gene_product_type](#gene_product_type) | Not specified | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-5-then-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target/properties/gene_product_type") |
+| [gene_product_type](#gene_product_type) | Not specified | Optional | cannot be null | [Experiment](fairtracks_experiment-allof-5-then-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target/properties/gene_product_type") |
 
 ## gene_product_type
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-allof-5-then-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target/properties/gene_product_type")
+-   defined in: [Experiment](fairtracks_experiment-allof-5-then-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/allOf/5/then/properties/target/properties/gene_product_type")
 
 ### gene_product_type Type
 

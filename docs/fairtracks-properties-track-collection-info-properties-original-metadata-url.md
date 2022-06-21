@@ -1,7 +1,7 @@
 # Original Metadata URL Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url
 ```
 
 URL to track collection metadata in its original form (might contain more than the relevant metadata)

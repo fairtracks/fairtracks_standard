@@ -1,7 +1,7 @@
 # Target: Details Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details
 ```
 
 Important details about the target of the experiment (to be included in the 'target/summary' property)

@@ -1,7 +1,7 @@
 # References to Primary Experiments Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/aggregated_from
 ```
 
 References to external experiments used as basis for aggregated data generation (using global experiment identifiers, resolvable by identifiers.org)

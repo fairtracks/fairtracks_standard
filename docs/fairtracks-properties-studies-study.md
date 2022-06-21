@@ -1,13 +1,13 @@
 # Study Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/studies/items
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/studies/items
 ```
 
 
 
 
-> JSON signature: f18772474933a3e1419ee64f0cc21771bd4ea56b7253651807e15cd42641aec7
+> JSON signature: ecac0358272416fc16ce76e8f7812375a0c3dc73a66885e11eba7c8c63d37407
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
@@ -22,13 +22,13 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 | Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
 | :-------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@schema](#@schema)               | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/@schema")                           |
-| [global_id](#global_id)           | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/global_id")                          |
-| [local_id](#local_id)             | `string` | Required | cannot be null | [Study](fairtracks_study-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/local_id")                            |
-| [collection_ref](#collection_ref) | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-track-collection-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref")    |
-| [study_name](#study_name)         | `string` | Required | cannot be null | [Study](fairtracks_study-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/study_name")                              |
-| [publication](#publication)       | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-publication.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/publication")                      |
-| [contact](#contact)               | Merged   | Required | cannot be null | [Study](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/contact") |
+| [@schema](#@schema)               | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/@schema")                           |
+| [global_id](#global_id)           | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/global_id")                          |
+| [local_id](#local_id)             | `string` | Required | cannot be null | [Study](fairtracks_study-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/local_id")                            |
+| [collection_ref](#collection_ref) | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-track-collection-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref")    |
+| [study_name](#study_name)         | `string` | Required | cannot be null | [Study](fairtracks_study-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/study_name")                              |
+| [publication](#publication)       | `string` | Optional | cannot be null | [Study](fairtracks_study-properties-publication.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/publication")                      |
+| [contact](#contact)               | Merged   | Required | cannot be null | [Study](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/properties/contact") |
 | Additional Properties             | Any      | Optional | can be null    |                                                                                                                                                                                                                              |
 
 ## @schema
@@ -41,7 +41,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 -   is optional
 -   Type: `string` ([Schema URL](fairtracks_study-properties-schema-url.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/@schema")
+-   defined in: [Study](fairtracks_study-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/@schema")
 -   format: "uri"
 
 ### @schema Type
@@ -53,7 +53,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 **constant**: the value of this property must be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json"
 ```
 
 **pattern**: the string must match the following regular expression: 
@@ -76,7 +76,7 @@ Global study identifier, resolvable by identifiers.org
 -   is optional
 -   Type: `string` ([Global ID](fairtracks_study-properties-global-id.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/global_id")
+-   defined in: [Study](fairtracks_study-properties-global-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/global_id")
 -   format: "curie"
 -   namespace: \["geo","ega.study"]
 -   matchType: "canonical"
@@ -105,7 +105,7 @@ Submitter-local identifier (within the track collection) for the study
 -   is required
 -   Type: `string` ([Local ID](fairtracks_study-properties-local-id.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/local_id")
+-   defined in: [Study](fairtracks_study-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/local_id")
 -   unique: true
 
 ### local_id Type
@@ -128,7 +128,7 @@ Reference to the track collection containing the study (using the submitter-loca
 -   is optional
 -   Type: `string` ([Track Collection Reference](fairtracks_study-properties-track-collection-reference.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-track-collection-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref")
+-   defined in: [Study](fairtracks_study-properties-track-collection-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref")
 -   format: "foreign_ref"
 -   foreignProperty: "fairtracks.schema.json#collection_info/local_id"
 -   augmented: true
@@ -157,7 +157,7 @@ Name of the study
 -   is required
 -   Type: `string` ([Name](fairtracks_study-properties-name.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/study_name")
+-   defined in: [Study](fairtracks_study-properties-name.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/study_name")
 
 ### study_name Type
 
@@ -179,7 +179,7 @@ Pubmed identifier (dataset or publication)
 -   is optional
 -   Type: `string` ([Publication](fairtracks_study-properties-publication.md))
 -   cannot be null
--   defined in: [Study](fairtracks_study-properties-publication.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/publication")
+-   defined in: [Study](fairtracks_study-properties-publication.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/publication")
 -   format: "curie"
 -   namespace: "pubmed"
 -   matchType: "canonical"
@@ -203,7 +203,7 @@ Pubmed identifier (dataset or publication)
 Contact information for the track collection
 
 
-> JSON signature: a924577aa4346db45ec899bce65fec7e61eb7fd069485779178e88e90464e03c
+> JSON signature: d41520e6e2acb6eb68b8482e755eceffbf5bd7a275c9aa09d1ff8abff6678cc6
 >
 
 `contact`
@@ -211,7 +211,7 @@ Contact information for the track collection
 -   is required
 -   Type: `object` ([Contact](fairtracks-properties-track-collection-info-properties-contact.md))
 -   cannot be null
--   defined in: [Study](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/contact")
+-   defined in: [Study](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/properties/contact")
 
 ### contact Type
 

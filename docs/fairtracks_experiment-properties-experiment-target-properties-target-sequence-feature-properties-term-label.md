@@ -1,7 +1,7 @@
 # Term Label Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature/properties/term_label
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature/properties/term_label
 ```
 
 Exact value according to the ontology used

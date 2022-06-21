@@ -1,7 +1,7 @@
 # Sample Reference Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/sample_ref
 ```
 
 Reference to the sample of the experiment (using the submitter-local identifier of the sample)

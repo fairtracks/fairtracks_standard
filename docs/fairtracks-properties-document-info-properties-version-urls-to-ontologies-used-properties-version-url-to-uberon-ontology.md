@@ -1,7 +1,7 @@
 # Version URL to "Uberon Ontology" Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/ontology_versions/properties/http://purl.obolibrary.org/obo/uberon.owl
 ```
 
 URL to the version of  "Uber-anatomy ontology" used in the JSON document

@@ -1,7 +1,7 @@
 # Track Collection Info Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info
 ```
 
 General information about the track collection that is annotated in the current FAIRtracks JSON document
@@ -19,14 +19,14 @@ General information about the track collection that is annotated in the current 
 
 | Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
 | :-------------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [source_repo_url](#source_repo_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")         |
-| [local_id](#local_id)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")                       |
-| [document_ref](#document_ref)           | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")         |
-| [short_name](#short_name)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")                   |
-| [long_name](#long_name)                 | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")                     |
-| [description_url](#description_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")         |
-| [orig_metadata_url](#orig_metadata_url) | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-original-metadata-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url") |
-| [contact](#contact)                     | Merged   | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/collection_info/properties/contact")                 |
+| [source_repo_url](#source_repo_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")         |
+| [local_id](#local_id)                   | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")                       |
+| [document_ref](#document_ref)           | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")         |
+| [short_name](#short_name)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")                   |
+| [long_name](#long_name)                 | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")                     |
+| [description_url](#description_url)     | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")         |
+| [orig_metadata_url](#orig_metadata_url) | `string` | Optional | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-original-metadata-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url") |
+| [contact](#contact)                     | Merged   | Required | cannot be null | [FAIRtracks](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/properties/collection_info/properties/contact")                 |
 
 ## source_repo_url
 
@@ -38,7 +38,7 @@ URL to the track repository containing the collection (e.g., the Track Hub Regis
 -   is optional
 -   Type: `string` ([Source Repo URL](fairtracks-properties-track-collection-info-properties-source-repo-url.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-source-repo-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url")
 -   format: "uri"
 
 ### source_repo_url Type
@@ -73,7 +73,7 @@ Submitter-local identifier (within track repository) for the collection
 -   is required
 -   Type: `string` ([Local ID](fairtracks-properties-track-collection-info-properties-local-id.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-local-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/local_id")
 -   unique: true
 
 ### local_id Type
@@ -96,7 +96,7 @@ Reference to the FAIRtracks document containing the track collection (using the 
 -   is required
 -   Type: `string` ([Document Reference](fairtracks-properties-track-collection-info-properties-document-reference.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref")
 -   format: "foreign_ref"
 -   foreignProperty: "fairtracks.schema.json#document/global_id"
 
@@ -124,7 +124,7 @@ Short name of the track collection. Suggested maximum length is 17 characters
 -   is required
 -   Type: `string` ([Name (Short)](fairtracks-properties-track-collection-info-properties-name-short.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-short.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/short_name")
 
 ### short_name Type
 
@@ -146,7 +146,7 @@ Long name of the track collection. Suggested maximum length is 80 characters
 -   is required
 -   Type: `string` ([Name (Long)](fairtracks-properties-track-collection-info-properties-name-long.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-name-long.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/long_name")
 
 ### long_name Type
 
@@ -168,7 +168,7 @@ URL to a web page or file describing the track collection
 -   is optional
 -   Type: `string` ([Description URL](fairtracks-properties-track-collection-info-properties-description-url.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-description-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/description_url")
 -   format: "uri"
 
 ### description_url Type
@@ -203,7 +203,7 @@ URL to track collection metadata in its original form (might contain more than t
 -   is optional
 -   Type: `string` ([Original Metadata URL](fairtracks-properties-track-collection-info-properties-original-metadata-url.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-original-metadata-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-original-metadata-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/orig_metadata_url")
 -   format: "uri"
 
 ### orig_metadata_url Type
@@ -233,7 +233,7 @@ URL to track collection metadata in its original form (might contain more than t
 Contact information for the track collection
 
 
-> JSON signature: a924577aa4346db45ec899bce65fec7e61eb7fd069485779178e88e90464e03c
+> JSON signature: d41520e6e2acb6eb68b8482e755eceffbf5bd7a275c9aa09d1ff8abff6678cc6
 >
 
 `contact`
@@ -241,7 +241,7 @@ Contact information for the track collection
 -   is required
 -   Type: `object` ([Contact](fairtracks-properties-track-collection-info-properties-contact.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/collection_info/properties/contact")
+-   defined in: [FAIRtracks](fairtracks-properties-track-collection-info-properties-contact.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/properties/collection_info/properties/contact")
 
 ### contact Type
 

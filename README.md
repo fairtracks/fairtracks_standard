@@ -28,7 +28,7 @@ https://fairtracks.github.io/
 
 ## FAIRtracks version information
 
-**FAIRtracks v1.0.2**
+**FAIRtracks v2.0.0 "Assembly" [http://purl.obolibrary.org/obo/SO_0001248](http://purl.obolibrary.org/obo/SO_0001248)**
 
 
 ## Overview of structure of the FAIRtracks standard

@@ -1,7 +1,7 @@
 # Document Reference Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/document_ref
 ```
 
 Reference to the FAIRtracks document containing the track collection (using the global identifier of the document)

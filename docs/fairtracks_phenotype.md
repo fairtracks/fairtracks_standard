@@ -1,13 +1,13 @@
 # Phenotype Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json
 ```
 
 
 
 
-> JSON signature: 857e0a5f3bb5d2c96f3e5d8252f12166c95a2b9a7cb69d297faa23058d99fe2d
+> JSON signature: 8b4d633accf030bf22b172f79af1dfbea063d58a28274a129bbc8bc7b7a188f9
 >
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                 |
@@ -22,9 +22,9 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 | Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                        |
 | :------------------------ | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [@schema](#@schema)       | `string` | Optional | cannot be null | [Phenotype](fairtracks_phenotype-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/@schema")    |
-| [term_id](#term_id)       | `string` | Required | cannot be null | [Phenotype](fairtracks_phenotype-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_id")       |
-| [term_label](#term_label) | `string` | Optional | cannot be null | [Phenotype](fairtracks_phenotype-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_label") |
+| [@schema](#@schema)       | `string` | Optional | cannot be null | [Phenotype](fairtracks_phenotype-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/@schema")    |
+| [term_id](#term_id)       | `string` | Required | cannot be null | [Phenotype](fairtracks_phenotype-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_id")       |
+| [term_label](#term_label) | `string` | Optional | cannot be null | [Phenotype](fairtracks_phenotype-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_label") |
 | Additional Properties     | Any      | Optional | can be null    |                                                                                                                                                                                                                   |
 
 ## @schema
@@ -37,7 +37,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 -   is optional
 -   Type: `string` ([Schema URL](fairtracks_phenotype-properties-schema-url.md))
 -   cannot be null
--   defined in: [Phenotype](fairtracks_phenotype-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/@schema")
+-   defined in: [Phenotype](fairtracks_phenotype-properties-schema-url.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/@schema")
 -   format: "uri"
 
 ### @schema Type
@@ -49,7 +49,7 @@ The absolute URL of the 'current' version of the relevant FAIRtracks JSON schema
 **constant**: the value of this property must be equal to:
 
 ```json
-"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json"
+"https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json"
 ```
 
 **pattern**: the string must match the following regular expression: 
@@ -72,7 +72,7 @@ URL linking to an ontology term
 -   is required
 -   Type: `string` ([Term ID](fairtracks_phenotype-properties-term-id.md))
 -   cannot be null
--   defined in: [Phenotype](fairtracks_phenotype-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_id")
+-   defined in: [Phenotype](fairtracks_phenotype-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_id")
 -   format: "term"
 -   ontology: "http://purl.obolibrary.org/obo/ncit.owl"
 -   ancestors: \["http://purl.obolibrary.org/obo/NCIT_C7057","http://purl.obolibrary.org/obo/NCIT_C22187","http://purl.obolibrary.org/obo/NCIT_C14165"]
@@ -112,7 +112,7 @@ Exact value according to the ontology used
 -   is optional
 -   Type: `string` ([Term Label](fairtracks_phenotype-properties-term-label.md))
 -   cannot be null
--   defined in: [Phenotype](fairtracks_phenotype-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_label")
+-   defined in: [Phenotype](fairtracks_phenotype-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/term_label")
 -   augmented: true
 
 ### term_label Type

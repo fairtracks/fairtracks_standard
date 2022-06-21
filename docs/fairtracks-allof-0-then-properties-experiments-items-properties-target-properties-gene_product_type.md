@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type
 ```
 
 

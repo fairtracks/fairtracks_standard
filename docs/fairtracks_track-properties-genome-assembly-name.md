@@ -1,7 +1,7 @@
 # Genome Assembly Name Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/assembly_name
 ```
 
 Genome assembly name or synonym, according to the NCBI Assembly database. For tracks following UCSC-style chromosome names (e.g., "chr1"), the UCSC synonym should be used instead of the official name

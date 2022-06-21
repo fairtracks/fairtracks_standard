@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
-    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks.schema.json",
-    "$comment": "JSON signature: 655e973af2740e19e5a9e78a1b1bd0a58f48e8355cbc6a0995cde42ab98ebd56",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/2.0.0/json/schema/fairtracks.schema.json",
+    "$comment": "JSON signature: bc8e144e6ba3bc5cb1d6499eb063af749ae720f46a27d16b7239b72f507256af",
     "title": "FAIRtracks",
     "type": "object",
     "properties": {
@@ -12,7 +12,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json"
         },
         "document": {
             "title": "Document info",

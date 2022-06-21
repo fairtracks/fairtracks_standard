@@ -1,7 +1,7 @@
 # Minimal Document Reference Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref
 ```
 
 Reference to the minimal (i.e. non-augmented) FAIRtracks document used to generate the present augmented FAIRtracks document (using the global identifier of the document)

@@ -1,7 +1,7 @@
 # Biospecimen Class Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class
 ```
 
 Main type of structural unit to be used for classification of the sample
@@ -19,8 +19,8 @@ Main type of structural unit to be used for classification of the sample
 
 | Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                         |
 | :------------------------ | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_id")       |
-| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_label") |
+| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_id")       |
+| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_label") |
 
 ## term_id
 
@@ -32,7 +32,7 @@ URL linking to an ontology term
 -   is required
 -   Type: `string` ([Term ID](fairtracks_sample-properties-biospecimen-class-properties-term-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_id")
+-   defined in: [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_id")
 -   format: "term"
 -   ontology: "http://purl.obolibrary.org/obo/ncit.owl"
 -   matchType: "exact"
@@ -82,7 +82,7 @@ Exact value according to the ontology used
 -   is optional
 -   Type: `string` ([Term Label](fairtracks_sample-properties-biospecimen-class-properties-term-label.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_label")
+-   defined in: [Sample](fairtracks_sample-properties-biospecimen-class-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/biospecimen_class/properties/term_label")
 -   augmented: true
 
 ### term_label Type

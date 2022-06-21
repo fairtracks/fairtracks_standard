@@ -1,7 +1,7 @@
 # Name Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/study_name
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/study_name
 ```
 
 Name of the study

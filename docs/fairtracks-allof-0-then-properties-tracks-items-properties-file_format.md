@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/tracks/items/properties/file_format
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/tracks/items/properties/file_format
 ```
 
 

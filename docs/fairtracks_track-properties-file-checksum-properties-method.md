@@ -1,7 +1,7 @@
 # Method Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method
 ```
 
 Method of checksum generation

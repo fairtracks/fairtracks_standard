@@ -1,7 +1,7 @@
 # Experiments Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/experiments
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/experiments
 ```
 
 Array of JSON documents describing the different experiments that have produced data for the track collection

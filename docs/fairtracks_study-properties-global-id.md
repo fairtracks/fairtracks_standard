@@ -1,7 +1,7 @@
 # Global ID Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/global_id
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/global_id
 ```
 
 Global study identifier, resolvable by identifiers.org

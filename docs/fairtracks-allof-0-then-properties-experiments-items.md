@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items
 ```
 
 
@@ -19,8 +19,8 @@ unknown
 
 | Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
 | :---------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [technique](#technique) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/technique") |
-| [target](#target)       | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target")       |
+| [technique](#technique) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/technique") |
+| [target](#target)       | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target")       |
 
 ## technique
 
@@ -32,7 +32,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/technique")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-technique.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/technique")
 
 ### technique Type
 
@@ -48,7 +48,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target")
 
 ### target Type
 

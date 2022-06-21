@@ -1,7 +1,7 @@
 # Compute Protocol Description Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/compute_protocol_description
 ```
 
 Free-text description of computational protocol, or URL to such description

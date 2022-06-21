@@ -1,7 +1,7 @@
 # Study Reference Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/study_ref
 ```
 
 Reference to the study that generated the sample (using the submitter-local identifier of the study)

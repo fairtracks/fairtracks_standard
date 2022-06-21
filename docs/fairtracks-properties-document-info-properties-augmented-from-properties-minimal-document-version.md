@@ -1,7 +1,7 @@
 # Minimal Document Version Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id
 ```
 
 Version string (preferably in CURIE form) that uniquely identifies the exact version (among all document versions matching "minimal_doc_ref") of the minimal FAIRtracks document used to generate the present augmented FAIRtracks document 

@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document
 ```
 
 
@@ -19,7 +19,7 @@ unknown
 
 | Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
 | :------------------------------------------------ | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [has_augmented_metadata](#has_augmented_metadata) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-if-properties-document-properties-has_augmented_metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document/properties/has_augmented_metadata") |
+| [has_augmented_metadata](#has_augmented_metadata) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-if-properties-document-properties-has_augmented_metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document/properties/has_augmented_metadata") |
 
 ## has_augmented_metadata
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-if-properties-document-properties-has_augmented_metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document/properties/has_augmented_metadata")
+-   defined in: [FAIRtracks](fairtracks-allof-0-if-properties-document-properties-has_augmented_metadata.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/if/properties/document/properties/has_augmented_metadata")
 
 ### has_augmented_metadata Type
 

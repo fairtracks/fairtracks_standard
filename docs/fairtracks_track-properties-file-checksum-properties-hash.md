@@ -1,7 +1,7 @@
 # Hash Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash
 ```
 
 Checksum of track file, using the method described in cs_method

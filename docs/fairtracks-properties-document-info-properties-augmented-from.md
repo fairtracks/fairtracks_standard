@@ -1,7 +1,7 @@
 # Augmented From Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from
 ```
 
 Information about the non-augmented "parent" FAIRtracks document used to generate the augmented FAIRtracks document. Only relevant if 'has_augmented_data' is true
@@ -19,8 +19,8 @@ Information about the non-augmented "parent" FAIRtracks document used to generat
 
 | Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                |
 | :------------------------------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [minimal_doc_ref](#minimal_doc_ref)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref")      |
-| [minimal_doc_version_id](#minimal_doc_version_id) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id") |
+| [minimal_doc_ref](#minimal_doc_ref)               | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref")      |
+| [minimal_doc_version_id](#minimal_doc_version_id) | `string` | Required | cannot be null | [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id") |
 
 ## minimal_doc_ref
 
@@ -32,7 +32,7 @@ Reference to the minimal (i.e. non-augmented) FAIRtracks document used to genera
 -   is required
 -   Type: `string` ([Minimal Document Reference](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-reference.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-reference.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_ref")
 -   namespace: "doi"
 
 ### minimal_doc_ref Type
@@ -49,7 +49,7 @@ Version string (preferably in CURIE form) that uniquely identifies the exact ver
 -   is required
 -   Type: `string` ([Minimal Document Version](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-version.md))
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id")
+-   defined in: [FAIRtracks](fairtracks-properties-document-info-properties-augmented-from-properties-minimal-document-version.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/augmented_from/properties/minimal_doc_version_id")
 
 ### minimal_doc_version_id Type
 

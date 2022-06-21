@@ -1,7 +1,7 @@
 # Sample Type Details Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/details
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/details
 ```
 
 Important details about the sample classification (to be included in the 'sample_type/summary' property)

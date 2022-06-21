@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target
 ```
 
 
@@ -19,10 +19,10 @@ unknown
 
 | Property                                              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                         |
 | :---------------------------------------------------- | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sequence_feature](#sequence_feature)                 | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/sequence_feature")                 |
-| [gene_product_type](#gene_product_type)               | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type")               |
-| [macromolecular_structure](#macromolecular_structure) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-macromolecular_structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/macromolecular_structure") |
-| [phenotype](#phenotype)                               | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/phenotype")                               |
+| [sequence_feature](#sequence_feature)                 | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/sequence_feature")                 |
+| [gene_product_type](#gene_product_type)               | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type")               |
+| [macromolecular_structure](#macromolecular_structure) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-macromolecular_structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/macromolecular_structure") |
+| [phenotype](#phenotype)                               | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/phenotype")                               |
 
 ## sequence_feature
 
@@ -34,7 +34,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/sequence_feature")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-sequence_feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/sequence_feature")
 
 ### sequence_feature Type
 
@@ -50,7 +50,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-gene_product_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/gene_product_type")
 
 ### gene_product_type Type
 
@@ -66,7 +66,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-macromolecular_structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/macromolecular_structure")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-macromolecular_structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/macromolecular_structure")
 
 ### macromolecular_structure Type
 
@@ -82,7 +82,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/phenotype")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-experiments-items-properties-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/experiments/items/properties/target/properties/phenotype")
 
 ### phenotype Type
 

@@ -1,7 +1,7 @@
 # E-mail Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/properties/e-mail
 ```
 
 E-mail to contact person/organization

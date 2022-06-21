@@ -1,7 +1,7 @@
 # File Checksum Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum
 ```
 
 
@@ -19,8 +19,8 @@ https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json
 
 | Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                    |
 | :---------------------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cs_method](#cs_method) | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file-checksum-properties-method.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method") |
-| [cs_hash](#cs_hash)     | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file-checksum-properties-hash.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash")     |
+| [cs_method](#cs_method) | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file-checksum-properties-method.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method") |
+| [cs_hash](#cs_hash)     | `string` | Required | cannot be null | [Track](fairtracks_track-properties-file-checksum-properties-hash.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash")     |
 
 ## cs_method
 
@@ -32,7 +32,7 @@ Method of checksum generation
 -   is required
 -   Type: `string` ([Method](fairtracks_track-properties-file-checksum-properties-method.md))
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-file-checksum-properties-method.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method")
+-   defined in: [Track](fairtracks_track-properties-file-checksum-properties-method.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_method")
 
 ### cs_method Type
 
@@ -91,7 +91,7 @@ Checksum of track file, using the method described in cs_method
 -   is required
 -   Type: `string` ([Hash](fairtracks_track-properties-file-checksum-properties-hash.md))
 -   cannot be null
--   defined in: [Track](fairtracks_track-properties-file-checksum-properties-hash.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash")
+-   defined in: [Track](fairtracks_track-properties-file-checksum-properties-hash.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/checksum/properties/cs_hash")
 
 ### cs_hash Type
 

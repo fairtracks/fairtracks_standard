@@ -1,5 +1,5 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json",
     "global_id": "geo:GSE35583",
     "local_id": "U54HG004592",
     "collection_ref": "encode_example",

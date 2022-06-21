@@ -1,7 +1,7 @@
 # Untitled undefined type in FAIRtracks Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items
 ```
 
 
@@ -19,9 +19,9 @@ unknown
 
 | Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                               |
 | :-------------------------------------- | ------------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [biospecimen_class](#biospecimen_class) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/biospecimen_class") |
-| [sample_type](#sample_type)             | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/sample_type")             |
-| [phenotype](#phenotype)                 | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/phenotype")                 |
+| [biospecimen_class](#biospecimen_class) | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/biospecimen_class") |
+| [sample_type](#sample_type)             | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/sample_type")             |
+| [phenotype](#phenotype)                 | Not specified | Optional | cannot be null | [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/phenotype")                 |
 
 ## biospecimen_class
 
@@ -33,7 +33,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/biospecimen_class")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-biospecimen_class.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/biospecimen_class")
 
 ### biospecimen_class Type
 
@@ -49,7 +49,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/sample_type")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/sample_type")
 
 ### sample_type Type
 
@@ -65,7 +65,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/phenotype")
+-   defined in: [FAIRtracks](fairtracks-allof-0-then-properties-samples-items-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/allOf/0/then/properties/samples/items/properties/phenotype")
 
 ### phenotype Type
 

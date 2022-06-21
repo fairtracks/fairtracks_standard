@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json",
-    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_contact.schema.json",
-    "$comment": "JSON signature: a924577aa4346db45ec899bce65fec7e61eb7fd069485779178e88e90464e03c",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/2.0.0/json/schema/fairtracks_contact.schema.json",
+    "$comment": "JSON signature: d41520e6e2acb6eb68b8482e755eceffbf5bd7a275c9aa09d1ff8abff6678cc6",
     "title": "Contact",
     "type": "object",
     "properties": {
@@ -12,7 +12,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json"
         },
         "name": {
             "title": "Name",

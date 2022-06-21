@@ -1,7 +1,7 @@
 # Untitled undefined type in Experiment Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype/ontologyTermPair
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype/ontologyTermPair
 ```
 
 

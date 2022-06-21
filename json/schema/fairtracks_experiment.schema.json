@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json",
-    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/1.0.2/json/schema/fairtracks_experiment.schema.json",
-    "$comment": "JSON signature: 12069a8f5b5c7b3128ae0ca629d2ecf8d511270c6da02ffc3e6c1ae985c1a15c",
+    "$id": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json",
+    "$version_url": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/2.0.0/json/schema/fairtracks_experiment.schema.json",
+    "$comment": "JSON signature: b5a0e18c03a50fc178e9333a518cd8b6e24fe72afd77942437ec5e9c38a618c5",
     "title": "Experiment",
     "type": "object",
     "properties": {
@@ -12,7 +12,7 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https?|ftp)://",
-            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json"
+            "const": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json"
         },
         "global_id": {
             "title": "Global ID",

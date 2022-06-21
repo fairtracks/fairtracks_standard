@@ -1,7 +1,7 @@
 # Untitled undefined type in Sample Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties
 ```
 
 

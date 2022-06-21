@@ -1,7 +1,7 @@
 # Label (Long) Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/label_long
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/label_long
 ```
 
 A long label of the track file. Suggested maximum length is 80 characters

@@ -1,7 +1,7 @@
 # Term ID Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_track.schema.json#/properties/file_format/properties/term_id
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_track.schema.json#/properties/file_format/properties/term_id
 ```
 
 URL linking to an ontology term

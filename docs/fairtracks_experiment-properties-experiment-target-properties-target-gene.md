@@ -1,7 +1,7 @@
 # Target: Gene Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id
 ```
 
 HGNC identifier for gene targeted by the experiment (e.g., specific transcription factor used as ChIP-seq antibody).

@@ -1,7 +1,7 @@
 # Untitled undefined type in Experiment Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature/properties
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/allOf/0/then/properties/target/properties/sequence_feature/properties
 ```
 
 

@@ -1,5 +1,5 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json",
     "global_id": "biosample:SAMN01731491",
     "local_id": "encode:ENCBS192PUU",
     "species_id": "taxonomy:9606",

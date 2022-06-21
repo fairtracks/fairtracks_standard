@@ -1,7 +1,7 @@
 # Organism Part (Tissue/Organ) Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part
 ```
 
 Part of organism (typically tissue or organ) from which the sample was taken, or cell line was derived from. This property  must be used is biospecimen_class is set to "Organism Part", but can also be used for the other values of biospecimen_class.
@@ -19,8 +19,8 @@ Part of organism (typically tissue or organ) from which the sample was taken, or
 
 | Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                           |
 | :------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_id")       |
-| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_label") |
+| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_id")       |
+| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_label") |
 
 ## term_id
 
@@ -32,7 +32,7 @@ URL linking to an ontology term
 -   is required
 -   Type: `string` ([Term ID](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_id")
+-   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_id")
 -   format: "term"
 -   ontology: "http://purl.obolibrary.org/obo/uberon.owl"
 -   ancestors: "http://purl.obolibrary.org/obo/UBERON_0000465"
@@ -74,7 +74,7 @@ Exact value according to the ontology used
 -   is optional
 -   Type: `string` ([Term Label](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_label")
+-   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-organism-part-tissueorgan-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/organism_part/properties/term_label")
 -   augmented: true
 
 ### term_label Type

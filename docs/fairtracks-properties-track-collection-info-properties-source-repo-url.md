@@ -1,7 +1,7 @@
 # Source Repo URL Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/collection_info/properties/source_repo_url
 ```
 
 URL to the track repository containing the collection (e.g., the Track Hub Registry)

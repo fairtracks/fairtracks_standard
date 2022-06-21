@@ -1,7 +1,7 @@
 # Untitled undefined type in Sample Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then
 ```
 
 
@@ -19,7 +19,7 @@ unknown
 
 | Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                           |
 | :-------------------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sample_type](#sample_type) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-2-then-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties/sample_type") |
+| [sample_type](#sample_type) | Not specified | Optional | cannot be null | [Sample](fairtracks_sample-allof-2-then-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties/sample_type") |
 
 ## sample_type
 
@@ -31,7 +31,7 @@ unknown
 -   is optional
 -   Type: unknown
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-allof-2-then-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties/sample_type")
+-   defined in: [Sample](fairtracks_sample-allof-2-then-properties-sample_type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/allOf/2/then/properties/sample_type")
 
 ### sample_type Type
 

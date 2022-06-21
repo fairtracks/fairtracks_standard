@@ -1,7 +1,7 @@
 # Track Collection Reference Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_study.schema.json#/properties/collection_ref
 ```
 
 Reference to the track collection containing the study (using the submitter-local identifier of the collection)

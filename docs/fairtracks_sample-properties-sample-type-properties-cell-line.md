@@ -1,7 +1,7 @@
 # Cell Line Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line
 ```
 
 Cultured cell line used in the sample. This property should only be used if biospecimen_class is set to "Cell Line".
@@ -19,8 +19,8 @@ Cultured cell line used in the sample. This property should only be used if bios
 
 | Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
 | :------------------------ | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_id")       |
-| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_label") |
+| [term_id](#term_id)       | `string` | Required | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_id")       |
+| [term_label](#term_label) | `string` | Optional | cannot be null | [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_label") |
 
 ## term_id
 
@@ -32,7 +32,7 @@ URL linking to an ontology term
 -   is required
 -   Type: `string` ([Term ID](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-id.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_id")
+-   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-id.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_id")
 -   format: "term"
 -   ontology: "http://www.ebi.ac.uk/efo/efo.owl"
 -   ancestors: "http://purl.obolibrary.org/obo/CL_0000010"
@@ -64,7 +64,7 @@ Exact value according to the ontology used
 -   is optional
 -   Type: `string` ([Term Label](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md))
 -   cannot be null
--   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_label")
+-   defined in: [Sample](fairtracks_sample-properties-sample-type-properties-cell-line-properties-term-label.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_sample.schema.json#/properties/sample_type/properties/cell_line/properties/term_label")
 -   augmented: true
 
 ### term_label Type

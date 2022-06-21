@@ -1,7 +1,7 @@
 # Studies Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/studies
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/studies
 ```
 
 Array of JSON documents describing different studies that have produced data for the track collection

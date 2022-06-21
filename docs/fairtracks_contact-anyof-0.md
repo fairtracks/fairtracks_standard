@@ -1,7 +1,7 @@
 # Untitled undefined type in Contact Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_contact.schema.json#/anyOf/0
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_contact.schema.json#/anyOf/0
 ```
 
 

@@ -1,7 +1,7 @@
 # Version ID Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_id
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/version_id
 ```
 
 Version string (preferably in CURIE form) that uniquely and exactly identifies the present version of the FAIRtracks document among all versions with the same "global_id" identifier

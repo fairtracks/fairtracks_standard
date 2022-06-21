@@ -1,10 +1,10 @@
 {
-    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json",
+    "@schema": "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json",
     "document": {
         "global_id": "doi:10.5281/zenodo.3984946",
         "version_id": "doi:10.5281/zenodo.3984947",
-        "version_date": "2020-09-03T13:09:30Z",
-        "json_signature": "e1b96d199ae43f2fc22c36b7e9eeeef7e150e4a6321e4905f602815298987abf"
+        "version_date": "2020-09-03T13:33:37Z",
+        "json_signature": "c18d2195d9a64ebc3cc05c043661dcf5cf42ac4c3508fcced53f92a1c146e9ed"
     },
     "collection_info": {
         "source_repo_url": "https://www.encodeproject.org/search",

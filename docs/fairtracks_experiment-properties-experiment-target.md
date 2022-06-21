@@ -1,7 +1,7 @@
 # Experiment Target Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target
 ```
 
 Main target of the experiment
@@ -19,13 +19,13 @@ Main target of the experiment
 
 | Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
 | :---------------------------------------------------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sequence_feature](#sequence_feature)                 | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-sequence-feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature")                 |
-| [gene_id](#gene_id)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id")                                      |
-| [gene_product_type](#gene_product_type)               | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type")               |
-| [macromolecular_structure](#macromolecular_structure) | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-macromolecular-structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/macromolecular_structure") |
-| [phenotype](#phenotype)                               | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype")                                       |
-| [details](#details)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-details.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details")                                   |
-| [summary](#summary)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-experiment-target-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/summary")                        |
+| [sequence_feature](#sequence_feature)                 | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-sequence-feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature")                 |
+| [gene_id](#gene_id)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id")                                      |
+| [gene_product_type](#gene_product_type)               | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type")               |
+| [macromolecular_structure](#macromolecular_structure) | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-macromolecular-structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/macromolecular_structure") |
+| [phenotype](#phenotype)                               | `object` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype")                                       |
+| [details](#details)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-details.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details")                                   |
+| [summary](#summary)                                   | `string` | Optional | cannot be null | [Experiment](fairtracks_experiment-properties-experiment-target-properties-experiment-target-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/summary")                        |
 
 ## sequence_feature
 
@@ -37,7 +37,7 @@ Sequence feature targeted by the experiment
 -   is optional
 -   Type: `object` ([Target: Sequence Feature](fairtracks_experiment-properties-experiment-target-properties-target-sequence-feature.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-sequence-feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-sequence-feature.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/sequence_feature")
 
 ### sequence_feature Type
 
@@ -53,7 +53,7 @@ HGNC identifier for gene targeted by the experiment (e.g., specific transcriptio
 -   is optional
 -   Type: `string` ([Target: Gene](fairtracks_experiment-properties-experiment-target-properties-target-gene.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_id")
 -   namespace: "hgnc"
 -   matchType: "canonical"
 
@@ -71,7 +71,7 @@ Gene product type targeted by the experiment (e.g., miRNA)
 -   is optional
 -   Type: `object` ([Target: Gene Product Type](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-gene-product-type.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/gene_product_type")
 
 ### gene_product_type Type
 
@@ -87,7 +87,7 @@ Macromolecular structure targeted by the experiment (e.g., chromatin strucure)
 -   is optional
 -   Type: `object` ([Target: Macromolecular Structure](fairtracks_experiment-properties-experiment-target-properties-target-macromolecular-structure.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-macromolecular-structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/macromolecular_structure")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-macromolecular-structure.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/macromolecular_structure")
 
 ### macromolecular_structure Type
 
@@ -98,7 +98,7 @@ Macromolecular structure targeted by the experiment (e.g., chromatin strucure)
 Main phenotype (e.g. disease) connected to the sample
 
 
-> JSON signature: 857e0a5f3bb5d2c96f3e5d8252f12166c95a2b9a7cb69d297faa23058d99fe2d
+> JSON signature: 8b4d633accf030bf22b172f79af1dfbea063d58a28274a129bbc8bc7b7a188f9
 >
 
 `phenotype`
@@ -106,7 +106,7 @@ Main phenotype (e.g. disease) connected to the sample
 -   is optional
 -   Type: `object` ([Phenotype](fairtracks_experiment-properties-experiment-target-properties-phenotype.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-phenotype.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_phenotype.schema.json#/properties/target/properties/phenotype")
 
 ### phenotype Type
 
@@ -122,7 +122,7 @@ Important details about the target of the experiment (to be included in the 'tar
 -   is optional
 -   Type: `string` ([Target: Details](fairtracks_experiment-properties-experiment-target-properties-target-details.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-details.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-target-details.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/details")
 
 ### details Type
 
@@ -138,7 +138,7 @@ Main target of the experiment. Summary of 'target' sub-properties: 'sequence_fea
 -   is optional
 -   Type: `string` ([Experiment Target (Summary)](fairtracks_experiment-properties-experiment-target-properties-experiment-target-summary.md))
 -   cannot be null
--   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-experiment-target-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/summary")
+-   defined in: [Experiment](fairtracks_experiment-properties-experiment-target-properties-experiment-target-summary.md "https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks_experiment.schema.json#/properties/target/properties/summary")
 -   augmented: true
 
 ### summary Type

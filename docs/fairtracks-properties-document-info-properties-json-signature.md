@@ -1,7 +1,7 @@
 # JSON Signature Schema
 
 ```txt
-https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v1/current/json/schema/fairtracks.schema.json#/properties/document/properties/json_signature
+https://raw.githubusercontent.com/fairtracks/fairtracks_standard/v2/current/json/schema/fairtracks.schema.json#/properties/document/properties/json_signature
 ```
 
 Unique signature derived from the JSON contents of the FAIRtracks document, as defined by the "scripts/python/json_signature.py" module in the FAIRtracks GitHub repo (<https://github.com/fairtracks/fairtracks_standard>).
